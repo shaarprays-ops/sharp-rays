@@ -928,15 +928,9 @@ export default function HookSection() {
                           src={slide.image}
                           alt={slide.title}
                           fill
-                          priority={
-                            index === 0
-                          }
-                          sizes="
-                            (min-width: 1536px) 760px,
-                            (min-width: 1280px) 50vw,
-                            (min-width: 1024px) 52vw,
-                            100vw
-                          "
+                          loading={index === 0 ? "eager" : "lazy"}
+                          fetchPriority={index === 0 ? "high" : "auto"}
+                          sizes="(min-width: 1536px) 760px, (min-width: 1280px) 50vw, (min-width: 1024px) 52vw, 100vw"
                           className="
                             object-contain
                             object-center
@@ -1033,12 +1027,7 @@ export default function HookSection() {
                         src={slide.image}
                         alt={slide.title}
                         fill
-                        sizes="
-                          (max-width: 480px) 96vw,
-                          (max-width: 768px) 88vw,
-                          (max-width: 1023px) 78vw,
-                          50vw
-                        "
+                        sizes="(max-width: 480px) 96vw, (max-width: 768px) 88vw, (max-width: 1023px) 78vw, 50vw"
                         className="
                           object-contain
                           object-center
