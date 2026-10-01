@@ -44,7 +44,7 @@ const services = [
   },
   {
     label: "AI Automation",
-    href: "/services/ai-automation",
+    href: "/services/AI-Automation",
   },
 ];
 
