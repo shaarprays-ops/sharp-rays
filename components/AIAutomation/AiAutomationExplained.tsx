@@ -830,7 +830,7 @@ export default function AiAutomationExplained() {
                     text-[#0B2A52]
                   "
                 >
-                
+                Automation
                 </span>
               </div>
 
