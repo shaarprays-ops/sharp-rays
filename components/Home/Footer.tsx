@@ -44,7 +44,6 @@ const exploreLinks = [
     label: "About",
     href: "/about",
   },
-
   {
     label: "Contact",
     href: "/contact",
@@ -53,19 +52,19 @@ const exploreLinks = [
 
 const socialLinks = [
   {
- 
-    href: "#",
+    href: "https://www.linkedin.com/company/sharp-rays/",
     icon: "linkedin",
+    label: "LinkedIn",
   },
   {
-
-    href: "#",
+    href: "https://www.instagram.com/sharpraysdigital/",
     icon: "instagram",
+    label: "Instagram",
   },
   {
-   
-    href: "#",
-    icon: "youtube",
+    href: "https://www.facebook.com/profile.php?id=61594116386615",
+    icon: "facebook",
+    label: "Facebook",
   },
 ] as const;
 
@@ -75,12 +74,9 @@ export default function Footer() {
       className="
         relative
         overflow-hidden
-
         border-t
         border-[#0B2A52]/[0.08]
-
         bg-[#FAFCFE]
-
         text-[#0B2A52]
       "
     >
@@ -102,14 +98,10 @@ export default function Footer() {
             absolute
             -left-[160px]
             top-[-160px]
-
             h-[340px]
             w-[340px]
-
             rounded-full
-
             bg-[#EEF5FA]/75
-
             blur-[110px]
           "
         />
@@ -119,14 +111,10 @@ export default function Footer() {
             absolute
             -right-[180px]
             bottom-[-200px]
-
             h-[380px]
             w-[380px]
-
             rounded-full
-
             bg-[#B79A72]/[0.04]
-
             blur-[120px]
           "
         />
@@ -140,23 +128,17 @@ export default function Footer() {
         className="
           relative
           z-10
-
           mx-auto
           w-full
           max-w-[1440px]
-
           px-4
           py-12
-
           sm:px-6
           sm:py-14
-
           md:px-8
           md:py-16
-
           lg:px-12
           lg:py-18
-
           xl:px-14
         "
       >
@@ -165,14 +147,11 @@ export default function Footer() {
             grid
             grid-cols-1
             gap-10
-
             sm:grid-cols-2
             sm:gap-x-10
             sm:gap-y-12
-
             lg:grid-cols-[1.15fr_1.15fr_0.7fr_0.9fr]
             lg:gap-10
-
             xl:gap-14
           "
         >
@@ -181,8 +160,6 @@ export default function Footer() {
           ================================================= */}
 
           <div>
-          
-
             <Link
               href="/"
               aria-label="Sharp Rays Home"
@@ -198,10 +175,8 @@ export default function Footer() {
                 className="
                   h-auto
                   w-[165px]
-
                   object-contain
                   object-left
-
                   sm:w-[180px]
                   lg:w-[195px]
                 "
@@ -213,14 +188,11 @@ export default function Footer() {
               className="
                 mt-6
                 max-w-[260px]
-
                 text-[1.35rem]
                 font-light
                 leading-[1.35]
                 tracking-[-0.025em]
-
                 text-[#0B2A52]
-
                 sm:text-[1.5rem]
               "
             >
@@ -241,71 +213,56 @@ export default function Footer() {
                 gap-y-3
               "
             >
-              {socialLinks.map((item) => {
-                return (
-                  <a
-              
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                 
-                    style={newYorkFont}
+              {socialLinks.map((item) => (
+                <a
+                  key={item.icon}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit Sharp Rays on ${item.label}`}
+                  style={newYorkFont}
+                  className="
+                    group
+                    inline-flex
+                    items-center
+                    gap-2
+                    text-[12px]
+                    font-medium
+                    text-[#60758A]
+                    transition-all
+                    duration-300
+                    hover:-translate-y-[1px]
+                    hover:text-[#0B2A52]
+                  "
+                >
+                  <span
                     className="
-                      group
-                      inline-flex
+                      flex
+                      h-8
+                      w-8
+                      shrink-0
                       items-center
-                      gap-2
-
-                      text-[12px]
-                      font-medium
-
-                      text-[#60758A]
-
+                      justify-center
+                      rounded-full
+                      border
+                      border-[#6285AD]/25
+                      bg-white/80
+                      text-[#0B2A52]
+                      shadow-[0_5px_16px_rgba(11,42,82,0.05)]
                       transition-all
                       duration-300
-
-                      hover:-translate-y-[1px]
-                      hover:text-[#0B2A52]
+                      group-hover:border-[#6285AD]/40
+                      group-hover:bg-[#F5F8FC]
+                      group-hover:text-[#6285AD]
                     "
                   >
-                    <span
-                      className="
-                        flex
-                        h-8
-                        w-8
-                        shrink-0
-                        items-center
-                        justify-center
-
-                        rounded-full
-
-                        border
-                        border-[#6285AD]/25
-
-                        bg-white/80
-
-                        text-[#0B2A52]
-
-                        shadow-[0_5px_16px_rgba(11,42,82,0.05)]
-
-                        transition-all
-                        duration-300
-
-                        group-hover:border-[#6285AD]/40
-                        group-hover:bg-[#F5F8FC]
-                        group-hover:text-[#6285AD]
-                      "
-                    >
-                      <SocialIcon
-                        name={item.icon}
-                        className="h-[14px] w-[14px]"
-                      />
-                    </span>
-
-                   
-                  </a>
-                );
-              })}
+                    <SocialIcon
+                      name={item.icon}
+                      className="h-[14px] w-[14px]"
+                    />
+                  </span>
+                </a>
+              ))}
             </div>
           </div>
 
@@ -376,7 +333,6 @@ export default function Footer() {
                 className="
                   text-[11px]
                   leading-[1.6]
-
                   text-[#8796A3]
                 "
               >
@@ -384,28 +340,23 @@ export default function Footer() {
               </p>
 
               <a
-                href="mailto:hello@sharprays.com"
+                href="mailto:info@sharprays.com"
                 style={newYorkFont}
                 className="
                   group
                   mt-4
                   inline-flex
                   items-center
-
                   text-[14px]
                   font-medium
-
                   text-[#0B2A52]
-
                   transition-colors
                   duration-300
-
                   hover:text-[#6285AD]
-
                   sm:text-[15px]
                 "
               >
-                hello@sharprays.com
+                info@sharprays.com
               </a>
 
               <div
@@ -413,7 +364,6 @@ export default function Footer() {
                   mt-5
                   h-px
                   w-10
-
                   bg-[#B79A72]
                 "
               />
@@ -430,7 +380,6 @@ export default function Footer() {
         className="
           relative
           z-10
-
           border-t
           border-[#0B2A52]/[0.08]
         "
@@ -441,23 +390,17 @@ export default function Footer() {
             flex
             w-full
             max-w-[1440px]
-
             flex-col
             gap-5
-
             px-4
             py-5
-
             sm:px-6
-
             md:flex-row
             md:items-center
             md:justify-between
             md:gap-8
             md:px-8
-
             lg:px-12
-
             xl:px-14
           "
         >
@@ -469,7 +412,6 @@ export default function Footer() {
               text-[10px]
               uppercase
               tracking-[0.12em]
-
               text-[#60758A]
             "
           >
@@ -485,7 +427,6 @@ export default function Footer() {
               items-center
               gap-x-5
               gap-y-2
-
               md:justify-center
             "
           >
@@ -494,12 +435,9 @@ export default function Footer() {
               style={newYorkFont}
               className="
                 text-[10px]
-
                 text-[#60758A]
-
                 transition-colors
                 duration-300
-
                 hover:text-[#0B2A52]
               "
             >
@@ -512,11 +450,8 @@ export default function Footer() {
                 hidden
                 h-1
                 w-1
-
                 rounded-full
-
                 bg-[#B79A72]/60
-
                 sm:block
               "
             />
@@ -526,12 +461,9 @@ export default function Footer() {
               style={newYorkFont}
               className="
                 text-[10px]
-
                 text-[#60758A]
-
                 transition-colors
                 duration-300
-
                 hover:text-[#0B2A52]
               "
             >
@@ -546,9 +478,7 @@ export default function Footer() {
             className="
               text-[10px]
               italic
-
               text-[#8A96A6]
-
               md:text-right
             "
           >
@@ -569,7 +499,7 @@ function SocialIcon({
   name,
   className = "",
 }: {
-  name: "linkedin" | "instagram" | "youtube";
+  name: "linkedin" | "instagram" | "facebook";
   className?: string;
 }) {
   if (name === "linkedin") {
@@ -599,7 +529,13 @@ function SocialIcon({
       >
         <rect x="3" y="3" width="18" height="18" rx="5" />
         <circle cx="12" cy="12" r="4.2" />
-        <circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none" />
+        <circle
+          cx="17.4"
+          cy="6.6"
+          r="1"
+          fill="currentColor"
+          stroke="none"
+        />
       </svg>
     );
   }
@@ -611,7 +547,7 @@ function SocialIcon({
       aria-hidden="true"
       className={className}
     >
-      <path d="M21.58 7.19a2.73 2.73 0 0 0-1.92-1.94C17.96 4.8 12 4.8 12 4.8s-5.96 0-7.66.45A2.73 2.73 0 0 0 2.42 7.2 28.56 28.56 0 0 0 2 12a28.56 28.56 0 0 0 .42 4.81 2.73 2.73 0 0 0 1.92 1.94c1.7.45 7.66.45 7.66.45s5.96 0 7.66-.45a2.73 2.73 0 0 0 1.92-1.94A28.56 28.56 0 0 0 22 12a28.56 28.56 0 0 0-.42-4.81ZM10 15.1V8.9l5.2 3.1L10 15.1Z" />
+      <path d="M13.5 22v-9h3l.5-3.5h-3.5V7.25c0-1.01.28-1.7 1.75-1.7H17V2.42C16.7 2.38 15.67 2.3 14.47 2.3c-2.5 0-4.22 1.53-4.22 4.34V9.5H7.4V13h2.85v9h3.25Z" />
     </svg>
   );
 }
@@ -634,7 +570,6 @@ function FooterHeading({
           font-medium
           uppercase
           tracking-[0.2em]
-
           text-[#B79A72]
         "
       >
@@ -647,7 +582,6 @@ function FooterHeading({
           block
           h-px
           w-7
-
           bg-[#B79A72]/70
         "
       />
@@ -670,17 +604,12 @@ function FooterLink({
         group
         relative
         w-fit
-
         text-[13px]
         leading-[1.45]
-
         text-[#445D74]
-
         transition-colors
         duration-300
-
         hover:text-[#0B2A52]
-
         sm:text-[14px]
       "
     >
@@ -691,15 +620,11 @@ function FooterLink({
           absolute
           -bottom-1
           left-0
-
           h-px
           w-0
-
           bg-[#B79A72]
-
           transition-all
           duration-300
-
           group-hover:w-full
         "
       />
