@@ -1095,33 +1095,17 @@ export default function WorkHero() {
 
             >
 
-              <Image
-
-                src={RIGHT_HERO_IMAGE}
-
-                alt="Sharp Rays selected work"
-
-                fill
-
-                priority
-
-                sizes="
-
-                  (max-width: 1024px) 100vw,
-
-                  50vw
-
-                "
-
-                className="
-
-                  object-contain
-
-                  object-center
-
-                "
-
-              />
+             <Image
+  src={RIGHT_HERO_IMAGE}
+  alt="Sharp Rays selected work"
+  fill
+  priority
+  sizes="(max-width: 1024px) 100vw, 50vw"
+  className="
+    object-contain
+    object-center
+  "
+/>
 
             </div>
 

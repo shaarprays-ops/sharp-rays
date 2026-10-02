@@ -1,3 +1,4 @@
+import Navbar from "@/components/Home/Navbar";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -261,6 +262,7 @@ const sections = [
 export default function PrivacyPolicyPage() {
   return (
     <main className="min-h-screen bg-white text-[#0B2A52]">
+      <Navbar />
       <section className="relative overflow-hidden border-b border-[#0B2A52]/10 bg-white">
         <div
           aria-hidden="true"

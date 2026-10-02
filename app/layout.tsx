@@ -15,10 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <head>
+        {/* Google Tag Manager */}
         <Script
           id="google-tag-manager"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){
@@ -40,7 +41,11 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* End Google Tag Manager */}
+      </head>
 
+      <body>
+        {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-T794RH8Z"
@@ -53,6 +58,8 @@ export default function RootLayout({
             title="Google Tag Manager"
           />
         </noscript>
+        {/* End Google Tag Manager (noscript) */}
+
         <FloatingWhatsAppButton />
 
         {children}
