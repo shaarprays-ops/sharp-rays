@@ -262,93 +262,94 @@ const homeSchema = {
        HOMEPAGE
     ===================================================== */
 
+   {
+  "@type": "WebPage",
+
+  "@id": "https://www.sharprays.com/#webpage",
+
+  url: "https://www.sharprays.com/",
+
+  name:
+    "Digital Marketing Agency in India | SEO, Ads & AI | Sharp Rays",
+
+  headline: "Make Your Brand Impossible to Ignore.",
+
+  alternativeHeadline:
+    "Digital Marketing Agency for Brands Ready to Grow",
+
+  description:
+    "Sharp Rays is a digital marketing agency in India helping startups, small businesses and D2C brands grow through SEO, paid ads, websites, AI video and automation.",
+
+  isPartOf: {
+    "@id": "https://www.sharprays.com/#website",
+  },
+
+  about: {
+    "@id": "https://www.sharprays.com/#organization",
+  },
+
+  mainEntity: {
+    "@id": "https://www.sharprays.com/#organization",
+  },
+
+  primaryImageOfPage: {
+    "@id": "https://www.sharprays.com/#primaryimage",
+  },
+
+  publisher: {
+    "@id": "https://www.sharprays.com/#organization",
+  },
+
+  audience: {
+    "@type": "BusinessAudience",
+
+    name:
+      "Startups, small businesses, D2C brands and growing businesses",
+
+    audienceType:
+      "Startups, small businesses, D2C brands, founders and growing businesses seeking digital marketing services",
+
+    description:
+      "Businesses looking to improve search visibility, digital marketing performance, websites, content, paid campaigns and business workflows.",
+  },
+
+  /* FAQ IS ACTUALLY PART OF THIS WEBPAGE */
+  hasPart: {
+    "@id": "https://www.sharprays.com/#faq",
+  },
+
+  /* SERVICES + SELECTED WORK ARE THINGS MENTIONED ON THE PAGE */
+  mentions: [
     {
-      "@type": "WebPage",
-
-      "@id": "https://www.sharprays.com/#webpage",
-
-      url: "https://www.sharprays.com/",
-
-      name:
-        "Digital Marketing Agency in India | SEO, Ads & AI | Sharp Rays",
-
-      headline: "Make Your Brand Impossible to Ignore.",
-
-      alternativeHeadline:
-        "Digital Marketing Agency for Brands Ready to Grow",
-
-      description:
-        "Sharp Rays is a digital marketing agency in India helping startups, small businesses and D2C brands grow through SEO, paid ads, websites, AI video and automation.",
-
-      isPartOf: {
-        "@id": "https://www.sharprays.com/#website",
-      },
-
-      about: {
-        "@id": "https://www.sharprays.com/#organization",
-      },
-
-      mainEntity: {
-        "@id": "https://www.sharprays.com/#organization",
-      },
-
-      primaryImageOfPage: {
-        "@id": "https://www.sharprays.com/#primaryimage",
-      },
-
-      publisher: {
-        "@id": "https://www.sharprays.com/#organization",
-      },
-
-      audience: {
-        "@type": "BusinessAudience",
-
-        name:
-          "Startups, small businesses, D2C brands and growing businesses",
-
-        audienceType:
-          "Startups, small businesses, D2C brands, founders and growing businesses seeking digital marketing services",
-
-        description:
-          "Businesses looking to improve search visibility, digital marketing performance, websites, content, paid campaigns and business workflows.",
-      },
-
-      hasPart: [
-        {
-          "@id": "https://www.sharprays.com/#services",
-        },
-
-        {
-          "@id": "https://www.sharprays.com/#selected-work",
-        },
-
-        {
-          "@id": "https://www.sharprays.com/#faq",
-        },
-      ],
-
-      significantLink: [
-        "https://www.sharprays.com/services/social-media-marketing",
-        "https://www.sharprays.com/services/search-engine-optimization",
-        "https://www.sharprays.com/services/performance-marketing",
-        "https://www.sharprays.com/services/website-development",
-        "https://www.sharprays.com/services/content-marketing",
-        "https://www.sharprays.com/services/ai-automation",
-        "https://www.sharprays.com/services/video-and-creative",
-        "https://www.sharprays.com/work",
-        "https://www.sharprays.com/about",
-        "https://www.sharprays.com/contact",
-      ],
-
-      copyrightYear: 2026,
-
-      copyrightHolder: {
-        "@id": "https://www.sharprays.com/#organization",
-      },
-
-      inLanguage: "en-IN",
+      "@id": "https://www.sharprays.com/#services",
     },
 
+    {
+      "@id": "https://www.sharprays.com/#selected-work",
+    },
+  ],
+
+  significantLink: [
+    "https://www.sharprays.com/services/social-media-marketing",
+    "https://www.sharprays.com/services/search-engine-optimization",
+    "https://www.sharprays.com/services/performance-marketing",
+    "https://www.sharprays.com/services/website-development",
+    "https://www.sharprays.com/services/content-marketing",
+    "https://www.sharprays.com/services/ai-automation",
+    "https://www.sharprays.com/services/video-and-creative",
+    "https://www.sharprays.com/work",
+    "https://www.sharprays.com/about",
+    "https://www.sharprays.com/contact",
+  ],
+
+  copyrightYear: 2026,
+
+  copyrightHolder: {
+    "@id": "https://www.sharprays.com/#organization",
+  },
+
+  inLanguage: "en-IN",
+},
     /* =====================================================
        SERVICE CATALOG
     ===================================================== */
