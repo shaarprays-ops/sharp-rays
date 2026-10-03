@@ -30,6 +30,7 @@ export default function Hero() {
       <img
         src="/hero1.png"
         alt="Sharp Rays Marketing Agency Hero Background"
+        title="Sharp Rays Marketing Agency Hero Background"
         className="
           absolute
           inset-0
@@ -331,6 +332,7 @@ export default function Hero() {
 
                 <Link
                   href="/free-audit"
+                  title="Get Your Free Growth Audit"
                   style={newYorkFont}
                   className="
                     group
@@ -730,7 +732,8 @@ export default function Hero() {
               >
                 <img
                   src="/hero2.png"
-                  alt=""
+                  alt="sharp rays marketing agency hero visual"
+                  title="Sharp Rays Marketing Agency Hero Visual"
                   className="
                     block
                     h-auto

@@ -65,7 +65,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/og/home.png",
+        url: "/og/home.webp",
         width: 1200,
         height: 630,
         alt: "Sharp Rays - Digital Marketing, AI Video and Automation Agency",
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     description:
       "Sharp Rays helps startups, small businesses and D2C brands grow through SEO, paid ads, websites, AI video and automation.",
 
-    images: ["/og/home.png"],
+    images: ["/og/home.webp"],
   },
 };
 

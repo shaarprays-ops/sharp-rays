@@ -502,9 +502,11 @@ export default function SelectedWorkSection() {
 
                 {/* CASE STUDY */}
 
-                <Link
-                  href={project.href}
-                  style={newYorkFont}
+              <Link
+  href={project.href}
+  title={`View ${project.title} Case Study`}
+  aria-label={`View ${project.title} Case Study`}
+  style={newYorkFont}
                   className="
                     relative
                     z-10
@@ -601,60 +603,62 @@ export default function SelectedWorkSection() {
             sm:mt-10
           "
         >
-          <Link
-            href="/work"
-            style={newYorkFont}
-            className="
-              group
-              relative
+         <Link
+  href="/work"
+  title="View All Sharp Rays Work and Case Studies"
+  aria-label="View All Sharp Rays Work and Case Studies"
+  style={newYorkFont}
+  className="
+    group
+    relative
 
-              inline-flex
-              min-h-[46px]
+    inline-flex
+    min-h-[46px]
 
-              items-center
-              justify-center
+    items-center
+    justify-center
 
-              overflow-hidden
+    overflow-hidden
 
-              rounded-[16px]
+    rounded-[16px]
 
-              border
-              border-[#6285AD]/30
+    border
+    border-[#6285AD]/30
 
-              bg-white/80
+    bg-white/80
 
-              px-5
-              py-[11px]
+    px-5
+    py-[11px]
 
-              text-[13px]
-              font-medium
-              tracking-[-0.01em]
+    text-[13px]
+    font-medium
+    tracking-[-0.01em]
 
-              text-[#0B2A52]
+    text-[#0B2A52]
 
-              shadow-[0_8px_30px_rgba(11,42,82,0.08)]
+    shadow-[0_8px_30px_rgba(11,42,82,0.08)]
 
-              backdrop-blur-[8px]
+    backdrop-blur-[8px]
 
-              transition-all
-              duration-300
-              ease-out
+    transition-all
+    duration-300
+    ease-out
 
-              hover:-translate-y-[2px]
-              hover:border-[#6285AD]/40
-              hover:bg-white
-              hover:shadow-[0_10px_35px_rgba(98,133,173,0.15)]
+    hover:-translate-y-[2px]
+    hover:border-[#6285AD]/40
+    hover:bg-white
+    hover:shadow-[0_10px_35px_rgba(98,133,173,0.15)]
 
-              active:translate-y-0
+    active:translate-y-0
 
-              sm:min-h-[48px]
-              sm:px-6
-              sm:py-3
-              sm:text-[14px]
+    sm:min-h-[48px]
+    sm:px-6
+    sm:py-3
+    sm:text-[14px]
 
-              md:text-[15px]
-            "
-          >
+    md:text-[15px]
+  "
+>
             <span
               className="
                 pointer-events-none

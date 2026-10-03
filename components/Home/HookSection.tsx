@@ -1038,16 +1038,17 @@ export default function HookSection() {
                         w-full
                       "
                     >
-                      <Image
-                        src={slide.image}
-                        alt={slide.title}
-                        fill
-                        sizes="(max-width: 480px) 96vw, (max-width: 768px) 88vw, (max-width: 1023px) 78vw, 50vw"
-                        className="
-                          object-contain
-                          object-center
-                        "
-                      />
+                     <Image
+  src={slide.image}
+  alt={slide.imageAlt}
+  title={slide.imageTitle}
+  fill
+  sizes="(max-width: 480px) 96vw, (max-width: 768px) 88vw, (max-width: 1023px) 78vw, 50vw"
+  className="
+    object-contain
+    object-center
+  "
+/>
                     </div>
                   </div>
                 );

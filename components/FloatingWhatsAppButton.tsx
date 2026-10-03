@@ -444,12 +444,13 @@ export default function FloatingWhatsAppButton() {
 
         {/* BUTTON */}
 
-        <a
-          href={whatsappURL}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Chat with Sharp Rays on WhatsApp"
-          className="sr-whatsapp-button"
+   <a
+  href={whatsappURL}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Chat with Sharp Rays on WhatsApp"
+  title="Chat with Sharp Rays on WhatsApp"
+  className="sr-whatsapp-button"
           style={{
             position: "relative",
 

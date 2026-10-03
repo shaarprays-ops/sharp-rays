@@ -9,15 +9,6 @@ const newYorkFont = {
 };
 
 /* =========================================================
-   COLORS
-
-   NAVY      #0B2A52
-   BLUE      #6285AD
-   GOLD      #B79A72
-   LIGHT BG  #F5F8FC
-========================================================= */
-
-/* =========================================================
    SERVICES
 ========================================================= */
 
@@ -25,26 +16,32 @@ const services = [
   {
     label: "Social Media Marketing",
     href: "/services/social-media-marketing",
+    linkTitle: "Explore Social Media Marketing Services",
   },
   {
     label: "Search Engine Optimization (SEO)",
     href: "/services/search-engine-optimization",
+    linkTitle: "Explore Search Engine Optimization SEO Services",
   },
   {
     label: "Performance Marketing / Paid Media",
     href: "/services/performance-marketing",
+    linkTitle: "Explore Performance Marketing and Paid Media Services",
   },
   {
     label: "Website Development & Management",
     href: "/services/website-development",
+    linkTitle: "Explore Website Development and Management Services",
   },
   {
     label: "AI Video & Video Editing",
     href: "/services/video-and-creative",
+    linkTitle: "Explore AI Video and Video Editing Services",
   },
   {
     label: "AI Automation",
-    href: "/services/AI-Automation",
+    href: "/services/ai-automation",
+    linkTitle: "Explore AI Automation Services",
   },
 ];
 
@@ -198,6 +195,7 @@ export default function Navbar() {
 
           <Link
             href="/"
+            title="Sharp Rays Digital Marketing Agency Home"
             aria-label="Sharp Rays Home"
             onClick={() => {
               setMenuOpen(false);
@@ -216,7 +214,8 @@ export default function Navbar() {
           >
             <img
               src="/logo/sharp-rays-logo.png"
-              alt="Sharp Rays"
+              alt="Sharp Rays Digital Marketing Agency"
+              title="Sharp Rays Digital Marketing Agency"
               className="
                 h-auto
                 w-[150px]
@@ -260,12 +259,14 @@ export default function Navbar() {
             <NavLink
               href="/"
               label="Home"
+              linkTitle="Sharp Rays Home"
               active={isHome}
             />
 
             <NavLink
               href="/about"
               label="About"
+              linkTitle="Learn More About Sharp Rays"
               active={isAbout}
             />
 
@@ -280,6 +281,8 @@ export default function Navbar() {
             >
               <button
                 type="button"
+                title="Explore Sharp Rays Services"
+                aria-label="Explore Sharp Rays Services"
                 aria-expanded={servicesOpen}
                 onClick={() =>
                   setServicesOpen((prev) => !prev)
@@ -317,6 +320,7 @@ export default function Navbar() {
                   className={`
                     transition-transform
                     duration-300
+
                     ${
                       servicesOpen
                         ? "rotate-180"
@@ -383,8 +387,6 @@ export default function Navbar() {
                   }
                 `}
               >
-                {/* heading */}
-
                 <div
                   className="
                     mb-2
@@ -407,58 +409,59 @@ export default function Navbar() {
                   </span>
                 </div>
 
-                {/* services */}
-
                 <div className="flex flex-col">
-  {services.map((service) => {
-    const serviceActive = pathname === service.href;
+                  {services.map((service) => {
+                    const serviceActive =
+                      pathname === service.href;
 
-    return (
-      <Link
-        key={service.href}
-        href={service.href}
-        onClick={() => setServicesOpen(false)}
-        style={newYorkFont}
-        className={`
-          group
-          flex
-          items-center
-          rounded-[12px]
-          px-3
-          py-[11px]
-          transition-all
-          duration-300
+                    return (
+                      <Link
+                        key={service.href}
+                        href={service.href}
+                        title={service.linkTitle}
+                        aria-label={service.linkTitle}
+                        onClick={() =>
+                          setServicesOpen(false)
+                        }
+                        style={newYorkFont}
+                        className={`
+                          group
+                          flex
+                          items-center
+                          rounded-[12px]
+                          px-3
+                          py-[11px]
+                          transition-all
+                          duration-300
 
-          ${
-            serviceActive
-              ? "bg-[#6285AD]/[0.08]"
-              : "hover:bg-[#6285AD]/[0.06]"
-          }
-        `}
-      >
-        <span
-          className={`
-            text-[13px]
-            font-medium
-            leading-[1.35]
-            transition-all
-            duration-300
+                          ${
+                            serviceActive
+                              ? "bg-[#6285AD]/[0.08]"
+                              : "hover:bg-[#6285AD]/[0.06]"
+                          }
+                        `}
+                      >
+                        <span
+                          className={`
+                            text-[13px]
+                            font-medium
+                            leading-[1.35]
+                            transition-all
+                            duration-300
 
-            ${
-              serviceActive
-                ? "translate-x-1 text-[#6285AD]"
-                : "text-[#0B2A52] group-hover:translate-x-1 group-hover:text-[#6285AD]"
-            }
-          `}
-        >
-          {service.label}
-        </span>
-      </Link>
-    );
-  })}
-</div>
-
-                {/* view all */}
+                            ${
+                              serviceActive
+                                ? "translate-x-1 text-[#6285AD]"
+                                : "text-[#0B2A52] group-hover:translate-x-1 group-hover:text-[#6285AD]"
+                            }
+                          `}
+                        >
+                          {service.label}
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </div>
 
                 <div
                   className="
@@ -467,21 +470,21 @@ export default function Navbar() {
                     border-[#0B2A52]/[0.07]
                     pt-2
                   "
-                >
-                  
-                </div>
+                />
               </div>
             </div>
 
             <NavLink
               href="/work"
               label="Work"
+              linkTitle="View Sharp Rays Work and Case Studies"
               active={isWork}
             />
 
             <NavLink
               href="/contact"
               label="Contact"
+              linkTitle="Contact Sharp Rays"
               active={isContact}
             />
           </div>
@@ -492,6 +495,8 @@ export default function Navbar() {
 
           <Link
             href="/contact"
+            title="Talk to Sharp Rays"
+            aria-label="Talk to Sharp Rays"
             style={newYorkFont}
             className="
               group
@@ -525,8 +530,6 @@ export default function Navbar() {
               xl:text-[16px]
             "
           >
-            {/* animated border */}
-
             <svg
               className="
                 pointer-events-none
@@ -606,6 +609,11 @@ export default function Navbar() {
 
           <button
             type="button"
+            title={
+              menuOpen
+                ? "Close Navigation Menu"
+                : "Open Navigation Menu"
+            }
             aria-label={
               menuOpen
                 ? "Close navigation menu"
@@ -714,8 +722,6 @@ export default function Navbar() {
           }
         `}
       >
-        {/* subtle decorative gradient */}
-
         <div
           aria-hidden="true"
           className="
@@ -745,10 +751,6 @@ export default function Navbar() {
             blur-3xl
           "
         />
-
-        {/* ===================================================
-            CONTENT
-        =================================================== */}
 
         <div
           className="
@@ -828,6 +830,7 @@ export default function Navbar() {
             <MobileNavLink
               label="Home"
               href="/"
+              linkTitle="Sharp Rays Home"
               index={1}
               active={isHome}
               onClick={closeMobileMenu}
@@ -836,6 +839,7 @@ export default function Navbar() {
             <MobileNavLink
               label="About"
               href="/about"
+              linkTitle="Learn More About Sharp Rays"
               index={2}
               active={isAbout}
               onClick={closeMobileMenu}
@@ -853,6 +857,8 @@ export default function Navbar() {
             >
               <button
                 type="button"
+                title="Explore Sharp Rays Services"
+                aria-label="Explore Sharp Rays Services"
                 aria-expanded={servicesOpen}
                 onClick={() =>
                   setServicesOpen((prev) => !prev)
@@ -879,11 +885,10 @@ export default function Navbar() {
                     min-w-0
                     items-center
                     gap-4
+
                     sm:gap-5
                   "
                 >
-                  {/* active marker */}
-
                   <span
                     className={`
                       h-[28px]
@@ -970,6 +975,7 @@ export default function Navbar() {
                       className={`
                         transition-transform
                         duration-300
+
                         ${
                           servicesOpen
                             ? "rotate-180"
@@ -1029,6 +1035,8 @@ export default function Navbar() {
                         <Link
                           key={service.href}
                           href={service.href}
+                          title={service.linkTitle}
+                          aria-label={service.linkTitle}
                           onClick={closeMobileMenu}
                           style={newYorkFont}
                           className="
@@ -1086,6 +1094,8 @@ export default function Navbar() {
 
                     <Link
                       href="/services"
+                      title="View All Sharp Rays Services"
+                      aria-label="View All Sharp Rays Services"
                       onClick={closeMobileMenu}
                       style={newYorkFont}
                       className="
@@ -1104,6 +1114,7 @@ export default function Navbar() {
                       <span>View All Services</span>
 
                       <span
+                        aria-hidden="true"
                         className="
                           text-[#B79A72]
                           transition-transform
@@ -1122,6 +1133,7 @@ export default function Navbar() {
             <MobileNavLink
               label="Work"
               href="/work"
+              linkTitle="View Sharp Rays Work and Case Studies"
               index={4}
               active={isWork}
               onClick={closeMobileMenu}
@@ -1130,6 +1142,7 @@ export default function Navbar() {
             <MobileNavLink
               label="Contact"
               href="/contact"
+              linkTitle="Contact Sharp Rays"
               index={5}
               active={isContact}
               onClick={closeMobileMenu}
@@ -1137,151 +1150,151 @@ export default function Navbar() {
           </div>
 
           {/* =================================================
-    MOBILE BOTTOM CONTENT
-================================================= */}
+              MOBILE BOTTOM CONTENT
+          ================================================= */}
 
-<div
-  className="
-    mt-auto
-    pt-7
-    sm:pt-9
-  "
->
-  {/* SMALL CENTER LET'S TALK CTA */}
+          <div
+            className="
+              mt-auto
+              pt-7
 
-  <div className="flex w-full justify-center">
-    <Link
-      href="/contact"
-      onClick={closeMobileMenu}
-      style={newYorkFont}
-      className="
-        group
-        relative
-        inline-flex
-        items-center
-        justify-center
-        gap-2.5
-        overflow-hidden
-        rounded-[13px]
-        border
-        border-[#0B2A52]/10
-        bg-white
-        px-4
-        py-2.5
-        text-[#0B2A52]
-        shadow-[0_7px_22px_rgba(11,42,82,0.07)]
-        transition-all
-        duration-300
+              sm:pt-9
+            "
+          >
+            <div className="flex w-full justify-center">
+              <Link
+                href="/contact"
+                title="Talk to Sharp Rays"
+                aria-label="Talk to Sharp Rays"
+                onClick={closeMobileMenu}
+                style={newYorkFont}
+                className="
+                  group
+                  relative
+                  inline-flex
+                  items-center
+                  justify-center
+                  gap-2.5
+                  overflow-hidden
+                  rounded-[13px]
+                  border
+                  border-[#0B2A52]/10
+                  bg-white
+                  px-4
+                  py-2.5
+                  text-[#0B2A52]
+                  shadow-[0_7px_22px_rgba(11,42,82,0.07)]
+                  transition-all
+                  duration-300
 
-        hover:-translate-y-[1px]
-        hover:border-[#6285AD]/30
-        hover:shadow-[0_10px_28px_rgba(11,42,82,0.10)]
+                  hover:-translate-y-[1px]
+                  hover:border-[#6285AD]/30
+                  hover:shadow-[0_10px_28px_rgba(11,42,82,0.10)]
 
-        sm:px-[18px]
-        sm:py-[11px]
-      "
-    >
-      <span
-        className="
-          pointer-events-none
-          absolute
-          bottom-0
-          left-1/2
-          h-[2px]
-          w-0
-          -translate-x-1/2
-          bg-[#B79A72]
-          transition-all
-          duration-300
-          group-hover:w-[68%]
-        "
-      />
+                  sm:px-[18px]
+                  sm:py-[11px]
+                "
+              >
+                <span
+                  className="
+                    pointer-events-none
+                    absolute
+                    bottom-0
+                    left-1/2
+                    h-[2px]
+                    w-0
+                    -translate-x-1/2
+                    bg-[#B79A72]
+                    transition-all
+                    duration-300
+                    group-hover:w-[68%]
+                  "
+                />
 
-      <span
-        className="
-          relative
-          z-10
-          whitespace-nowrap
-          text-[13px]
-          font-medium
-          tracking-[-0.01em]
-          sm:text-[14px]
-        "
-      >
-        Let&apos;s Talk
-      </span>
+                <span
+                  className="
+                    relative
+                    z-10
+                    whitespace-nowrap
+                    text-[13px]
+                    font-medium
+                    tracking-[-0.01em]
 
-      <span
-        className="
-          relative
-          z-10
-          flex
-          h-7
-          w-7
-          shrink-0
-          items-center
-          justify-center
-          rounded-full
-          bg-[#0B2A52]
-          text-white
-          transition-all
-          duration-300
+                    sm:text-[14px]
+                  "
+                >
+                  Let&apos;s Talk
+                </span>
 
-          group-hover:translate-x-[2px]
-          group-hover:bg-[#6285AD]
-        "
-      >
-        <svg
-          width="11"
-          height="11"
-          viewBox="0 0 14 14"
-          fill="none"
-          aria-hidden="true"
-        >
-          <path
-            d="M2.5 7H11.5M7.8 3.3L11.5 7L7.8 10.7"
-            stroke="currentColor"
-            strokeWidth="1.4"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </span>
-    </Link>
-  </div>
+                <span
+                  className="
+                    relative
+                    z-10
+                    flex
+                    h-7
+                    w-7
+                    shrink-0
+                    items-center
+                    justify-center
+                    rounded-full
+                    bg-[#0B2A52]
+                    text-white
+                    transition-all
+                    duration-300
 
-  {/* SMALL SUPPORTING LINE */}
+                    group-hover:translate-x-[2px]
+                    group-hover:bg-[#6285AD]
+                  "
+                >
+                  <svg
+                    width="11"
+                    height="11"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2.5 7H11.5M7.8 3.3L11.5 7L7.8 10.7"
+                      stroke="currentColor"
+                      strokeWidth="1.4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </Link>
+            </div>
 
-  <div
-    className="
-      mt-5
-      flex
-      flex-wrap
-      items-center
-      justify-center
-      gap-x-4
-      gap-y-2
-      text-[9px]
-      font-medium
-      uppercase
-      tracking-[0.2em]
-      text-[#0B2A52]/40
+            <div
+              className="
+                mt-5
+                flex
+                flex-wrap
+                items-center
+                justify-center
+                gap-x-4
+                gap-y-2
+                text-[9px]
+                font-medium
+                uppercase
+                tracking-[0.2em]
+                text-[#0B2A52]/40
 
-      sm:mt-6
-      sm:text-[10px]
-    "
-  >
-    <span>Ideas</span>
+                sm:mt-6
+                sm:text-[10px]
+              "
+            >
+              <span>Ideas</span>
 
-    <span className="h-[4px] w-[4px] rounded-full bg-[#B79A72]" />
+              <span className="h-[4px] w-[4px] rounded-full bg-[#B79A72]" />
 
-    <span>Strategy</span>
+              <span>Strategy</span>
 
-    <span className="h-[4px] w-[4px] rounded-full bg-[#B79A72]" />
+              <span className="h-[4px] w-[4px] rounded-full bg-[#B79A72]" />
 
-    <span>Impact</span>
-  </div>
-</div>
+              <span>Impact</span>
+            </div>
+          </div>
         </div>
       </div>
     </>
@@ -1295,15 +1308,19 @@ export default function Navbar() {
 function NavLink({
   href,
   label,
+  linkTitle,
   active = false,
 }: {
   href: string;
   label: string;
+  linkTitle: string;
   active?: boolean;
 }) {
   return (
     <Link
       href={href}
+      title={linkTitle}
+      aria-label={linkTitle}
       style={{
         ...newYorkFont,
         color: active
@@ -1356,12 +1373,14 @@ function NavLink({
 function MobileNavLink({
   label,
   href,
+  linkTitle,
   index,
   active = false,
   onClick,
 }: {
   label: string;
   href: string;
+  linkTitle: string;
   index: number;
   active?: boolean;
   onClick: () => void;
@@ -1369,6 +1388,8 @@ function MobileNavLink({
   return (
     <Link
       href={href}
+      title={linkTitle}
+      aria-label={linkTitle}
       onClick={onClick}
       className="
         group
@@ -1398,8 +1419,6 @@ function MobileNavLink({
           sm:gap-5
         "
       >
-        {/* ACTIVE GOLD MARKER */}
-
         <span
           className={`
             h-[28px]
@@ -1416,8 +1435,6 @@ function MobileNavLink({
             }
           `}
         />
-
-        {/* TEXT */}
 
         <span
           style={newYorkFont}
@@ -1445,8 +1462,6 @@ function MobileNavLink({
           {label}
         </span>
       </div>
-
-      {/* NUMBER */}
 
       <span
         className={`

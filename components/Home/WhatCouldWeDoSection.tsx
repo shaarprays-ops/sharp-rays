@@ -28,6 +28,10 @@ const services = [
     title: "Social Media Marketing",
     slug: "/services/social-media-marketing",
     image: "/whatwedo/social-media1.png",
+    imageAlt:
+      "Social media marketing services for brand growth, content strategy and community engagement",
+    imageTitle:
+      "Social Media Marketing Services by Sharp Rays",
     description:
       "Build a stronger and more recognizable social presence through strategy, content planning, publishing, community engagement, and ongoing management.",
     items: [
@@ -43,6 +47,10 @@ const services = [
     title: "Search Engine Optimization (SEO)",
     slug: "/services/search-engine-optimization",
     image: "/seo.webp",
+    imageAlt:
+      "SEO services for improving organic search visibility, rankings and website discoverability",
+    imageTitle:
+      "Search Engine Optimization SEO Services by Sharp Rays",
     description:
       "Improve organic search visibility through technical SEO, search intent strategy, on-page optimization, internal linking, and continuous improvement.",
     items: [
@@ -58,6 +66,10 @@ const services = [
     title: "Performance Marketing / Paid Media",
     slug: "/services/performance-marketing",
     image: "/whatwedo/performance-maketing.png",
+    imageAlt:
+      "Performance marketing and paid media services for leads, sales and campaign optimization",
+    imageTitle:
+      "Performance Marketing and Paid Media Services by Sharp Rays",
     description:
       "Generate measurable leads and sales through paid campaigns built around targeting, creative testing, conversion tracking, and ongoing optimization.",
     items: [
@@ -73,6 +85,10 @@ const services = [
     title: "Website Development & Management",
     slug: "/services/website-development",
     image: "/whatwedo/web.png",
+    imageAlt:
+      "Website development and management services for responsive, high-performance business websites",
+    imageTitle:
+      "Website Development and Management Services by Sharp Rays",
     description:
       "Plan, design, develop, and manage responsive websites built for clearer user journeys, strong performance, search visibility, and business growth.",
     items: [
@@ -88,6 +104,10 @@ const services = [
     title: "Content Management",
     slug: "/services/content-marketing",
     image: "/whatwedo/content-marketing.png",
+    imageAlt:
+      "Content management services for website updates, publishing and digital content organization",
+    imageTitle:
+      "Content Management Services by Sharp Rays",
     description:
       "Keep your website and digital content organized, accurate, consistent, and up to date across pages, services, campaigns, and brand communication.",
     items: [
@@ -103,6 +123,10 @@ const services = [
     title: "AI Automation",
     slug: "/services/ai-automation",
     image: "/whatwedo/ai.webp",
+    imageAlt:
+      "AI automation services for workflow automation, lead automation and business process optimization",
+    imageTitle:
+      "AI Automation Services by Sharp Rays",
     description:
       "Reduce repetitive work and connect everyday business processes through practical AI workflows, automation, and smarter information handling.",
     items: [
@@ -118,6 +142,10 @@ const services = [
     title: "AI Video & Video Editing",
     slug: "/services/video-and-creative",
     image: "/whatwedo/video-creative.png",
+    imageAlt:
+      "AI video creation and professional video editing services for reels, shorts and digital campaigns",
+    imageTitle:
+      "AI Video Creation and Video Editing Services by Sharp Rays",
     description:
       "Create, edit, and adapt video content using AI-assisted production, professional editing, motion graphics, captions, and platform-ready workflows.",
     items: [
@@ -448,6 +476,7 @@ export default function ServicesSection() {
               <Link
                 key={service.slug}
                 href={service.slug}
+                  title={`Explore ${service.title} Services by Sharp Rays`}
                 aria-label={`Explore ${service.title}`}
                 className="
                   block
@@ -586,16 +615,17 @@ export default function ServicesSection() {
                     "
                   >
                     <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      sizes="
-                        (max-width: 640px) 80vw,
-                        (max-width: 1024px) 40vw,
-                        240px
-                      "
-                      className="object-contain"
-                    />
+  src={service.image}
+  alt={service.imageAlt}
+  title={service.imageTitle}
+  fill
+  sizes="
+    (max-width: 640px) 80vw,
+    (max-width: 1024px) 40vw,
+    240px
+  "
+  className="object-contain"
+/>
                   </div>
 
                   {/* Icon */}

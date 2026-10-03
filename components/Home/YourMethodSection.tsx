@@ -365,6 +365,7 @@ export default function YourMethodSection() {
             <motion.img
               src="/whatwedo/YourMethodSection.png"
               alt="People collaborating and finding insights"
+              title="People collaborating and finding insights"
               initial={{
                 scale: 0.94,
               }}

@@ -286,106 +286,97 @@ export default function BigIdeaSection() {
               transitionDelay: "550ms",
             }}
           >
-            <Link
-              href="/about"
-              style={newYorkFont}
-              className="
-                group
-                relative
-                inline-flex
+           <Link
+  href="/about"
+  title="Learn More About Sharp Rays"
+  style={newYorkFont}
+  className="
+    group
+    relative
+    inline-flex
 
-                min-h-[46px]
+    min-h-[46px]
 
-                items-center
-                justify-center
+    items-center
+    justify-center
 
-                overflow-hidden
+    overflow-hidden
 
-                rounded-[16px]
+    rounded-[16px]
 
-                border
-                border-[#6285AD]/30
+    border
+    border-[#6285AD]/30
 
-                bg-white/80
+    bg-white/80
 
-                px-5
-                py-[11px]
+    px-5
+    py-[11px]
 
-                text-[13px]
-                font-medium
-                tracking-[-0.01em]
+    text-[13px]
+    font-medium
+    tracking-[-0.01em]
 
-                text-[#0B2A52]
+    text-[#0B2A52]
 
-                shadow-[0_8px_30px_rgba(11,42,82,0.08)]
+    shadow-[0_8px_30px_rgba(11,42,82,0.08)]
 
-                backdrop-blur-[8px]
+    backdrop-blur-[8px]
 
-                transition-all
-                duration-300
-                ease-out
+    transition-all
+    duration-300
+    ease-out
 
-                hover:-translate-y-[2px]
-                hover:border-[#6285AD]/40
-                hover:bg-white
-                hover:shadow-[0_10px_35px_rgba(98,133,173,0.15)]
+    hover:-translate-y-[2px]
+    hover:border-[#6285AD]/40
+    hover:bg-white
+    hover:shadow-[0_10px_35px_rgba(98,133,173,0.15)]
 
-                active:translate-y-0
+    active:translate-y-0
 
-                sm:min-h-[48px]
-                sm:px-6
-                sm:py-3
-                sm:text-[14px]
+    sm:min-h-[48px]
+    sm:px-6
+    sm:py-3
+    sm:text-[14px]
 
-                md:text-[15px]
-              "
-            >
-              {/* STATIC SOFT BORDER */}
+    md:text-[15px]
+  "
+>
+  <span
+    className="
+      pointer-events-none
+      absolute
+      inset-[2px]
+      rounded-[13px]
+      border
+      border-white/60
+    "
+  />
 
-              <span
-                className="
-                  pointer-events-none
-                  absolute
-                  inset-[2px]
+  <span
+    className="
+      pointer-events-none
+      absolute
+      inset-x-4
+      top-0
+      h-px
+      bg-gradient-to-r
+      from-transparent
+      via-white
+      to-transparent
+    "
+  />
 
-                  rounded-[13px]
-
-                  border
-                  border-white/60
-                "
-              />
-
-              {/* VERY SUBTLE INNER LIGHT */}
-
-              <span
-                className="
-                  pointer-events-none
-                  absolute
-                  inset-x-4
-                  top-0
-
-                  h-px
-
-                  bg-gradient-to-r
-                  from-transparent
-                  via-white
-                  to-transparent
-                "
-              />
-
-              {/* BUTTON TEXT */}
-
-              <span
-                className="
-                  relative
-                  z-10
-                  whitespace-nowrap
-                  text-[#0B2A52]
-                "
-              >
-                About Sharp Rays
-              </span>
-            </Link>
+  <span
+    className="
+      relative
+      z-10
+      whitespace-nowrap
+      text-[#0B2A52]
+    "
+  >
+    About Sharp Rays
+  </span>
+</Link>
           </div>
         </div>
       </div>

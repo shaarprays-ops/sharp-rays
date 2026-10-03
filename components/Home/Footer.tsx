@@ -8,30 +8,37 @@ const services = [
   {
     label: "Social Media Marketing",
     href: "/services/social-media-marketing",
+    title: "Social Media Marketing Services by Sharp Rays",
   },
   {
     label: "Search Engine Optimization (SEO)",
     href: "/services/search-engine-optimization",
+    title: "SEO Services by Sharp Rays",
   },
   {
     label: "Performance Marketing / Paid Media",
     href: "/services/performance-marketing",
+    title: "Performance Marketing and Paid Media Services by Sharp Rays",
   },
   {
     label: "Website Development & Management",
     href: "/services/website-development",
+    title: "Website Development and Management Services by Sharp Rays",
   },
   {
     label: "Content Management",
     href: "/services/content-management",
+    title: "Content Management Services by Sharp Rays",
   },
   {
     label: "AI Video & Video Editing",
     href: "/services/ai-video-editing",
+    title: "AI Video and Video Editing Services by Sharp Rays",
   },
   {
     label: "AI Automation",
     href: "/services/ai-automation",
+    title: "AI Automation Services by Sharp Rays",
   },
 ];
 
@@ -39,14 +46,17 @@ const exploreLinks = [
   {
     label: "Work",
     href: "/work",
+    title: "View Sharp Rays Client Work and Case Studies",
   },
   {
     label: "About",
     href: "/about",
+    title: "About Sharp Rays",
   },
   {
     label: "Contact",
     href: "/contact",
+    title: "Contact Sharp Rays",
   },
 ];
 
@@ -163,6 +173,7 @@ export default function Footer() {
             <Link
               href="/"
               aria-label="Sharp Rays Home"
+              title="Sharp Rays Home"
               className="
                 mt-5
                 inline-flex
@@ -172,6 +183,7 @@ export default function Footer() {
               <img
                 src="/logo/sharp-rays-logo.png"
                 alt="Sharp Rays"
+                title="Sharp Rays"
                 className="
                   h-auto
                   w-[165px]
@@ -220,6 +232,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Visit Sharp Rays on ${item.label}`}
+                  title={`Visit Sharp Rays on ${item.label}`}
                   style={newYorkFont}
                   className="
                     group
@@ -261,6 +274,8 @@ export default function Footer() {
                       className="h-[14px] w-[14px]"
                     />
                   </span>
+
+                  <span>{item.label}</span>
                 </a>
               ))}
             </div>
@@ -286,6 +301,7 @@ export default function Footer() {
                 <FooterLink
                   key={service.href}
                   href={service.href}
+                  title={service.title}
                 >
                   {service.label}
                 </FooterLink>
@@ -313,6 +329,7 @@ export default function Footer() {
                 <FooterLink
                   key={item.href}
                   href={item.href}
+                  title={item.title}
                 >
                   {item.label}
                 </FooterLink>
@@ -341,6 +358,8 @@ export default function Footer() {
 
               <a
                 href="mailto:info@sharprays.com"
+                title="Email Sharp Rays"
+                aria-label="Email Sharp Rays"
                 style={newYorkFont}
                 className="
                   group
@@ -432,6 +451,8 @@ export default function Footer() {
           >
             <Link
               href="/privacy-policy"
+              title="Privacy Policy"
+              aria-label="Privacy Policy"
               style={newYorkFont}
               className="
                 text-[10px]
@@ -458,6 +479,8 @@ export default function Footer() {
 
             <Link
               href="/terms-and-conditions"
+              title="Terms and Conditions"
+              aria-label="Terms and Conditions"
               style={newYorkFont}
               className="
                 text-[10px]
@@ -528,7 +551,9 @@ function SocialIcon({
         className={className}
       >
         <rect x="3" y="3" width="18" height="18" rx="5" />
+
         <circle cx="12" cy="12" r="4.2" />
+
         <circle
           cx="17.4"
           cy="6.6"
@@ -591,40 +616,52 @@ function FooterHeading({
 
 function FooterLink({
   href,
+  title,
   children,
 }: {
   href: string;
+  title: string;
   children: React.ReactNode;
 }) {
   return (
     <Link
       href={href}
+      title={title}
+      aria-label={title}
       style={newYorkFont}
       className="
         group
         relative
         w-fit
+
         text-[13px]
         leading-[1.45]
         text-[#445D74]
+
         transition-colors
         duration-300
+
         hover:text-[#0B2A52]
+
         sm:text-[14px]
       "
     >
       <span>{children}</span>
 
       <span
+        aria-hidden="true"
         className="
           absolute
           -bottom-1
           left-0
           h-px
           w-0
+
           bg-[#B79A72]
+
           transition-all
           duration-300
+
           group-hover:w-full
         "
       />
