@@ -11,6 +11,8 @@ const slides = [
     subtitle: "",
     description: "",
     image: "/hook/hook.png",
+    imageAlt: "Business owner analyzing why their brand is not growing",
+    imageTitle: "Why Your Brand Isn't Growing",
   },
   {
     number: "02",
@@ -20,6 +22,9 @@ const slides = [
     description:
       "Your brand gets attention, but it doesn't stay in people's minds.",
     image: "/hook/hook1.png",
+    imageAlt:
+      "Brand struggling to create recognition and stay memorable to customers",
+    imageTitle: "Brand Recognition and Customer Recall",
   },
   {
     number: "03",
@@ -29,6 +34,9 @@ const slides = [
     description:
       "People land on your website, explore your brand, and then disappear.",
     image: "/hook/hook2.png",
+    imageAlt:
+      "Website visitors leaving without converting into customers",
+    imageTitle: "Website Visitors Not Converting",
   },
   {
     number: "04",
@@ -38,6 +46,9 @@ const slides = [
     description:
       "You keep posting, but the content isn't creating the attention or momentum you expected.",
     image: "/hook/hook3.png",
+    imageAlt:
+      "Social media content receiving attention but not generating meaningful business growth",
+    imageTitle: "Social Media Content Without Business Growth",
   },
   {
     number: "05",
@@ -47,6 +58,9 @@ const slides = [
     description:
       "You're spending money, getting clicks, and still wondering where the real growth is.",
     image: "/hook/hook4.png",
+    imageAlt:
+      "Digital advertising campaign generating clicks without clear business growth",
+    imageTitle: "Digital Ads Without Clear ROI",
   },
 ];
 
@@ -924,18 +938,19 @@ export default function HookSection() {
                           xl:h-[clamp(320px,64dvh,650px)]
                         "
                       >
-                        <Image
-                          src={slide.image}
-                          alt={slide.title}
-                          fill
-                          loading={index === 0 ? "eager" : "lazy"}
-                          fetchPriority={index === 0 ? "high" : "auto"}
-                          sizes="(min-width: 1536px) 760px, (min-width: 1280px) 50vw, (min-width: 1024px) 52vw, 100vw"
-                          className="
-                            object-contain
-                            object-center
-                          "
-                        />
+                       <Image
+  src={slide.image}
+  alt={slide.imageAlt}
+  title={slide.imageTitle}
+  fill
+  loading={index === 0 ? "eager" : "lazy"}
+  fetchPriority={index === 0 ? "high" : "auto"}
+  sizes="(min-width: 1536px) 760px, (min-width: 1280px) 50vw, (min-width: 1024px) 52vw, 100vw"
+  className="
+    object-contain
+    object-center
+  "
+/>
                       </div>
                     </div>
                   );

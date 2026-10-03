@@ -29,7 +29,7 @@ export default function Hero() {
 
       <img
         src="/hero1.png"
-        alt=""
+        alt="Sharp Rays Marketing Agency Hero Background"
         className="
           absolute
           inset-0
