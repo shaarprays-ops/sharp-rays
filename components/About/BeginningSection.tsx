@@ -344,9 +344,10 @@ export default function BeginningSection() {
           {/* IMAGE */}
 
           <img
-            ref={imageRef}
-            src="/about/BeginningSection.png"
-            alt="SHARPRAYS creative workspace"
+         ref={imageRef}
+src="/about/Beginning.webp"
+alt="Sharp Rays creative workspace representing the beginning of our digital growth journey"
+title="The Beginning of Sharp Rays"
             className="beginning-image"
             style={{
               position: "absolute",

@@ -144,8 +144,9 @@ export default function TheWayWeThink() {
             <div className="relative aspect-[4/5] overflow-hidden">
 
               <img
-                src="/about/theway.png"
-                alt="The way we think"
+             src="/about/thewaywethink.webp"
+alt="Sharp Rays approach to strategy, creativity and digital growth"
+title="The Way We Think at Sharp Rays"
                 className="h-full w-full object-cover transition-transform duration-1000 hover:scale-[1.04]"
               />
 

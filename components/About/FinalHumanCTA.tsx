@@ -170,8 +170,9 @@ export default function FinalHumanCTA() {
               {/* Image */}
               <div className="relative z-10w-full overflow-hidden ">
                 <img
-                  src="/about/about_ct.png"
-                  alt="SHARPRAYS team workspace"
+                src="/about/about_cta.webp"
+alt="Sharp Rays team collaborating in a creative digital workspace"
+title="Sharp Rays Team and Creative Workspace"
                   className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
                 />
               </div>

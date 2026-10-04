@@ -4,31 +4,42 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-
 const pillars = [
   {
     number: "01",
     title: "STRATEGY",
     text: "Know where you're going.",
-    image: "/about/Strategy.png",
+    image: "/about/Strategy.webp",
+
+    alt: "Sharp Rays digital marketing strategy and growth planning",
+    imageTitle: "Digital Marketing Strategy at Sharp Rays",
   },
   {
     number: "02",
     title: "CREATIVE",
     text: "Give people a reason to care.",
-    image: "/about/creative.png",
+    image: "/about/creative_about.webp",
+
+    alt: "Sharp Rays creative marketing and brand content development",
+    imageTitle: "Creative Marketing and Brand Content at Sharp Rays",
   },
   {
     number: "03",
     title: "DISTRIBUTION",
     text: "Get the right message to the right people.",
-    image: "/about/distribution.png",
+    image: "/about/distribution_about.webp",
+
+    alt: "Sharp Rays content distribution and digital marketing channels",
+    imageTitle: "Content Distribution Strategy at Sharp Rays",
   },
   {
     number: "04",
     title: "GROWTH",
     text: "Measure it. Improve it. Scale it.",
-    image: "/about/Growth.png",
+    image: "/about/Growth_about.webp",
+
+    alt: "Sharp Rays digital growth performance measurement and scaling",
+    imageTitle: "Digital Growth and Performance at Sharp Rays",
   },
 ];
 
@@ -472,22 +483,23 @@ export default function WhatSharpraysIs() {
                   }}
                 >
                   <Image
-                    src={pillar.image}
-                    alt={`${pillar.title} — SHARPRAYS`}
-                    fill
-                    sizes={
-                      mobile
-                        ? "100vw"
-                        : tablet
-                        ? "50vw"
-                        : ultraWide
-                        ? "20vw"
-                        : "25vw"
-                    }
-                    style={{
-                      objectFit: "contain",
-                    }}
-                  />
+  src={pillar.image}
+  alt={pillar.alt}
+  title={pillar.imageTitle}
+  fill
+  sizes={
+    mobile
+      ? "100vw"
+      : tablet
+      ? "50vw"
+      : ultraWide
+      ? "20vw"
+      : "25vw"
+  }
+  style={{
+    objectFit: "contain",
+  }}
+/>
                 </motion.div>
 
                 {/* Number */}
@@ -498,31 +510,6 @@ export default function WhatSharpraysIs() {
 
                 {/* Arrow */}
 
-                <motion.div
-                  whileHover={{
-                    y: -2,
-                    x: 2,
-                  }}
-                  style={{
-                    position: "absolute",
-                    right: 0,
-                    bottom: 0,
-                    width: mobile ? "32px" : "34px",
-                    height: mobile ? "32px" : "34px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    borderRadius: "50%",
-                    border: "1px solid rgba(11,42,82,0.10)",
-                    background: "#ffffff",
-                    color: "#0B2A52",
-                  }}
-                >
-                  <ArrowUpRight
-                    size={mobile ? 12 : 13}
-                    strokeWidth={1.25}
-                  />
-                </motion.div>
               </div>
 
               {/* CONTENT */}

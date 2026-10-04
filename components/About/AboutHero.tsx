@@ -22,8 +22,9 @@ export default function AboutPage() {
       ====================================================== */}
 
       <img
-        src="/about/about_hero.png"
-        alt=""
+        src="/about/hero_about.webp"
+         alt="Modern creative workspace background representing strategy, ideas and digital growth"
+  title="Sharp Rays creative strategy workspace"
         aria-hidden="true"
         className="
           pointer-events-none
@@ -527,8 +528,9 @@ export default function AboutPage() {
           "
         >
           <motion.img
-            src="/about/about_right.png"
-            alt=""
+            src="/about/right_hero.webp"
+           alt="Digital marketing professional working on brand strategy and growth planning"
+  title="Sharp Rays digital marketing and growth strategy"
             initial={{
               scale: 0.96,
             }}
