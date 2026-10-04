@@ -18,7 +18,7 @@ const newYorkFont = {
 
 \========================================================= */
 
-const RIGHT_HERO_IMAGE = "/work/workhero.png";
+const RIGHT_HERO_IMAGE = "/work/work.webp";
 
 /* =========================================================
 
@@ -799,6 +799,7 @@ export default function WorkHero() {
               <motion.a
 
                 href="/contact#contact-form"
+                title="Start a Project with Sharp Rays"
 
                 whileHover={
 
@@ -1098,6 +1099,7 @@ export default function WorkHero() {
              <Image
   src={RIGHT_HERO_IMAGE}
   alt="Sharp Rays selected work"
+  title="Sharp Rays selected work"
   fill
   priority
   sizes="(max-width: 1024px) 100vw, 50vw"

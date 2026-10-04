@@ -135,7 +135,7 @@ const projects: Project[] = [
     platform: "Instagram",
     industry: "Car Rental",
     contentTag: "Social Media",
-    image: "/services/social/rnk.png",
+    image: "/services/social/rnk_social.webp",
     intro:
       "Social media content for a car rental brand focused on presenting the fleet clearly, building a more consistent visual presence and making rental options easier to discover.",
     challenge:
@@ -154,7 +154,7 @@ const projects: Project[] = [
     platform: "Instagram",
     industry: "Digital Marketing",
     contentTag: "Brand Content",
-    image: "/services/social/dts.png",
+    image: "/services/social/dts_social.webp",
     intro:
       "Social media work for a digital marketing brand, combining educational, promotional and brand-led content into a more consistent publishing system.",
     challenge:
@@ -173,7 +173,7 @@ const projects: Project[] = [
     platform: "Instagram",
     industry: "Food & Product",
     contentTag: "Product Content",
-    image: "/services/social/cake.png",
+    image: "/services/social/cake_social.webp",
     intro:
       "Product-led social content for a cake and dessert brand focused on visual appeal, consistency and memorable digital presentation.",
     challenge:
@@ -192,7 +192,7 @@ const projects: Project[] = [
     platform: "Instagram",
     industry: "Food & Restaurant",
     contentTag: "Food Content",
-    image: "/services/social/chicken.png",
+    image: "/services/social/chicken_social.webp",
     intro:
       "Social media content for a food brand built around appetite appeal, product visibility, offers and a more recognisable restaurant presence.",
     challenge:
@@ -211,7 +211,7 @@ const projects: Project[] = [
     platform: "Instagram",
     industry: "Interior Design",
     contentTag: "Portfolio Content",
-    image: "/services/social/shruti.png",
+    image: "/services/social/shruti_social.webp",
     intro:
       "Social media content for an interior designer focused on presenting spaces, design thinking and project details in a polished editorial format.",
     challenge:
@@ -230,7 +230,7 @@ const projects: Project[] = [
     platform: "Instagram",
     industry: "Events & Experiences",
     contentTag: "Event Content",
-    image: "/services/social/vow.png",
+    image: "/services/social/vow_social.webp",
     intro:
       "Social media content for an event brand covering weddings, launches and branded experiences through a more cohesive visual storytelling system.",
     challenge:
@@ -255,7 +255,7 @@ const projects: Project[] = [
     type: "Client Project",
     industry: "Car Rental",
     contentTag: "SEO",
-    image: "/services/seo/rnk.png",
+    image: "/services/seo/rnk_seo.webp",
     intro:
       "SEO work for a car rental business focused on improving service visibility, strengthening important pages and building a clearer organic search foundation.",
     challenge:
@@ -273,7 +273,7 @@ const projects: Project[] = [
     type: "Client Project",
     industry: "Digital Marketing",
     contentTag: "SEO",
-    image: "/services/seo/dts.png",
+    image: "/services/seo/dts_seo.webp",
     intro:
       "Ongoing SEO work for a digital marketing brand covering technical improvements, search-led pages, internal linking and authority-building activity.",
     challenge:
@@ -347,7 +347,7 @@ const projects: Project[] = [
     type: "Client Project",
     industry: "Digital Marketing",
     contentTag: "Website",
-    image: "/services/webdev/dts_web.png",
+    image: "/services/webdev/dts_web.webp",
     intro:
       "A website project for a digital marketing brand focused on organising services, improving clarity and creating a stronger responsive digital presence.",
     challenge:
@@ -365,7 +365,7 @@ const projects: Project[] = [
     type: "Client Project",
     industry: "Car Rental",
     contentTag: "Website",
-    image: "/services/webdev/rnk_web.png",
+    image: "/services/webdev/rnk_web.webp",
     intro:
       "A car rental website experience designed to make the fleet, rental options and enquiry journey easier to understand across devices.",
     challenge:
@@ -383,7 +383,7 @@ const projects: Project[] = [
     type: "Client Project",
     industry: "Fabric Import & Export",
     contentTag: "Website",
-    image: "/xiimba.jpeg",
+    image: "/services/webdev/xiimba_web.webp",
     intro:
       "A business website for a fabric import and export company built to present products, capabilities and company information in a clearer professional format.",
     challenge:
@@ -401,7 +401,7 @@ const projects: Project[] = [
     type: "Client Project",
     industry: "Furniture & Interior Products",
     contentTag: "Showcase Website",
-    image: "/services/webdev/poetry1.jpeg",
+    image: "/services/webdev/poetry_web.webp",
     intro:
       "A showcase-led website for a Dubai brand presenting chairs, wall pieces and other design-focused products through a clean visual browsing experience.",
     challenge:
@@ -410,7 +410,7 @@ const projects: Project[] = [
       "Showcase Strategy · UX/UI · Product Presentation · Responsive Development · Content Structure",
     outcome:
       "A cleaner product showcase that gives individual pieces more visual space while keeping browsing straightforward.",
-    href: "/work/poetry-dubai-website",
+    href: "/services/webdev/poetry_web.webp",
   },
   {
     id: "shruti-chadha-website",
@@ -419,7 +419,7 @@ const projects: Project[] = [
     type: "Client Project",
     industry: "Interior Design",
     contentTag: "Portfolio Website",
-    image: "/shruti-chadha.jpeg",
+    image: "/services/webdev/shruti_chadha_web.webp",
     intro:
       "A portfolio-led website for an interior designer created to present projects, services and design thinking through a more refined digital experience.",
     challenge:
@@ -437,7 +437,7 @@ const projects: Project[] = [
     type: "Client Project",
     industry: "Car Cleaning & Washing",
     contentTag: "Service Website",
-    image: "/services/webdev/vcar.png",
+    image: "/services/webdev/vcar_web.webp",
     intro:
       "A service website for a car cleaning and washing business designed to explain services clearly and make the next customer action easier to understand.",
     challenge:
@@ -455,7 +455,7 @@ const projects: Project[] = [
     type: "Client Project",
     industry: "DJ & Artist",
     contentTag: "Artist Website",
-    image: "/services/webdev/jkayy.png",
+    image: "/services/webdev/jkayy_web.webp",
     intro:
       "A personal artist website for a DJ built to showcase identity, performances and creative presence in one focused digital destination.",
     challenge:
@@ -473,7 +473,7 @@ const projects: Project[] = [
     type: "Client Project",
     industry: "Sports, Gaming & Café",
     contentTag: "Experience Website",
-    image: "/services/webdev/aftermatch.png",
+    image: "/services/webdev/aftermatch_web.webp",
     intro:
       "A multi-experience website for a venue combining pickleball, pool tables, PS5 gaming, café experiences and DJ-led entertainment.",
     challenge:
@@ -491,7 +491,7 @@ const projects: Project[] = [
   type: "Client Project",
   industry: "Events, Weddings & Brand Experiences",
   contentTag: "Event Website",
-  image: "/vow-story.jpeg",
+  image: "/services/webdev/vow-story_web.webp",
   intro:
     "A visually led website for an event brand showcasing weddings, brand launches and curated experiences through a clear and premium digital presentation.",
   challenge:
@@ -670,32 +670,35 @@ function WorkCard({
           xl:h-[250px]
         "
       >
-        <Image
-          src={project.image}
-          alt={`${project.title} ${service.label} work`}
-          width={1600}
-          height={1000}
-          sizes="
-            (max-width: 767px) 100vw,
-            (max-width: 1279px) 50vw,
-            33vw
-          "
-          className="
-            block
-            h-full
-            w-full
-            max-w-none
+       <Image
+  src={project.image}
+  alt={`${project.title} ${service.label} project by Sharp Rays${
+    project.industry ? ` for the ${project.industry} industry` : ""
+  }`}
+  title={`${project.title} — ${service.label} Case Study | Sharp Rays`}
+  width={1600}
+  height={1000}
+  sizes="
+    (max-width: 767px) 100vw,
+    (max-width: 1279px) 50vw,
+    33vw
+  "
+  className="
+    block
+    h-full
+    w-full
+    max-w-none
 
-            object-cover
-            object-center
+    object-cover
+    object-center
 
-            transition-transform
-            duration-700
-            ease-out
+    transition-transform
+    duration-700
+    ease-out
 
-            group-hover:scale-[1.035]
-          "
-        />
+    group-hover:scale-[1.035]
+  "
+/>
 
         <div
           className="
