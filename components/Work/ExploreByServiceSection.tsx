@@ -997,41 +997,42 @@ function WorkCard({
 
         {/* CTA */}
 
-        <Link
-          href={project.href}
-          style={newYorkFont}
-          className="
-            mt-auto
-            pt-5
+     <Link
+  href={project.href}
+  title={`View ${project.title} ${service.label} case study`}
+  style={newYorkFont}
+  className="
+    mt-auto
+    pt-5
 
-            flex
-            w-fit
-            items-center
-            gap-2
+    flex
+    w-fit
+    items-center
+    gap-2
 
-            text-[8px]
-            font-medium
-            uppercase
-            tracking-[0.16em]
+    text-[8px]
+    font-medium
+    uppercase
+    tracking-[0.16em]
 
-            text-[#0B2A52]
-          "
-        >
-          <span>View Full Case Study</span>
+    text-[#0B2A52]
+  "
+>
+  <span>View Full Case Study</span>
 
-          <ArrowRight
-            size={11}
-            strokeWidth={1.7}
-            className="
-              text-[#B79A72]
+  <ArrowRight
+    size={11}
+    strokeWidth={1.7}
+    className="
+      text-[#B79A72]
 
-              transition-transform
-              duration-300
+      transition-transform
+      duration-300
 
-              group-hover:translate-x-1
-            "
-          />
-        </Link>
+      group-hover:translate-x-1
+    "
+  />
+</Link>
       </div>
 
       <span
