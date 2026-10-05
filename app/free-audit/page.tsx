@@ -72,7 +72,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/og/free-audit.webp",
+        url: "/og/Free-audit.webp",
 
         width: 1200,
 
