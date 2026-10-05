@@ -47,7 +47,7 @@ const socialWorks: SocialWork[] = [
     client: "DTS World",
     description:
       "Social media presence built around events, celebrities, weddings, PR and entertainment-led brand communication.",
-    image: "/services/social/dts.png",
+    image: "/services/social/dts_social.webp",
     handle: "@doubletrouble_studio",
     badge: "Digital agency",
   },
@@ -58,7 +58,7 @@ const socialWorks: SocialWork[] = [
     client: "Brownie Point",
     description:
       "Product-led social content focused on visual appeal, consistency and memorable digital presentation.",
-    image: "/services/social/cake.png",
+    image: "/services/social/cake_social.webp",
     handle: "@browniepointindia",
     badge: "Product Content",
   },
@@ -69,7 +69,7 @@ const socialWorks: SocialWork[] = [
     client: "Shruti Chadha",
     description:
       "A refined personal-brand presence built through visual consistency, editorial content and social storytelling.",
-    image: "/services/social/shruti.png",
+    image: "/services/social/shruti_social.webp",
     handle: "@shrutichadha_",
     badge: "Personal Branding",
   },
@@ -723,6 +723,7 @@ function SocialCard({
         <Image
           src={work.image}
           alt={`${work.client} Instagram profile`}
+          title={`${work.client} Instagram profile`}
           fill
           quality={95}
           sizes="
@@ -1001,6 +1002,7 @@ function SocialCard({
 
           <a
             href={`https://instagram.com/${instagramUsername}`}
+            title={`View ${work.client} Instagram profile`}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`View ${work.client} Instagram profile`}
