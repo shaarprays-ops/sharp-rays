@@ -461,6 +461,7 @@ export default function TermsAndConditionsPage() {
               <div className="mt-8 border-t border-[#0B2A52]/10 pt-6">
                 <Link
                   href="/privacy-policy"
+                  title="View Sharp Rays Privacy Policy"
                   className="text-[13px] font-medium text-[#0B2A52] transition-colors hover:text-[#6285AD]"
                 >
                   View Privacy Policy →

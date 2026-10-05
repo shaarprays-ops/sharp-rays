@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     images: [
       {
         url:
-          "/og/terms-and-conditions.png",
+          "/og/terms-and-conditions.webp",
 
         width: 1200,
 
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
       "Read the Sharp Rays terms and conditions covering website use, proposals, payments, revisions, intellectual property and how our marketing services work.",
 
     images: [
-      "/og/terms-and-conditions.png",
+      "/og/terms-and-conditions.webp",
     ],
   },
 };
@@ -119,10 +119,10 @@ const termsCoreSchema = {
         "https://www.sharprays.com/terms-and-conditions#primaryimage",
 
       url:
-        "https://www.sharprays.com/og/terms-and-conditions.png",
+        "https://www.sharprays.com/og/terms-and-conditions.webp",
 
       contentUrl:
-        "https://www.sharprays.com/og/terms-and-conditions.png",
+        "https://www.sharprays.com/og/terms-and-conditions.webp",
 
       width: 1200,
 

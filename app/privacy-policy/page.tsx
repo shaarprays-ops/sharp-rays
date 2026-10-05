@@ -67,7 +67,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/og/privacy-policy.webp",
+        url: "/og/Privacy-Policy.webp",
 
         width: 1200,
 
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     description:
       "Read the Sharp Rays privacy policy to learn how we collect, use, store and protect personal information submitted through our website and enquiry forms.",
 
-    images: ["/og/privacy-policy.webp"],
+    images: ["/og/Privacy-Policy.webp"],
   },
 };
 
@@ -111,10 +111,10 @@ const privacyPolicyCoreSchema = {
         "https://www.sharprays.com/privacy-policy#primaryimage",
 
       url:
-        "https://www.sharprays.com/og/privacy-policy.webp",
+        "https://www.sharprays.com/og/Privacy-Policy.webp",
 
       contentUrl:
-        "https://www.sharprays.com/og/privacy-policy.webp",
+        "https://www.sharprays.com/og/Privacy-Policy.webp",
 
       width: 1200,
 
