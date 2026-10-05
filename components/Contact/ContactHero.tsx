@@ -748,6 +748,7 @@ export default function ContactPage() {
 
         <a
           href="#contact-form"
+          title="Fill Out Contact Form"
           style={newYorkFont}
           className="
             group
@@ -3122,6 +3123,7 @@ export default function ContactPage() {
               >
                 <a
                   href="#contact-form"
+                  title="Start a conversation with Sharp Rays"
                   style={newYorkFont}
                   className="
                     group
