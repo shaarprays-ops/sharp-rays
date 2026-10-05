@@ -471,7 +471,7 @@ export default function ContactPage() {
       setSubmitMessage(
         error instanceof Error
           ? error.message
-          : "We couldn’t send your enquiry. Please try again or email hello@sharprays.com.",
+          : "We couldn’t send your enquiry. Please try again or email info@sharprays.com.",
       );
     } finally {
       setIsSubmitting(false);
@@ -857,6 +857,7 @@ export default function ContactPage() {
 
         <a
           href="/#services"
+          title="Explore Our Services"
           style={newYorkFont}
           className="
             group
@@ -2152,341 +2153,416 @@ export default function ContactPage() {
           SECTION 07 — DIRECT CONTACT
       ===================================================== */}
 
-      <section
+    {/* =====================================================
+    SECTION 08 — CONTACT FAQS
+===================================================== */}
+
+<section
+  className="
+    relative
+    overflow-hidden
+    bg-[#F8FAFC]
+    py-16
+    sm:py-20
+    md:py-24
+    lg:py-28
+  "
+>
+  {/* BACKGROUND DETAIL */}
+
+  <div
+    aria-hidden="true"
+    className="
+      pointer-events-none
+      absolute
+      inset-0
+      overflow-hidden
+    "
+  >
+    <div
+      className="
+        absolute
+        -right-[180px]
+        top-[80px]
+        h-[360px]
+        w-[360px]
+        rounded-full
+        bg-[#EDF4F9]
+        blur-[110px]
+      "
+    />
+
+    <div
+      className="
+        absolute
+        -left-[160px]
+        bottom-[-120px]
+        h-[320px]
+        w-[320px]
+        rounded-full
+        bg-[#FBF3E8]
+        blur-[105px]
+      "
+    />
+  </div>
+
+  <div
+    className="
+      relative
+      z-10
+      mx-auto
+      w-full
+      max-w-[1240px]
+      px-5
+      sm:px-7
+      md:px-9
+      lg:px-12
+      xl:px-16
+    "
+  >
+    {/* SECTION HEADING */}
+
+    <motion.div
+      variants={stagger}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.25 }}
+      className="
+        mx-auto
+        max-w-[900px]
+        text-center
+      "
+    >
+      <motion.div variants={fadeUp}>
+        <Eyebrow centered>Contact FAQs</Eyebrow>
+      </motion.div>
+
+      <motion.h2
+        variants={fadeUp}
         className="
-          relative
-          overflow-hidden
-          bg-white
-          py-16
-          sm:py-20
-          md:py-24
-          lg:py-28
+          mx-auto
+          mt-5
+          max-w-[850px]
+          font-serif
+          text-[2.1rem]
+          leading-[1.04]
+          tracking-[-0.045em]
+          text-[#0B2A52]
+          sm:text-[2.6rem]
+          md:text-[2.95rem]
+          lg:text-[3.1rem]
+          xl:text-[3.35rem]
         "
       >
-        <div
-          className="
-            mx-auto
-            w-full
-            max-w-[1240px]
-            px-5
-            sm:px-7
-            md:px-9
-            lg:px-12
-            xl:px-16
-          "
-        >
-          <div
+        Before You Send the{" "}
+        <span className="italic text-[#A97C52]">
+          Enquiry.
+        </span>
+      </motion.h2>
+
+      <motion.p
+        variants={fadeUp}
+        className="
+          mx-auto
+          mt-5
+          max-w-[660px]
+          font-serif
+          text-[0.9rem]
+          leading-[1.75]
+          text-[#60758A]
+        "
+      >
+        Straightforward answers to common questions before the first
+        conversation.
+      </motion.p>
+    </motion.div>
+
+    {/* FAQ LIST */}
+
+    <div
+      className="
+        mx-auto
+        mt-12
+        max-w-[950px]
+        border-y
+        border-[#D9E3E9]
+      "
+    >
+      {[
+        {
+          question: "Do I need to know which service I need?",
+          answer:
+            "No. If you already know what you need, select the relevant service. If you are unsure, choose Not Sure Yet and explain what you are trying to improve.",
+        },
+        {
+          question: "Do I need a full project brief?",
+          answer:
+            "No. A short explanation of your business, current situation and objective is enough to start the conversation.",
+        },
+        {
+          question: "Does Sharp Rays work with startups?",
+          answer:
+            "Yes. We work with startups and growing businesses. The right scope depends on your stage, priorities, available resources and the problem you are trying to solve.",
+        },
+        {
+          question: "Do you work with established businesses too?",
+          answer:
+            "Yes. Sharp Rays can support established businesses that already have websites, campaigns, marketing teams or digital systems and need help improving a specific area.",
+        },
+        {
+          question: "Can I contact you for just one service?",
+          answer:
+            "Yes. You can contact us for a single service such as SEO, social media marketing, website development, performance marketing, content marketing, AI video or AI automation.",
+        },
+        {
+          question: "What happens after I send the enquiry?",
+          answer:
+            "We review the information you provide and determine the most useful next step. If the project looks like something we can help with, we arrange a conversation and clarify scope, deliverables and requirements.",
+        },
+        {
+          question: "How quickly will Sharp Rays respond?",
+          answer:
+            "We aim to review enquiries as soon as possible during business hours. More complex requests may require additional time so we can properly understand the project before responding.",
+        },
+      ].map((faq, index) => {
+        const isOpen = openFaq === index;
+
+        return (
+          <motion.div
+            key={faq.question}
+            initial={{
+              opacity: 0,
+              y: reduceMotion ? 0 : 16,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{
+              duration: 0.5,
+              delay: reduceMotion ? 0 : index * 0.04,
+              ease,
+            }}
             className="
-              grid
-              gap-12
-              lg:grid-cols-[0.8fr_1.2fr]
+              border-b
+              border-[#E1E8ED]
+              last:border-b-0
             "
           >
-            <motion.div
-              initial={{
-                opacity: 0,
-                x: reduceMotion ? 0 : -28,
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-              }}
-              viewport={{ once: true, amount: 0.25 }}
-              transition={{ duration: 0.7, ease }}
+            <button
+              type="button"
+              onClick={() => setOpenFaq(isOpen ? null : index)}
+              aria-expanded={isOpen}
+              className="
+                group
+                flex
+                w-full
+                items-start
+                justify-between
+                gap-6
+                py-6
+                text-left
+                sm:py-7
+              "
             >
-              <Eyebrow>Prefer Email?</Eyebrow>
+              <div className="flex min-w-0 gap-4 sm:gap-5">
+                {/* NUMBER */}
 
-              <h2
-                className="
-                  mt-6
-                  max-w-[500px]
-                  font-serif
-                  text-[2.1rem]
-                  leading-[1.04]
-                  tracking-[-0.045em]
-                  text-[#0B2A52]
-                  sm:text-[2.6rem]
-                  md:text-[2.95rem]
-                  lg:text-[3.1rem]
-                  xl:text-[3.35rem]
-                "
-              >
-                Reach Sharp Rays{" "}
-                <span className="italic text-[#A97C52]">
-                  Directly.
-                </span>
-              </h2>
-
-              <p
-                className="
-                  mt-6
-                  max-w-[470px]
-                  font-serif
-                  text-[0.88rem]
-                  leading-[1.7]
-                  text-[#60758A]
-                "
-              >
-                If email is easier, you can contact us directly without filling
-                out the full project form.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{
-                opacity: 0,
-                x: reduceMotion ? 0 : 28,
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-              }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.7, ease }}
-              className="border-y border-[#DCE5EB]"
-            >
-              {[
-                {
-                  label: "Email",
-                  value: "hello@sharprays.com",
-                  icon: Mail,
-                  href: "mailto:hello@sharprays.com",
-                },
-                {
-                  label: "Phone",
-                  value: "[ADD YOUR REAL BUSINESS PHONE NUMBER]",
-                  icon: Phone,
-                },
-                {
-                  label: "Business Hours",
-                  value: "[ADD YOUR REAL WORKING HOURS]",
-                  icon: Clock3,
-                },
-                {
-                  label: "Location / Service Area",
-                  value: "[ADD YOUR REAL BUSINESS LOCATION OR SERVICE AREA]",
-                  icon: MapPin,
-                },
-              ].map((item) => {
-                const Icon = item.icon;
-
-                return (
-                  <div
-                    key={item.label}
-                    className="
-                      grid
-                      gap-4
-                      border-b
-                      border-[#E2E9EE]
-                      py-5
-                      last:border-b-0
-                      sm:grid-cols-[48px_150px_1fr]
-                      sm:items-center
-                    "
-                  >
-                    <span
-                      className="
-                        flex
-                        h-9
-                        w-9
-                        items-center
-                        justify-center
-                        rounded-full
-                        bg-[#F2F6F9]
-                        text-[#0B2A52]
-                      "
-                    >
-                      <Icon size={14} />
-                    </span>
-
-                    <span
-                      className="
-                        text-[0.45rem]
-                        font-semibold
-                        uppercase
-                        tracking-[0.18em]
-                        text-[#92745C]
-                      "
-                    >
-                      {item.label}
-                    </span>
-
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        className="
-                          font-serif
-                          text-[0.9rem]
-                          text-[#0B2A52]
-                          transition
-                          hover:text-[#A97C52]
-                        "
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <span
-                        className="
-                          font-serif
-                          text-[0.8rem]
-                          leading-[1.5]
-                          text-[#60758A]
-                        "
-                      >
-                        {item.value}
-                      </span>
-                    )}
-                  </div>
-                );
-              })}
-
-              {/* SOCIAL */}
-
-              <div
-                className="
-                  flex
-                  flex-wrap
-                  items-center
-                  gap-3
-                  py-5
-                "
-              >
                 <span
                   className="
-                    mr-2
-                    text-[0.45rem]
+                    mt-[3px]
+                    shrink-0
+                    text-[0.48rem]
                     font-semibold
                     uppercase
-                    tracking-[0.18em]
-                    text-[#92745C]
+                    tracking-[0.16em]
+                    text-[#A97C52]
                   "
                 >
-                  Social
+                  {String(index + 1).padStart(2, "0")}
                 </span>
 
-              <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={newYorkFont}
-                  className="
-                    group
-                    relative
-                    inline-flex
-                    min-h-[42px]
-                    items-center
-                    justify-center
-                    overflow-hidden
-                    rounded-[16px]
-                    border
-                    border-[#6285AD]/30
-                    bg-white/80
-                    px-4
-                    py-2.5
-                    text-[11px]
-                    font-medium
-                    tracking-[-0.01em]
-                    text-[#0B2A52]
-                    shadow-[0_7px_24px_rgba(11,42,82,0.065)]
-                    backdrop-blur-[8px]
-                    transition-all
-                    duration-300
-                    hover:-translate-y-[2px]
-                    hover:border-[#6285AD]/40
-                    hover:bg-white
-                    hover:shadow-[0_10px_28px_rgba(98,133,173,0.13)]
-                    sm:min-h-[44px]
-                    sm:px-5
-                    sm:text-[12px]
-                  "
-                >
-                  <span className="pointer-events-none absolute inset-[2px] rounded-[13px] border border-white/60" />
-                  <span className="pointer-events-none absolute inset-x-3 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent" />
-                  <span className="relative z-10 whitespace-nowrap">LinkedIn</span>
-                </a>
+                {/* QUESTION */}
 
-<a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={newYorkFont}
+                <span
                   className="
-                    group
-                    relative
-                    inline-flex
-                    min-h-[42px]
-                    items-center
-                    justify-center
-                    overflow-hidden
-                    rounded-[16px]
-                    border
-                    border-[#6285AD]/30
-                    bg-white/80
-                    px-4
-                    py-2.5
-                    text-[11px]
-                    font-medium
-                    tracking-[-0.01em]
+                    font-serif
+                    text-[1rem]
+                    leading-[1.45]
                     text-[#0B2A52]
-                    shadow-[0_7px_24px_rgba(11,42,82,0.065)]
-                    backdrop-blur-[8px]
-                    transition-all
+                    transition-colors
                     duration-300
-                    hover:-translate-y-[2px]
-                    hover:border-[#6285AD]/40
-                    hover:bg-white
-                    hover:shadow-[0_10px_28px_rgba(98,133,173,0.13)]
-                    sm:min-h-[44px]
-                    sm:px-5
-                    sm:text-[12px]
+                    group-hover:text-[#A97C52]
+                    sm:text-[1.08rem]
                   "
                 >
-                  <span className="pointer-events-none absolute inset-[2px] rounded-[13px] border border-white/60" />
-                  <span className="pointer-events-none absolute inset-x-3 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent" />
-                  <span className="relative z-10 whitespace-nowrap">Instagram</span>
-                </a>
+                  {faq.question}
+                </span>
               </div>
-            </motion.div>
-          </div>
 
-          <div
-            className="
-              mx-auto
-              mt-10
-              max-w-[850px]
-              border-l-2
-              border-[#B79A72]
-              pl-5
-            "
-          >
-            <span
-              className="
-                text-[0.42rem]
-                font-semibold
-                uppercase
-                tracking-[0.18em]
-                text-[#92745C]
-              "
-            >
-              Important
-            </span>
+              {/* ICON */}
 
-            <p
-              className="
-                mt-2
-                font-serif
-                text-[0.8rem]
-                leading-[1.65]
-                text-[#60758A]
-              "
-            >
-              Only publish real contact details that you actively monitor. If
-              Sharp Rays does not operate from a customer-facing office, use an
-              accurate service area rather than adding a fake office address.
-            </p>
-          </div>
-        </div>
-      </section>
+              <span
+                className={`
+                  flex
+                  h-8
+                  w-8
+                  shrink-0
+                  items-center
+                  justify-center
+                  rounded-full
+                  border
+                  border-[#D5E0E7]
+                  bg-white
+                  text-[#0B2A52]
+                  shadow-[0_5px_16px_rgba(11,42,82,0.04)]
+                  transition-all
+                  duration-300
+
+                  ${
+                    isOpen
+                      ? "rotate-180 border-[#B79A72]/40 bg-[#FBF7F1] text-[#A97C52]"
+                      : ""
+                  }
+                `}
+              >
+                <ChevronDown size={14} strokeWidth={1.8} />
+              </span>
+            </button>
+
+            <AnimatePresence initial={false}>
+              {isOpen && (
+                <motion.div
+                  initial={{
+                    height: 0,
+                    opacity: 0,
+                  }}
+                  animate={{
+                    height: "auto",
+                    opacity: 1,
+                  }}
+                  exit={{
+                    height: 0,
+                    opacity: 0,
+                  }}
+                  transition={{
+                    duration: reduceMotion ? 0 : 0.35,
+                    ease,
+                  }}
+                  className="overflow-hidden"
+                >
+                  <div
+                    className="
+                      pb-6
+                      pl-[2.5rem]
+                      pr-12
+                      sm:pb-7
+                      sm:pl-[3.25rem]
+                      sm:pr-16
+                    "
+                  >
+                    <p
+                      className="
+                        max-w-[760px]
+                        font-serif
+                        text-[0.84rem]
+                        leading-[1.75]
+                        text-[#60758A]
+                        sm:text-[0.9rem]
+                      "
+                    >
+                      {faq.answer}
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        );
+      })}
+    </div>
+
+    {/* BOTTOM SUPPORT */}
+
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: reduceMotion ? 0 : 18,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.6, ease }}
+      className="
+        mx-auto
+        mt-9
+        max-w-[760px]
+        text-center
+      "
+    >
+      <p
+        className="
+          font-serif
+          text-[0.82rem]
+          leading-[1.7]
+          text-[#6A7E90]
+        "
+      >
+        Still unsure where to start? You can select{" "}
+        <span className="font-medium text-[#0B2A52]">
+          Not Sure Yet
+        </span>{" "}
+        in the enquiry form and simply describe the problem.
+      </p>
+
+      <a
+        href="#contact-form"
+        title="Start a conversation with Sharp Rays"
+        style={newYorkFont}
+        className="
+          group
+          relative
+          mt-6
+          inline-flex
+          min-h-[44px]
+          items-center
+          justify-center
+          overflow-hidden
+          rounded-[16px]
+          border
+          border-[#6285AD]/30
+          bg-white/80
+          px-5
+          py-[10px]
+          text-[12px]
+          font-medium
+          tracking-[-0.01em]
+          text-[#0B2A52]
+          shadow-[0_8px_30px_rgba(11,42,82,0.07)]
+          backdrop-blur-[8px]
+          transition-all
+          duration-300
+          hover:-translate-y-[2px]
+          hover:border-[#6285AD]/40
+          hover:bg-white
+          hover:shadow-[0_10px_35px_rgba(98,133,173,0.14)]
+          sm:min-h-[46px]
+          sm:px-6
+          sm:text-[13px]
+        "
+      >
+        <span className="pointer-events-none absolute inset-[2px] rounded-[13px] border border-white/60" />
+
+        <span className="relative z-10">
+          Start the Conversation
+        </span>
+      </a>
+    </motion.div>
+  </div>
+</section>
 
       {/* =====================================================
           SECTION 08 — BEFORE WE START
@@ -3093,7 +3169,8 @@ export default function ContactPage() {
                 </a>
 
                 <a
-                  href="mailto:hello@sharprays.com"
+                  href="mailto:info@sharprays.com"
+                  title="Email Sharp Rays"
                   style={newYorkFont}
                   className="
                     group
