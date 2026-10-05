@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import Footer from "@/components/Home/Footer";
 import Navbar from "@/components/Home/Navbar";
-import PrivacyPolicyPage from "@/components/Privacy-Policy/PrivacyPolicies";
 
 /* =========================================================
    METADATA
@@ -11,10 +10,11 @@ import PrivacyPolicyPage from "@/components/Privacy-Policy/PrivacyPolicies";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.sharprays.com"),
 
-  title: "Privacy Policy: How We Collect & Protect Data | Sharp Rays",
+  title:
+    "Terms & Conditions for Website Use & Services | Sharp Rays",
 
   description:
-    "Read the Sharp Rays privacy policy to learn how we collect, use, store and protect personal information submitted through our website and enquiry forms.",
+    "Read the Sharp Rays terms and conditions covering website use, proposals, payments, revisions, intellectual property and how our marketing services work.",
 
   applicationName: "Sharp Rays",
 
@@ -23,19 +23,20 @@ export const metadata: Metadata = {
   publisher: "Sharp Rays",
 
   keywords: [
-    "Sharp Rays privacy policy",
-    "privacy policy Sharp Rays",
-    "Sharp Rays data protection policy",
-    "digital marketing agency privacy policy",
-    "website privacy policy",
-    "personal data protection",
-    "data privacy policy",
-    "website data collection policy",
-    "Sharp Rays data privacy",
+    "Sharp Rays terms and conditions",
+    "Sharp Rays terms",
+    "Sharp Rays service terms",
+    "digital marketing agency terms and conditions",
+    "website terms and conditions",
+    "marketing service terms",
+    "service agreement terms",
+    "payment and revision terms",
+    "intellectual property terms",
   ],
 
   alternates: {
-    canonical: "https://www.sharprays.com/privacy-policy",
+    canonical:
+      "https://www.sharprays.com/terms-and-conditions",
   },
 
   robots: {
@@ -56,25 +57,28 @@ export const metadata: Metadata = {
 
     locale: "en_IN",
 
-    url: "https://www.sharprays.com/privacy-policy",
+    url:
+      "https://www.sharprays.com/terms-and-conditions",
 
     siteName: "Sharp Rays",
 
-    title: "Privacy Policy: How We Collect & Protect Data",
+    title:
+      "Terms & Conditions for Website Use & Services",
 
     description:
-      "Read the Sharp Rays privacy policy to learn how we collect, use, store and protect personal information submitted through our website and enquiry forms.",
+      "Read the Sharp Rays terms and conditions covering website use, proposals, payments, revisions, intellectual property and how our marketing services work.",
 
     images: [
       {
-        url: "/og/privacy-policy.webp",
+        url:
+          "/og/terms-and-conditions.webp",
 
         width: 1200,
 
         height: 630,
 
         alt:
-          "Sharp Rays Privacy Policy - How We Collect, Use and Protect Information",
+          "Sharp Rays Terms and Conditions for Website Use and Services",
       },
     ],
   },
@@ -82,21 +86,24 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title: "Privacy Policy: How We Collect & Protect Data",
+    title:
+      "Terms & Conditions for Website Use & Services",
 
     description:
-      "Read the Sharp Rays privacy policy to learn how we collect, use, store and protect personal information submitted through our website and enquiry forms.",
+      "Read the Sharp Rays terms and conditions covering website use, proposals, payments, revisions, intellectual property and how our marketing services work.",
 
-    images: ["/og/privacy-policy.webp"],
+    images: [
+      "/og/terms-and-conditions.webp",
+    ],
   },
 };
 
 /* =========================================================
-   PRIVACY POLICY CORE SCHEMA
+   TERMS & CONDITIONS CORE SCHEMA
    ImageObject + Organization + WebSite + WebPage
 ========================================================= */
 
-const privacyPolicyCoreSchema = {
+const termsCoreSchema = {
   "@context": "https://schema.org",
 
   "@graph": [
@@ -108,20 +115,20 @@ const privacyPolicyCoreSchema = {
       "@type": "ImageObject",
 
       "@id":
-        "https://www.sharprays.com/privacy-policy#primaryimage",
+        "https://www.sharprays.com/terms-and-conditions#primaryimage",
 
       url:
-        "https://www.sharprays.com/og/privacy-policy.webp",
+        "https://www.sharprays.com/og/terms-and-conditions.webp",
 
       contentUrl:
-        "https://www.sharprays.com/og/privacy-policy.webp",
+        "https://www.sharprays.com/og/terms-and-conditions.webp",
 
       width: 1200,
 
       height: 630,
 
       caption:
-        "Sharp Rays Privacy Policy",
+        "Sharp Rays Terms and Conditions",
 
       representativeOfPage: true,
 
@@ -144,7 +151,8 @@ const privacyPolicyCoreSchema = {
       contentUrl:
         "https://www.sharprays.com/logo/sharp-rays-logo.png",
 
-      caption: "Sharp Rays Logo",
+      caption:
+        "Sharp Rays Logo",
     },
 
     /* =====================================================
@@ -157,7 +165,8 @@ const privacyPolicyCoreSchema = {
       "@id":
         "https://www.sharprays.com/#organization",
 
-      name: "Sharp Rays",
+      name:
+        "Sharp Rays",
 
       alternateName:
         "Sharp Rays Digital Marketing Agency",
@@ -207,19 +216,6 @@ const privacyPolicyCoreSchema = {
           name: "Worldwide",
         },
       ],
-
-      knowsAbout: [
-        "Digital Marketing",
-        "Search Engine Optimization",
-        "Social Media Marketing",
-        "Performance Marketing",
-        "Paid Media",
-        "Content Marketing",
-        "Website Development",
-        "AI Video",
-        "AI Automation",
-        "Digital Growth Strategy",
-      ],
     },
 
     /* =====================================================
@@ -235,46 +231,45 @@ const privacyPolicyCoreSchema = {
       url:
         "https://www.sharprays.com/",
 
-      name: "Sharp Rays",
+      name:
+        "Sharp Rays",
 
       alternateName:
         "Sharp Rays Digital Marketing Agency",
-
-      description:
-        "Sharp Rays provides SEO, social media marketing, performance marketing, website development, content management, AI video and AI automation services.",
 
       publisher: {
         "@id":
           "https://www.sharprays.com/#organization",
       },
 
-      inLanguage: "en-IN",
+      inLanguage:
+        "en-IN",
     },
 
     /* =====================================================
-       PRIVACY POLICY PAGE
+       TERMS & CONDITIONS PAGE
     ===================================================== */
 
     {
       "@type": "WebPage",
 
       "@id":
-        "https://www.sharprays.com/privacy-policy#webpage",
+        "https://www.sharprays.com/terms-and-conditions#webpage",
 
       url:
-        "https://www.sharprays.com/privacy-policy",
+        "https://www.sharprays.com/terms-and-conditions",
 
       name:
-        "Privacy Policy: How We Collect & Protect Data | Sharp Rays",
+        "Terms & Conditions for Website Use & Services | Sharp Rays",
 
       headline:
-        "Privacy Policy",
+        "Sharp Rays Terms & Conditions",
 
       alternativeHeadline:
-        "How Sharp Rays Handles Information Collected Through Our Website and Business Communications",
+        "Terms Governing Website Use and Sharp Rays Services",
 
       description:
-        "This Privacy Policy explains how Sharp Rays may collect, use, store and protect information when visitors use the website, submit enquiries or communicate about Sharp Rays services.",
+        "The Sharp Rays terms and conditions cover website use, service scope, proposals, payments, revisions, approvals, intellectual property and other terms relating to digital marketing services.",
 
       isPartOf: {
         "@id":
@@ -285,7 +280,7 @@ const privacyPolicyCoreSchema = {
         "@type": "Thing",
 
         name:
-          "Sharp Rays Privacy and Data Handling Practices",
+          "Sharp Rays Website and Service Terms",
       },
 
       mainEntity: {
@@ -295,7 +290,7 @@ const privacyPolicyCoreSchema = {
 
       primaryImageOfPage: {
         "@id":
-          "https://www.sharprays.com/privacy-policy#primaryimage",
+          "https://www.sharprays.com/terms-and-conditions#primaryimage",
       },
 
       publisher: {
@@ -305,80 +300,96 @@ const privacyPolicyCoreSchema = {
 
       breadcrumb: {
         "@id":
-          "https://www.sharprays.com/privacy-policy#breadcrumb",
+          "https://www.sharprays.com/terms-and-conditions#breadcrumb",
       },
 
       isAccessibleForFree: true,
 
       keywords: [
-        "Privacy Policy",
-        "Personal Information",
-        "Data Collection",
-        "Data Protection",
-        "Cookies",
-        "Analytics",
-        "Data Retention",
-        "Data Security",
-        "Privacy Rights",
+        "Terms and Conditions",
+        "Website Use",
+        "Service Scope",
+        "Proposals",
+        "Payments",
+        "Revisions",
+        "Approvals",
+        "Intellectual Property",
+        "Marketing Services",
       ],
 
       mentions: [
         {
           "@type": "Thing",
 
-          name: "Personal Information",
+          name:
+            "Website Use",
         },
 
         {
           "@type": "Thing",
 
-          name: "Website Analytics",
+          name:
+            "Service Scope",
         },
 
         {
           "@type": "Thing",
 
-          name: "Cookies",
+          name:
+            "Proposals",
         },
 
         {
           "@type": "Thing",
 
-          name: "Data Retention",
+          name:
+            "Payments",
         },
 
         {
           "@type": "Thing",
 
-          name: "Data Security",
+          name:
+            "Revisions and Approvals",
         },
 
         {
           "@type": "Thing",
 
-          name: "Third-Party Services",
+          name:
+            "Intellectual Property",
         },
 
         {
           "@type": "Thing",
 
-          name: "Privacy Rights",
+          name:
+            "Marketing Results",
+        },
+
+        {
+          "@type": "Thing",
+
+          name:
+            "Governing Law",
         },
       ],
 
       significantLink: [
+        "https://www.sharprays.com/privacy-policy",
         "https://www.sharprays.com/contact",
-        "https://www.sharprays.com/terms-and-conditions",
       ],
 
-      copyrightYear: 2026,
+      copyrightYear:
+        2026,
 
       copyrightHolder: {
         "@id":
           "https://www.sharprays.com/#organization",
       },
 
-      inLanguage: "en-IN",
+      inLanguage:
+        "en-IN",
     },
   ],
 };
@@ -393,7 +404,7 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
 
   "@id":
-    "https://www.sharprays.com/privacy-policy#breadcrumb",
+    "https://www.sharprays.com/terms-and-conditions#breadcrumb",
 
   itemListElement: [
     {
@@ -401,7 +412,8 @@ const breadcrumbSchema = {
 
       position: 1,
 
-      name: "Home",
+      name:
+        "Home",
 
       item:
         "https://www.sharprays.com/",
@@ -412,31 +424,32 @@ const breadcrumbSchema = {
 
       position: 2,
 
-      name: "Privacy Policy",
+      name:
+        "Terms & Conditions",
 
       item:
-        "https://www.sharprays.com/privacy-policy",
+        "https://www.sharprays.com/terms-and-conditions",
     },
   ],
 };
 
 /* =========================================================
-   PRIVACY POLICY PAGE
+   TERMS & CONDITIONS PAGE
 ========================================================= */
 
-export default function PrivacyPolicy() {
+export default function TermsAndConditions() {
   return (
     <>
       {/* =====================================================
-          PRIVACY POLICY STRUCTURED DATA
+          TERMS & CONDITIONS STRUCTURED DATA
       ===================================================== */}
 
       <script
-        id="privacy-policy-core-structured-data"
+        id="terms-core-structured-data"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
-            privacyPolicyCoreSchema,
+            termsCoreSchema,
           ).replace(
             /</g,
             "\\u003c",
@@ -449,7 +462,7 @@ export default function PrivacyPolicy() {
       ===================================================== */}
 
       <script
-        id="privacy-policy-breadcrumb-structured-data"
+        id="terms-breadcrumb-structured-data"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
@@ -468,9 +481,9 @@ export default function PrivacyPolicy() {
       <main className="min-h-screen bg-white">
         <Navbar />
 
-        <PrivacyPolicyPage />
+        {/* Add your Terms & Conditions content component here */}
 
-    
+        <Footer />
       </main>
     </>
   );

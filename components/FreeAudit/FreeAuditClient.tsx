@@ -202,6 +202,7 @@ export default function FreeAuditClient() {
 
             <a
               href="#audit-form"
+              title="Request Your Free Audit"
               className="mt-10 inline-flex items-center gap-3 rounded-[16px] border border-[#6285AD]/30 bg-white/80 px-7 py-4 text-[14px] font-semibold text-[#0B2A52] shadow-[0_14px_45px_rgba(11,42,82,0.10)] transition duration-300 hover:-translate-y-2 hover:shadow-[0_20px_55px_rgba(11,42,82,0.15)]"
             >
               Get My Free Audit
@@ -650,6 +651,7 @@ export default function FreeAuditClient() {
 
             <a
               href="#audit-form"
+              title="Request Your Free Audit"
               className="mt-8 inline-flex items-center gap-3 rounded-[16px] border border-[#6285AD]/30 bg-white/80 px-7 py-4 text-[14px] font-semibold text-[#0B2A52] shadow-[0_14px_45px_rgba(11,42,82,0.10)] transition duration-300 hover:-translate-y-2"
             >
               Request My Free Audit
