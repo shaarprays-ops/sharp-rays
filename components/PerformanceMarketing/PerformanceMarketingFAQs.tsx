@@ -1,1049 +1,1164 @@
-"use client";
 
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import {
-  ArrowRight,
-  ArrowUpRight,
-  BarChart3,
-  CheckCircle2,
-  CircleDollarSign,
-  HelpCircle,
-  Minus,
-  Plus,
-  Sparkles,
-} from "lucide-react";
-import { useState } from "react";
+import type { Metadata } from "next";
 
-/* =========================================================
-   FAQ DATA
-========================================================= */
+import Footer from "@/components/Home/Footer";
+import Navbar from "@/components/Home/Navbar";
 
-const faqs = [
-  {
-    question: "What is performance marketing?",
-    answer:
-      "Performance marketing is a results-focused approach to digital advertising where campaigns are measured and optimized around defined outcomes such as leads, sales, enquiries, calls or other valuable actions.",
-  },
-  {
-    question: "What does a performance marketing agency do?",
-    answer:
-      "A performance marketing agency can manage campaign strategy, paid search, paid social, audience targeting, advertising creative, conversion tracking, optimization and performance reporting.\n\nThe exact scope depends on the business, platforms and objectives.",
-  },
-  {
-    question:
-      "What is the difference between performance marketing and digital marketing?",
-    answer:
-      "Digital marketing is a broad category covering channels such as SEO, social media, content, email and paid advertising.\n\nPerformance marketing focuses specifically on measurable campaign activity and optimizing spend around defined outcomes.",
-  },
-  {
-    question: "Which platforms do you manage?",
-    answer:
-      "Depending on the strategy and agreed scope, campaigns may include Google Ads, Meta Ads and other relevant paid media platforms.\n\nWe recommend platforms based on the audience, objective and available opportunity rather than trying to advertise everywhere.",
-  },
-  {
-    question: "Do you manage Google Ads?",
-    answer:
-      "Yes.\n\nGoogle Ads management can be included within a Sharp Rays performance marketing plan, including relevant Search, Performance Max, YouTube, Display or other suitable campaign types.",
-  },
-  {
-    question: "Do you manage Meta Ads?",
-    answer:
-      "Yes.\n\nFacebook and Instagram advertising can be included depending on your audience, campaign objective, creative requirements and agreed scope.",
-  },
-  {
-    question: "How much should I spend on paid advertising?",
-    answer:
-      "There is no universal advertising budget.\n\nThe appropriate level depends on your market, audience size, customer value, competition, conversion rate, campaign objective and available growth opportunity.\n\nMedia spend is discussed separately from management fees.",
-  },
-  {
-    question: "What is a conversion?",
-    answer:
-      "A conversion is a valuable action completed after someone interacts with your marketing.\n\nDepending on your business, this could be a purchase, lead form, phone call, booking, signup or another meaningful action.",
-  },
-  {
-    question: "What is conversion tracking?",
-    answer:
-      "Conversion tracking measures the valuable actions generated after people interact with advertising.\n\nIt helps connect campaign activity with outcomes such as leads or purchases and provides better information for optimization.",
-  },
-  {
-    question: "What is cost per lead?",
-    answer:
-      "Cost per lead, or CPL, is the amount of advertising spend required on average to generate a recorded lead.\n\nLead quality should be evaluated alongside CPL rather than judging campaign performance on cost alone.",
-  },
-
- 
-];
+import ChannelStrategySection from "@/components/PerformanceMarketing/ChannelStrategySection";
+import PerformanceMarketingExplained from "@/components/PerformanceMarketing/PerformanceMarketingExplained";
+import PerformanceMarketingFAQs from "@/components/PerformanceMarketing/PerformanceMarketingFAQs";
+import PerformanceMarketingFinalSections from "@/components/PerformanceMarketing/PerformanceMarketingFinalSections";
+import PerformanceMarketingHero from "@/components/PerformanceMarketing/PerformanceMarketingHero";
+import PerformanceMarketingPricing from "@/components/PerformanceMarketing/PerformanceMarketingPricing";
+import PerformanceMarketingProblem from "@/components/PerformanceMarketing/PerformanceMarketingProblem";
+import PerformanceMarketingProcess from "@/components/PerformanceMarketing/PerformanceMarketingProcess";
+import PerformanceMarketingServices from "@/components/PerformanceMarketing/PerformanceMarketingServices";
+import PerformanceMetricsSection from "@/components/PerformanceMarketing/PerformanceMetricsSection";
+import PerformancePointOfView from "@/components/PerformanceMarketing/PerformancePointOfView";
 
 /* =========================================================
-   SECTION
+   METADATA
 ========================================================= */
 
-export default function PerformanceMarketingFAQs() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [mobileOpenIndex, setMobileOpenIndex] = useState<number | null>(0);
+export const metadata: Metadata = {
+  metadataBase: new URL("https://www.sharprays.com"),
 
-  const reduceMotion = useReducedMotion();
-  const ease = [0.22, 1, 0.36, 1] as const;
+  title:
+    "Performance Marketing Agency in India | Sharp Rays",
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
+  description:
+    "Performance marketing agency in India for startups and D2C brands offering Google & Meta ads, tracking, retargeting and landing-page optimization.",
+
+  applicationName: "Sharp Rays",
+
+  creator: "Sharp Rays",
+
+  publisher: "Sharp Rays",
+
+  keywords: [
+    "performance marketing agency in India",
+    "performance marketing agency for startups",
+    "performance marketing agency India",
+    "lead generation agency India",
+    "Google Ads management India",
+    "Meta Ads management India",
+    "Google and Meta ads management",
+    "paid media agency India",
+    "paid advertising agency India",
+    "retargeting ads agency India",
+    "conversion tracking services India",
+    "performance marketing for startups",
+    "performance marketing for D2C brands",
+    "Google Ads agency India",
+    "Meta Ads agency India",
+    "Facebook Ads agency India",
+    "Instagram Ads agency India",
+    "ROAS marketing agency India",
+    "lead generation marketing agency",
+    "paid media management India",
+  ],
+
+  alternates: {
+    canonical:
+      "https://www.sharprays.com/services/performance-marketing",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
+  openGraph: {
+    type: "website",
+
+    locale: "en_IN",
+
+    url:
+      "https://www.sharprays.com/services/performance-marketing",
+
+    siteName: "Sharp Rays",
+
+    title:
+      "Performance Marketing Agency in India",
+
+    description:
+      "Performance marketing agency in India for startups and D2C brands offering Google & Meta ads, tracking, retargeting and landing-page optimization.",
+
+    images: [
+      {
+        url:
+          "/og/services-performance-marketing.webp",
+
+        width: 1200,
+
+        height: 630,
+
+        alt:
+          "Sharp Rays Performance Marketing Agency in India",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title:
+      "Performance Marketing Agency in India",
+
+    description:
+      "Performance marketing agency in India for startups and D2C brands offering Google & Meta ads, tracking, retargeting and landing-page optimization.",
+
+    images: [
+      "/og/services-performance-marketing.webp",
+    ],
+  },
+};
+
+/* =========================================================
+   PERFORMANCE MARKETING CORE SCHEMA
+   ImageObject + Organization + WebSite + WebPage
+========================================================= */
+
+const performanceMarketingCoreSchema = {
+  "@context": "https://schema.org",
+
+  "@graph": [
+    /* =====================================================
+       PRIMARY IMAGE
+    ===================================================== */
+
+    {
+      "@type": "ImageObject",
+
+      "@id":
+        "https://www.sharprays.com/services/performance-marketing#primaryimage",
+
+      url:
+        "https://www.sharprays.com/og/services-performance-marketing.webp",
+
+      contentUrl:
+        "https://www.sharprays.com/og/services-performance-marketing.webp",
+
+      width: 1200,
+
+      height: 630,
+
+      caption:
+        "Sharp Rays Performance Marketing Agency in India",
+
+      representativeOfPage: true,
+
+      inLanguage: "en-IN",
+    },
+
+    /* =====================================================
+       LOGO
+    ===================================================== */
+
+    {
+      "@type": "ImageObject",
+
+      "@id":
+        "https://www.sharprays.com/#logo",
+
+      url:
+        "https://www.sharprays.com/logo/sharp-rays-logo.png",
+
+      contentUrl:
+        "https://www.sharprays.com/logo/sharp-rays-logo.png",
+
+      caption:
+        "Sharp Rays Logo",
+    },
+
+    /* =====================================================
+       ORGANIZATION
+    ===================================================== */
+
+    {
+      "@type": "Organization",
+
+      "@id":
+        "https://www.sharprays.com/#organization",
+
+      name:
+        "Sharp Rays",
+
+      alternateName:
+        "Sharp Rays Digital Marketing Agency",
+
+      url:
+        "https://www.sharprays.com/",
+
+      logo: {
+        "@id":
+          "https://www.sharprays.com/#logo",
+      },
+
+      description:
+        "Sharp Rays is a digital marketing and digital growth company helping startups, small businesses, D2C brands and growing businesses through SEO, social media marketing, performance marketing, website development, content, AI video and AI automation.",
+
+      slogan:
+        "Digital growth, without the guesswork.",
+
+      email:
+        "info@sharprays.com",
+
+      telephone:
+        "+91-9415951060",
+
+      sameAs: [
+        "https://www.linkedin.com/company/sharp-rays/",
+        "https://www.instagram.com/sharpraysdigital/",
+        "https://www.facebook.com/profile.php?id=61594116386615",
+      ],
+
+      areaServed: [
+        {
+          "@type": "City",
+          name: "Mumbai",
+        },
+
+        {
+          "@type": "Country",
+          name: "India",
+        },
+
+        {
+          "@type": "Place",
+          name: "Worldwide",
+        },
+      ],
+
+      knowsAbout: [
+        "Performance Marketing",
+        "Paid Media Strategy",
+        "Google Ads",
+        "Google Search Ads",
+        "Performance Max",
+        "Meta Ads",
+        "Facebook Ads",
+        "Instagram Ads",
+        "LinkedIn Ads",
+        "YouTube Advertising",
+        "Display Advertising",
+        "Retargeting",
+        "Remarketing",
+        "Lead Generation",
+        "Conversion Tracking",
+        "Landing Page Optimization",
+        "Performance Creative",
+        "Audience Targeting",
+        "Campaign Optimization",
+        "Conversion Rate Optimization",
+        "Return On Ad Spend",
+        "Cost Per Lead",
+        "Cost Per Acquisition",
+        "Paid Media Analytics",
+      ],
+    },
+
+    /* =====================================================
+       WEBSITE
+    ===================================================== */
+
+    {
+      "@type": "WebSite",
+
+      "@id":
+        "https://www.sharprays.com/#website",
+
+      url:
+        "https://www.sharprays.com/",
+
+      name:
+        "Sharp Rays",
+
+      alternateName:
+        "Sharp Rays Digital Marketing Agency",
+
+      description:
+        "Sharp Rays provides SEO, social media marketing, performance marketing, website development, content management, AI video and AI automation services.",
+
+      publisher: {
+        "@id":
+          "https://www.sharprays.com/#organization",
+      },
+
+      inLanguage: "en-IN",
+    },
+
+    /* =====================================================
+       PERFORMANCE MARKETING WEBPAGE
+    ===================================================== */
+
+    {
+      "@type": "WebPage",
+
+      "@id":
+        "https://www.sharprays.com/services/performance-marketing#webpage",
+
+      url:
+        "https://www.sharprays.com/services/performance-marketing",
+
+      name:
+        "Performance Marketing Agency in India | Sharp Rays",
+
+      headline:
+        "Turn Reach Into Results.",
+
+      alternativeHeadline:
+        "Performance Marketing That Turns Paid Reach Into Measurable Business Action",
+
+      description:
+        "Sharp Rays provides performance marketing services covering paid media strategy, Google Ads, Meta Ads, retargeting, creative, landing-page optimization, conversion tracking and ongoing campaign optimization.",
+
+      isPartOf: {
+        "@id":
+          "https://www.sharprays.com/#website",
+      },
+
+      about: {
+        "@id":
+          "https://www.sharprays.com/services/performance-marketing#service",
+      },
+
+      mainEntity: {
+        "@id":
+          "https://www.sharprays.com/services/performance-marketing#service",
+      },
+
+      primaryImageOfPage: {
+        "@id":
+          "https://www.sharprays.com/services/performance-marketing#primaryimage",
+      },
+
+      publisher: {
+        "@id":
+          "https://www.sharprays.com/#organization",
+      },
+
+      breadcrumb: {
+        "@id":
+          "https://www.sharprays.com/services/performance-marketing#breadcrumb",
+      },
+
+      hasPart: [
+        {
+          "@id":
+            "https://www.sharprays.com/services/performance-marketing#faq",
+        },
+
+        {
+          "@id":
+            "https://www.sharprays.com/services/performance-marketing#plans",
+        },
+      ],
+
+      audience: {
+        "@type": "BusinessAudience",
+
+        name:
+          "Startups, D2C brands, local businesses and growing companies",
+
+        audienceType:
+          "Businesses seeking Google Ads, Meta Ads, paid media, lead generation, retargeting and conversion optimization",
+
+        description:
+          "Businesses that want paid advertising connected to measurable actions such as leads, enquiries, purchases, calls or revenue.",
+      },
+
+      mentions: [
+        {
+          "@type": "Thing",
+          name: "Google Ads",
+        },
+
+        {
+          "@type": "Thing",
+          name: "Meta Ads",
+        },
+
+        {
+          "@type": "Thing",
+          name: "Facebook Advertising",
+        },
+
+        {
+          "@type": "Thing",
+          name: "Instagram Advertising",
+        },
+
+        {
+          "@type": "Thing",
+          name: "LinkedIn Ads",
+        },
+
+        {
+          "@type": "Thing",
+          name: "YouTube Advertising",
+        },
+
+        {
+          "@type": "Thing",
+          name: "Retargeting",
+        },
+
+        {
+          "@type": "Thing",
+          name: "Conversion Tracking",
+        },
+
+        {
+          "@type": "Thing",
+          name: "Landing Page Optimization",
+        },
+
+        {
+          "@type": "Thing",
+          name: "Performance Creative",
+        },
+
+        {
+          "@type": "Thing",
+          name: "Return On Ad Spend",
+        },
+      ],
+
+      significantLink: [
+        "https://www.sharprays.com/services",
+        "https://www.sharprays.com/services/performance-marketing/google-ads-management",
+        "https://www.sharprays.com/services/performance-marketing/meta-ads",
+        "https://www.sharprays.com/services/performance-marketing/conversion-tracking",
+        "https://www.sharprays.com/services/website-development/landing-page-development",
+        "https://www.sharprays.com/free-audit",
+        "https://www.sharprays.com/contact",
+      ],
+
+      copyrightYear: 2026,
+
+      copyrightHolder: {
+        "@id":
+          "https://www.sharprays.com/#organization",
+      },
+
+      inLanguage: "en-IN",
+    },
+  ],
+};
+
+/* =========================================================
+   PERFORMANCE MARKETING SERVICE SCHEMA
+========================================================= */
+
+const performanceMarketingServiceSchema = {
+  "@context": "https://schema.org",
+
+  "@type": "Service",
+
+  "@id":
+    "https://www.sharprays.com/services/performance-marketing#service",
+
+  name:
+    "Performance Marketing",
+
+  alternateName:
+    "Paid Media and Performance Marketing Services",
+
+  url:
+    "https://www.sharprays.com/services/performance-marketing",
+
+  serviceType:
+    "Performance Marketing",
+
+  category:
+    "Digital Advertising and Paid Media",
+
+  description:
+    "Performance marketing services covering paid media strategy, Google Ads, Meta Ads, paid social, performance creative, landing-page optimization, conversion tracking, retargeting and campaign optimization.",
+
+  provider: {
+    "@id":
+      "https://www.sharprays.com/#organization",
+  },
+
+  areaServed: [
+    {
+      "@type": "City",
+      name: "Mumbai",
+    },
+
+    {
+      "@type": "Country",
+      name: "India",
+    },
+
+    {
+      "@type": "Place",
+      name: "Worldwide",
+    },
+  ],
+
+  audience: {
+    "@type": "BusinessAudience",
+
+    audienceType:
+      "Startups, D2C brands, local businesses and growing companies seeking measurable paid media growth",
+  },
+
+  serviceOutput: [
+    {
+      "@type": "CreativeWork",
+      name: "Paid Media Strategy",
+    },
+
+    {
+      "@type": "CreativeWork",
+      name: "Google Ads Campaign Management",
+    },
+
+    {
+      "@type": "CreativeWork",
+      name: "Meta Ads Campaign Management",
+    },
+
+    {
+      "@type": "CreativeWork",
+      name: "Performance Creative",
+    },
+
+    {
+      "@type": "CreativeWork",
+      name: "Landing Page Optimization Recommendations",
+    },
+
+    {
+      "@type": "CreativeWork",
+      name: "Conversion Tracking and Measurement",
+    },
+
+    {
+      "@type": "CreativeWork",
+      name: "Retargeting Campaigns",
+    },
+
+    {
+      "@type": "CreativeWork",
+      name: "Campaign Optimization",
+    },
+
+    {
+      "@type": "CreativeWork",
+      name: "Performance Reporting",
+    },
+  ],
+
+  hasOfferCatalog: {
+    "@id":
+      "https://www.sharprays.com/services/performance-marketing#plans",
+  },
+};
+
+/* =========================================================
+   PERFORMANCE MARKETING PLANS
+========================================================= */
+
+const performanceMarketingPlansSchema = {
+  "@context": "https://schema.org",
+
+  "@type": "OfferCatalog",
+
+  "@id":
+    "https://www.sharprays.com/services/performance-marketing#plans",
+
+  name:
+    "Sharp Rays Performance Marketing Plans",
+
+  url:
+    "https://www.sharprays.com/services/performance-marketing",
+
+  description:
+    "Performance marketing management plans for businesses running one or more paid advertising platforms.",
+
+  itemListOrder:
+    "https://schema.org/ItemListUnordered",
+
+  numberOfItems: 3,
+
+  itemListElement: [
+    /* =====================================================
+       STARTER
+    ===================================================== */
+
+    {
+      "@type": "Offer",
+
+      name:
+        "Starter Performance Marketing Plan",
+
+      url:
+        "https://www.sharprays.com/contact?service=performance-marketing",
+
+      seller: {
+        "@id":
+          "https://www.sharprays.com/#organization",
+      },
+
+      itemOffered: {
+        "@type": "Service",
+
+        name:
+          "Starter Performance Marketing",
+
+        serviceType:
+          "Performance Marketing",
+
+        description:
+          "A focused single-channel performance marketing plan for businesses that want to begin paid acquisition with one advertising platform and a clear performance objective.",
+
+        provider: {
+          "@id":
+            "https://www.sharprays.com/#organization",
+        },
+
+        additionalProperty: [
+          {
+            "@type": "PropertyValue",
+
+            name:
+              "Platform Scope",
+
+            value:
+              "1 Advertising Platform",
+          },
+        ],
+      },
+    },
+
+    /* =====================================================
+       GROWTH
+    ===================================================== */
+
+    {
+      "@type": "Offer",
+
+      name:
+        "Growth Performance Marketing Plan",
+
+      url:
+        "https://www.sharprays.com/contact?service=performance-marketing",
+
+      seller: {
+        "@id":
+          "https://www.sharprays.com/#organization",
+      },
+
+      itemOffered: {
+        "@type": "Service",
+
+        name:
+          "Growth Performance Marketing",
+
+        serviceType:
+          "Performance Marketing",
+
+        description:
+          "A connected performance marketing plan for growing businesses that want two paid channels working together with stronger tracking, testing and retargeting.",
+
+        provider: {
+          "@id":
+            "https://www.sharprays.com/#organization",
+        },
+
+        additionalProperty: [
+          {
+            "@type": "PropertyValue",
+
+            name:
+              "Platform Scope",
+
+            value:
+              "Up to 2 Advertising Platforms",
+          },
+
+          {
+            "@type": "PropertyValue",
+
+            name:
+              "Bundle Advantage",
+
+            value:
+              "Save ₹2,999 compared with two separate Starter plans",
+          },
+        ],
+      },
+    },
+
+    /* =====================================================
+       SCALE
+    ===================================================== */
+
+    {
+      "@type": "Offer",
+
+      name:
+        "Scale Performance Marketing Plan",
+
+      url:
+        "https://www.sharprays.com/contact?service=performance-marketing",
+
+      seller: {
+        "@id":
+          "https://www.sharprays.com/#organization",
+      },
+
+      itemOffered: {
+        "@type": "Service",
+
+        name:
+          "Scale Performance Marketing",
+
+        serviceType:
+          "Performance Marketing",
+
+        description:
+          "A broader paid growth system for businesses scaling acquisition across multiple channels, audiences and conversion journeys.",
+
+        provider: {
+          "@id":
+            "https://www.sharprays.com/#organization",
+        },
+
+        additionalProperty: [
+          {
+            "@type": "PropertyValue",
+
+            name:
+              "Platform Scope",
+
+            value:
+              "Up to 3 Advertising Platforms",
+          },
+
+          {
+            "@type": "PropertyValue",
+
+            name:
+              "Scale Advantage",
+
+            value:
+              "Save ₹5,998 compared with three separate Starter plans",
+          },
+        ],
+      },
+    },
+  ],
+};
+
+/* =========================================================
+   BREADCRUMB SCHEMA
+========================================================= */
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+
+  "@type": "BreadcrumbList",
+
+  "@id":
+    "https://www.sharprays.com/services/performance-marketing#breadcrumb",
+
+  itemListElement: [
+    {
+      "@type": "ListItem",
+
+      position: 1,
+
+      name:
+        "Home",
+
+      item:
+        "https://www.sharprays.com/",
+    },
+
+    {
+      "@type": "ListItem",
+
+      position: 2,
+
+      name:
+        "Services",
+
+      item:
+        "https://www.sharprays.com/services",
+    },
+
+    {
+      "@type": "ListItem",
+
+      position: 3,
+
+      name:
+        "Performance Marketing",
+
+      item:
+        "https://www.sharprays.com/services/performance-marketing",
+    },
+  ],
+};
+
+/* =========================================================
+   FAQ PAGE SCHEMA
+========================================================= */
+
+const faqSchema = {
+  "@context": "https://schema.org",
+
+  "@type": "FAQPage",
+
+  "@id":
+    "https://www.sharprays.com/services/performance-marketing#faq",
+
+  url:
+    "https://www.sharprays.com/services/performance-marketing#performance-marketing-faqs",
+
+  name:
+    "Performance Marketing FAQs",
+
+  description:
+    "Answers to common questions about performance marketing, paid media, Google Ads, Meta Ads, advertising budgets, conversions, conversion tracking and cost per lead.",
+
+  isPartOf: {
+    "@id":
+      "https://www.sharprays.com/services/performance-marketing#webpage",
+  },
+
+  about: {
+    "@id":
+      "https://www.sharprays.com/services/performance-marketing#service",
+  },
+
+  publisher: {
+    "@id":
+      "https://www.sharprays.com/#organization",
+  },
+
+  inLanguage:
+    "en-IN",
+
+  mainEntity: [
+    /* =====================================================
+       FAQ 01
+    ===================================================== */
+
+    {
       "@type": "Question",
-      name: faq.question,
+
+      name:
+        "What is performance marketing?",
+
       acceptedAnswer: {
         "@type": "Answer",
-        text: faq.answer.replace(/\n\n/g, " "),
-      },
-    })),
-  };
 
+        text:
+          "Performance marketing is a results-focused approach to digital advertising where campaigns are measured and optimized around defined outcomes such as leads, sales, enquiries, calls or other valuable actions.",
+      },
+    },
+
+    /* =====================================================
+       FAQ 02
+    ===================================================== */
+
+    {
+      "@type": "Question",
+
+      name:
+        "What does a performance marketing agency do?",
+
+      acceptedAnswer: {
+        "@type": "Answer",
+
+        text:
+          "A performance marketing agency can manage campaign strategy, paid search, paid social, audience targeting, advertising creative, conversion tracking, optimization and performance reporting. The exact scope depends on the business, platforms and objectives.",
+      },
+    },
+
+    /* =====================================================
+       FAQ 03
+    ===================================================== */
+
+    {
+      "@type": "Question",
+
+      name:
+        "What is the difference between performance marketing and digital marketing?",
+
+      acceptedAnswer: {
+        "@type": "Answer",
+
+        text:
+          "Digital marketing is a broad category covering channels such as SEO, social media, content, email and paid advertising. Performance marketing focuses specifically on measurable campaign activity and optimizing spend around defined outcomes.",
+      },
+    },
+
+    /* =====================================================
+       FAQ 04
+    ===================================================== */
+
+    {
+      "@type": "Question",
+
+      name:
+        "Which platforms do you manage?",
+
+      acceptedAnswer: {
+        "@type": "Answer",
+
+        text:
+          "Depending on the strategy and agreed scope, campaigns may include Google Ads, Meta Ads and other relevant paid media platforms. We recommend platforms based on the audience, objective and available opportunity rather than trying to advertise everywhere.",
+      },
+    },
+
+    /* =====================================================
+       FAQ 05
+    ===================================================== */
+
+    {
+      "@type": "Question",
+
+      name:
+        "Do you manage Google Ads?",
+
+      acceptedAnswer: {
+        "@type": "Answer",
+
+        text:
+          "Yes. Google Ads management can be included within a Sharp Rays performance marketing plan, including relevant Search, Performance Max, YouTube, Display or other suitable campaign types.",
+      },
+    },
+
+    /* =====================================================
+       FAQ 06
+    ===================================================== */
+
+    {
+      "@type": "Question",
+
+      name:
+        "Do you manage Meta Ads?",
+
+      acceptedAnswer: {
+        "@type": "Answer",
+
+        text:
+          "Yes. Facebook and Instagram advertising can be included depending on your audience, campaign objective, creative requirements and agreed scope.",
+      },
+    },
+
+    /* =====================================================
+       FAQ 07
+    ===================================================== */
+
+    {
+      "@type": "Question",
+
+      name:
+        "How much should I spend on paid advertising?",
+
+      acceptedAnswer: {
+        "@type": "Answer",
+
+        text:
+          "There is no universal advertising budget. The appropriate level depends on your market, audience size, customer value, competition, conversion rate, campaign objective and available growth opportunity. Media spend is discussed separately from management fees.",
+      },
+    },
+
+    /* =====================================================
+       FAQ 08
+    ===================================================== */
+
+    {
+      "@type": "Question",
+
+      name:
+        "What is a conversion?",
+
+      acceptedAnswer: {
+        "@type": "Answer",
+
+        text:
+          "A conversion is a valuable action completed after someone interacts with your marketing. Depending on your business, this could be a purchase, lead form, phone call, booking, signup or another meaningful action.",
+      },
+    },
+
+    /* =====================================================
+       FAQ 09
+    ===================================================== */
+
+    {
+      "@type": "Question",
+
+      name:
+        "What is conversion tracking?",
+
+      acceptedAnswer: {
+        "@type": "Answer",
+
+        text:
+          "Conversion tracking measures the valuable actions generated after people interact with advertising. It helps connect campaign activity with outcomes such as leads or purchases and provides better information for optimization.",
+      },
+    },
+
+    /* =====================================================
+       FAQ 10
+    ===================================================== */
+
+    {
+      "@type": "Question",
+
+      name:
+        "What is cost per lead?",
+
+      acceptedAnswer: {
+        "@type": "Answer",
+
+        text:
+          "Cost per lead, or CPL, is the amount of advertising spend required on average to generate a recorded lead. Lead quality should be evaluated alongside CPL rather than judging campaign performance on cost alone.",
+      },
+    },
+  ],
+};
+
+/* =========================================================
+   PERFORMANCE MARKETING PAGE
+========================================================= */
+
+export default function PerformanceMarketing() {
   return (
-    <section
-      id="performance-marketing-faqs"
-      aria-labelledby="performance-faq-heading"
-      className="
-        relative
-        isolate
-        overflow-hidden
-        bg-white
-        py-24
-        sm:py-28
-        lg:py-32
-        xl:py-36
-      "
-    >
+    <>
       {/* =====================================================
-          SEO / AEO FAQ SCHEMA
+          CORE STRUCTURED DATA
       ===================================================== */}
 
       <script
+        id="performance-marketing-core-structured-data"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
+          __html: JSON.stringify(
+            performanceMarketingCoreSchema,
+          ).replace(
+            /</g,
+            "\\u003c",
+          ),
         }}
       />
 
       {/* =====================================================
-          BACKGROUND
+          SERVICE STRUCTURED DATA
       ===================================================== */}
 
-      <div className="pointer-events-none absolute inset-0 -z-20">
-        <div
-          className="
-            absolute
-            -left-52
-            top-[7%]
-            h-[500px]
-            w-[500px]
-            rounded-full
-            bg-[#E5F1FA]/65
-            blur-[140px]
-          "
-        />
+      <script
+        id="performance-marketing-service-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            performanceMarketingServiceSchema,
+          ).replace(
+            /</g,
+            "\\u003c",
+          ),
+        }}
+      />
 
-        <div
-          className="
-            absolute
-            -right-48
-            top-[34%]
-            h-[450px]
-            w-[450px]
-            rounded-full
-            bg-[#F1E4D7]/45
-            blur-[130px]
-          "
-        />
+      {/* =====================================================
+          PRICING / PLANS STRUCTURED DATA
+      ===================================================== */}
 
-        <div
-          className="
-            absolute
-            bottom-[-200px]
-            left-[28%]
-            h-[560px]
-            w-[720px]
-            rounded-full
-            bg-[#E6F0F9]/50
-            blur-[150px]
-          "
-        />
+      <script
+        id="performance-marketing-plans-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            performanceMarketingPlansSchema,
+          ).replace(
+            /</g,
+            "\\u003c",
+          ),
+        }}
+      />
 
-        <div
-          className="
-            absolute
-            inset-0
-            opacity-[0.18]
-            [background-image:linear-gradient(to_right,#0B2A5208_1px,transparent_1px),linear-gradient(to_bottom,#0B2A5208_1px,transparent_1px)]
-            [background-size:92px_92px]
-          "
-        />
+      {/* =====================================================
+          BREADCRUMB STRUCTURED DATA
+      ===================================================== */}
 
-        <div
-          className="
-            absolute
-            inset-x-0
-            top-0
-            h-px
-            bg-gradient-to-r
-            from-transparent
-            via-[#0B2A52]/10
-            to-transparent
-          "
-        />
+      <script
+        id="performance-marketing-breadcrumb-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema,
+          ).replace(
+            /</g,
+            "\\u003c",
+          ),
+        }}
+      />
 
-        {/* decorative circles */}
-        <div
-          className="
-            absolute
-            -right-[230px]
-            top-[130px]
-            h-[470px]
-            w-[470px]
-            rounded-full
-            border
-            border-[#8EB7D4]/20
-          "
-        />
+      {/* =====================================================
+          FAQ STRUCTURED DATA
+      ===================================================== */}
 
-        <div
-          className="
-            absolute
-            -right-[165px]
-            top-[195px]
-            h-[340px]
-            w-[340px]
-            rounded-full
-            border
-            border-[#B88B59]/18
-          "
-        />
-      </div>
+      <script
+        id="performance-marketing-faq-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            faqSchema,
+          ).replace(
+            /</g,
+            "\\u003c",
+          ),
+        }}
+      />
 
-      <div
-        className="
-          mx-auto
-          w-full
-          max-w-[1380px]
-          px-5
-          sm:px-8
-          lg:px-10
-          xl:px-14
-        "
-      >
-        {/* =====================================================
-            HEADER
-        ===================================================== */}
+      {/* =====================================================
+          PAGE
+      ===================================================== */}
 
-        <div
-          className="
-            grid
-            gap-9
-            lg:grid-cols-[1fr_0.65fr]
-            lg:items-end
-            lg:gap-16
-          "
-        >
-          {/* LEFT */}
-          <div>
-            <motion.div
-              initial={
-                reduceMotion
-                  ? false
-                  : {
-                      opacity: 0,
-                      x: -24,
-                    }
-              }
-              whileInView={{
-                opacity: 1,
-                x: 0,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.7,
-              }}
-              transition={{
-                duration: reduceMotion ? 0 : 0.65,
-                ease,
-              }}
-              className="
-                mb-6
-                flex
-                items-center
-                gap-4
-              "
-            >
-           <span
-            className="
-              h-px
-              w-10
+      <main className="min-h-screen">
+        <Navbar />
 
-              bg-gradient-to-r
-              from-transparent
-              to-[#B79A72]
-            "
-          />
+        <PerformanceMarketingHero />
 
-              <span
-                className="
-                  text-[0.66rem]
-               
-                  uppercase
-                  tracking-[0.28em]
-                  text-[#B79A72]
-                  sm:text-[0.7rem]
-                "
-              >
-                Performance Marketing FAQs
-              </span>
-              <span
-            className="
-              h-px
-              w-10
+        <PerformanceMarketingExplained />
 
-              bg-gradient-to-l
-              from-transparent
-              to-[#B79A72]
-            "
-          />
-            </motion.div>
+        <PerformanceMarketingProblem />
 
-            <motion.h2
-              id="performance-faq-heading"
-              initial={
-                reduceMotion
-                  ? false
-                  : {
-                      opacity: 0,
-                      y: 30,
-                    }
-              }
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.55,
-              }}
-              transition={{
-                duration: reduceMotion ? 0 : 0.85,
-                delay: reduceMotion ? 0 : 0.05,
-                ease,
-              }}
-              className="
-                max-w-[760px]
-                text-[2.3rem]
-                font-medium
-                leading-[1.05]
-                tracking-[-0.045em]
-                text-[#0B2A52]
-                sm:text-[2.6rem]
-                md:text-[2.95rem]
-                lg:text-[3.1rem]
-                xl:text-[3.35rem]
-              "
-            >
-              Questions About{" "}
-              <span
-                className="
-                  font-serif
-                  font-normal
-                  italic
-                  tracking-[-0.02em]
-                  text-[#B79A72]
-                "
-              >
-                Paid Growth?
-              </span>
-            </motion.h2>
-          </div>
+        <PerformancePointOfView />
 
-                  </div>
+        <PerformanceMarketingServices />
 
-        {/* =====================================================
-            DESKTOP INTERACTIVE FAQ
-        ===================================================== */}
+        <PerformanceMetricsSection />
 
-        <div
-          className="
-            mt-14
-            hidden
-            gap-6
-            lg:grid
-            lg:grid-cols-[1.08fr_0.92fr]
-            lg:items-start
-          "
-        >
-          {/* =================================================
-              QUESTIONS
-          ================================================= */}
+        <ChannelStrategySection />
 
-          <div
-            className="
-              overflow-hidden
-              rounded-[28px]
-              border
-              border-[#C7D9E6]
-              bg-white
-              shadow-[0_18px_60px_rgba(11,42,82,0.05)]
-            "
-          >
-            
+        <PerformanceMarketingProcess />
 
-            {faqs.map((faq, index) => {
-              const active = activeIndex === index;
+        <PerformanceMarketingPricing />
 
-              return (
-                <motion.button
-                  key={faq.question}
-                  type="button"
-                  initial={
-                    reduceMotion
-                      ? false
-                      : {
-                          opacity: 0,
-                          x: -18,
-                        }
-                  }
-                  whileInView={{
-                    opacity: 1,
-                    x: 0,
-                  }}
-                  viewport={{
-                    once: true,
-                    amount: 0.45,
-                  }}
-                  transition={{
-                    duration: reduceMotion ? 0 : 0.5,
-                    delay: reduceMotion
-                      ? 0
-                      : Math.min((index % 5) * 0.04, 0.16),
-                  }}
-                  onMouseEnter={() => setActiveIndex(index)}
-                  onFocus={() => setActiveIndex(index)}
-                  onClick={() => setActiveIndex(index)}
-                  aria-pressed={active}
-                  className={`
-                    group
-                    relative
-                    flex
-                    w-full
-                    items-center
-                    gap-5
-                    border-b
-                    border-[#E5EBF0]
-                    px-6
-                    py-5
-                    text-left
-                    transition-all
-                    duration-300
-                    last:border-b-0
-                    sm:px-7
+        <PerformanceMarketingFAQs />
 
-                    ${
-                      active
-                        ? "bg-[#F3F9FD]"
-                        : "bg-white hover:bg-[#FAFCFD]"
-                    }
-                  `}
-                >
-                  {/* ACTIVE LINE */}
-                  <motion.span
-                    animate={{
-                      scaleY: active ? 1 : 0,
-                    }}
-                    transition={{
-                      duration: reduceMotion ? 0 : 0.3,
-                    }}
-                    className="
-                      absolute
-                      left-0
-                      top-0
-                      h-full
-                      w-[3px]
-                      origin-top
-                      bg-gradient-to-b
-                      from-[#0D5A93]
-                      to-[#B67D49]
-                    "
-                  />
+        <PerformanceMarketingFinalSections />
 
-              
-
-                  {/* QUESTION */}
-                  <span
-                    className={`
-                      flex-1
-                      text-[0.93rem]
-                      font-semibold
-                      leading-[1.45]
-                      tracking-[-0.015em]
-                      transition-all
-                      duration-300
-
-                      ${
-                        active
-                          ? "translate-x-1 text-[#0B2A52]"
-                          : "text-[#456079]"
-                      }
-                    `}
-                  >
-                    {faq.question}
-                  </span>
-
-                  {/* ARROW */}
-                  <span
-                    className={`
-                      grid
-                      h-9
-                      w-9
-                      shrink-0
-                      place-items-center
-                      rounded-full
-                      border
-                      transition-all
-                      duration-300
-
-                      ${
-                        active
-                          ? `
-                            border-[#0D5A93]
-                            bg-[#0D5A93]
-                            text-white
-                          `
-                          : `
-                            border-[#D7E2EA]
-                            bg-white
-                            text-[#7890A5]
-                            group-hover:border-[#B5CAD9]
-                          `
-                      }
-                    `}
-                  >
-                    <ArrowUpRight
-                      size={14}
-                      strokeWidth={1.7}
-                      className={`
-                        transition-transform
-                        duration-300
-                        ${active ? "translate-x-[1px] -translate-y-[1px]" : ""}
-                      `}
-                    />
-                  </span>
-                </motion.button>
-              );
-            })}
-          </div>
-
-          {/* =================================================
-              STICKY ANSWER PANEL
-          ================================================= */}
-
-          <div
-            className="
-              sticky
-              top-28
-              overflow-hidden
-              rounded-[30px]
-              border
-              border-[#B9D0E0]
-              bg-gradient-to-br
-              from-[#F2F9FD]
-              via-white
-              to-[#FCF7F2]
-              shadow-[0_26px_80px_rgba(11,42,82,0.08)]
-            "
-          >
-            {/* atmospheric glows */}
-            <div
-              className="
-                pointer-events-none
-                absolute
-                -right-24
-                -top-24
-                h-[300px]
-                w-[300px]
-                rounded-full
-                bg-[#CDE6F5]/70
-                blur-[80px]
-              "
-            />
-
-            <div
-              className="
-                pointer-events-none
-                -bottom-28
-                -left-20
-                absolute
-                h-[280px]
-                w-[280px]
-                rounded-full
-                bg-[#EFDBC6]/55
-                blur-[90px]
-              "
-            />
-
-            {/* decorative ? */}
-            <span
-              className="
-                pointer-events-none
-                absolute
-                -right-2
-                -top-9
-                font-serif
-                text-[180px]
-                font-medium
-                leading-none
-                text-[#0B2A52]/[0.035]
-              "
-            >
-              ?
-            </span>
-
-            <div
-              className="
-                relative
-                flex
-                min-h-[610px]
-                flex-col
-                p-9
-                xl:p-11
-              "
-            >
-              {/* TOP META */}
-              <div
-                className="
-                  flex
-                  items-center
-                  justify-between
-                  gap-5
-                "
-              >
-                <div className="flex items-center gap-3">
-                  <span
-                    className="
-                      grid
-                      h-10
-                      w-10
-                      place-items-center
-                      rounded-[14px]
-                      bg-gradient-to-br
-                      from-[#0B3E70]
-                      to-[#176CA8]
-                      text-white
-                      shadow-[0_9px_25px_rgba(11,62,112,0.18)]
-                    "
-                  >
-                    <Sparkles size={16} strokeWidth={1.7} />
-                  </span>
-
-                  <div>
-                    <p
-                      className="
-                        text-[0.5rem]
-                        font-semibold
-                        uppercase
-                        tracking-[0.2em]
-                        text-[#A46F41]
-                      "
-                    >
-                      Straight Answer
-                    </p>
-
-                    <p
-                      className="
-                        mt-0.5
-                        text-[0.7rem]
-                        text-[#7890A4]
-                      "
-                    >
-                      Performance Marketing FAQ
-                    </p>
-                  </div>
-                </div>
-
-                
-              </div>
-
-              {/* ANSWER */}
-              <div
-                className="
-                  flex
-                  flex-1
-                  items-center
-                  py-10
-                "
-              >
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeIndex}
-                    initial={
-                      reduceMotion
-                        ? false
-                        : {
-                            opacity: 0,
-                            y: 18,
-                          }
-                    }
-                    animate={{
-                      opacity: 1,
-                      y: 0,
-                    }}
-                    exit={
-                      reduceMotion
-                        ? undefined
-                        : {
-                            opacity: 0,
-                            y: -10,
-                          }
-                    }
-                    transition={{
-                      duration: reduceMotion ? 0 : 0.38,
-                      ease,
-                    }}
-                  >
-                    
-
-                    <h3
-                      className="
-                        mt-4
-                        max-w-[500px]
-                        font-serif
-                        text-[1.85rem]
-                        font-semibold
-                        leading-[1.18]
-                        tracking-[-0.03em]
-                        text-[#0B2A52]
-                        xl:text-[2.1rem]
-                      "
-                    >
-                      {faqs[activeIndex].question}
-                    </h3>
-
-                    <div
-                      className="
-                        mt-7
-                        h-px
-                        w-12
-                        bg-[#B67D49]
-                      "
-                    />
-
-                    <div
-                      className="
-                        mt-7
-                        max-w-[520px]
-                        whitespace-pre-line
-                        text-[0.92rem]
-                        leading-[1.8]
-                        text-[#556E85]
-                      "
-                    >
-                      {faqs[activeIndex].answer}
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-
-              {/* BOTTOM */}
-              <div
-                className="
-                  flex
-                  items-end
-                  justify-between
-                  gap-6
-                  border-t
-                  border-[#DDE7EE]
-                  pt-6
-                "
-              >
-                <div className="flex items-center gap-3">
-                  <span
-                    className="
-                      grid
-                      h-8
-                      w-8
-                      place-items-center
-                      rounded-full
-                      border
-                      border-[#CBDEE9]
-                      bg-white
-                      text-[#0D5A93]
-                    "
-                  >
-                    <BarChart3 size={13} strokeWidth={1.7} />
-                  </span>
-
-                  <div>
-                    <p
-                      className="
-                        text-[0.48rem]
-                        font-semibold
-                        uppercase
-                        tracking-[0.16em]
-                        text-[#899BAB]
-                      "
-                    >
-                      Clear Information
-                    </p>
-
-                    <p
-                      className="
-                        mt-0.5
-                        text-[0.7rem]
-                        font-medium
-                        text-[#45647D]
-                      "
-                    >
-                      Better decisions start with better questions.
-                    </p>
-                  </div>
-                </div>
-
-              
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* =====================================================
-            MOBILE / TABLET ACCORDION
-        ===================================================== */}
-
-        <div
-          className="
-            mt-12
-            overflow-hidden
-            rounded-[26px]
-            border
-            border-[#C7D9E6]
-            bg-white
-            shadow-[0_18px_55px_rgba(11,42,82,0.05)]
-            lg:hidden
-          "
-        >
-          {faqs.map((faq, index) => {
-            const open = mobileOpenIndex === index;
-
-            return (
-              <motion.div
-                key={faq.question}
-                initial={
-                  reduceMotion
-                    ? false
-                    : {
-                        opacity: 0,
-                        y: 15,
-                      }
-                }
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                viewport={{
-                  once: true,
-                  amount: 0.25,
-                }}
-                transition={{
-                  duration: reduceMotion ? 0 : 0.5,
-                }}
-                className="
-                  border-b
-                  border-[#E3EAF0]
-                  last:border-b-0
-                "
-              >
-                <button
-                  type="button"
-                  onClick={() =>
-                    setMobileOpenIndex(open ? null : index)
-                  }
-                  aria-expanded={open}
-                  className={`
-                    relative
-                    flex
-                    w-full
-                    items-center
-                    gap-4
-                    px-5
-                    py-5
-                    text-left
-                    transition-colors
-                    duration-300
-                    sm:px-6
-
-                    ${
-                      open
-                        ? "bg-[#F3F9FD]"
-                        : "bg-white"
-                    }
-                  `}
-                >
-                  {open && (
-                    <span
-                      className="
-                        absolute
-                        left-0
-                        top-0
-                        h-full
-                        w-[3px]
-                        bg-gradient-to-b
-                        from-[#0D5A93]
-                        to-[#B67D49]
-                      "
-                    />
-                  )}
-
-                  <span
-                    className={`
-                      w-7
-                      shrink-0
-                      font-serif
-                      text-[0.72rem]
-
-                      ${
-                        open
-                          ? "text-[#B67D49]"
-                          : "text-[#9BA9B6]"
-                      }
-                    `}
-                  >
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-
-                  <span
-                    className={`
-                      flex-1
-                      text-[0.9rem]
-                      font-semibold
-                      leading-[1.45]
-
-                      ${
-                        open
-                          ? "text-[#0B2A52]"
-                          : "text-[#455F77]"
-                      }
-                    `}
-                  >
-                    {faq.question}
-                  </span>
-
-                  <span
-                    className={`
-                      grid
-                      h-8
-                      w-8
-                      shrink-0
-                      place-items-center
-                      rounded-full
-                      border
-                      transition-all
-                      duration-300
-
-                      ${
-                        open
-                          ? `
-                            border-[#0D5A93]
-                            bg-[#0D5A93]
-                            text-white
-                          `
-                          : `
-                            border-[#D5E1E9]
-                            bg-white
-                            text-[#7790A5]
-                          `
-                      }
-                    `}
-                  >
-                    {open ? (
-                      <Minus size={13} strokeWidth={1.8} />
-                    ) : (
-                      <Plus size={13} strokeWidth={1.8} />
-                    )}
-                  </span>
-                </button>
-
-                <AnimatePresence initial={false}>
-                  {open && (
-                    <motion.div
-                      initial={
-                        reduceMotion
-                          ? false
-                          : {
-                              height: 0,
-                              opacity: 0,
-                            }
-                      }
-                      animate={{
-                        height: "auto",
-                        opacity: 1,
-                      }}
-                      exit={
-                        reduceMotion
-                          ? undefined
-                          : {
-                              height: 0,
-                              opacity: 0,
-                            }
-                      }
-                      transition={{
-                        duration: reduceMotion ? 0 : 0.35,
-                        ease,
-                      }}
-                      className="overflow-hidden"
-                    >
-                      <div
-                        className="
-                          bg-gradient-to-br
-                          from-[#F8FBFD]
-                          to-[#FCF8F4]
-                          px-5
-                          pb-6
-                          pt-2
-                          sm:px-6
-                        "
-                      >
-                        <div
-                          className="
-                            ml-11
-                            h-px
-                            w-9
-                            bg-[#B67D49]
-                          "
-                        />
-
-                        <p
-                          className="
-                            ml-11
-                            mt-4
-                            whitespace-pre-line
-                            text-[0.84rem]
-                            leading-[1.75]
-                            text-[#586F84]
-                          "
-                        >
-                          {faq.answer}
-                        </p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            );
-          })}
-        </div>
-
-       
-             
-
-            <div className="flex-1">
-             
-            </div>
-
-              </div>
-       
-    
-    </section>
+        <Footer />
+      </main>
+    </>
   );
 }
