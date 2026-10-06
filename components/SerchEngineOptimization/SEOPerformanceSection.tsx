@@ -351,9 +351,11 @@ export default function SEOPerformanceSection() {
               lg:ml-auto
             "
           >
-            <Image
-              src="/services/seo/seo-performance-hero.png"
-              alt="SEO performance growth shown on a laptop"
+         <Image
+  src="/services/seo/seo-performance-hero.webp"
+  alt="SEO performance dashboard on a laptop showing organic search growth and visibility"
+  title="SEO Performance and Organic Growth"
+
               width={1080}
               height={870}
               priority={false}
@@ -528,9 +530,11 @@ export default function SEOPerformanceSection() {
                 sm:w-[290px]
               "
             >
-              <Image
-                src="/services/seo/seo-performance-book.png"
-                alt="Better rankings, brighter opportunities"
+            <Image
+  src="/services/seo/seo-performance-book.webp"
+  alt="SEO growth visual representing better rankings, visibility and new search opportunities"
+  title="Better Rankings and Search Opportunities"
+
                 fill
                 sizes="290px"
                 className="object-cover"

@@ -533,17 +533,12 @@ export default function AiAutomationHero() {
               "
             >
               <Image
-                src="/aihero.webp"
-                alt="AI automation connecting business systems, customer support, leads, scheduling and reporting"
-                width={1536}
-                height={1024}
-                priority
-                sizes="
-                  (max-width: 639px) 92vw,
-                  (max-width: 1279px) 680px,
-                  (max-width: 1535px) 560px,
-                  680px
-                "
+             
+  src="/aihero.webp"
+  alt="AI automation connecting business systems, customer support, leads, scheduling and reporting"
+  width={1536}
+  height={1536}
+sizes="(max-width: 639px) 92vw, (max-width: 767px) 88vw, (max-width: 1023px) 80vw, 55vw"
                 className="
                   h-auto
                   w-full

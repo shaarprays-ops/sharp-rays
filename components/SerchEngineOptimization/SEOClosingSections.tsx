@@ -919,6 +919,7 @@ export function SEOFinalCTASection() {
           >
             <Link
               href="/contact?service=seo#contact-form"
+              title="Contact Sharp Rays for Search Engine Optimization Services"
               style={newYorkFont}
               className="
                 group

@@ -510,9 +510,11 @@ export default function SEOProblemSection() {
                 lg:max-w-[560px]
               "
             >
-              <Image
-                src="/services/seo/seo-problem-visual.png"
-                alt="Website search visibility and SEO discoverability illustration"
+            <Image
+  src="/services/seo/seo-problem-visual.webp"
+  alt="SEO illustration showing website visibility challenges and search discoverability gaps"
+  title="SEO Visibility and Discoverability Challenges"
+
                 width={800}
                 height={700}
                 sizes="

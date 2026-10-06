@@ -52,6 +52,7 @@ const plans = [
     cta: "Start With Foundation",
 
     href: "/contact?service=seo&plan=foundation#contact-form",
+    
   },
 
   {
@@ -881,100 +882,78 @@ export default function SEOPricingSection() {
                       pt-6
                     "
                   >
-                    <Link
-                      href={plan.href}
-                      className={`
-                        group/button
+                   <Link
+  href={plan.href}
+  title={`${plan.cta} — ${plan.name} SEO Plan`}
+  className={`
+    group/button
+    flex
+    min-h-[48px]
+    w-full
+    items-center
+    justify-center
+    gap-2
+    rounded-[13px]
+    border
+    px-4
+    py-3
+    text-[11.5px]
+    font-medium
+    transition-all
+    duration-300
 
-                        flex
-                        min-h-[48px]
-                        w-full
-                        items-center
-                        justify-center
-                        gap-2
+    ${
+      plan.name === "Growth"
+        ? `
+            border-[#0B2A52]
+            bg-[#0B2A52]
+            !text-white
+            shadow-[0_10px_26px_rgba(11,42,82,0.12)]
+            hover:-translate-y-0.5
+            hover:bg-[#123B6A]
+            hover:!text-white
+            hover:shadow-[0_14px_30px_rgba(11,42,82,0.18)]
+          `
+        : plan.name === "Scale"
+        ? `
+            border-[#C6A77A]/55
+            bg-[#FFF8EE]
+            text-[#0B2A52]
+            hover:-translate-y-0.5
+            hover:border-[#B58D61]
+            hover:bg-[#FCF2E4]
+            hover:text-[#9A7043]
+            hover:shadow-[0_10px_26px_rgba(181,141,97,0.12)]
+          `
+        : `
+            border-[#8FB2D3]/55
+            bg-[#F2F7FB]
+            text-[#0B2A52]
+            hover:-translate-y-0.5
+            hover:border-[#6E9CC6]
+            hover:bg-[#EAF3FA]
+            hover:text-[#245C91]
+            hover:shadow-[0_10px_26px_rgba(78,126,171,0.10)]
+          `
+    }
+  `}
+>
+  <span className={plan.name === "Growth" ? "!text-white" : ""}>
+    {plan.cta}
+  </span>
 
-                        rounded-[13px]
-                        border
-
-                        px-4
-                        py-3
-
-                        text-[11.5px]
-                        font-medium
-
-                        transition-all
-                        duration-300
-
-                        ${
-                          plan.name === "Growth"
-                            ? `
-                                border-[#0B2A52]
-                                bg-[#0B2A52]
-                                !text-white
-
-                                shadow-[0_10px_26px_rgba(11,42,82,0.12)]
-
-                                hover:-translate-y-0.5
-                                hover:bg-[#123B6A]
-                                hover:!text-white
-                                hover:shadow-[0_14px_30px_rgba(11,42,82,0.18)]
-                              `
-                            : plan.name === "Scale"
-                              ? `
-                                  border-[#C6A77A]/55
-                                  bg-[#FFF8EE]
-                                  text-[#0B2A52]
-
-                                  hover:-translate-y-0.5
-                                  hover:border-[#B58D61]
-                                  hover:bg-[#FCF2E4]
-                                  hover:text-[#9A7043]
-
-                                  hover:shadow-[0_10px_26px_rgba(181,141,97,0.12)]
-                                `
-                              : `
-                                  border-[#8FB2D3]/55
-                                  bg-[#F2F7FB]
-                                  text-[#0B2A52]
-
-                                  hover:-translate-y-0.5
-                                  hover:border-[#6E9CC6]
-                                  hover:bg-[#EAF3FA]
-                                  hover:text-[#245C91]
-
-                                  hover:shadow-[0_10px_26px_rgba(78,126,171,0.10)]
-                                `
-                        }
-                      `}
-                    >
-                      <span
-                        className={
-                          plan.name === "Growth"
-                            ? "!text-white"
-                            : ""
-                        }
-                      >
-                        {plan.cta}
-                      </span>
-
-                      <ArrowUpRight
-                        size={13}
-                        strokeWidth={1.5}
-                        className={`
-                          transition-transform
-                          duration-300
-
-                          group-hover/button:translate-x-0.5
-                          group-hover/button:-translate-y-0.5
-
-                          ${
-                            plan.name === "Growth"
-                              ? "text-white"
-                              : ""
-                          }
-                        `}
-                      />
-                    </Link>
+  <ArrowUpRight
+    size={13}
+    strokeWidth={1.5}
+    className={`
+      transition-transform
+      duration-300
+      group-hover/button:translate-x-0.5
+      group-hover/button:-translate-y-0.5
+      ${plan.name === "Growth" ? "text-white" : ""}
+    `}
+  />
+</Link>
                   </div>
                 </div>
               </motion.article>
@@ -1081,6 +1060,7 @@ export default function SEOPricingSection() {
 
           <Link
             href="/contact?service=seo&need=seo-opportunity-review#contact-form"
+            title="Request a Free SEO Opportunity Review from Sharp Rays"
             className="
               group
 
