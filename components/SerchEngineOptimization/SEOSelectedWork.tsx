@@ -20,7 +20,7 @@ const projects = [
     name: "Double Trouble Studio",
     domain: "dtsworld.in",
     url: "https://www.dtsworld.in",
-    image: "/services/seo/dts.webp",
+    image: "/services/seo/dts_seo.webp",
     imageAlt:
       "Double Trouble Studio SEO performance dashboard showing organic search visibility and optimization data",
     imageTitle: "Double Trouble Studio SEO Performance",
@@ -36,7 +36,7 @@ const projects = [
     name: "RNK Rentals",
     domain: "rnk.com",
     url: "https://www.rnk.com",
-    image: "/services/seo/rnk.webp",
+    image: "/services/seo/rnk_seo.webp",
     imageAlt:
       "RNK Rentals SEO performance dashboard showing organic visibility and local search performance",
     imageTitle: "RNK Rentals SEO Performance",
