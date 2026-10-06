@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 
 const newYorkFont = {
-  fontFamily: '"New York", "Bodoni Moda", Georgia, serif',
+  fontFamily: '"New York",  Georgia, serif',
 };
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -329,6 +329,7 @@ export default function AiAutomationHero() {
 
               <a
                 href="/contact?service=ai-automation#contact-form"
+                title="Automate My Workflow"
                 style={newYorkFont}
                 className="
                   group
@@ -534,8 +535,9 @@ export default function AiAutomationHero() {
             >
               <Image
              
-  src="/aihero.webp"
+  src="/services/ai/aihero.webp"
   alt="AI automation connecting business systems, customer support, leads, scheduling and reporting"
+  title="AI automation connecting business systems, customer support, leads, scheduling and reporting"
   width={1536}
   height={1536}
 sizes="(max-width: 639px) 92vw, (max-width: 767px) 88vw, (max-width: 1023px) 80vw, 55vw"

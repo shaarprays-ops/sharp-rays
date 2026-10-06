@@ -598,6 +598,7 @@ export default function ContentPerformanceSection() {
               <Image
                 src="/content/content-performance-person.png"
                 alt="Content marketing performance and measurement"
+                title="Content marketing performance and measurement"
                 fill
                 className="
                   object-contain
@@ -1137,8 +1138,9 @@ export default function ContentPerformanceSection() {
               "
             >
               <Image
-                src="/content/content-performance-person.png"
+                src="/content/content-performance-person.webp"
                 alt="Content marketing performance and measurement"
+                title="Content marketing performance and measurement"
                 fill
                 className="
                   object-contain

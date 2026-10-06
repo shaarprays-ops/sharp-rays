@@ -19,7 +19,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
    ADD YOUR IMAGE HERE
 ========================================================= */
 
-const progressBgImage = "/services/webdev/progress-bg.png";
+const progressBgImage = "/services/webdev/progress-bg.webp";
 
 /* =========================================================
    DATA
@@ -566,7 +566,8 @@ export default function WebsitePointOfViewSection() {
 
             <Image
               src={progressBgImage}
-              alt=""
+              alt="Website visual"
+              title="Website visual"
               fill
               sizes="
                 (max-width: 1024px) 100vw,

@@ -579,8 +579,9 @@ export default function ContentMarketingProblem() {
               "
             >
               <Image
-                src="/content/content-problem.png"
+                src="/content/content-problem.webp"
                 alt="Content strategy problem visual"
+                title="Content strategy problem visual" 
                 fill
                 priority={false}
                 sizes="

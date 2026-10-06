@@ -312,6 +312,7 @@ export default function AiVideoEditingHero() {
 
               <Link
                 href="/contact?service=ai-video-editing#contact-form"
+                title="Create My Video"
                 style={newYorkFont}
                 className="
                   group

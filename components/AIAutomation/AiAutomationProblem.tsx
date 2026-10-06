@@ -885,6 +885,7 @@ export default function AiAutomationProblem() {
             <Image
               src="/aiprb.png"
               alt="Professional managing repetitive work with AI automation"
+              title="Professional managing repetitive work with AI automation"
               width={1536}
               height={1024}
               className="
@@ -956,8 +957,9 @@ export default function AiAutomationProblem() {
             "
           >
             <Image
-              src="/aiprb.png"
+              src="/services/ai/aiprb.webp"
               alt="Professional managing repetitive work with AI automation"
+              title="Professional managing repetitive work with AI automation"
               width={1536}
               height={1024}
               className="

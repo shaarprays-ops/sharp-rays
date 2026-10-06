@@ -437,7 +437,7 @@ export default function ContentMarketingHero() {
               <Link
 
                 href="/contact?service=content-marketing&need=content-strategy#contact-form"
-
+                title="Build My Content Strategy"
                 className="
 
                   group
@@ -519,7 +519,7 @@ export default function ContentMarketingHero() {
               <Link
 
                 href="#content-marketing-approach"
-
+                title="Explore Our Approach"
                 className="
 
                   group
@@ -676,9 +676,10 @@ export default function ContentMarketingHero() {
 
             <Image
 
-              src="/content/content-hero-person.png"
+              src="/content/content-hero-person.webp"
 
               alt="Content marketing strategy and content creation"
+              title="Content marketing strategy and content creation"
 
               width={1100}
 

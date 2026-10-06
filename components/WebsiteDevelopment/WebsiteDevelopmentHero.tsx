@@ -18,8 +18,8 @@ const ease = [0.22, 1, 0.36, 1] as const;
    IMAGES
 ========================================================= */
 
-const desktopRightImage = "/services/webdev/web_desktop.png";
-const mobileMiddleImage = "/services/webdev/web-mobile.png";
+const desktopRightImage = "/services/webdev/web_desktop.webp";
+const mobileMiddleImage = "/services/webdev/web-mobile.webp";
 
 /* =========================================================
    SUPPORTING PILLS
@@ -348,6 +348,7 @@ export default function WebsiteDevelopmentHero() {
 
             <Link
               href="/contact?service=website-development#contact-form"
+              title="Build My Website"
               className="
                 group
                 relative
@@ -426,6 +427,7 @@ export default function WebsiteDevelopmentHero() {
 
         <a
   href="#website-framework"
+  title="Explore Our Approach"
   style={{
     fontFamily: '"New York", "", Georgia, serif',
   }}
@@ -779,6 +781,7 @@ export default function WebsiteDevelopmentHero() {
                 <Image
                   src="/logo/sharp-rays-logo.png"
                   alt="Sharp Rays"
+                  title="Sharp Rays"
                   width={95}
                   height={30}
                   className="
@@ -1094,6 +1097,7 @@ export default function WebsiteDevelopmentHero() {
                   <Image
                     src={desktopRightImage}
                     alt="Website visual"
+                    title="Website visual"
                     fill
                     priority
                     sizes="
@@ -1459,6 +1463,7 @@ export default function WebsiteDevelopmentHero() {
                 <Image
                   src="/logo/sharp-rays-logo.png"
                   alt="Sharp Rays"
+                  title="Sharp Rays"
                   width={25}
                   height={25}
                   className="
@@ -1541,6 +1546,7 @@ export default function WebsiteDevelopmentHero() {
                   <Image
                     src={mobileMiddleImage}
                     alt="Mobile website visual"
+                    title="Mobile website visual"
                     fill
                     priority
                     sizes="145px"

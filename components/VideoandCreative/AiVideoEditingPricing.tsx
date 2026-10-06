@@ -53,6 +53,7 @@ type Plan = {
   category: PricingCategory;
 
   name: string;
+
 title: string;
 
   description: string;
@@ -84,6 +85,7 @@ const editingPlans: Plan[] = [
     category: "editing",
 
     name: "Edit Starter",
+
 title: "Consistent Editing for Consistent Content.",
 
     description:
@@ -129,6 +131,7 @@ title: "Consistent Editing for Consistent Content.",
     category: "editing",
 
     name: "Edit Growth",
+
 title: "More Content. Stronger Creative Treatment.",
 
     description:
@@ -178,6 +181,7 @@ title: "More Content. Stronger Creative Treatment.",
     category: "editing",
 
     name: "Edit Scale",
+
 title: "Build a Reliable Video Content Pipeline.",
 
     description:
@@ -237,6 +241,7 @@ const aiPlans: Plan[] = [
     category: "ai",
 
     name: "AI Starter",
+
 title: "Turn an Idea Into a Finished AI Video.",
 
     description:
@@ -286,6 +291,7 @@ title: "Turn an Idea Into a Finished AI Video.",
     category: "ai",
 
     name: "AI Growth",
+
 title: "Build More Concepts. Test More Creative.",
 
     description:
@@ -335,6 +341,7 @@ title: "Build More Concepts. Test More Creative.",
     category: "ai",
 
     name: "AI Scale",
+
 title: "Build an AI Creative Production System.",
 
     description:
@@ -398,16 +405,27 @@ function PlanButton({ plan }: { plan: Plan }) {
   const isAI = plan.category === "ai";
 
   const planHref =
+
     plan.name === "Edit Starter"
+
       ? "/contact?service=ai-video-editing&plan=edit-starter#contact-form"
+
       : plan.name === "Edit Growth"
+
       ? "/contact?service=ai-video-editing&plan=edit-growth#contact-form"
+
       : plan.name === "Edit Scale"
+
       ? "/contact?service=ai-video-editing&plan=edit-scale#contact-form"
+
       : plan.name === "AI Starter"
+
       ? "/contact?service=ai-video-editing&plan=ai-starter#contact-form"
+
       : plan.name === "AI Growth"
+
       ? "/contact?service=ai-video-editing&plan=ai-growth#contact-form"
+
       : "/contact?service=ai-video-editing&plan=ai-scale#contact-form";
 
   return (
@@ -416,6 +434,7 @@ function PlanButton({ plan }: { plan: Plan }) {
 
       href={planHref}
 
+      title={`${plan.name} AI Video & Editing Plan`}
       style={newYorkFont}
 
       className={`
@@ -730,33 +749,7 @@ function PricingCard({
 
         <div
 
-          className="
-
-            absolute
-
-            right-4
-
-            top-4
-
-            z-20
-
-            flex
-
-            items-center
-
-            gap-1.5
-
-            rounded-full
-
-            bg-[#0B2A52]
-
-            px-2.5
-
-            py-1.5
-
-            shadow-[0_7px_18px_rgba(11,42,82,0.14)]
-
-          "
+          className="absolute right-4 top-4 z-20 flex items-center gap-1.5 rounded-full bg-[#0B2A52] px-2.5 py-1.5 shadow-[0_7px_18px_rgba(11,42,82,0.14)]"
 
         >
 
@@ -772,19 +765,7 @@ function PricingCard({
 
           <span
 
-            className="
-
-              text-[7px]
-
-              font-bold
-
-              uppercase
-
-              tracking-[0.13em]
-
-              text-white
-
-            "
+            className="text-[7px] font-bold uppercase tracking-[0.13em] text-white"
 
           >
 
@@ -800,21 +781,7 @@ function PricingCard({
 
       <div
 
-        className="
-
-          flex
-
-          h-full
-
-          flex-1
-
-          flex-col
-
-          p-5
-
-          sm:p-6
-
-        "
+        className="flex h-full flex-1 flex-col p-5 sm:p-6"
 
       >
 
@@ -872,19 +839,7 @@ function PricingCard({
 
             <p
 
-              className="
-
-                text-[9px]
-
-                font-bold
-
-                uppercase
-
-                tracking-[0.19em]
-
-                text-[#B79A72]
-
-              "
+              className="text-[9px] font-bold uppercase tracking-[0.19em] text-[#B79A72]"
 
             >
 
@@ -894,21 +849,7 @@ function PricingCard({
 
             <p
 
-              className="
-
-                mt-0.5
-
-                text-[7px]
-
-                font-semibold
-
-                uppercase
-
-                tracking-[0.13em]
-
-                text-[#8496A8]
-
-              "
+              className="mt-0.5 text-[7px] font-semibold uppercase tracking-[0.13em] text-[#8496A8]"
 
             >
 
@@ -926,25 +867,7 @@ function PricingCard({
 
           style={newYorkFont}
 
-          className="
-
-            mt-5
-
-            min-h-[54px]
-
-            text-[21px]
-
-            font-medium
-
-            leading-[1.08]
-
-            tracking-[-0.03em]
-
-            text-[#0B2A52]
-
-            sm:text-[23px]
-
-          "
+          className="mt-5 min-h-[54px] text-[21px] font-medium leading-[1.08] tracking-[-0.03em] text-[#0B2A52] sm:text-[23px]"
 
         >
 
@@ -956,21 +879,7 @@ function PricingCard({
 
         <p
 
-          className="
-
-            mt-3
-
-            min-h-[62px]
-
-            text-[11px]
-
-            leading-[1.65]
-
-            text-[#617991]
-
-            sm:text-[11.5px]
-
-          "
+          className="mt-3 min-h-[62px] text-[11px] leading-[1.65] text-[#617991] sm:text-[11.5px]"
 
         >
 
@@ -1014,19 +923,7 @@ function PricingCard({
 
           <p
 
-            className="
-
-              text-[7px]
-
-              font-bold
-
-              uppercase
-
-              tracking-[0.16em]
-
-              text-[#8495A6]
-
-            "
+            className="text-[7px] font-bold uppercase tracking-[0.16em] text-[#8495A6]"
 
           >
 
@@ -1036,19 +933,7 @@ function PricingCard({
 
           <p
 
-            className="
-
-              mt-1
-
-              text-[10.5px]
-
-              font-semibold
-
-              leading-[1.4]
-
-              text-[#274F72]
-
-            "
+            className="mt-1 text-[10.5px] font-semibold leading-[1.4] text-[#274F72]"
 
           >
 
@@ -1064,19 +949,7 @@ function PricingCard({
 
           <p
 
-            className="
-
-              text-[8px]
-
-              font-bold
-
-              uppercase
-
-              tracking-[0.18em]
-
-              text-[#0B2A52]
-
-            "
+            className="text-[8px] font-bold uppercase tracking-[0.18em] text-[#0B2A52]"
 
           >
 
@@ -1092,15 +965,7 @@ function PricingCard({
 
                 key={feature}
 
-                className="
-
-                  flex
-
-                  items-start
-
-                  gap-2.5
-
-                "
+                className="flex items-start gap-2.5"
 
               >
 
@@ -1154,17 +1019,7 @@ function PricingCard({
 
                 <span
 
-                  className="
-
-                    text-[10.5px]
-
-                    leading-[1.48]
-
-                    text-[#5D758B]
-
-                    sm:text-[11px]
-
-                  "
+                  className="text-[10.5px] leading-[1.48] text-[#5D758B] sm:text-[11px]"
 
                 >
 
@@ -1186,49 +1041,19 @@ function PricingCard({
 
         <div
 
-          className="
-
-            mt-6
-
-            border-t
-
-            border-[#DCE6EE]
-
-            pt-4
-
-          "
+          className="mt-6 border-t border-[#DCE6EE] pt-4"
 
         >
 
           <div
 
-            className="
-
-              border-l
-
-              border-[#B79A72]
-
-              pl-3
-
-            "
+            className="border-l border-[#B79A72] pl-3"
 
           >
 
             <p
 
-              className="
-
-                text-[7px]
-
-                font-bold
-
-                uppercase
-
-                tracking-[0.17em]
-
-                text-[#B79A72]
-
-              "
+              className="text-[7px] font-bold uppercase tracking-[0.17em] text-[#B79A72]"
 
             >
 
@@ -1238,17 +1063,7 @@ function PricingCard({
 
             <p
 
-              className="
-
-                mt-1.5
-
-                text-[10px]
-
-                leading-[1.6]
-
-                text-[#667D92]
-
-              "
+              className="mt-1.5 text-[10px] leading-[1.6] text-[#667D92]"
 
             >
 
@@ -1350,39 +1165,13 @@ function CategoryHeading({
 
       }}
 
-      className="
-
-        mb-6
-
-        flex
-
-        flex-col
-
-        gap-4
-
-        sm:flex-row
-
-        sm:items-end
-
-        sm:justify-between
-
-        lg:mb-7
-
-      "
+      className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between lg:mb-7"
 
     >
 
       <div
 
-        className="
-
-          flex
-
-          items-start
-
-          gap-4
-
-        "
+        className="flex items-start gap-4"
 
       >
 
@@ -1432,19 +1221,7 @@ function CategoryHeading({
 
           <p
 
-            className="
-
-              text-[8px]
-
-              font-bold
-
-              uppercase
-
-              tracking-[0.22em]
-
-              text-[#B79A72]
-
-            "
+            className="text-[8px] font-bold uppercase tracking-[0.22em] text-[#B79A72]"
 
           >
 
@@ -1456,23 +1233,7 @@ function CategoryHeading({
 
             style={newYorkFont}
 
-            className="
-
-              mt-1.5
-
-              text-[25px]
-
-              font-medium
-
-              leading-[1.05]
-
-              tracking-[-0.035em]
-
-              text-[#0B2A52]
-
-              sm:text-[28px]
-
-            "
+            className="mt-1.5 text-[25px] font-medium leading-[1.05] tracking-[-0.035em] text-[#0B2A52] sm:text-[28px]"
 
           >
 
@@ -1486,21 +1247,7 @@ function CategoryHeading({
 
       <p
 
-        className="
-
-          max-w-[480px]
-
-          text-[11px]
-
-          leading-[1.65]
-
-          text-[#647B91]
-
-          sm:text-right
-
-          sm:text-[11.5px]
-
-        "
+        className="max-w-[480px] text-[11px] leading-[1.65] text-[#647B91] sm:text-right sm:text-[11.5px]"
 
       >
 
@@ -1532,27 +1279,7 @@ export default function AiVideoEditingPricing() {
 
       aria-labelledby="ai-video-editing-pricing-heading"
 
-      className="
-
-        relative
-
-        isolate
-
-        overflow-hidden
-
-        bg-white
-
-        py-20
-
-        text-[#0B2A52]
-
-        sm:py-24
-
-        lg:py-28
-
-        xl:py-32
-
-      "
+      className="relative isolate overflow-hidden bg-white py-20 text-[#0B2A52] sm:py-24 lg:py-28 xl:py-32"
 
     >
 
@@ -1566,101 +1293,25 @@ export default function AiVideoEditingPricing() {
 
         aria-hidden="true"
 
-        className="
-
-          pointer-events-none
-
-          absolute
-
-          inset-0
-
-          -z-20
-
-          overflow-hidden
-
-        "
+        className="pointer-events-none absolute inset-0 -z-20 overflow-hidden"
 
       >
 
         <div
 
-          className="
-
-            absolute
-
-            left-1/2
-
-            top-[-320px]
-
-            h-[580px]
-
-            w-[960px]
-
-            -translate-x-1/2
-
-            rounded-full
-
-            bg-[#EAF4FB]/80
-
-            blur-[175px]
-
-          "
+          className="absolute left-1/2 top-[-320px] h-[580px] w-[960px] -translate-x-1/2 rounded-full bg-[#EAF4FB]/80 blur-[175px]"
 
         />
 
         <div
 
-          className="
-
-            absolute
-
-            -left-[300px]
-
-            top-[38%]
-
-            hidden
-
-            h-[560px]
-
-            w-[560px]
-
-            rounded-full
-
-            border
-
-            border-[#9CC5E2]/15
-
-            lg:block
-
-          "
+          className="absolute -left-[300px] top-[38%] hidden h-[560px] w-[560px] rounded-full border border-[#9CC5E2]/15 lg:block"
 
         />
 
         <div
 
-          className="
-
-            absolute
-
-            -right-[290px]
-
-            bottom-[9%]
-
-            hidden
-
-            h-[540px]
-
-            w-[540px]
-
-            rounded-full
-
-            border
-
-            border-[#B79A72]/15
-
-            lg:block
-
-          "
+          className="absolute -right-[290px] bottom-[9%] hidden h-[540px] w-[540px] rounded-full border border-[#B79A72]/15 lg:block"
 
         />
 
@@ -1674,27 +1325,7 @@ export default function AiVideoEditingPricing() {
 
       <div
 
-        className="
-
-          relative
-
-          z-10
-
-          mx-auto
-
-          w-full
-
-          max-w-[1380px]
-
-          px-5
-
-          sm:px-8
-
-          lg:px-10
-
-          xl:px-14
-
-        "
+        className="relative z-10 mx-auto w-full max-w-[1380px] px-5 sm:px-8 lg:px-10 xl:px-14"
 
       >
 
@@ -1738,69 +1369,25 @@ export default function AiVideoEditingPricing() {
 
           }}
 
-          className="
-
-            mx-auto
-
-            max-w-[950px]
-
-            text-center
-
-          "
+          className="mx-auto max-w-[950px] text-center"
 
         >
 
           <div
 
-            className="
-
-              flex
-
-              items-center
-
-              justify-center
-
-              gap-3
-
-            "
+            className="flex items-center justify-center gap-3"
 
           >
 
             <span
 
-              className="
-
-                h-px
-
-                w-10
-
-                bg-gradient-to-r
-
-                from-transparent
-
-                to-[#B79A72]
-
-              "
+              className="h-px w-10 bg-gradient-to-r from-transparent to-[#B79A72]"
 
             />
 
             <span
 
-              className="
-
-                text-[9px]
-
-                font-semibold
-
-                uppercase
-
-                tracking-[0.27em]
-
-                text-[#B79A72]
-
-                sm:text-[10px]
-
-              "
+              className="text-[9px] font-semibold uppercase tracking-[0.27em] text-[#B79A72] sm:text-[10px]"
 
             >
 
@@ -1810,19 +1397,7 @@ export default function AiVideoEditingPricing() {
 
             <span
 
-              className="
-
-                h-px
-
-                w-10
-
-                bg-gradient-to-l
-
-                from-transparent
-
-                to-[#B79A72]
-
-              "
+              className="h-px w-10 bg-gradient-to-l from-transparent to-[#B79A72]"
 
             />
 
@@ -1834,33 +1409,7 @@ export default function AiVideoEditingPricing() {
 
             style={newYorkFont}
 
-            className="
-
-              mx-auto
-
-              mt-6
-
-              max-w-[930px]
-
-              text-[2.1rem]
-
-              font-medium
-
-              leading-[1]
-
-              tracking-[-0.045em]
-
-              text-[#0B2A52]
-
-              sm:text-[2.6rem]
-
-              md:text-[2.95rem]
-
-              lg:text-[3.1rem]
-
-              xl:text-[3.35rem]
-
-            "
+            className="mx-auto mt-6 max-w-[930px] text-[2.1rem] font-medium leading-[1] tracking-[-0.045em] text-[#0B2A52] sm:text-[2.6rem] md:text-[2.95rem] lg:text-[3.1rem] xl:text-[3.35rem]"
 
           >
 
@@ -1876,25 +1425,7 @@ export default function AiVideoEditingPricing() {
 
           <p
 
-            className="
-
-              mx-auto
-
-              mt-5
-
-              max-w-[760px]
-
-              text-[13px]
-
-              leading-[1.8]
-
-              text-[#536C83]
-
-              sm:text-[14px]
-
-              md:text-[15px]
-
-            "
+            className="mx-auto mt-5 max-w-[760px] text-[13px] leading-[1.8] text-[#536C83] sm:text-[14px] md:text-[15px]"
 
           >
 
@@ -1916,19 +1447,7 @@ export default function AiVideoEditingPricing() {
 
         <div
 
-          className="
-
-            mx-auto
-
-            mt-14
-
-            max-w-[1200px]
-
-            sm:mt-16
-
-            lg:mt-20
-
-          "
+          className="mx-auto mt-14 max-w-[1200px] sm:mt-16 lg:mt-20"
 
         >
 
@@ -1950,23 +1469,7 @@ export default function AiVideoEditingPricing() {
 
           <div
 
-            className="
-
-              grid
-
-              grid-cols-1
-
-              items-stretch
-
-              gap-5
-
-              md:grid-cols-2
-
-              xl:grid-cols-3
-
-              xl:gap-6
-
-            "
+            className="grid grid-cols-1 items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3 xl:gap-6"
 
           >
 
@@ -2028,73 +1531,19 @@ export default function AiVideoEditingPricing() {
 
           }}
 
-          className="
-
-            mx-auto
-
-            my-14
-
-            flex
-
-            max-w-[900px]
-
-            items-center
-
-            gap-4
-
-            sm:my-16
-
-            lg:my-20
-
-          "
+          className="mx-auto my-14 flex max-w-[900px] items-center gap-4 sm:my-16 lg:my-20"
 
         >
 
           <span
 
-            className="
-
-              h-px
-
-              flex-1
-
-              bg-gradient-to-r
-
-              from-transparent
-
-              to-[#8FB7D2]/55
-
-            "
+            className="h-px flex-1 bg-gradient-to-r from-transparent to-[#8FB7D2]/55"
 
           />
 
           <span
 
-            className="
-
-              flex
-
-              h-9
-
-              w-9
-
-              items-center
-
-              justify-center
-
-              rounded-full
-
-              border
-
-              border-[#D6E2EA]
-
-              bg-white
-
-              text-[#B79A72]
-
-              shadow-[0_5px_15px_rgba(11,42,82,0.05)]
-
-            "
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D6E2EA] bg-white text-[#B79A72] shadow-[0_5px_15px_rgba(11,42,82,0.05)]"
 
           >
 
@@ -2110,19 +1559,7 @@ export default function AiVideoEditingPricing() {
 
           <span
 
-            className="
-
-              h-px
-
-              flex-1
-
-              bg-gradient-to-l
-
-              from-transparent
-
-              to-[#B79A72]/55
-
-            "
+            className="h-px flex-1 bg-gradient-to-l from-transparent to-[#B79A72]/55"
 
           />
 
@@ -2136,13 +1573,7 @@ export default function AiVideoEditingPricing() {
 
         <div
 
-          className="
-
-            mx-auto
-
-            max-w-[1200px]
-
-          "
+          className="mx-auto max-w-[1200px]"
 
         >
 
@@ -2164,23 +1595,7 @@ export default function AiVideoEditingPricing() {
 
           <div
 
-            className="
-
-              grid
-
-              grid-cols-1
-
-              items-stretch
-
-              gap-5
-
-              md:grid-cols-2
-
-              xl:grid-cols-3
-
-              xl:gap-6
-
-            "
+            className="grid grid-cols-1 items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3 xl:gap-6"
 
           >
 
@@ -2244,29 +1659,7 @@ export default function AiVideoEditingPricing() {
 
           }}
 
-          className="
-
-            mx-auto
-
-            mt-8
-
-            max-w-[1080px]
-
-            rounded-[17px]
-
-            border
-
-            border-[#E3D5C2]
-
-            bg-[#FFFBF6]
-
-            px-5
-
-            py-5
-
-            sm:px-6
-
-          "
+          className="mx-auto mt-8 max-w-[1080px] rounded-[17px] border border-[#E3D5C2] bg-[#FFFBF6] px-5 py-5 sm:px-6"
 
         >
 
@@ -2274,29 +1667,7 @@ export default function AiVideoEditingPricing() {
 
             <span
 
-              className="
-
-                flex
-
-                h-9
-
-                w-9
-
-                shrink-0
-
-                items-center
-
-                justify-center
-
-                rounded-full
-
-                bg-white
-
-                text-[#A97C52]
-
-                shadow-[0_5px_14px_rgba(11,42,82,0.05)]
-
-              "
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-[#A97C52] shadow-[0_5px_14px_rgba(11,42,82,0.05)]"
 
             >
 
@@ -2314,19 +1685,7 @@ export default function AiVideoEditingPricing() {
 
               <p
 
-                className="
-
-                  text-[8px]
-
-                  font-bold
-
-                  uppercase
-
-                  tracking-[0.18em]
-
-                  text-[#B79A72]
-
-                "
+                className="text-[8px] font-bold uppercase tracking-[0.18em] text-[#B79A72]"
 
               >
 
@@ -2336,21 +1695,7 @@ export default function AiVideoEditingPricing() {
 
               <p
 
-                className="
-
-                  mt-1.5
-
-                  text-[11px]
-
-                  font-medium
-
-                  leading-[1.65]
-
-                  text-[#0B2A52]
-
-                  sm:text-[11.5px]
-
-                "
+                className="mt-1.5 text-[11px] font-medium leading-[1.65] text-[#0B2A52] sm:text-[11.5px]"
 
               >
 
@@ -2362,17 +1707,7 @@ export default function AiVideoEditingPricing() {
 
               <p
 
-                className="
-
-                  mt-1
-
-                  text-[10.5px]
-
-                  leading-[1.65]
-
-                  text-[#6B8094]
-
-                "
+                className="mt-1 text-[10.5px] leading-[1.65] text-[#6B8094]"
 
               >
 
@@ -2430,47 +1765,7 @@ export default function AiVideoEditingPricing() {
 
           }}
 
-          className="
-
-            relative
-
-            mx-auto
-
-            mt-10
-
-            max-w-[1120px]
-
-            overflow-hidden
-
-            rounded-[22px]
-
-            border
-
-            border-[#C9DBE7]
-
-            bg-[linear-gradient(110deg,#EEF7FC_0%,#FFFFFF_52%,#FFF8F0_100%)]
-
-            px-5
-
-            py-6
-
-            shadow-[0_14px_40px_rgba(11,42,82,0.05)]
-
-            sm:px-7
-
-            sm:py-7
-
-            lg:flex
-
-            lg:items-center
-
-            lg:justify-between
-
-            lg:gap-10
-
-            lg:px-9
-
-          "
+          className="relative mx-auto mt-10 max-w-[1120px] overflow-hidden rounded-[22px] border border-[#C9DBE7] bg-[linear-gradient(110deg,#EEF7FC_0%,#FFFFFF_52%,#FFF8F0_100%)] px-5 py-6 shadow-[0_14px_40px_rgba(11,42,82,0.05)] sm:px-7 sm:py-7 lg:flex lg:items-center lg:justify-between lg:gap-10 lg:px-9"
 
         >
 
@@ -2478,59 +1773,19 @@ export default function AiVideoEditingPricing() {
 
             aria-hidden="true"
 
-            className="
-
-              pointer-events-none
-
-              absolute
-
-              -right-[100px]
-
-              -top-[115px]
-
-              h-[250px]
-
-              w-[250px]
-
-              rounded-full
-
-              border
-
-              border-[#B79A72]/15
-
-            "
+            className="pointer-events-none absolute -right-[100px] -top-[115px] h-[250px] w-[250px] rounded-full border border-[#B79A72]/15"
 
           />
 
           <div
 
-            className="
-
-              relative
-
-              z-10
-
-              max-w-[730px]
-
-            "
+            className="relative z-10 max-w-[730px]"
 
           >
 
             <p
 
-              className="
-
-                text-[8px]
-
-                font-bold
-
-                uppercase
-
-                tracking-[0.2em]
-
-                text-[#B79A72]
-
-              "
+              className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#B79A72]"
 
             >
 
@@ -2542,23 +1797,7 @@ export default function AiVideoEditingPricing() {
 
               style={newYorkFont}
 
-              className="
-
-                mt-2
-
-                text-[25px]
-
-                font-medium
-
-                leading-[1.08]
-
-                tracking-[-0.035em]
-
-                text-[#0B2A52]
-
-                sm:text-[29px]
-
-              "
+              className="mt-2 text-[25px] font-medium leading-[1.08] tracking-[-0.035em] text-[#0B2A52] sm:text-[29px]"
 
             >
 
@@ -2568,21 +1807,7 @@ export default function AiVideoEditingPricing() {
 
             <p
 
-              className="
-
-                mt-3
-
-                max-w-[700px]
-
-                text-[12px]
-
-                leading-[1.75]
-
-                text-[#657C95]
-
-                sm:text-[13px]
-
-              "
+              className="mt-3 max-w-[700px] text-[12px] leading-[1.75] text-[#657C95] sm:text-[13px]"
 
             >
 
@@ -2598,39 +1823,13 @@ export default function AiVideoEditingPricing() {
 
           <div
 
-            className="
-
-              relative
-
-              z-10
-
-              mt-6
-
-              shrink-0
-
-              lg:mt-0
-
-              lg:text-right
-
-            "
+            className="relative z-10 mt-6 shrink-0 lg:mt-0 lg:text-right"
 
           >
 
             <p
 
-              className="
-
-                text-[7px]
-
-                font-bold
-
-                uppercase
-
-                tracking-[0.18em]
-
-                text-[#B79A72]
-
-              "
+              className="text-[7px] font-bold uppercase tracking-[0.18em] text-[#B79A72]"
 
             >
 
@@ -2642,17 +1841,7 @@ export default function AiVideoEditingPricing() {
 
               style={newYorkFont}
 
-              className="
-
-                mt-1
-
-                text-[24px]
-
-                font-medium
-
-                text-[#0B2A52]
-
-              "
+              className="mt-1 text-[24px] font-medium text-[#0B2A52]"
 
             >
 
@@ -2664,57 +1853,11 @@ export default function AiVideoEditingPricing() {
 
   href="/contact?service=ai-video-editing&need=combined-video-plan#contact-form"
 
+  title="Build My Video Plan"
+
   style={newYorkFont}
 
-  className="
-
-    group
-
-    mt-4
-
-    inline-flex
-
-    min-h-[48px]
-
-    items-center
-
-    justify-center
-
-    gap-2.5
-
-    rounded-[16px]
-
-    border
-
-    border-[#0B2A52]
-
-    bg-[#0B2A52]
-
-    px-6
-
-    py-3
-
-    text-[12px]
-
-    font-medium
-
-    !text-white
-
-    shadow-[0_9px_24px_rgba(11,42,82,0.14)]
-
-    transition-all
-
-    duration-300
-
-    hover:-translate-y-[2px]
-
-    hover:bg-[#123B6A]
-
-    hover:!text-white
-
-    hover:shadow-[0_13px_30px_rgba(11,42,82,0.18)]
-
-  "
+  className="group mt-4 inline-flex min-h-[48px] items-center justify-center gap-2.5 rounded-[16px] border border-[#0B2A52] bg-[#0B2A52] px-6 py-3 text-[12px] font-medium !text-white shadow-[0_9px_24px_rgba(11,42,82,0.14)] transition-all duration-300 hover:-translate-y-[2px] hover:bg-[#123B6A] hover:!text-white hover:shadow-[0_13px_30px_rgba(11,42,82,0.18)]"
 
 >
 
@@ -2730,23 +1873,7 @@ export default function AiVideoEditingPricing() {
 
     strokeWidth={1.6}
 
-    className="
-
-      relative
-
-      z-10
-
-      !text-white
-
-      transition-transform
-
-      duration-300
-
-      group-hover:translate-x-0.5
-
-      group-hover:-translate-y-0.5
-
-    "
+    className="relative z-10 !text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
 
   />
 
@@ -2796,37 +1923,13 @@ export default function AiVideoEditingPricing() {
 
           }}
 
-          className="
-
-            mx-auto
-
-            mt-8
-
-            max-w-[1080px]
-
-            border-y
-
-            border-[#E0E8EE]
-
-            py-5
-
-          "
+          className="mx-auto mt-8 max-w-[1080px] border-y border-[#E0E8EE] py-5"
 
         >
 
           <div
 
-            className="
-
-              grid
-
-              gap-5
-
-              md:grid-cols-2
-
-              md:gap-10
-
-            "
+            className="grid gap-5 md:grid-cols-2 md:gap-10"
 
           >
 
@@ -2834,19 +1937,7 @@ export default function AiVideoEditingPricing() {
 
               <p
 
-                className="
-
-                  text-[8px]
-
-                  font-bold
-
-                  uppercase
-
-                  tracking-[0.18em]
-
-                  text-[#B79A72]
-
-                "
+                className="text-[8px] font-bold uppercase tracking-[0.18em] text-[#B79A72]"
 
               >
 
@@ -2856,19 +1947,7 @@ export default function AiVideoEditingPricing() {
 
               <p
 
-                className="
-
-                  mt-2
-
-                  text-[11px]
-
-                  leading-[1.7]
-
-                  text-[#647B90]
-
-                  sm:text-[11.5px]
-
-                "
+                className="mt-2 text-[11px] leading-[1.7] text-[#647B90] sm:text-[11.5px]"
 
               >
 
@@ -2884,41 +1963,13 @@ export default function AiVideoEditingPricing() {
 
             <div
 
-              className="
-
-                border-t
-
-                border-[#E0E8EE]
-
-                pt-5
-
-                md:border-l
-
-                md:border-t-0
-
-                md:pl-10
-
-                md:pt-0
-
-              "
+              className="border-t border-[#E0E8EE] pt-5 md:border-l md:border-t-0 md:pl-10 md:pt-0"
 
             >
 
               <p
 
-                className="
-
-                  text-[8px]
-
-                  font-bold
-
-                  uppercase
-
-                  tracking-[0.18em]
-
-                  text-[#B79A72]
-
-                "
+                className="text-[8px] font-bold uppercase tracking-[0.18em] text-[#B79A72]"
 
               >
 
@@ -2928,19 +1979,7 @@ export default function AiVideoEditingPricing() {
 
               <p
 
-                className="
-
-                  mt-2
-
-                  text-[11px]
-
-                  leading-[1.7]
-
-                  text-[#647B90]
-
-                  sm:text-[11.5px]
-
-                "
+                className="mt-2 text-[11px] leading-[1.7] text-[#647B90] sm:text-[11.5px]"
 
               >
 
@@ -2966,63 +2005,19 @@ export default function AiVideoEditingPricing() {
 
         <div
 
-          className="
-
-            mx-auto
-
-            mt-9
-
-            flex
-
-            max-w-[670px]
-
-            items-center
-
-            gap-3
-
-          "
+          className="mx-auto mt-9 flex max-w-[670px] items-center gap-3"
 
         >
 
           <span
 
-            className="
-
-              h-px
-
-              flex-1
-
-              bg-gradient-to-r
-
-              from-transparent
-
-              to-[#7EA9C8]/45
-
-            "
+            className="h-px flex-1 bg-gradient-to-r from-transparent to-[#7EA9C8]/45"
 
           />
 
           <span
 
-            className="
-
-              shrink-0
-
-              text-center
-
-              text-[8px]
-
-              font-semibold
-
-              uppercase
-
-              tracking-[0.14em]
-
-              text-[#8295A8]
-
-              sm:tracking-[0.2em]
-
-            "
+            className="shrink-0 text-center text-[8px] font-semibold uppercase tracking-[0.14em] text-[#8295A8] sm:tracking-[0.2em]"
 
           >
 
@@ -3032,19 +2027,7 @@ export default function AiVideoEditingPricing() {
 
           <span
 
-            className="
-
-              h-px
-
-              flex-1
-
-              bg-gradient-to-l
-
-              from-transparent
-
-              to-[#B79A72]/45
-
-            "
+            className="h-px flex-1 bg-gradient-to-l from-transparent to-[#B79A72]/45"
 
           />
 

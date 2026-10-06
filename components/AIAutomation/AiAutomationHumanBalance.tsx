@@ -589,8 +589,9 @@ export default function AiAutomationHumanBalance() {
               "
             >
               <Image
-                src="/ailaptop1.png"
+                src="/services/ai/ailaptop1.webp"
                 alt="Laptop workspace representing balance between AI automation and human judgement"
+                title="Laptop workspace representing balance between AI automation and human judgement"
                 width={1536}
                 height={1024}
                 className="

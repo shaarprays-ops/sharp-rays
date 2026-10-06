@@ -2541,7 +2541,7 @@ function BiggerPictureCard({
       <a
 
         href="/contact?service=ai-automation#contact-form"
-
+        title="Contact Us"
         style={newYorkFont}
 
         className="
@@ -3869,7 +3869,7 @@ export default function AiAutomationServices() {
           <a
 
             href="/contact?service=ai-automation#contact-form"
-
+            title="Contact Us"
             style={newYorkFont}
 
             className="
