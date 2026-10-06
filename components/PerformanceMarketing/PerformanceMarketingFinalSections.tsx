@@ -300,6 +300,7 @@ export default function PerformanceMarketingFinalSections() {
               >
                 <motion.a
                 href="/contact?service=performance-marketing&need=custom-performance-plan#contact-form"
+                title="Start Growing With Paid Media"
                   whileTap={
                     reduceMotion
                       ? undefined

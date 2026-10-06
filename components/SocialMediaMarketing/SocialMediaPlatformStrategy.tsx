@@ -7,7 +7,7 @@ import { ArrowUpRight, Check, Play } from "lucide-react";
 /* =========================================================
    FONT
 ========================================================= */
-const newYorkFont = { fontFamily: '"New York", "Bodoni Moda", Georgia, serif' };
+const newYorkFont = { fontFamily: '"New York", "", Georgia, serif' };
 
 /* =========================================================
    PLATFORM DATA

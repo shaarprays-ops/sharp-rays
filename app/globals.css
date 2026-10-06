@@ -16,7 +16,7 @@
 
 :root {
   --font-new-york: "New York", Georgia, serif;
-  --font-editorial: "Bodoni Moda", Georgia, serif;
+  --font-editorial: , Georgia, serif;
 }
 
 html,

@@ -16,7 +16,7 @@ import {
 ========================================================= */
 
 const newYorkFont = {
-  fontFamily: '"New York", "Bodoni Moda", Georgia, serif',
+  fontFamily: '"New York", "", Georgia, serif',
 };
 
 /* =========================================================

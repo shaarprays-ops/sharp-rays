@@ -620,7 +620,7 @@ export default function WebsiteFinalSections() {
 
                   style={{
 
-                    fontFamily: '"New York", "Bodoni Moda", Georgia, serif',
+                    fontFamily: '"New York", "", Georgia, serif',
 
                   }}
 
@@ -770,7 +770,7 @@ export default function WebsiteFinalSections() {
 
                   style={{
 
-                    fontFamily: '"New York", "Bodoni Moda", Georgia, serif',
+                    fontFamily: '"New York", "", Georgia, serif',
 
                   }}
 

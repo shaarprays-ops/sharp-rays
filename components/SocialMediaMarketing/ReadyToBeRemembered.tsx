@@ -17,7 +17,7 @@ import {
 } from "framer-motion";
 
 const newYorkFont = {
-  fontFamily: '"New York", "Bodoni Moda", Georgia, serif',
+  fontFamily: '"New York", "", Georgia, serif',
 };
 
 const supportAreas = [

@@ -181,7 +181,7 @@ export default function FreeAuditClient() {
                   md:text-[2.95rem]
                   lg:text-[3.1rem]
                   xl:text-[3.35rem]"
-              style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
+              style={{ fontFamily: ' Georgia, serif' }}
             >
               Find Out What Is Holding Your Digital Growth Back.
             </h1>
@@ -222,7 +222,7 @@ export default function FreeAuditClient() {
 
             <h2
               className="mt-4 text-[2.6rem] leading-[1.02] tracking-[-0.04em] sm:text-[2.6rem] md:text-[2.95rem] lg:text-[3.1rem] xl:text-[3.35rem]"
-              style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
+              style={{ fontFamily: ' Georgia, serif' }}
             >
               A Focused Review of What Matters Most.
             </h2>
@@ -285,7 +285,7 @@ export default function FreeAuditClient() {
 
             <h2
               className="mt-4 text-[2.6rem] leading-[1.02] tracking-[-0.04em] sm:text-[2.6rem] md:text-[2.95rem] lg:text-[3.1rem] xl:text-[3.35rem]"
-              style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
+              style={{ fontFamily: '"", Georgia, serif' }}
             >
               Useful Direction. Not a Generic Sales Pitch.
             </h2>
@@ -335,7 +335,7 @@ export default function FreeAuditClient() {
 
             <h2
               className="mt-4 text-[2.6rem] leading-[1.02] tracking-[-0.04em] sm:text-[2.6rem] md:text-[2.95rem] lg:text-[3.1rem] xl:text-[3.35rem]"
-              style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
+              style={{ fontFamily: '"", Georgia, serif' }}
             >
               Tell Us a Little About Your Business.
             </h2>
@@ -371,7 +371,7 @@ export default function FreeAuditClient() {
 
                 <h3
                   className="mt-3 max-w-[500px] text-[2.2rem] leading-[1.08] tracking-[-0.035em] sm:text-[2.7rem]"
-                  style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
+                  style={{ fontFamily: '"", Georgia, serif' }}
                 >
                   Thanks. We Have Your Details.
                 </h3>
@@ -532,7 +532,7 @@ export default function FreeAuditClient() {
 
             <h2
               className="mt-4 text-[2.6rem] leading-[1.02] tracking-[-0.04em] sm:text-[2.6rem] md:text-[2.95rem] lg:text-[3.1rem] xl:text-[3.35rem]"
-              style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
+              style={{ fontFamily: '"", Georgia, serif' }}
             >
               Simple From Request to Recommendations.
             </h2>
@@ -589,7 +589,7 @@ export default function FreeAuditClient() {
 
             <h2
               className="mt-4 text-[2.6rem] leading-[1.02] tracking-[-0.04em] sm:text-[2.6rem] md:text-[2.95rem] lg:text-[3.1rem] xl:text-[3.35rem]"
-              style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
+              style={{ fontFamily: '"", Georgia, serif' }}
             >
               Before You Request Your Audit.
             </h2>
@@ -639,7 +639,7 @@ export default function FreeAuditClient() {
 
             <h2
               className="mt-4 text-[2.6rem] leading-[1.02] tracking-[-0.04em] sm:text-[2.6rem] md:text-[2.95rem] lg:text-[3.1rem] xl:text-[3.35rem]"
-              style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
+              style={{ fontFamily: '"", Georgia, serif' }}
             >
               Find the Opportunities You May Be Missing.
             </h2>

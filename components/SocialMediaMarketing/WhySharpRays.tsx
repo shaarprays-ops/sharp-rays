@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 
 const newYorkFont = {
-  fontFamily: '"New York", "Bodoni Moda", Georgia, serif',
+  fontFamily: '"New York", "", Georgia, serif',
 };
 
 const principles = [

@@ -427,7 +427,7 @@ export default function WebsiteDevelopmentHero() {
         <a
   href="#website-framework"
   style={{
-    fontFamily: '"New York", "Bodoni Moda", Georgia, serif',
+    fontFamily: '"New York", "", Georgia, serif',
   }}
   className="
     group

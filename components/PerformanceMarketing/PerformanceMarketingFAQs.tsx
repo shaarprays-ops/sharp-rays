@@ -3,7 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 
 const newYorkFont = {
-  fontFamily: '"New York", "Bodoni Moda", Georgia, serif',
+  fontFamily: '"New York", "", Georgia, serif',
 };
 
 const ease = [0.22, 1, 0.36, 1] as const;

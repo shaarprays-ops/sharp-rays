@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 const newYorkFont = {
-  fontFamily: '"New York", "Bodoni Moda", Georgia, serif',
+  fontFamily: '"New York", "", Georgia, serif',
 };
 
 const fitItems = [
