@@ -7,13 +7,19 @@ import { defineQuery } from "next-sanity";
 export const BLOG_POSTS_QUERY = defineQuery(`
   *[
     _type == "blogPost" &&
-    defined(slug.current)
-  ] | order(publishedAt desc) {
+    defined(slug.current) &&
+    dateTime(
+      coalesce(publishedAt, _createdAt)
+    ) <= dateTime($now)
+  ]
+  | order(
+    coalesce(publishedAt, _createdAt) desc
+  ) {
     _id,
     title,
     "slug": slug.current,
     excerpt,
-    publishedAt,
+    "publishedAt": coalesce(publishedAt, _createdAt),
     featured,
 
     featuredImage {
@@ -53,13 +59,16 @@ export const BLOG_POSTS_QUERY = defineQuery(`
 export const BLOG_POST_QUERY = defineQuery(`
   *[
     _type == "blogPost" &&
-    slug.current == $slug
+    slug.current == $slug &&
+    dateTime(
+      coalesce(publishedAt, _createdAt)
+    ) <= dateTime($now)
   ][0] {
     _id,
     title,
     "slug": slug.current,
     excerpt,
-    publishedAt,
+    "publishedAt": coalesce(publishedAt, _createdAt),
     updatedAt,
     featured,
     seoTitle,
@@ -114,13 +123,16 @@ export const RELATED_POSTS_QUERY = defineQuery(`
   *[
     _type == "blogPost" &&
     defined(slug.current) &&
-    slug.current != $slug
+    slug.current != $slug &&
+    dateTime(
+      coalesce(publishedAt, _createdAt)
+    ) <= dateTime($now)
   ] {
     _id,
     title,
     "slug": slug.current,
     excerpt,
-    publishedAt,
+    "publishedAt": coalesce(publishedAt, _createdAt),
 
     featuredImage {
       asset,
@@ -158,21 +170,22 @@ export const RELATED_POSTS_QUERY = defineQuery(`
       category._ref == $categoryId
   }
   | order(
-      tagMatchCount desc,
-      sameCategory desc,
-      publishedAt desc
-    )[0...3]
+    tagMatchCount desc,
+    sameCategory desc,
+    publishedAt desc
+  )[0...3]
 `);
 
 /* =========================================================
-   BLOG CATEGORIES + POST COUNT
+   BLOG CATEGORIES + LIVE POST COUNT
 ========================================================= */
 
 export const BLOG_CATEGORIES_QUERY = defineQuery(`
   *[
     _type == "category" &&
     defined(slug.current)
-  ] | order(title asc) {
+  ]
+  | order(title asc) {
     _id,
     title,
     "slug": slug.current,
@@ -181,11 +194,19 @@ export const BLOG_CATEGORIES_QUERY = defineQuery(`
       *[
         _type == "blogPost" &&
         defined(slug.current) &&
-        category._ref == ^._id
+        category._ref == ^._id &&
+        dateTime(
+          coalesce(publishedAt, _createdAt)
+        ) <= dateTime($now)
       ]
     )
   }
 `);
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
 export const CATEGORY_BY_SLUG_QUERY = defineQuery(`
   *[
     _type == "category" &&
@@ -198,18 +219,27 @@ export const CATEGORY_BY_SLUG_QUERY = defineQuery(`
   }
 `);
 
+/* =========================================================
+   POSTS BY CATEGORY
+========================================================= */
+
 export const POSTS_BY_CATEGORY_QUERY = defineQuery(`
   *[
     _type == "blogPost" &&
     defined(slug.current) &&
-    category->slug.current == $slug
+    category->slug.current == $slug &&
+    dateTime(
+      coalesce(publishedAt, _createdAt)
+    ) <= dateTime($now)
   ]
-  | order(publishedAt desc) {
+  | order(
+    coalesce(publishedAt, _createdAt) desc
+  ) {
     _id,
     title,
     "slug": slug.current,
     excerpt,
-    publishedAt,
+    "publishedAt": coalesce(publishedAt, _createdAt),
     featured,
 
     featuredImage {
@@ -241,6 +271,11 @@ export const POSTS_BY_CATEGORY_QUERY = defineQuery(`
     }
   }
 `);
+
+/* =========================================================
+   TAG
+========================================================= */
+
 export const TAG_BY_SLUG_QUERY = defineQuery(`
   *[
     _type == "tag" &&
@@ -253,18 +288,27 @@ export const TAG_BY_SLUG_QUERY = defineQuery(`
   }
 `);
 
+/* =========================================================
+   POSTS BY TAG
+========================================================= */
+
 export const POSTS_BY_TAG_QUERY = defineQuery(`
   *[
     _type == "blogPost" &&
     defined(slug.current) &&
-    $slug in tags[]->slug.current
+    $slug in tags[]->slug.current &&
+    dateTime(
+      coalesce(publishedAt, _createdAt)
+    ) <= dateTime($now)
   ]
-  | order(publishedAt desc) {
+  | order(
+    coalesce(publishedAt, _createdAt) desc
+  ) {
     _id,
     title,
     "slug": slug.current,
     excerpt,
-    publishedAt,
+    "publishedAt": coalesce(publishedAt, _createdAt),
     featured,
 
     featuredImage {
@@ -296,6 +340,7 @@ export const POSTS_BY_TAG_QUERY = defineQuery(`
     }
   }
 `);
+
 /* =========================================================
    SITEMAP — BLOG POSTS
 ========================================================= */
@@ -304,14 +349,21 @@ export const SITEMAP_BLOG_POSTS_QUERY = defineQuery(`
   *[
     _type == "blogPost" &&
     defined(slug.current) &&
-    (!defined(noIndex) || noIndex != true)
+    (!defined(noIndex) || noIndex != true) &&
+    dateTime(
+      coalesce(publishedAt, _createdAt)
+    ) <= dateTime($now)
   ]
-  | order(publishedAt desc) {
+  | order(
+    coalesce(publishedAt, _createdAt) desc
+  ) {
     "slug": slug.current,
+
     "lastModified": coalesce(
       updatedAt,
       _updatedAt,
-      publishedAt
+      publishedAt,
+      _createdAt
     )
   }
 `);
@@ -345,6 +397,7 @@ export const SITEMAP_TAGS_QUERY = defineQuery(`
     "lastModified": _updatedAt
   }
 `);
+
 /* =========================================================
    LATEST BLOG POSTS
 ========================================================= */
@@ -354,13 +407,18 @@ export const LATEST_POSTS_QUERY = defineQuery(`
     _type == "blogPost" &&
     defined(slug.current) &&
     slug.current != $slug &&
-    (!defined(noIndex) || noIndex != true)
+    (!defined(noIndex) || noIndex != true) &&
+    dateTime(
+      coalesce(publishedAt, _createdAt)
+    ) <= dateTime($now)
   ]
-  | order(publishedAt desc)[0...3] {
+  | order(
+    coalesce(publishedAt, _createdAt) desc
+  )[0...3] {
     _id,
     title,
     "slug": slug.current,
-    publishedAt,
+    "publishedAt": coalesce(publishedAt, _createdAt),
 
     category-> {
       _id,

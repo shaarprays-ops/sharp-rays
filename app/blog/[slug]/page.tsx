@@ -11,15 +11,19 @@ import ArticleSidebar, {
   type TocItem,
 } from "@/components/Blog/ArticleSidebar";
 
+import Navbar from "@/components/Home/Navbar";
+import Footer from "@/components/Home/Footer";
+
 import { sanityClient } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
+
 import {
   BLOG_CATEGORIES_QUERY,
   BLOG_POST_QUERY,
   RELATED_POSTS_QUERY,
 } from "@/sanity/lib/queries";
-import Navbar from "@/components/Home/Navbar";
-import Footer from "@/components/Home/Footer";
+
+export const revalidate = 60;
 
 type BlogTag = {
   _id?: string;
@@ -119,12 +123,9 @@ type PageProps = {
   }>;
 };
 
-const SITE_URL =
-  "https://www.sharprays.com";
+const SITE_URL = "https://www.sharprays.com";
 
-function getBlockText(
-  block: PortableTextBlock
-) {
+function getBlockText(block: PortableTextBlock) {
   if (!Array.isArray(block.children)) {
     return "";
   }
@@ -145,9 +146,7 @@ function getBlockText(
     .join("");
 }
 
-function slugifyHeading(
-  text: string
-) {
+function slugifyHeading(text: string) {
   return text
     .toLowerCase()
     .trim()
@@ -156,14 +155,15 @@ function slugifyHeading(
     .replace(/-+/g, "-");
 }
 
-async function getPost(
-  slug: string
-) {
-  return sanityClient.fetch<
-    BlogPost | null
-  >(
+async function getPost(slug: string) {
+  const now = new Date().toISOString();
+
+  return sanityClient.fetch<BlogPost | null>(
     BLOG_POST_QUERY,
-    { slug }
+    {
+      slug,
+      now,
+    }
   );
 }
 
@@ -172,13 +172,11 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { slug } = await params;
 
-  const post =
-    await getPost(slug);
+  const post = await getPost(slug);
 
   if (!post) {
     return {
-      title:
-        "Blog Post Not Found | Sharp Rays",
+      title: "Blog Post Not Found | Sharp Rays",
       robots: {
         index: false,
         follow: false,
@@ -197,16 +195,13 @@ export async function generateMetadata({
         ? post.featuredImage
         : null;
 
-  const socialImage =
-    socialImageSource
-      ? urlFor(
-          socialImageSource
-        )
-          .width(1200)
-          .height(630)
-          .fit("crop")
-          .url()
-      : `${SITE_URL}/og/home.webp`;
+  const socialImage = socialImageSource
+    ? urlFor(socialImageSource)
+        .width(1200)
+        .height(630)
+        .fit("crop")
+        .url()
+    : `${SITE_URL}/og/home.webp`;
 
   const title =
     post.seoTitle ||
@@ -225,76 +220,53 @@ export async function generateMetadata({
     },
 
     robots: {
-      index:
-        !post.noIndex,
-      follow:
-        !post.noIndex,
+      index: !post.noIndex,
+      follow: !post.noIndex,
     },
 
     openGraph: {
       type: "article",
       locale: "en_IN",
       url: articleUrl,
-      siteName:
-        "Sharp Rays",
+      siteName: "Sharp Rays",
       title,
       description,
 
-      publishedTime:
-        post.publishedAt,
+      publishedTime: post.publishedAt,
 
       modifiedTime:
         post.updatedAt ||
         post.publishedAt,
 
-      authors:
-        post.author?.name
-          ? [
-              post.author.name,
-            ]
-          : [
-              "Sharp Rays",
-            ],
+      authors: post.author?.name
+        ? [post.author.name]
+        : ["Sharp Rays"],
 
-      tags:
-        post.tags
-          ?.map(
-            (tag) =>
-              tag.title
-          )
-          .filter(
-            (
-              tag
-            ): tag is string =>
-              Boolean(tag)
-          ),
+      tags: post.tags
+        ?.map((tag) => tag.title)
+        .filter(
+          (tag): tag is string =>
+            Boolean(tag)
+        ),
 
       images: [
         {
-          url:
-            socialImage,
-          width:
-            1200,
-          height:
-            630,
+          url: socialImage,
+          width: 1200,
+          height: 630,
           alt:
-            post.ogImage
-              ?.alt ||
-            post.featuredImage
-              ?.alt ||
+            post.ogImage?.alt ||
+            post.featuredImage?.alt ||
             post.title,
         },
       ],
     },
 
     twitter: {
-      card:
-        "summary_large_image",
+      card: "summary_large_image",
       title,
       description,
-      images: [
-        socialImage,
-      ],
+      images: [socialImage],
     },
   };
 }
@@ -302,8 +274,10 @@ export async function generateMetadata({
 export default async function BlogArticlePage({
   params,
 }: PageProps) {
-  const { slug } =
-    await params;
+  const { slug } = await params;
+
+  const now =
+    new Date().toISOString();
 
   const post =
     await getPost(slug);
@@ -320,41 +294,25 @@ export default async function BlogArticlePage({
     (post.body || [])
       .filter(
         (block) =>
-          block._type ===
-            "block" &&
-          (block.style ===
-            "h2" ||
-            block.style ===
-              "h3")
+          block._type === "block" &&
+          (block.style === "h2" ||
+            block.style === "h3")
       )
-      .map(
-        (
-          block
-        ): TocItem => {
-          const text =
-            getBlockText(
-              block
-            );
+      .map((block): TocItem => {
+        const text =
+          getBlockText(block);
 
-          return {
-            id:
-              slugifyHeading(
-                text
-              ),
-            text,
-            level:
-              block.style ===
-              "h3"
-                ? 3
-                : 2,
-          };
-        }
-      )
-      .filter(
-        (item) =>
-          Boolean(
-            item.text
-          )
+        return {
+          id: slugifyHeading(text),
+          text,
+          level:
+            block.style === "h3"
+              ? 3
+              : 2,
+        };
+      })
+      .filter((item) =>
+        Boolean(item.text)
       );
 
   /* =====================================================
@@ -363,14 +321,9 @@ export default async function BlogArticlePage({
 
   const tagIds =
     post.tags
-      ?.map(
-        (tag) =>
-          tag._id
-      )
+      ?.map((tag) => tag._id)
       .filter(
-        (
-          id
-        ): id is string =>
+        (id): id is string =>
           Boolean(id)
       ) || [];
 
@@ -378,15 +331,12 @@ export default async function BlogArticlePage({
     await sanityClient.fetch(
       RELATED_POSTS_QUERY,
       {
-        slug:
-          post.slug,
-
+        slug: post.slug,
         categoryId:
-          post.category
-            ?._id ||
+          post.category?._id ||
           "",
-
         tagIds,
+        now,
       }
     );
 
@@ -396,7 +346,10 @@ export default async function BlogArticlePage({
 
   const categories: BlogCategory[] =
     await sanityClient.fetch(
-      BLOG_CATEGORIES_QUERY
+      BLOG_CATEGORIES_QUERY,
+      {
+        now,
+      }
     );
 
   /* =====================================================
@@ -407,11 +360,8 @@ export default async function BlogArticlePage({
     `${SITE_URL}/blog/${post.slug}`;
 
   const featuredImageUrl =
-    post.featuredImage
-      ?.asset
-      ? urlFor(
-          post.featuredImage
-        )
+    post.featuredImage?.asset
+      ? urlFor(post.featuredImage)
           .width(1600)
           .height(900)
           .fit("crop")
@@ -452,9 +402,7 @@ export default async function BlogArticlePage({
 
     image:
       featuredImageUrl
-        ? [
-            featuredImageUrl,
-          ]
+        ? [featuredImageUrl]
         : undefined,
 
     author:
@@ -464,12 +412,10 @@ export default async function BlogArticlePage({
               "Person",
 
             name:
-              post.author
-                .name,
+              post.author.name,
 
             url:
-              post.author
-                .slug
+              post.author.slug
                 ? `${SITE_URL}/blog/author/${post.author.slug}`
                 : undefined,
           }
@@ -496,8 +442,7 @@ export default async function BlogArticlePage({
       "en-IN",
 
     articleSection:
-      post.category
-        ?.title ||
+      post.category?.title ||
       undefined,
 
     keywords:
@@ -506,9 +451,7 @@ export default async function BlogArticlePage({
           (tag) =>
             tag.title
         )
-        .filter(
-          Boolean
-        )
+        .filter(Boolean)
         .join(", ") ||
       undefined,
   };
@@ -567,8 +510,7 @@ export default async function BlogArticlePage({
         "@type":
           "ListItem",
 
-        position:
-          1,
+        position: 1,
 
         name:
           "Home",
@@ -580,8 +522,7 @@ export default async function BlogArticlePage({
         "@type":
           "ListItem",
 
-        position:
-          2,
+        position: 2,
 
         name:
           "Blog",
@@ -593,8 +534,7 @@ export default async function BlogArticlePage({
         "@type":
           "ListItem",
 
-        position:
-          3,
+        position: 3,
 
         name:
           post.title,
@@ -608,56 +548,50 @@ export default async function BlogArticlePage({
   return (
     <main className="bg-white text-[#0B2A52]">
       <Navbar />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html:
-            JSON.stringify(
-              articleSchema
-            ).replace(
-              /</g,
-              "\\u003c"
-            ),
+          __html: JSON.stringify(
+            articleSchema
+          ).replace(
+            /</g,
+            "\\u003c"
+          ),
         }}
       />
 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html:
-            JSON.stringify(
-              webPageSchema
-            ).replace(
-              /</g,
-              "\\u003c"
-            ),
+          __html: JSON.stringify(
+            webPageSchema
+          ).replace(
+            /</g,
+            "\\u003c"
+          ),
         }}
       />
 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html:
-            JSON.stringify(
-              breadcrumbSchema
-            ).replace(
-              /</g,
-              "\\u003c"
-            ),
+          __html: JSON.stringify(
+            breadcrumbSchema
+          ).replace(
+            /</g,
+            "\\u003c"
+          ),
         }}
       />
 
-      <ArticleHero
-        post={post}
-      />
+      <ArticleHero post={post} />
 
       <ArticleOverview
         keyTakeaways={
           post.keyTakeaways
         }
-        tags={
-          post.tags
-        }
+        tags={post.tags}
       />
 
       <section className="relative bg-white px-5 pb-20 pt-8 sm:px-8 md:px-10 lg:px-14">
@@ -668,9 +602,7 @@ export default async function BlogArticlePage({
                 title={
                   post.title
                 }
-                toc={
-                  toc
-                }
+                toc={toc}
                 tags={
                   post.tags
                 }
@@ -700,12 +632,11 @@ export default async function BlogArticlePage({
       </section>
 
       <ArticleAuthor
-        author={
-          post.author
-        }
+        author={post.author}
       />
 
       <ArticleCTA />
+
       <Footer />
     </main>
   );

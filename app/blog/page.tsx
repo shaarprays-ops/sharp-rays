@@ -5,6 +5,8 @@ import Navbar from "@/components/Home/Navbar";
 import { sanityClient } from "@/sanity/lib/client";
 import { BLOG_POSTS_QUERY } from "@/sanity/lib/queries";
 
+export const revalidate = 60;
+
 type BlogPost = {
   _id: string;
   title: string;
@@ -42,17 +44,21 @@ type BlogPost = {
 };
 
 export default async function BlogPage() {
-  const posts: BlogPost[] =
-    await sanityClient.fetch(
-      BLOG_POSTS_QUERY
-    );
+  const now = new Date().toISOString();
+
+  const posts: BlogPost[] = await sanityClient.fetch(
+    BLOG_POSTS_QUERY,
+    {
+      now,
+    }
+  );
 
   return (
     <main className="overflow-hidden bg-white text-[#0B2A52]">
       <Navbar />
-      <BlogPageContent
-        posts={posts}
-      />
+
+      <BlogPageContent posts={posts} />
+
       <Footer />
     </main>
   );
