@@ -587,12 +587,7 @@ export default async function BlogArticlePage({
 
       <ArticleHero post={post} />
 
-      <ArticleOverview
-        keyTakeaways={
-          post.keyTakeaways
-        }
-        tags={post.tags}
-      />
+     
 
       <section className="relative bg-white px-5 pb-20 pt-8 sm:px-8 md:px-10 lg:px-14">
         <div className="mx-auto max-w-[1220px]">
@@ -630,6 +625,12 @@ export default async function BlogArticlePage({
           </div>
         </div>
       </section>
+      <ArticleOverview
+        keyTakeaways={
+          post.keyTakeaways
+        }
+       
+      />
 
       <ArticleAuthor
         author={post.author}

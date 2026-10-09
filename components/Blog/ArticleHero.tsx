@@ -109,7 +109,7 @@ export default function ArticleHero({
               )}
             </div>
 
-            <h1 className="max-w-[650px] font-serif text-[2.35rem] leading-[1.03] tracking-[-0.035em] text-[#0B2A52] sm:text-[2.65rem] md:text-[2.9rem] lg:text-[3.15rem] xl:text-[3.3rem]">
+            <h1 className="max-w-[650px] font-serif text-[1.65rem] leading-[1.03] tracking-[-0.035em] text-[#0B2A52] sm:text-[1.65rem] md:text-[1.75rem] lg:text-[1.85rem] xl:text-[1.95rem]">
               {post.title}
             </h1>
 
