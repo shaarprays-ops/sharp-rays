@@ -9,9 +9,10 @@ import {
   SITEMAP_TAGS_QUERY,
 } from "@/sanity/lib/queries";
 
-const SITE_URL =
+const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL ||
-  "https://www.sharprays.com";
+  "https://www.sharprays.com"
+).replace(/\/$/, "");
 
 /* =========================================================
    TYPES
@@ -170,60 +171,46 @@ function getAppRoutes(
   );
 
   if (hasPage) {
-    let relativePath =
-      path.relative(
-        baseDirectory,
-        directory
-      );
+    let relativePath = path.relative(
+      baseDirectory,
+      directory
+    );
 
-    relativePath =
-      relativePath
-        .split(path.sep)
-        .join("/");
+    relativePath = relativePath
+      .split(path.sep)
+      .join("/");
 
     let route =
       relativePath === ""
         ? "/"
         : `/${relativePath}`;
 
-    route =
-      cleanRouteGroups(route);
+    route = cleanRouteGroups(route);
 
-    if (
-      !shouldExcludeRoute(route)
-    ) {
+    if (!shouldExcludeRoute(route)) {
       routes.push(route);
     }
   }
 
   for (const entry of entries) {
+    if (!entry.isDirectory()) {
+      continue;
+    }
+
+    const folderName = entry.name;
+
     if (
-      !entry.isDirectory()
+      folderName === "node_modules" ||
+      folderName.startsWith("_") ||
+      folderName.startsWith("@")
     ) {
       continue;
     }
 
-    const folderName =
-      entry.name;
-
-    if (
-      folderName ===
-        "node_modules" ||
-      folderName.startsWith(
-        "_"
-      ) ||
-      folderName.startsWith(
-        "@"
-      )
-    ) {
-      continue;
-    }
-
-    const childDirectory =
-      path.join(
-        directory,
-        folderName
-      );
+    const childDirectory = path.join(
+      directory,
+      folderName
+    );
 
     routes.push(
       ...getAppRoutes(
@@ -240,24 +227,16 @@ function getAppRoutes(
    PRIORITY
 ========================================================= */
 
-function getPriority(
-  route: string
-) {
+function getPriority(route: string) {
   if (route === "/") {
     return 1;
   }
 
-  if (
-    route === "/services"
-  ) {
+  if (route === "/services") {
     return 0.95;
   }
 
-  if (
-    route.startsWith(
-      "/services/"
-    )
-  ) {
+  if (route.startsWith("/services/")) {
     return 0.9;
   }
 
@@ -265,11 +244,7 @@ function getPriority(
     return 0.9;
   }
 
-  if (
-    route.startsWith(
-      "/work/"
-    )
-  ) {
+  if (route.startsWith("/work/")) {
     return 0.8;
   }
 
@@ -293,11 +268,7 @@ function getPriority(
     return 0.7;
   }
 
-  if (
-    route.startsWith(
-      "/blog/"
-    )
-  ) {
+  if (route.startsWith("/blog/")) {
     return 0.8;
   }
 
@@ -305,9 +276,7 @@ function getPriority(
     return 0.8;
   }
 
-  if (
-    route === "/contact"
-  ) {
+  if (route === "/contact") {
     return 0.8;
   }
 
@@ -345,11 +314,7 @@ function getChangeFrequency(
     return "weekly";
   }
 
-  if (
-    route.startsWith(
-      "/blog/"
-    )
-  ) {
+  if (route.startsWith("/blog/")) {
     return "monthly";
   }
 
@@ -357,11 +322,7 @@ function getChangeFrequency(
     return "weekly";
   }
 
-  if (
-    route.startsWith(
-      "/work/"
-    )
-  ) {
+  if (route.startsWith("/work/")) {
     return "monthly";
   }
 
@@ -391,23 +352,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
    * /src/app
    */
 
-  const rootAppDirectory =
-    path.join(
-      process.cwd(),
-      "app"
-    );
+  const rootAppDirectory = path.join(
+    process.cwd(),
+    "app"
+  );
 
-  const srcAppDirectory =
-    path.join(
-      process.cwd(),
-      "src",
-      "app"
-    );
+  const srcAppDirectory = path.join(
+    process.cwd(),
+    "src",
+    "app"
+  );
 
   const appDirectory =
-    fs.existsSync(
-      rootAppDirectory
-    )
+    fs.existsSync(rootAppDirectory)
       ? rootAppDirectory
       : srcAppDirectory;
 
@@ -417,16 +374,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   let routes: string[] = [];
 
-  if (
-    fs.existsSync(
+  if (fs.existsSync(appDirectory)) {
+    routes = getAppRoutes(
+      appDirectory,
       appDirectory
-    )
-  ) {
-    routes =
-      getAppRoutes(
-        appDirectory,
-        appDirectory
-      );
+    );
   } else {
     console.warn(
       "Sitemap: app directory could not be found."
@@ -437,47 +389,44 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...new Set(routes),
   ];
 
-  routes.sort(
-    (a, b) => {
-      if (a === "/") {
-        return -1;
-      }
-
-      if (b === "/") {
-        return 1;
-      }
-
-      return a.localeCompare(
-        b
-      );
+  routes.sort((a, b) => {
+    if (a === "/") {
+      return -1;
     }
-  );
+
+    if (b === "/") {
+      return 1;
+    }
+
+    return a.localeCompare(b);
+  });
 
   const currentDate =
     new Date();
 
   const staticEntries: MetadataRoute.Sitemap =
-    routes.map(
-      (route) => ({
-        url:
-          route === "/"
-            ? SITE_URL
-            : `${SITE_URL}${route}`,
+    routes.map((route) => ({
+      url:
+        route === "/"
+          ? SITE_URL
+          : `${SITE_URL}${route}`,
 
-        lastModified:
-          currentDate,
+      lastModified:
+        currentDate,
 
-        changeFrequency:
-          getChangeFrequency(
-            route
-          ),
+      changeFrequency:
+        getChangeFrequency(route),
 
-        priority:
-          getPriority(
-            route
-          ),
-      })
-    );
+      priority:
+        getPriority(route),
+    }));
+
+  /* =======================================================
+     CURRENT TIME FOR FUTURE-DATED POSTS
+  ======================================================= */
+
+  const now =
+    new Date().toISOString();
 
   /* =======================================================
      SANITY DATA
@@ -497,26 +446,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       blogPosts,
       categories,
       tags,
-    ] =
-      await Promise.all([
-        sanityClient.fetch<
-          SitemapSanityItem[]
-        >(
-          SITEMAP_BLOG_POSTS_QUERY
-        ),
+    ] = await Promise.all([
+      sanityClient.fetch<
+        SitemapSanityItem[]
+      >(
+        SITEMAP_BLOG_POSTS_QUERY,
+        {
+          now,
+        }
+      ),
 
-        sanityClient.fetch<
-          SitemapSanityItem[]
-        >(
-          SITEMAP_CATEGORIES_QUERY
-        ),
+      sanityClient.fetch<
+        SitemapSanityItem[]
+      >(
+        SITEMAP_CATEGORIES_QUERY
+      ),
 
-        sanityClient.fetch<
-          SitemapSanityItem[]
-        >(
-          SITEMAP_TAGS_QUERY
-        ),
-      ]);
+      sanityClient.fetch<
+        SitemapSanityItem[]
+      >(
+        SITEMAP_TAGS_QUERY
+      ),
+    ]);
   } catch (error) {
     console.error(
       "Sitemap: failed to fetch Sanity blog URLs.",
@@ -530,38 +481,35 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const blogEntries: MetadataRoute.Sitemap =
     blogPosts
-      .filter(
-        (post) =>
-          Boolean(post.slug)
+      .filter((post) =>
+        Boolean(post.slug)
       )
-      .map(
-        (post) => {
-          const route =
-            `/blog/${post.slug}`;
+      .map((post) => {
+        const route =
+          `/blog/${post.slug}`;
 
-          return {
-            url:
-              `${SITE_URL}${route}`,
+        return {
+          url:
+            `${SITE_URL}${route}`,
 
-            lastModified:
-              post.lastModified
-                ? new Date(
-                    post.lastModified
-                  )
-                : currentDate,
+          lastModified:
+            post.lastModified
+              ? new Date(
+                  post.lastModified
+                )
+              : currentDate,
 
-            changeFrequency:
-              getChangeFrequency(
-                route
-              ),
+          changeFrequency:
+            getChangeFrequency(
+              route
+            ),
 
-            priority:
-              getPriority(
-                route
-              ),
-          };
-        }
-      );
+          priority:
+            getPriority(
+              route
+            ),
+        };
+      });
 
   /* =======================================================
      CATEGORY ARCHIVES
@@ -569,40 +517,37 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const categoryEntries: MetadataRoute.Sitemap =
     categories
-      .filter(
-        (category) =>
-          Boolean(
-            category.slug
-          )
+      .filter((category) =>
+        Boolean(
+          category.slug
+        )
       )
-      .map(
-        (category) => {
-          const route =
-            `/blog/category/${category.slug}`;
+      .map((category) => {
+        const route =
+          `/blog/category/${category.slug}`;
 
-          return {
-            url:
-              `${SITE_URL}${route}`,
+        return {
+          url:
+            `${SITE_URL}${route}`,
 
-            lastModified:
-              category.lastModified
-                ? new Date(
-                    category.lastModified
-                  )
-                : currentDate,
+          lastModified:
+            category.lastModified
+              ? new Date(
+                  category.lastModified
+                )
+              : currentDate,
 
-            changeFrequency:
-              getChangeFrequency(
-                route
-              ),
+          changeFrequency:
+            getChangeFrequency(
+              route
+            ),
 
-            priority:
-              getPriority(
-                route
-              ),
-          };
-        }
-      );
+          priority:
+            getPriority(
+              route
+            ),
+        };
+      });
 
   /* =======================================================
      TAG ARCHIVES
@@ -610,38 +555,35 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const tagEntries: MetadataRoute.Sitemap =
     tags
-      .filter(
-        (tag) =>
-          Boolean(tag.slug)
+      .filter((tag) =>
+        Boolean(tag.slug)
       )
-      .map(
-        (tag) => {
-          const route =
-            `/blog/tag/${tag.slug}`;
+      .map((tag) => {
+        const route =
+          `/blog/tag/${tag.slug}`;
 
-          return {
-            url:
-              `${SITE_URL}${route}`,
+        return {
+          url:
+            `${SITE_URL}${route}`,
 
-            lastModified:
-              tag.lastModified
-                ? new Date(
-                    tag.lastModified
-                  )
-                : currentDate,
+          lastModified:
+            tag.lastModified
+              ? new Date(
+                  tag.lastModified
+                )
+              : currentDate,
 
-            changeFrequency:
-              getChangeFrequency(
-                route
-              ),
+          changeFrequency:
+            getChangeFrequency(
+              route
+            ),
 
-            priority:
-              getPriority(
-                route
-              ),
-          };
-        }
-      );
+          priority:
+            getPriority(
+              route
+            ),
+        };
+      });
 
   /* =======================================================
      COMBINE + REMOVE DUPLICATES
@@ -668,15 +610,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   uniqueEntries.sort(
     (a, b) => {
-      if (
-        a.url === SITE_URL
-      ) {
+      if (a.url === SITE_URL) {
         return -1;
       }
 
-      if (
-        b.url === SITE_URL
-      ) {
+      if (b.url === SITE_URL) {
         return 1;
       }
 
