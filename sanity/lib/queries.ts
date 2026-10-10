@@ -291,7 +291,6 @@ export const TAG_BY_SLUG_QUERY = defineQuery(`
 /* =========================================================
    POSTS BY TAG
 ========================================================= */
-
 export const POSTS_BY_TAG_QUERY = defineQuery(`
   *[
     _type == "blogPost" &&
@@ -308,6 +307,7 @@ export const POSTS_BY_TAG_QUERY = defineQuery(`
     title,
     "slug": slug.current,
     excerpt,
+    "bodyText": pt::text(body),
     "publishedAt": coalesce(publishedAt, _createdAt),
     featured,
 
