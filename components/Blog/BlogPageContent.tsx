@@ -418,16 +418,10 @@ export default function BlogPageContent({
           className="scroll-mt-24"
         >
           <BlogGrid
-            posts={
-              searchResults
-            }
-            searchQuery={
-              searchQuery
-            }
-            selectedCategory="All Insights"
-            initialVisibleCount={6}
-            enableLoadMore
-          />
+  posts={searchResults}
+  searchQuery={searchQuery}
+  selectedCategory="All Insights"
+/>
         </div>
       )}
 

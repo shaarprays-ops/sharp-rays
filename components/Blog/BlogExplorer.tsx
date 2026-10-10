@@ -25,9 +25,33 @@ export default function BlogExplorer({
 
   /* =====================================================
      LATEST THIS WEEK
+
+     All posts published during the last 7 days.
+     WeeklyPosts handles 6 cards per page.
   ===================================================== */
 
-  const weeklyPosts = posts.slice(1, 4);
+  const weeklyPosts = useMemo(() => {
+    const now = new Date();
+    const sevenDaysAgo = new Date(now);
+
+    sevenDaysAgo.setDate(
+      sevenDaysAgo.getDate() - 7
+    );
+
+    return posts.filter((post) => {
+      if (!post.publishedAt) {
+        return false;
+      }
+
+      const publishedDate =
+        new Date(post.publishedAt);
+
+      return (
+        publishedDate >= sevenDaysAgo &&
+        publishedDate <= now
+      );
+    });
+  }, [posts]);
 
   /* =====================================================
      FEATURED POST
@@ -44,9 +68,6 @@ export default function BlogExplorer({
 
   /* =====================================================
      CATEGORIES
-
-     BlogCategoryFilter now requires:
-     { title, slug }[]
   ===================================================== */
 
   const categories = useMemo(() => {
@@ -59,8 +80,11 @@ export default function BlogExplorer({
     >();
 
     posts.forEach((post) => {
-      const title = post.category?.title;
-      const slug = post.category?.slug;
+      const title =
+        post.category?.title;
+
+      const slug =
+        post.category?.slug;
 
       if (!title || !slug) {
         return;
@@ -74,7 +98,9 @@ export default function BlogExplorer({
       }
     });
 
-    return Array.from(categoryMap.values());
+    return Array.from(
+      categoryMap.values()
+    );
   }, [posts]);
 
   /* =====================================================
@@ -82,7 +108,11 @@ export default function BlogExplorer({
   ===================================================== */
 
   const tags = useMemo(() => {
-    const map = new Map<string, BlogTag>();
+    const map =
+      new Map<
+        string,
+        BlogTag
+      >();
 
     posts.forEach((post) => {
       post.tags?.forEach((tag) => {
@@ -101,7 +131,9 @@ export default function BlogExplorer({
       });
     });
 
-    return Array.from(map.values());
+    return Array.from(
+      map.values()
+    );
   }, [posts]);
 
   /* =====================================================
@@ -109,56 +141,61 @@ export default function BlogExplorer({
   ===================================================== */
 
   const normalizedSearch =
-    searchQuery.trim().toLowerCase();
+    searchQuery
+      .trim()
+      .toLowerCase();
 
-  const searchResults = useMemo(() => {
-    if (!normalizedSearch) {
-      return [];
-    }
+  const searchResults =
+    useMemo(() => {
+      if (!normalizedSearch) {
+        return [];
+      }
 
-    return posts.filter((post) => {
-      const searchable = [
-        post.title,
-        post.excerpt,
-        post.category?.title,
-        post.author?.name,
-        ...(post.tags?.map(
-          (tag) => tag.title
-        ) || []),
-      ]
-        .filter(Boolean)
-        .join(" ")
-        .toLowerCase();
+      return posts.filter((post) => {
+        const searchable = [
+          post.title,
+          post.excerpt,
+          post.category?.title,
+          post.author?.name,
+          ...(post.tags?.map(
+            (tag) => tag.title
+          ) || []),
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase();
 
-      return searchable.includes(
-        normalizedSearch
-      );
-    });
-  }, [
-    posts,
-    normalizedSearch,
-  ]);
+        return searchable.includes(
+          normalizedSearch
+        );
+      });
+    }, [
+      posts,
+      normalizedSearch,
+    ]);
 
   /* =====================================================
      ALL INSIGHTS
 
-     Hero/latest post is excluded so the same article
-     is not repeated immediately below.
+     Latest hero post excluded.
+     BlogGrid handles 9 cards per page.
   ===================================================== */
 
-  const allInsights = useMemo(() => {
-    if (!latestPost) {
-      return posts;
-    }
+  const allInsights =
+    useMemo(() => {
+      if (!latestPost) {
+        return posts;
+      }
 
-    return posts.filter(
-      (post) =>
-        post._id !== latestPost._id
-    );
-  }, [
-    posts,
-    latestPost,
-  ]);
+      return posts.filter(
+        (post) =>
+          post._id !==
+          latestPost._id
+      );
+    }, [
+      posts,
+      latestPost,
+    ]);
 
   return (
     <>
@@ -200,6 +237,8 @@ export default function BlogExplorer({
 
             <BlogGrid
               posts={searchResults}
+              searchQuery={searchQuery}
+              selectedCategory="All Insights"
             />
           </div>
         </section>
@@ -209,75 +248,81 @@ export default function BlogExplorer({
           LATEST THIS WEEK
       ================================================= */}
 
-      {weeklyPosts.length > 0 && (
-        <WeeklyPosts
-          posts={weeklyPosts}
-        />
-      )}
+      {!normalizedSearch &&
+        weeklyPosts.length > 0 && (
+          <WeeklyPosts
+            posts={weeklyPosts}
+          />
+        )}
 
       {/* =================================================
           CATEGORY ARCHIVE LINKS
       ================================================= */}
 
-      <BlogCategoryFilter
-        categories={categories}
-      />
+      {!normalizedSearch && (
+        <BlogCategoryFilter
+          categories={categories}
+        />
+      )}
 
       {/* =================================================
           ALL INSIGHTS
       ================================================= */}
 
-      <section
-        id="blog-results"
-        className="scroll-mt-28 border-t border-[#0B2A52]/8 bg-[#F8FBFD]"
-      >
-        <div className="mx-auto max-w-[1380px] px-5 py-14 sm:px-8 md:px-10 lg:px-14 lg:py-20 xl:px-20">
-          <div className="mb-8">
-            <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#6285AD]">
-              All Insights
-            </p>
-
-            <div className="mt-3 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
-              <h2 className="font-serif text-[2.2rem] leading-tight tracking-[-0.03em] text-[#0B2A52]">
-                Explore All Perspectives.
-              </h2>
-
-              <p className="text-[11px] text-[#0B2A52]/45">
-                {allInsights.length}{" "}
-                {allInsights.length === 1
-                  ? "article"
-                  : "articles"}
+      {!normalizedSearch && (
+        <section
+          id="blog-results"
+          className="scroll-mt-28 border-t border-[#0B2A52]/8 bg-[#F8FBFD]"
+        >
+          <div className="mx-auto max-w-[1380px] px-5 py-14 sm:px-8 md:px-10 lg:px-14 lg:py-20 xl:px-20">
+            <div className="mb-8">
+              <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#6285AD]">
+                All Insights
               </p>
-            </div>
-          </div>
 
-          <BlogGrid
-            posts={allInsights}
-            initialVisibleCount={6}
-            enableLoadMore
-          />
-        </div>
-      </section>
+              <div className="mt-3 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+                <h2 className="font-serif text-[2.2rem] leading-tight tracking-[-0.03em] text-[#0B2A52]">
+                  Explore All Perspectives.
+                </h2>
+
+                <p className="text-[11px] text-[#0B2A52]/45">
+                  {allInsights.length}{" "}
+                  {allInsights.length === 1
+                    ? "article"
+                    : "articles"}
+                </p>
+              </div>
+            </div>
+
+            <BlogGrid
+              posts={allInsights}
+              selectedCategory="All Insights"
+            />
+          </div>
+        </section>
+      )}
 
       {/* =================================================
           FEATURED INSIGHT
       ================================================= */}
 
-      {featuredPost && (
-        <FeaturedInsight
-          post={featuredPost}
-        />
-      )}
+      {!normalizedSearch &&
+        featuredPost && (
+          <FeaturedInsight
+            post={featuredPost}
+          />
+        )}
 
       {/* =================================================
           POPULAR TOPICS
       ================================================= */}
 
-      {tags.length > 0 && (
-        <PopularTopics
-          tags={tags}
-        />
-      )}
+      {!normalizedSearch &&
+        tags.length > 0 && (
+          <PopularTopics
+            tags={tags}
+          />
+        )}
     </>
   );
 }
