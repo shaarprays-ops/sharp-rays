@@ -45,10 +45,16 @@ export default function BlogCard({
           .url()
       : null;
 
-  const visibleTags =
-    post.tags
-      ?.filter((tag) => Boolean(tag.title))
-      .slice(0, 3) || [];
+const visibleTags = Array.from(
+  new Map(
+    (post.tags || [])
+      .filter((tag) => Boolean(tag.title))
+      .map((tag) => [
+        tag._id || tag.slug || tag.title,
+        tag,
+      ])
+  ).values()
+).slice(0, 3);
 
   return (
     <article className="group flex h-full flex-col overflow-hidden border border-[#0B2A52]/12 bg-white transition-all duration-300 hover:-translate-y-[2px] hover:border-[#6285AD]/35 hover:shadow-[0_16px_42px_rgba(11,42,82,0.07)]">
@@ -92,18 +98,18 @@ export default function BlogCard({
           {post.excerpt}
         </p>
 
-        {visibleTags.length > 0 && (
-          <div className="mt-4 flex flex-wrap gap-1.5">
-            {visibleTags.map((tag) => (
-              <span
-                key={tag._id || tag.slug || tag.title}
-                className="border border-[#0B2A52]/8 bg-[#f7fafc] px-2.5 py-1.5 text-[9px] font-medium text-[#0B2A52]/55"
-              >
-                {tag.title}
-              </span>
-            ))}
-          </div>
-        )}
+       {visibleTags.length > 0 && (
+  <div className="mt-4 flex flex-wrap gap-1.5">
+    {visibleTags.map((tag, index) => (
+      <span
+        key={`${tag._id || tag.slug || tag.title}-${index}`}
+        className="border border-[#0B2A52]/8 bg-[#f7fafc] px-2.5 py-1.5 text-[9px] font-medium text-[#0B2A52]/55"
+      >
+        {tag.title}
+      </span>
+    ))}
+  </div>
+)}
 
         <div className="mt-auto flex items-center justify-between gap-4 pt-5">
           <p className="truncate text-[11px] text-[#0B2A52]/50">

@@ -1,6 +1,17 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+
+import {
+  ArrowLeft,
+  ArrowRight,
+} from "lucide-react";
+
 import BlogCard from "./BlogCard";
 
 type BlogPost = {
@@ -35,55 +46,108 @@ type BlogGridProps = {
   posts: BlogPost[];
   searchQuery?: string;
   selectedCategory?: string;
-  initialVisibleCount?: number;
-  enableLoadMore?: boolean;
 };
+
+const POSTS_PER_PAGE = 9;
 
 export default function BlogGrid({
   posts,
   searchQuery = "",
   selectedCategory = "All Insights",
-  initialVisibleCount = 6,
-  enableLoadMore = false,
 }: BlogGridProps) {
-  const [visibleCount, setVisibleCount] =
-    useState(initialVisibleCount);
+  const [currentPage, setCurrentPage] =
+    useState(1);
+
+  const sectionRef =
+    useRef<HTMLElement | null>(null);
 
   const isCategorySelected =
     selectedCategory !== "All Insights";
 
-  const visiblePosts = useMemo(() => {
-    if (!enableLoadMore) {
-      return posts;
-    }
+  /* =====================================================
+     REMOVE DUPLICATE POSTS
+  ===================================================== */
 
-    return posts.slice(
-      0,
-      visibleCount
+  const uniquePosts = useMemo(() => {
+    return Array.from(
+      new Map(
+        posts.map((post) => [
+          post._id,
+          post,
+        ])
+      ).values()
     );
+  }, [posts]);
+
+  /* =====================================================
+     RESET PAGE WHEN DATA / FILTER CHANGES
+  ===================================================== */
+
+  useEffect(() => {
+    setCurrentPage(1);
   }, [
     posts,
-    visibleCount,
-    enableLoadMore,
+    searchQuery,
+    selectedCategory,
   ]);
 
-  const hasMore =
-    enableLoadMore &&
-    visibleCount < posts.length;
+  /* =====================================================
+     PAGINATION
+  ===================================================== */
 
-  const handleLoadMore = () => {
-    setVisibleCount(
-      (current) =>
-        Math.min(
-          current + 6,
-          posts.length
-        )
+  const totalPages = Math.max(
+    1,
+    Math.ceil(
+      uniquePosts.length /
+        POSTS_PER_PAGE
+    )
+  );
+
+  const safeCurrentPage =
+    Math.min(
+      currentPage,
+      totalPages
     );
-  };
+
+  const startIndex =
+    (safeCurrentPage - 1) *
+    POSTS_PER_PAGE;
+
+  const visiblePosts =
+    uniquePosts.slice(
+      startIndex,
+      startIndex +
+        POSTS_PER_PAGE
+    );
+
+  function changePage(
+    page: number
+  ) {
+    if (
+      page < 1 ||
+      page > totalPages ||
+      page === safeCurrentPage
+    ) {
+      return;
+    }
+
+    setCurrentPage(page);
+
+    window.setTimeout(() => {
+      sectionRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 50);
+  }
 
   return (
-    <section className="bg-white">
+    <section
+      ref={sectionRef}
+      className="scroll-mt-28 bg-white"
+    >
       <div className="mx-auto max-w-[1380px] px-5 pb-20 sm:px-8 sm:pb-24 md:px-10 lg:px-14 lg:pb-28 xl:px-20">
+        {/* HEADER */}
         <div className="mb-9 border-t border-[#0B2A52]/10 pt-10 sm:flex sm:items-end sm:justify-between">
           <div>
             <p className="text-[12px] font-medium uppercase tracking-[0.2em] text-[#6285AD]">
@@ -113,7 +177,8 @@ export default function BlogGrid({
             )}
         </div>
 
-        {posts.length > 0 ? (
+        {/* POSTS */}
+        {uniquePosts.length > 0 ? (
           <>
             <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {visiblePosts.map(
@@ -126,17 +191,60 @@ export default function BlogGrid({
               )}
             </div>
 
-            {hasMore && (
-              <div className="mt-10 flex justify-center">
+            {/* PAGINATION */}
+            {totalPages > 1 && (
+              <div className="mt-12 flex items-center justify-center gap-3 border-t border-[#0B2A52]/10 pt-8">
                 <button
                   type="button"
-                  onClick={
-                    handleLoadMore
+                  onClick={() =>
+                    changePage(
+                      safeCurrentPage - 1
+                    )
                   }
-                  title="Load more Sharp Rays insights"
-                  className="inline-flex min-h-[48px] items-center justify-center rounded-[16px] border border-[#0B2A52]/15 bg-white px-6 py-3 text-[12px] font-medium text-[#0B2A52] shadow-[0_8px_24px_rgba(11,42,82,0.05)] transition-all duration-300 hover:-translate-y-[2px] hover:border-[#6285AD]/35 hover:bg-[#f8fbfe] hover:shadow-[0_12px_30px_rgba(11,42,82,0.08)]"
+                  disabled={
+                    safeCurrentPage === 1
+                  }
+                  className="group inline-flex min-h-[44px] items-center gap-2 border border-[#0B2A52]/12 bg-white px-4 text-[11px] font-medium text-[#0B2A52] transition-all duration-300 hover:border-[#0B2A52] hover:bg-[#0B2A52] hover:text-white disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:border-[#0B2A52]/12 disabled:hover:bg-white disabled:hover:text-[#0B2A52]"
                 >
-                  Load More Insights
+                  <ArrowLeft
+                    size={14}
+                    strokeWidth={1.7}
+                    className="transition-transform duration-300 group-hover:-translate-x-[2px]"
+                  />
+
+                  Previous
+                </button>
+
+                <div className="inline-flex min-h-[44px] min-w-[72px] items-center justify-center border border-[#0B2A52]/12 bg-[#F8FBFE] px-4 text-[11px] font-medium text-[#0B2A52]">
+                  {safeCurrentPage}
+
+                  <span className="mx-1.5 text-[#0B2A52]/30">
+                    /
+                  </span>
+
+                  {totalPages}
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() =>
+                    changePage(
+                      safeCurrentPage + 1
+                    )
+                  }
+                  disabled={
+                    safeCurrentPage ===
+                    totalPages
+                  }
+                  className="group inline-flex min-h-[44px] items-center gap-2 border border-[#0B2A52]/12 bg-white px-4 text-[11px] font-medium text-[#0B2A52] transition-all duration-300 hover:border-[#0B2A52] hover:bg-[#0B2A52] hover:text-white disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:border-[#0B2A52]/12 disabled:hover:bg-white disabled:hover:text-[#0B2A52]"
+                >
+                  Next
+
+                  <ArrowRight
+                    size={14}
+                    strokeWidth={1.7}
+                    className="transition-transform duration-300 group-hover:translate-x-[2px]"
+                  />
                 </button>
               </div>
             )}

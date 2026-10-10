@@ -58,10 +58,7 @@ type BlogPageContentProps = {
 export default function BlogPageContent({
   posts,
 }: BlogPageContentProps) {
-  const [
-    searchQuery,
-    setSearchQuery,
-  ] =
+  const [searchQuery, setSearchQuery] =
     useState("");
 
   const searchResultsRef =
@@ -78,6 +75,10 @@ export default function BlogPageContent({
 
   /* =====================================================
      LATEST THIS WEEK
+
+     ALL posts from the last 7 days.
+     No 3-post limit.
+     Hero post is also allowed here.
   ===================================================== */
 
   const weeklyPosts =
@@ -93,44 +94,28 @@ export default function BlogPageContent({
           7
       );
 
-      return posts
-        .filter(
-          (post) => {
-            if (
-              !post.publishedAt
-            ) {
-              return false;
-            }
-
-            if (
-              latestPost &&
-              post._id ===
-                latestPost._id
-            ) {
-              return false;
-            }
-
-            const publishedDate =
-              new Date(
-                post.publishedAt
-              );
-
-            return (
-              publishedDate >=
-                sevenDaysAgo &&
-              publishedDate <=
-                now
-            );
+      return posts.filter(
+        (post) => {
+          if (
+            !post.publishedAt
+          ) {
+            return false;
           }
-        )
-        .slice(
-          0,
-          3
-        );
-    }, [
-      posts,
-      latestPost,
-    ]);
+
+          const publishedDate =
+            new Date(
+              post.publishedAt
+            );
+
+          return (
+            publishedDate >=
+              sevenDaysAgo &&
+            publishedDate <=
+              now
+          );
+        }
+      );
+    }, [posts]);
 
   /* =====================================================
      CATEGORIES
@@ -150,12 +135,10 @@ export default function BlogPageContent({
       posts.forEach(
         (post) => {
           const title =
-            post.category
-              ?.title;
+            post.category?.title;
 
           const slug =
-            post.category
-              ?.slug;
+            post.category?.slug;
 
           if (
             !title ||
@@ -187,9 +170,6 @@ export default function BlogPageContent({
 
   /* =====================================================
      POPULAR TAGS
-
-     Count how many posts use each tag.
-     Most-used tags appear first.
   ===================================================== */
 
   const popularTags =
@@ -207,6 +187,16 @@ export default function BlogPageContent({
 
       posts.forEach(
         (post) => {
+          const uniquePostTags =
+            new Map<
+              string,
+              {
+                _id?: string;
+                title?: string;
+                slug?: string;
+              }
+            >();
+
           post.tags?.forEach(
             (tag) => {
               if (
@@ -220,14 +210,30 @@ export default function BlogPageContent({
                 tag._id ||
                 tag.title.toLowerCase();
 
+              if (
+                !uniquePostTags.has(
+                  key
+                )
+              ) {
+                uniquePostTags.set(
+                  key,
+                  tag
+                );
+              }
+            }
+          );
+
+          uniquePostTags.forEach(
+            (
+              tag,
+              key
+            ) => {
               const existing =
                 tagMap.get(
                   key
                 );
 
-              if (
-                existing
-              ) {
+              if (existing) {
                 existing.count +=
                   1;
               } else {
@@ -235,8 +241,7 @@ export default function BlogPageContent({
                   key,
                   {
                     ...tag,
-                    count:
-                      1,
+                    count: 1,
                   }
                 );
               }
@@ -249,17 +254,11 @@ export default function BlogPageContent({
         tagMap.values()
       )
         .sort(
-          (
-            a,
-            b
-          ) =>
+          (a, b) =>
             b.count -
             a.count
         )
-        .slice(
-          0,
-          12
-        );
+        .slice(0, 12);
     }, [posts]);
 
   /* =====================================================
@@ -290,12 +289,8 @@ export default function BlogPageContent({
                 (tag) =>
                   tag.title
               )
-              .filter(
-                Boolean
-              )
-              .join(
-                " "
-              ) ||
+              .filter(Boolean)
+              .join(" ") ||
             "";
 
           const searchableContent =
@@ -308,12 +303,8 @@ export default function BlogPageContent({
                 ?.name,
               tagsText,
             ]
-              .filter(
-                Boolean
-              )
-              .join(
-                " "
-              )
+              .filter(Boolean)
+              .join(" ")
               .toLowerCase();
 
           return searchableContent.includes(
@@ -331,9 +322,7 @@ export default function BlogPageContent({
   ===================================================== */
 
   useEffect(() => {
-    if (
-      !isSearching
-    ) {
+    if (!isSearching) {
       return;
     }
 
@@ -362,10 +351,7 @@ export default function BlogPageContent({
   ]);
 
   /* =====================================================
-     ALL INSIGHTS
-
-     Latest hero post excluded.
-     Maximum 9 posts.
+     LATEST INSIGHTS
   ===================================================== */
 
   const latestInsights =
@@ -376,10 +362,7 @@ export default function BlogPageContent({
             post._id !==
             latestPost?._id
         )
-        .slice(
-          0,
-          9
-        );
+        .slice(0, 9);
     }, [
       posts,
       latestPost,
@@ -434,46 +417,57 @@ export default function BlogPageContent({
           }
           className="scroll-mt-24"
         >
-         <BlogGrid
-  posts={latestInsights}
-  selectedCategory="All Insights"
-  initialVisibleCount={6}
-  enableLoadMore
-/>
+          <BlogGrid
+            posts={
+              searchResults
+            }
+            searchQuery={
+              searchQuery
+            }
+            selectedCategory="All Insights"
+            initialVisibleCount={6}
+            enableLoadMore
+          />
         </div>
       )}
 
       {/* LATEST THIS WEEK */}
 
-      {weeklyPosts.length >
-        0 && (
-        <WeeklyPosts
-          posts={
-            weeklyPosts
+      {!isSearching &&
+        weeklyPosts.length >
+          0 && (
+          <WeeklyPosts
+            posts={
+              weeklyPosts
+            }
+          />
+        )}
+
+      {/* CATEGORY ARCHIVES */}
+
+      {!isSearching && (
+        <BlogCategoryFilter
+          categories={
+            categories
           }
         />
       )}
 
-      {/* CATEGORY ARCHIVES */}
-
-      <BlogCategoryFilter
-        categories={
-          categories
-        }
-      />
-
       {/* LATEST INSIGHTS */}
 
-      <BlogGrid
-        posts={
-          latestInsights
-        }
-        selectedCategory="All Insights"
-      />
+      {!isSearching && (
+        <BlogGrid
+          posts={
+            latestInsights
+          }
+          selectedCategory="All Insights"
+        />
+      )}
 
       {/* FEATURED */}
 
-      {featuredPost && (
+      {!isSearching &&
+        featuredPost && (
         <FeaturedBlog
           post={
             featuredPost
@@ -483,14 +477,15 @@ export default function BlogPageContent({
 
       {/* POPULAR TOPICS */}
 
-      {popularTags.length >
-        0 && (
-        <PopularTopics
-          tags={
-            popularTags
-          }
-        />
-      )}
+      {!isSearching &&
+        popularTags.length >
+          0 && (
+          <PopularTopics
+            tags={
+              popularTags
+            }
+          />
+        )}
     </>
   );
 }
