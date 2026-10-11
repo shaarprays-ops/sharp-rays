@@ -620,7 +620,7 @@ const socialMediaPlansSchema = {
         "Starter Social Media Marketing Plan",
 
       url:
-        "https://www.sharprays.com/contact?service=social-media-marketing&plan=starter",
+        "  url:https://www.sharprays.com/services/social-media-marketing#pricing",
 
       seller: {
         "@id":
@@ -656,8 +656,7 @@ const socialMediaPlansSchema = {
       name:
         "Growth Social Media Marketing Plan",
 
-      url:
-        "https://www.sharprays.com/contact?service=social-media-marketing&plan=growth",
+      url: "https://www.sharprays.com/services/social-media-marketing#pricing",
 
       seller: {
         "@id":
@@ -692,9 +691,8 @@ const socialMediaPlansSchema = {
 
       name:
         "Scale Social Media Marketing Plan",
-
-      url:
-        "https://www.sharprays.com/contact?service=social-media-marketing&plan=scale",
+        
+  url: "https://www.sharprays.com/services/social-media-marketing#pricing",
 
       seller: {
         "@id":

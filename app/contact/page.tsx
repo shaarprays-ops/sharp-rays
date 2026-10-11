@@ -149,10 +149,10 @@ const contactCoreSchema = {
         "https://www.sharprays.com/contact#primaryimage",
 
       url:
-        "https://www.sharprays.com/og/contact.png",
+        "https://www.sharprays.com/og/contact.webp",
 
       contentUrl:
-        "https://www.sharprays.com/og/contact.png",
+        "https://www.sharprays.com/og/contact.webp",
 
       width: 1200,
 
