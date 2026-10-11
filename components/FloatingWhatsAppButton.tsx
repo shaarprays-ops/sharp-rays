@@ -1,6 +1,6 @@
 "use client";
 
-const WHATSAPP_NUMBER = "917517848682";
+const WHATSAPP_NUMBER = "9194159 51060";
 
 const WHATSAPP_MESSAGE =
   "Hello Sharp Rays! I visited your website and would like to know more about your services.";

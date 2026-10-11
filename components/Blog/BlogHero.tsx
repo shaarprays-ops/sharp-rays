@@ -188,6 +188,7 @@ export default function BlogHero({
                       latestPost.title
                     }
                     fill
+                    unoptimized
                     priority
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover transition-transform duration-500 hover:scale-[1.02]"
@@ -240,6 +241,7 @@ export default function BlogHero({
                             "Sharp Rays author"
                           }
                           fill
+                          unoptimized
                           sizes="36px"
                           className="object-cover"
                         />

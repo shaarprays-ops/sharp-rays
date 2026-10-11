@@ -26,9 +26,9 @@ const services = [
     title: "Website Development and Management Services by Sharp Rays",
   },
   {
-    label: "Content Management",
-    href: "/services/content-management",
-    title: "Content Management Services by Sharp Rays",
+    label: "Content Marketing",
+    href: "/services/content-marketing",
+    title: "Content Marketing Services by Sharp Rays",
   },
   {
     label: "AI Video & Video Editing",
@@ -85,91 +85,26 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer
-      className="
-        relative
-        overflow-hidden
-        border-t
-        border-[#0B2A52]/[0.08]
-        bg-[#FAFCFE]
-        text-[#0B2A52]
-      "
-    >
+    <footer className="relative overflow-hidden border-t border-[#0B2A52]/[0.08] bg-[#FAFCFE] text-[#0B2A52]">
       {/* =====================================================
           VERY SUBTLE BACKGROUND
       ===================================================== */}
 
       <div
         aria-hidden="true"
-        className="
-          pointer-events-none
-          absolute
-          inset-0
-          overflow-hidden
-        "
+        className="pointer-events-none absolute inset-0 overflow-hidden"
       >
-        <div
-          className="
-            absolute
-            -left-[160px]
-            top-[-160px]
-            h-[340px]
-            w-[340px]
-            rounded-full
-            bg-[#EEF5FA]/75
-            blur-[110px]
-          "
-        />
+        <div className="absolute -left-[160px] top-[-160px] h-[340px] w-[340px] rounded-full bg-[#EEF5FA]/75 blur-[110px]" />
 
-        <div
-          className="
-            absolute
-            -right-[180px]
-            bottom-[-200px]
-            h-[380px]
-            w-[380px]
-            rounded-full
-            bg-[#B79A72]/[0.04]
-            blur-[120px]
-          "
-        />
+        <div className="absolute -right-[180px] bottom-[-200px] h-[380px] w-[380px] rounded-full bg-[#B79A72]/[0.04] blur-[120px]" />
       </div>
 
       {/* =====================================================
           MAIN FOOTER
       ===================================================== */}
 
-      <div
-        className="
-          relative
-          z-10
-          mx-auto
-          w-full
-          max-w-[1440px]
-          px-4
-          py-12
-          sm:px-6
-          sm:py-14
-          md:px-8
-          md:py-16
-          lg:px-12
-          lg:py-18
-          xl:px-14
-        "
-      >
-        <div
-          className="
-            grid
-            grid-cols-1
-            gap-10
-            sm:grid-cols-2
-            sm:gap-x-10
-            sm:gap-y-12
-            lg:grid-cols-[1.15fr_1.15fr_0.7fr_0.9fr]
-            lg:gap-10
-            xl:gap-14
-          "
-        >
+      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-4 py-12 sm:px-6 sm:py-14 md:px-8 md:py-16 lg:px-12 lg:py-18 xl:px-14">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 lg:grid-cols-[1.15fr_1.15fr_0.7fr_1fr] lg:gap-10 xl:gap-14">
           {/* =================================================
               BRAND
           ================================================= */}
@@ -179,39 +114,19 @@ export default function Footer() {
               href="/"
               aria-label="Sharp Rays Home"
               title="Sharp Rays Home"
-              className="
-                mt-5
-                inline-flex
-                items-center
-              "
+              className="mt-5 inline-flex items-center"
             >
               <img
                 src="/logo/sharp-rays-logo.png"
                 alt="Sharp Rays"
                 title="Sharp Rays"
-                className="
-                  h-auto
-                  w-[165px]
-                  object-contain
-                  object-left
-                  sm:w-[180px]
-                  lg:w-[195px]
-                "
+                className="h-auto w-[165px] object-contain object-left sm:w-[180px] lg:w-[195px]"
               />
             </Link>
 
             <p
               style={newYorkFont}
-              className="
-                mt-6
-                max-w-[260px]
-                text-[1.35rem]
-                font-light
-                leading-[1.35]
-                tracking-[-0.025em]
-                text-[#0B2A52]
-                sm:text-[1.5rem]
-              "
+              className="mt-6 max-w-[260px] text-[1.35rem] font-light leading-[1.35] tracking-[-0.025em] text-[#0B2A52] sm:text-[1.5rem]"
             >
               Digital growth,{" "}
               <span className="italic text-[#B79A72]">
@@ -221,15 +136,7 @@ export default function Footer() {
 
             {/* SOCIAL */}
 
-            <div
-              className="
-                mt-7
-                flex
-                flex-wrap
-                gap-x-5
-                gap-y-3
-              "
-            >
+            <div className="mt-7 flex flex-wrap gap-x-5 gap-y-3">
               {socialLinks.map((item) => (
                 <a
                   key={item.icon}
@@ -239,41 +146,9 @@ export default function Footer() {
                   aria-label={`Visit Sharp Rays on ${item.label}`}
                   title={`Visit Sharp Rays on ${item.label}`}
                   style={newYorkFont}
-                  className="
-                    group
-                    inline-flex
-                    items-center
-                    gap-2
-                    text-[12px]
-                    font-medium
-                    text-[#60758A]
-                    transition-all
-                    duration-300
-                    hover:-translate-y-[1px]
-                    hover:text-[#0B2A52]
-                  "
+                  className="group inline-flex items-center gap-2 text-[12px] font-medium text-[#60758A] transition-all duration-300 hover:-translate-y-[1px] hover:text-[#0B2A52]"
                 >
-                  <span
-                    className="
-                      flex
-                      h-8
-                      w-8
-                      shrink-0
-                      items-center
-                      justify-center
-                      rounded-full
-                      border
-                      border-[#6285AD]/25
-                      bg-white/80
-                      text-[#0B2A52]
-                      shadow-[0_5px_16px_rgba(11,42,82,0.05)]
-                      transition-all
-                      duration-300
-                      group-hover:border-[#6285AD]/40
-                      group-hover:bg-[#F5F8FC]
-                      group-hover:text-[#6285AD]
-                    "
-                  >
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#6285AD]/25 bg-white/80 text-[#0B2A52] shadow-[0_5px_16px_rgba(11,42,82,0.05)] transition-all duration-300 group-hover:border-[#6285AD]/40 group-hover:bg-[#F5F8FC] group-hover:text-[#6285AD]">
                     <SocialIcon
                       name={item.icon}
                       className="h-[14px] w-[14px]"
@@ -295,12 +170,7 @@ export default function Footer() {
 
             <nav
               aria-label="Footer services"
-              className="
-                mt-5
-                flex
-                flex-col
-                gap-3
-              "
+              className="mt-5 flex flex-col gap-3"
             >
               {services.map((service) => (
                 <FooterLink
@@ -323,12 +193,7 @@ export default function Footer() {
 
             <nav
               aria-label="Footer navigation"
-              className="
-                mt-5
-                flex
-                flex-col
-                gap-3
-              "
+              className="mt-5 flex flex-col gap-3"
             >
               {exploreLinks.map((item) => (
                 <FooterLink
@@ -352,45 +217,67 @@ export default function Footer() {
             <div className="mt-5">
               <p
                 style={newYorkFont}
-                className="
-                  text-[11px]
-                  leading-[1.6]
-                  text-[#8796A3]
-                "
+                className="text-[11px] leading-[1.6] text-[#8796A3]"
               >
                 Have a project, problem or opportunity in mind?
               </p>
+
+              {/* EMAIL */}
 
               <a
                 href="mailto:info@sharprays.com"
                 title="Email Sharp Rays"
                 aria-label="Email Sharp Rays"
                 style={newYorkFont}
-                className="
-                  group
-                  mt-4
-                  inline-flex
-                  items-center
-                  text-[14px]
-                  font-medium
-                  text-[#0B2A52]
-                  transition-colors
-                  duration-300
-                  hover:text-[#6285AD]
-                  sm:text-[15px]
-                "
+                className="group mt-4 inline-flex items-center text-[14px] font-medium text-[#0B2A52] transition-colors duration-300 hover:text-[#6285AD] sm:text-[15px]"
               >
                 info@sharprays.com
               </a>
 
-              <div
-                className="
-                  mt-5
-                  h-px
-                  w-10
-                  bg-[#B79A72]
-                "
-              />
+              {/* PHONE */}
+
+              <a
+                href="tel:+919415951060"
+                title="Call Sharp Rays"
+                aria-label="Call Sharp Rays at +91 94159 51060"
+                style={newYorkFont}
+                className="mt-3 block w-fit text-[14px] font-medium text-[#0B2A52] transition-colors duration-300 hover:text-[#6285AD] sm:text-[15px]"
+              >
+                +91 94159 51060
+              </a>
+
+              {/* LOCATION */}
+
+              <div className="mt-5 border-t border-[#0B2A52]/[0.08] pt-5">
+                <p
+                  style={newYorkFont}
+                  className="text-[9px] font-medium uppercase tracking-[0.18em] text-[#B79A72]"
+                >
+                  Location
+                </p>
+
+                <address
+                  style={newYorkFont}
+                  className="mt-3 not-italic text-[12px] leading-[1.75] text-[#60758A]"
+                >
+                  <span className="font-medium text-[#0B2A52]">
+                    Sharp Rays
+                  </span>
+                  <br />
+                  Naigaon East, Vasai-Virar
+                  <br />
+                  Palghar, Maharashtra 401208
+                </address>
+
+                <p
+                  style={newYorkFont}
+                  className="mt-3 max-w-[230px] text-[11px] leading-[1.6] text-[#8796A3]"
+                >
+                  Serving businesses across Maharashtra & India
+                </p>
+              </div>
+
+              <div className="mt-5 h-px w-10 bg-[#B79A72]" />
             </div>
           </div>
         </div>
@@ -400,86 +287,33 @@ export default function Footer() {
           BOTTOM BAR
       ===================================================== */}
 
-      <div
-        className="
-          relative
-          z-10
-          border-t
-          border-[#0B2A52]/[0.08]
-        "
-      >
-        <div
-          className="
-            mx-auto
-            flex
-            w-full
-            max-w-[1440px]
-            flex-col
-            gap-5
-            px-4
-            py-5
-            sm:px-6
-            md:flex-row
-            md:items-center
-            md:justify-between
-            md:gap-8
-            md:px-8
-            lg:px-12
-            xl:px-14
-          "
-        >
+      <div className="relative z-10 border-t border-[#0B2A52]/[0.08]">
+        <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-5 px-4 py-5 sm:px-6 md:flex-row md:items-center md:justify-between md:gap-8 md:px-8 lg:px-12 xl:px-14">
           {/* COPYRIGHT */}
 
           <p
             style={newYorkFont}
-            className="
-              text-[10px]
-              uppercase
-              tracking-[0.12em]
-              text-[#60758A]
-            "
+            className="text-[10px] uppercase tracking-[0.12em] text-[#60758A]"
           >
             © 2026 Sharp Rays
           </p>
 
           {/* LEGAL */}
 
-          <div
-            className="
-              flex
-              flex-wrap
-              items-center
-              gap-x-5
-              gap-y-2
-              md:justify-center
-            "
-          >
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 md:justify-center">
             <Link
               href="/privacy-policy"
               title="Privacy Policy"
               aria-label="Privacy Policy"
               style={newYorkFont}
-              className="
-                text-[10px]
-                text-[#60758A]
-                transition-colors
-                duration-300
-                hover:text-[#0B2A52]
-              "
+              className="text-[10px] text-[#60758A] transition-colors duration-300 hover:text-[#0B2A52]"
             >
               Privacy Policy
             </Link>
 
             <span
               aria-hidden="true"
-              className="
-                hidden
-                h-1
-                w-1
-                rounded-full
-                bg-[#B79A72]/60
-                sm:block
-              "
+              className="hidden h-1 w-1 rounded-full bg-[#B79A72]/60 sm:block"
             />
 
             <Link
@@ -487,13 +321,7 @@ export default function Footer() {
               title="Terms and Conditions"
               aria-label="Terms and Conditions"
               style={newYorkFont}
-              className="
-                text-[10px]
-                text-[#60758A]
-                transition-colors
-                duration-300
-                hover:text-[#0B2A52]
-              "
+              className="text-[10px] text-[#60758A] transition-colors duration-300 hover:text-[#0B2A52]"
             >
               Terms & Conditions
             </Link>
@@ -503,12 +331,7 @@ export default function Footer() {
 
           <p
             style={newYorkFont}
-            className="
-              text-[10px]
-              italic
-              text-[#8A96A6]
-              md:text-right
-            "
+            className="text-[10px] italic text-[#8A96A6] md:text-right"
           >
             Made with intention.
           </p>
@@ -556,9 +379,7 @@ function SocialIcon({
         className={className}
       >
         <rect x="3" y="3" width="18" height="18" rx="5" />
-
         <circle cx="12" cy="12" r="4.2" />
-
         <circle
           cx="17.4"
           cy="6.6"
@@ -595,26 +416,12 @@ function FooterHeading({
     <div>
       <span
         style={newYorkFont}
-        className="
-          text-[9px]
-          font-medium
-          uppercase
-          tracking-[0.2em]
-          text-[#B79A72]
-        "
+        className="text-[9px] font-medium uppercase tracking-[0.2em] text-[#B79A72]"
       >
         {children}
       </span>
 
-      <span
-        className="
-          mt-3
-          block
-          h-px
-          w-7
-          bg-[#B79A72]/70
-        "
-      />
+      <span className="mt-3 block h-px w-7 bg-[#B79A72]/70" />
     </div>
   );
 }
@@ -634,41 +441,13 @@ function FooterLink({
       title={title}
       aria-label={title}
       style={newYorkFont}
-      className="
-        group
-        relative
-        w-fit
-
-        text-[13px]
-        leading-[1.45]
-        text-[#445D74]
-
-        transition-colors
-        duration-300
-
-        hover:text-[#0B2A52]
-
-        sm:text-[14px]
-      "
+      className="group relative w-fit text-[13px] leading-[1.45] text-[#445D74] transition-colors duration-300 hover:text-[#0B2A52] sm:text-[14px]"
     >
       <span>{children}</span>
 
       <span
         aria-hidden="true"
-        className="
-          absolute
-          -bottom-1
-          left-0
-          h-px
-          w-0
-
-          bg-[#B79A72]
-
-          transition-all
-          duration-300
-
-          group-hover:w-full
-        "
+        className="absolute -bottom-1 left-0 h-px w-0 bg-[#B79A72] transition-all duration-300 group-hover:w-full"
       />
     </Link>
   );

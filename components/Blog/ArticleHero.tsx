@@ -132,6 +132,7 @@ export default function ArticleHero({
                         post.author.name
                       }
                       fill
+                      unoptimized
                       sizes="40px"
                       className="object-cover"
                     />
@@ -169,7 +170,7 @@ export default function ArticleHero({
                     post.title
                   }
                   fill
-                  priority
+                  unoptimized
                   sizes="(max-width: 1024px) 100vw, 56vw"
                   className="object-cover object-center"
                 />

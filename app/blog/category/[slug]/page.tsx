@@ -1068,6 +1068,7 @@ export default async function CategoryPage({
           }
 
           fill
+          unoptimized
 
           priority
 

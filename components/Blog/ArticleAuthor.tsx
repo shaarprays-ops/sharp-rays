@@ -44,6 +44,7 @@ export default function ArticleAuthor({
                   author.name
                 }
                 fill
+                unoptimized
                 sizes="64px"
                 className="object-cover"
               />

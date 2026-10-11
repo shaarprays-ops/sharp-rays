@@ -64,14 +64,15 @@ const visibleTags = Array.from(
         className="relative block aspect-[16/9] w-full overflow-hidden bg-[#eef4fa]"
       >
         {imageUrl ? (
-          <Image
-            src={imageUrl}
-            alt={post.featuredImage?.alt || post.title}
-            title={post.featuredImage?.alt || post.title}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-          />
+         <Image
+  src={imageUrl}
+  alt={post.featuredImage?.alt || post.title}
+  title={post.featuredImage?.alt || post.title}
+  fill
+  unoptimized
+  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+/>
         ) : (
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(98,133,173,0.20),transparent_36%),linear-gradient(135deg,#f5f9fc,#e8f0f8)]" />
         )}

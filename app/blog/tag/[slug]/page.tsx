@@ -506,6 +506,7 @@ export default async function TagPage({
                                   post.title
                                 }
                                 fill
+                                unoptimized
                                 priority
                                 sizes="(max-width: 1024px) 100vw, 55vw"
                                 className="object-cover object-center transition-transform duration-700 hover:scale-[1.02]"
@@ -668,6 +669,7 @@ export default async function TagPage({
                               post.title
                             }
                             fill
+                            unoptimized
                             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                             className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.025]"
                           />
