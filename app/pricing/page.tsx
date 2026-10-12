@@ -13,6 +13,7 @@ import PricingFAQ from "@/components/Pricing/PricingFAQ";
 import PricingQuoteForm from "@/components/Pricing/PricingQuoteForm";
 import { pricingFaqs, pricingServices } from "@/components/Pricing/pricingData";
 
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.sharprays.com"),
 
@@ -51,6 +52,14 @@ export const metadata: Metadata = {
     title: "Digital Marketing Price List & Packages India | Sharp Rays",
     description:
       "See the Sharp Rays digital marketing price list: website, SEO, social media, ads, AI automation and video packages in India. Clear scope, honest pricing.",
+    images: [
+      {
+        url: "/og/Pricing Packages.webp",
+        width: 1200,
+        height: 630,
+        alt: "Sharp Rays Digital Marketing Pricing and Packages in India",
+      },
+    ],
   },
 
   twitter: {
@@ -58,6 +67,7 @@ export const metadata: Metadata = {
     title: "Digital Marketing Price List & Packages India | Sharp Rays",
     description:
       "See the Sharp Rays digital marketing price list: website, SEO, social media, ads, AI automation and video packages in India. Clear scope, honest pricing.",
+    images: ["/og/Pricing Packages.webp"],
   },
 };
 
