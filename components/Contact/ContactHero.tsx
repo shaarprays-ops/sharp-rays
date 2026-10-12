@@ -607,19 +607,23 @@ export default function ContactPage() {
       z-10
 
       mx-auto
-      flex
+      grid
       w-full
-      max-w-[1240px]
+      max-w-[1380px]
 
-      items-center
-      justify-center
+      grid-cols-1
+      items-start
+      gap-10
 
       px-4
 
+      sm:gap-12
       sm:px-6
       md:px-8
+      lg:grid-cols-[0.72fr_1.28fr]
+      lg:gap-14
       lg:px-12
-      xl:px-14
+      xl:px-16
     "
   >
     {/* =====================================================
@@ -1034,660 +1038,539 @@ export default function ContactPage() {
         )}
       </motion.div>
     </motion.div>
-  </div>
-</section>
 
-      {/* =====================================================
-          SECTION 02 — CONTACT FORM
-      ===================================================== */}
-
-      <section
-        id="contact-form"
+    <div id="contact-form" className="scroll-mt-24">
+      <motion.form
+        onSubmit={handleSubmit}
+        initial={{
+          opacity: 0,
+          y: reduceMotion ? 0 : 28,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.75, ease }}
         className="
-          relative
-          scroll-mt-24
-          overflow-hidden
-          bg-[#F8FAFC]
-          py-16
-          sm:py-20
-          md:py-24
-          lg:py-28
+          rounded-[28px]
+          border
+          border-[#D8E3E9]
+          bg-white
+          p-5
+          shadow-[0_24px_65px_rgba(11,42,82,0.055)]
+          sm:p-7
+          md:p-8
         "
       >
-        <div
-          className="
-            mx-auto
-            grid
-            w-full
-            max-w-[1380px]
-            gap-10
-            px-4
-            sm:gap-12
-            sm:px-6
-            md:px-8
-            lg:grid-cols-[0.72fr_1.28fr]
-            lg:gap-14
-            lg:px-12
-            xl:px-16
-          "
-        >
-          {/* LEFT INTRO */}
+        {/* BASIC FIELDS */}
 
-          <motion.div
-            initial={{
-              opacity: 0,
-              x: reduceMotion ? 0 : -30,
-            }}
-            whileInView={{
-              opacity: 1,
-              x: 0,
-            }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.7, ease }}
-            className="lg:sticky lg:top-28 lg:self-start"
-          >
-            <Eyebrow>Start a Project</Eyebrow>
+        <div className="grid gap-5 md:grid-cols-2">
+          <label className="block">
+            <span className="text-[0.5rem] font-semibold uppercase tracking-[0.18em] text-[#60758A]">
+              Your Name *
+            </span>
 
-            <h2
+            <input
+              required
+              name="name"
+              placeholder="Your name"
               className="
-                mt-6
-                max-w-[540px]
+                mt-2.5
+                w-full
+                rounded-[13px]
+                border
+                border-[#D8E2E8]
+                bg-[#FBFCFD]
+                px-4
+                py-3.5
                 font-serif
-                text-[2.1rem]
-                leading-[1.04]
-                tracking-[-0.045em]
+                text-[0.86rem]
                 text-[#0B2A52]
-                sm:text-[2.6rem]
-                md:text-[2.95rem]
-                lg:text-[3.1rem]
-                xl:text-[3.35rem]
+                outline-none
+                transition
+                placeholder:text-[#A6B1BA]
+                focus:border-[#89A4B9]
+                focus:bg-white
               "
-            >
-              A Few Details. Then We Can{" "}
-              <span className="italic text-[#A97C52]">
-                Talk Properly.
-              </span>
-            </h2>
+            />
+          </label>
 
-            <p
+          <label className="block">
+            <span className="text-[0.5rem] font-semibold uppercase tracking-[0.18em] text-[#60758A]">
+              Work Email *
+            </span>
+
+            <input
+              required
+              type="email"
+              name="email"
+              placeholder="you@company.com"
               className="
-                mt-6
-                max-w-[460px]
+                mt-2.5
+                w-full
+                rounded-[13px]
+                border
+                border-[#D8E2E8]
+                bg-[#FBFCFD]
+                px-4
+                py-3.5
                 font-serif
-                text-[0.95rem]
-                leading-[1.75]
-                text-[#60758A]
+                text-[0.86rem]
+                text-[#0B2A52]
+                outline-none
+                transition
+                placeholder:text-[#A6B1BA]
+                focus:border-[#89A4B9]
+                focus:bg-white
               "
-            >
-              Give us enough context to understand where the conversation
-              should begin.
-            </p>
+            />
+          </label>
 
-            <div
+          <label className="block">
+            <span className="text-[0.5rem] font-semibold uppercase tracking-[0.18em] text-[#60758A]">
+              Company / Brand
+            </span>
+
+            <input
+              name="company"
+              placeholder="Company name"
               className="
-                mt-9
-                border-l-2
-                border-[#B79A72]
-                pl-5
+                mt-2.5
+                w-full
+                rounded-[13px]
+                border
+                border-[#D8E2E8]
+                bg-[#FBFCFD]
+                px-4
+                py-3.5
+                font-serif
+                text-[0.86rem]
+                text-[#0B2A52]
+                outline-none
+                placeholder:text-[#A6B1BA]
+                focus:border-[#89A4B9]
+                focus:bg-white
               "
-            >
-              <p
-                className="
-                  font-serif
-                  text-[1.05rem]
-                  leading-[1.6]
-                  text-[#0B2A52]
-                "
-              >
-                No pressure. No automated sales sequence.
-              </p>
+            />
+          </label>
 
-              <p
-                className="
-                  mt-2
-                  font-serif
-                  text-[0.83rem]
-                  leading-[1.6]
-                  text-[#6A7E90]
-                "
-              >
-                Just enough information for us to understand what you need.
-              </p>
-            </div>
-          </motion.div>
+          <label className="block">
+            <span className="text-[0.5rem] font-semibold uppercase tracking-[0.18em] text-[#60758A]">
+              Website
+            </span>
 
-          {/* FORM */}
+            <input
+              name="website"
+              placeholder="www.yourwebsite.com"
+              className="
+                mt-2.5
+                w-full
+                rounded-[13px]
+                border
+                border-[#D8E2E8]
+                bg-[#FBFCFD]
+                px-4
+                py-3.5
+                font-serif
+                text-[0.86rem]
+                text-[#0B2A52]
+                outline-none
+                placeholder:text-[#A6B1BA]
+                focus:border-[#89A4B9]
+                focus:bg-white
+              "
+            />
+          </label>
+        </div>
 
-          <motion.form
-            onSubmit={handleSubmit}
-            initial={{
-              opacity: 0,
-              y: reduceMotion ? 0 : 28,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.75, ease }}
+        {/* SERVICES */}
+
+        <div className="mt-7">
+          <span
             className="
-              rounded-[28px]
-              border
-              border-[#D8E3E9]
-              bg-white
-              p-5
-              shadow-[0_24px_65px_rgba(11,42,82,0.055)]
-              sm:p-7
-              md:p-8
+              text-[0.5rem]
+              font-semibold
+              uppercase
+              tracking-[0.18em]
+              text-[#60758A]
             "
           >
-            {/* BASIC FIELDS */}
+            What Can We Help With? *
+          </span>
 
-            <div className="grid gap-5 md:grid-cols-2">
-              <label className="block">
-                <span className="text-[0.5rem] font-semibold uppercase tracking-[0.18em] text-[#60758A]">
-                  Your Name *
-                </span>
+          <p
+            className="
+              mt-1.5
+              font-serif
+              text-[0.75rem]
+              text-[#8796A3]
+            "
+          >
+            Select one or more.
+          </p>
 
-                <input
-                  required
-                  name="name"
-                  placeholder="Your name"
-                  className="
-                    mt-2.5
-                    w-full
-                    rounded-[13px]
+          <div
+            className="
+              mt-4
+              flex
+              flex-wrap
+              gap-2.5
+            "
+          >
+            {services.map((service) => {
+              const selected = selectedServices.includes(service);
+
+              return (
+                <button
+                  key={service}
+                  type="button"
+                  onClick={() => toggleService(service)}
+                  style={newYorkFont}
+                  className={`
+                    group
+                    relative
+                    inline-flex
+                    min-h-[42px]
+                    items-center
+                    justify-center
+                    overflow-hidden
+                    rounded-[16px]
                     border
-                    border-[#D8E2E8]
-                    bg-[#FBFCFD]
                     px-4
-                    py-3.5
-                    font-serif
-                    text-[0.86rem]
-                    text-[#0B2A52]
-                    outline-none
-                    transition
-                    placeholder:text-[#A6B1BA]
-                    focus:border-[#89A4B9]
-                    focus:bg-white
-                  "
-                />
-              </label>
+                    py-2.5
+                    text-[11px]
+                    font-medium
+                    tracking-[-0.01em]
+                    shadow-[0_7px_24px_rgba(11,42,82,0.065)]
+                    backdrop-blur-[8px]
+                    transition-all
+                    duration-300
+                    hover:-translate-y-[2px]
+                    hover:shadow-[0_10px_28px_rgba(98,133,173,0.13)]
+                    sm:min-h-[44px]
+                    sm:px-5
+                    sm:text-[12px]
 
-              <label className="block">
-                <span className="text-[0.5rem] font-semibold uppercase tracking-[0.18em] text-[#60758A]">
-                  Work Email *
-                </span>
-
-                <input
-                  required
-                  type="email"
-                  name="email"
-                  placeholder="you@company.com"
-                  className="
-                    mt-2.5
-                    w-full
-                    rounded-[13px]
-                    border
-                    border-[#D8E2E8]
-                    bg-[#FBFCFD]
-                    px-4
-                    py-3.5
-                    font-serif
-                    text-[0.86rem]
-                    text-[#0B2A52]
-                    outline-none
-                    transition
-                    placeholder:text-[#A6B1BA]
-                    focus:border-[#89A4B9]
-                    focus:bg-white
-                  "
-                />
-              </label>
-
-              <label className="block">
-                <span className="text-[0.5rem] font-semibold uppercase tracking-[0.18em] text-[#60758A]">
-                  Company / Brand
-                </span>
-
-                <input
-                  name="company"
-                  placeholder="Company name"
-                  className="
-                    mt-2.5
-                    w-full
-                    rounded-[13px]
-                    border
-                    border-[#D8E2E8]
-                    bg-[#FBFCFD]
-                    px-4
-                    py-3.5
-                    font-serif
-                    text-[0.86rem]
-                    text-[#0B2A52]
-                    outline-none
-                    placeholder:text-[#A6B1BA]
-                    focus:border-[#89A4B9]
-                    focus:bg-white
-                  "
-                />
-              </label>
-
-              <label className="block">
-                <span className="text-[0.5rem] font-semibold uppercase tracking-[0.18em] text-[#60758A]">
-                  Website
-                </span>
-
-                <input
-                  name="website"
-                  placeholder="www.yourwebsite.com"
-                  className="
-                    mt-2.5
-                    w-full
-                    rounded-[13px]
-                    border
-                    border-[#D8E2E8]
-                    bg-[#FBFCFD]
-                    px-4
-                    py-3.5
-                    font-serif
-                    text-[0.86rem]
-                    text-[#0B2A52]
-                    outline-none
-                    placeholder:text-[#A6B1BA]
-                    focus:border-[#89A4B9]
-                    focus:bg-white
-                  "
-                />
-              </label>
-            </div>
-
-            {/* SERVICES */}
-
-            <div className="mt-7">
-              <span
-                className="
-                  text-[0.5rem]
-                  font-semibold
-                  uppercase
-                  tracking-[0.18em]
-                  text-[#60758A]
-                "
-              >
-                What Can We Help With? *
-              </span>
-
-              <p
-                className="
-                  mt-1.5
-                  font-serif
-                  text-[0.75rem]
-                  text-[#8796A3]
-                "
-              >
-                Select one or more.
-              </p>
-
-              <div
-                className="
-                  mt-4
-                  flex
-                  flex-wrap
-                  gap-2.5
-                "
-              >
-                {services.map((service) => {
-                  const selected = selectedServices.includes(service);
-
-                  return (
-                    <button
-                      key={service}
-                      type="button"
-                      onClick={() => toggleService(service)}
-                      style={newYorkFont}
-                      className={`
-                        group
-                        relative
-                        inline-flex
-                        min-h-[42px]
-                        items-center
-                        justify-center
-                        overflow-hidden
-                        rounded-[16px]
-                        border
-                        px-4
-                        py-2.5
-                        text-[11px]
-                        font-medium
-                        tracking-[-0.01em]
-                        shadow-[0_7px_24px_rgba(11,42,82,0.065)]
-                        backdrop-blur-[8px]
-                        transition-all
-                        duration-300
-                        hover:-translate-y-[2px]
-                        hover:shadow-[0_10px_28px_rgba(98,133,173,0.13)]
-                        sm:min-h-[44px]
-                        sm:px-5
-                        sm:text-[12px]
-
-                        ${
-                          selected
-                            ? "border-[#0B2A52] bg-[#0B2A52] text-white shadow-[0_10px_30px_rgba(11,42,82,0.16)]"
-                            : "border-[#6285AD]/30 bg-white/80 text-[#0B2A52] hover:border-[#6285AD]/40 hover:bg-white"
-                        }
-                      `}
-                    >
-                      <span className="pointer-events-none absolute inset-[2px] rounded-[13px] border border-white/60" />
-                      <span className="pointer-events-none absolute inset-x-3 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent" />
-                      <span className="relative z-10 flex items-center gap-2 whitespace-nowrap">
-                        {selected && (
-                          <span aria-hidden="true" className="text-[12px]">
-                            ✓
-                          </span>
-                        )}
-                        {service}
+                    ${
+                      selected
+                        ? "border-[#0B2A52] bg-[#0B2A52] text-white shadow-[0_10px_30px_rgba(11,42,82,0.16)]"
+                        : "border-[#6285AD]/30 bg-white/80 text-[#0B2A52] hover:border-[#6285AD]/40 hover:bg-white"
+                    }
+                  `}
+                >
+                  <span className="pointer-events-none absolute inset-[2px] rounded-[13px] border border-white/60" />
+                  <span className="pointer-events-none absolute inset-x-3 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent" />
+                  <span className="relative z-10 flex items-center gap-2 whitespace-nowrap">
+                    {selected && (
+                      <span aria-hidden="true" className="text-[12px]">
+                        ✓
                       </span>
-                    </button>
-                  );
-                })}
-              </div>
+                    )}
+                    {service}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* PRE-SELECTED ENQUIRY CONTEXT */}
+        {(enquiryNeed || selectedPlan) && (
+          <div className="mt-5 rounded-[16px] border border-[#D8E3E9] bg-[#F8FAFC] px-4 py-3.5">
+            <span className="text-[0.48rem] font-semibold uppercase tracking-[0.18em] text-[#92745C]">
+              You&apos;re enquiring about
+            </span>
+
+            <div className="mt-2 flex flex-wrap gap-2">
+              {selectedPlan && (
+                <span className="rounded-full border border-[#C9D8E2] bg-white px-3 py-1.5 font-serif text-[0.75rem] text-[#0B2A52]">
+                  {selectedPlan}
+                </span>
+              )}
+
+              {enquiryNeed && (
+                <span className="rounded-full border border-[#C9D8E2] bg-white px-3 py-1.5 font-serif text-[0.75rem] text-[#0B2A52]">
+                  {enquiryNeed}
+                </span>
+              )}
             </div>
+          </div>
+        )}
 
-            {/* PRE-SELECTED ENQUIRY CONTEXT */}
-            {(enquiryNeed || selectedPlan) && (
-              <div className="mt-5 rounded-[16px] border border-[#D8E3E9] bg-[#F8FAFC] px-4 py-3.5">
-                <span className="text-[0.48rem] font-semibold uppercase tracking-[0.18em] text-[#92745C]">
-                  You&apos;re enquiring about
-                </span>
+        {/* Keep pre-selected context available when the form is wired to a backend */}
+        <input
+          type="hidden"
+          name="services"
+          value={selectedServices.join(", ")}
+        />
+        <input type="hidden" name="selectedPlan" value={selectedPlan} />
+        <input type="hidden" name="enquiryNeed" value={enquiryNeed} />
 
-                <div className="mt-2 flex flex-wrap gap-2">
-                  {selectedPlan && (
-                    <span className="rounded-full border border-[#C9D8E2] bg-white px-3 py-1.5 font-serif text-[0.75rem] text-[#0B2A52]">
-                      {selectedPlan}
-                    </span>
-                  )}
+        {/* Honeypot: real users never see or fill this */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-[9999px] h-px w-px overflow-hidden opacity-0"
+        >
+          <label htmlFor="websiteConfirm">Leave this field empty</label>
+          <input
+            id="websiteConfirm"
+            name="websiteConfirm"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+          />
+        </div>
 
-                  {enquiryNeed && (
-                    <span className="rounded-full border border-[#C9D8E2] bg-white px-3 py-1.5 font-serif text-[0.75rem] text-[#0B2A52]">
-                      {enquiryNeed}
-                    </span>
-                  )}
-                </div>
-              </div>
-            )}
+        {/* MESSAGE */}
 
-            {/* Keep pre-selected context available when the form is wired to a backend */}
-            <input
-              type="hidden"
-              name="services"
-              value={selectedServices.join(", ")}
-            />
-            <input type="hidden" name="selectedPlan" value={selectedPlan} />
-            <input type="hidden" name="enquiryNeed" value={enquiryNeed} />
+        <label className="mt-7 block">
+          <span
+            className="
+              text-[0.5rem]
+              font-semibold
+              uppercase
+              tracking-[0.18em]
+              text-[#60758A]
+            "
+          >
+            What Are You Trying to Achieve? *
+          </span>
 
-            {/* Honeypot: real users never see or fill this */}
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -left-[9999px] h-px w-px overflow-hidden opacity-0"
-            >
-              <label htmlFor="websiteConfirm">Leave this field empty</label>
-              <input
-                id="websiteConfirm"
-                name="websiteConfirm"
-                type="text"
-                tabIndex={-1}
-                autoComplete="off"
-              />
-            </div>
+          <textarea
+            required
+            name="message"
+            rows={6}
+            placeholder="Tell us about the challenge, project or opportunity. What would you like to improve?"
+            className="
+              mt-2.5
+              w-full
+              resize-none
+              rounded-[15px]
+              border
+              border-[#D8E2E8]
+              bg-[#FBFCFD]
+              px-4
+              py-4
+              font-serif
+              text-[0.86rem]
+              leading-[1.65]
+              text-[#0B2A52]
+              outline-none
+              placeholder:text-[#A6B1BA]
+              focus:border-[#89A4B9]
+              focus:bg-white
+            "
+          />
+        </label>
 
-            {/* MESSAGE */}
+        {/* SELECTS */}
 
-            <label className="mt-7 block">
-              <span
-                className="
-                  text-[0.5rem]
-                  font-semibold
-                  uppercase
-                  tracking-[0.18em]
-                  text-[#60758A]
-                "
-              >
-                What Are You Trying to Achieve? *
-              </span>
+        <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <label>
+            <span className="text-[0.48rem] font-semibold uppercase tracking-[0.16em] text-[#60758A]">
+              Estimated Budget
+            </span>
 
-              <textarea
-                required
-                name="message"
-                rows={6}
-                placeholder="Tell us about the challenge, project or opportunity. What would you like to improve?"
-                className="
-                  mt-2.5
-                  w-full
-                  resize-none
-                  rounded-[15px]
-                  border
-                  border-[#D8E2E8]
-                  bg-[#FBFCFD]
-                  px-4
-                  py-4
-                  font-serif
-                  text-[0.86rem]
-                  leading-[1.65]
-                  text-[#0B2A52]
-                  outline-none
-                  placeholder:text-[#A6B1BA]
-                  focus:border-[#89A4B9]
-                  focus:bg-white
-                "
-              />
-            </label>
-
-            {/* SELECTS */}
-
-            <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              <label>
-                <span className="text-[0.48rem] font-semibold uppercase tracking-[0.16em] text-[#60758A]">
-                  Estimated Budget
-                </span>
-
-                <select
-                  name="budget"
-                  defaultValue=""
-                  className="
-                    mt-2.5
-                    w-full
-                    rounded-[13px]
-                    border
-                    border-[#D8E2E8]
-                    bg-[#FBFCFD]
-                    px-4
-                    py-3.5
-                    font-serif
-                    text-[0.79rem]
-                    text-[#536D83]
-                    outline-none
-                  "
-                >
-                  <option value="" disabled>
-                    Select budget
-                  </option>
-                  <option>Still Exploring</option>
-                  <option>Under ₹50,000</option>
-                  <option>₹50,000 – ₹1,00,000</option>
-                  <option>₹1,00,000 – ₹2,50,000</option>
-                  <option>₹2,50,000+</option>
-                  <option>Let&apos;s Discuss</option>
-                </select>
-              </label>
-
-              <label>
-                <span className="text-[0.48rem] font-semibold uppercase tracking-[0.16em] text-[#60758A]">
-                  When Would You Like to Start?
-                </span>
-
-                <select
-                  name="timeline"
-                  defaultValue=""
-                  className="
-                    mt-2.5
-                    w-full
-                    rounded-[13px]
-                    border
-                    border-[#D8E2E8]
-                    bg-[#FBFCFD]
-                    px-4
-                    py-3.5
-                    font-serif
-                    text-[0.79rem]
-                    text-[#536D83]
-                    outline-none
-                  "
-                >
-                  <option value="" disabled>
-                    Select timeline
-                  </option>
-                  <option>As Soon as Possible</option>
-                  <option>Within 1 Month</option>
-                  <option>1–3 Months</option>
-                  <option>3+ Months</option>
-                  <option>Still Planning</option>
-                </select>
-              </label>
-
-              <label>
-                <span className="text-[0.48rem] font-semibold uppercase tracking-[0.16em] text-[#60758A]">
-                  How Did You Find Sharp Rays?
-                </span>
-
-                <select
-                  name="source"
-                  defaultValue=""
-                  className="
-                    mt-2.5
-                    w-full
-                    rounded-[13px]
-                    border
-                    border-[#D8E2E8]
-                    bg-[#FBFCFD]
-                    px-4
-                    py-3.5
-                    font-serif
-                    text-[0.79rem]
-                    text-[#536D83]
-                    outline-none
-                  "
-                >
-                  <option value="" disabled>
-                    Select source
-                  </option>
-                  <option>Google Search</option>
-                  <option>Social Media</option>
-                  <option>Referral</option>
-                  <option>LinkedIn</option>
-                  <option>Saw Our Work</option>
-                  <option>Other</option>
-                </select>
-              </label>
-            </div>
-
-            {/* SUBMIT */}
-
-            <div
+            <select
+              name="budget"
+              defaultValue=""
               className="
-                mt-8
-                flex
-                flex-col
-                gap-4
-                border-t
-                border-[#E0E7EC]
-                pt-6
-                sm:flex-row
-                sm:items-center
-                sm:justify-between
-                sm:gap-6
+                mt-2.5
+                w-full
+                rounded-[13px]
+                border
+                border-[#D8E2E8]
+                bg-[#FBFCFD]
+                px-4
+                py-3.5
+                font-serif
+                text-[0.79rem]
+                text-[#536D83]
+                outline-none
               "
             >
-              <p
-                className="
-                  max-w-[390px]
-                  font-serif
-                  text-[0.72rem]
-                  leading-[1.55]
-                  text-[#8796A3]
-                "
-              >
-                No pressure. No automated sales sequence. Just enough
-                information for us to understand what you need.
-              </p>
+              <option value="" disabled>
+                Select budget
+              </option>
+              <option>Still Exploring</option>
+              <option>Under ₹50,000</option>
+              <option>₹50,000 – ₹1,00,000</option>
+              <option>₹1,00,000 – ₹2,50,000</option>
+              <option>₹2,50,000+</option>
+              <option>Let&apos;s Discuss</option>
+            </select>
+          </label>
 
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                style={newYorkFont}
-                className="
-                  group
-                  relative
-                  inline-flex
-                  min-h-[46px]
-                  w-full
-                  items-center
-                  justify-center
-                  overflow-hidden
-                  rounded-[16px]
-                  border
-                  border-[#6285AD]/30
-                  bg-white/80
-                  px-5
-                  py-[11px]
-                  text-[13px]
-                  font-medium
-                  tracking-[-0.01em]
-                  text-[#0B2A52]
-                  shadow-[0_8px_30px_rgba(11,42,82,0.08)]
-                  backdrop-blur-[8px]
-                  transition-all
-                  duration-300
-                  ease-out
-                  hover:-translate-y-[2px]
-                  hover:border-[#6285AD]/40
-                  hover:bg-white
-                  hover:shadow-[0_10px_35px_rgba(98,133,173,0.15)]
-                  active:translate-y-0
-                  disabled:cursor-not-allowed
-                  disabled:opacity-60
-                  disabled:hover:translate-y-0
-                  sm:w-auto
-                  sm:min-h-[48px]
-                  sm:px-6
-                  sm:py-3
-                  sm:text-[14px]
-                  md:text-[15px]
-                "
-              >
-                <span className="pointer-events-none absolute inset-[2px] rounded-[13px] border border-white/60" />
-                <span className="pointer-events-none absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent" />
-                <span className="relative z-10 whitespace-nowrap text-[#0B2A52]">
-                  {isSubmitting ? "Sending Enquiry..." : "Send My Enquiry"}
-                </span>
-              </button>
-            </div>
+          <label>
+            <span className="text-[0.48rem] font-semibold uppercase tracking-[0.16em] text-[#60758A]">
+              When Would You Like to Start?
+            </span>
 
-            {submitStatus !== "idle" && submitMessage && (
-              <div
-                role={submitStatus === "error" ? "alert" : "status"}
-                aria-live="polite"
-                className={`mt-4 rounded-[14px] border px-4 py-3 font-serif text-[0.78rem] leading-[1.6] ${
-                  submitStatus === "success"
-                    ? "border-[#BFD9CE] bg-[#F3FAF6] text-[#2F6D55]"
-                    : "border-[#E5C7C7] bg-[#FFF7F7] text-[#9B4A4A]"
-                }`}
-              >
-                {submitMessage}
-              </div>
-            )}
-          </motion.form>
+            <select
+              name="timeline"
+              defaultValue=""
+              className="
+                mt-2.5
+                w-full
+                rounded-[13px]
+                border
+                border-[#D8E2E8]
+                bg-[#FBFCFD]
+                px-4
+                py-3.5
+                font-serif
+                text-[0.79rem]
+                text-[#536D83]
+                outline-none
+              "
+            >
+              <option value="" disabled>
+                Select timeline
+              </option>
+              <option>As Soon as Possible</option>
+              <option>Within 1 Month</option>
+              <option>1–3 Months</option>
+              <option>3+ Months</option>
+              <option>Still Planning</option>
+            </select>
+          </label>
+
+          <label>
+            <span className="text-[0.48rem] font-semibold uppercase tracking-[0.16em] text-[#60758A]">
+              How Did You Find Sharp Rays?
+            </span>
+
+            <select
+              name="source"
+              defaultValue=""
+              className="
+                mt-2.5
+                w-full
+                rounded-[13px]
+                border
+                border-[#D8E2E8]
+                bg-[#FBFCFD]
+                px-4
+                py-3.5
+                font-serif
+                text-[0.79rem]
+                text-[#536D83]
+                outline-none
+              "
+            >
+              <option value="" disabled>
+                Select source
+              </option>
+              <option>Google Search</option>
+              <option>Social Media</option>
+              <option>Referral</option>
+              <option>LinkedIn</option>
+              <option>Saw Our Work</option>
+              <option>Other</option>
+            </select>
+          </label>
         </div>
-      </section>
+
+        {/* SUBMIT */}
+
+        <div
+          className="
+            mt-8
+            flex
+            flex-col
+            gap-4
+            border-t
+            border-[#E0E7EC]
+            pt-6
+            sm:flex-row
+            sm:items-center
+            sm:justify-between
+            sm:gap-6
+          "
+        >
+          <p
+            className="
+              max-w-[390px]
+              font-serif
+              text-[0.72rem]
+              leading-[1.55]
+              text-[#8796A3]
+            "
+          >
+            No pressure. No automated sales sequence. Just enough
+            information for us to understand what you need.
+          </p>
+
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            style={newYorkFont}
+            className="
+              group
+              relative
+              inline-flex
+              min-h-[46px]
+              w-full
+              items-center
+              justify-center
+              overflow-hidden
+              rounded-[16px]
+              border
+              border-[#6285AD]/30
+              bg-white/80
+              px-5
+              py-[11px]
+              text-[13px]
+              font-medium
+              tracking-[-0.01em]
+              text-[#0B2A52]
+              shadow-[0_8px_30px_rgba(11,42,82,0.08)]
+              backdrop-blur-[8px]
+              transition-all
+              duration-300
+              ease-out
+              hover:-translate-y-[2px]
+              hover:border-[#6285AD]/40
+              hover:bg-white
+              hover:shadow-[0_10px_35px_rgba(98,133,173,0.15)]
+              active:translate-y-0
+              disabled:cursor-not-allowed
+              disabled:opacity-60
+              disabled:hover:translate-y-0
+              sm:w-auto
+              sm:min-h-[48px]
+              sm:px-6
+              sm:py-3
+              sm:text-[14px]
+              md:text-[15px]
+            "
+          >
+            <span className="pointer-events-none absolute inset-[2px] rounded-[13px] border border-white/60" />
+            <span className="pointer-events-none absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent" />
+            <span className="relative z-10 whitespace-nowrap text-[#0B2A52]">
+              {isSubmitting ? "Sending Enquiry..." : "Send My Enquiry"}
+            </span>
+          </button>
+        </div>
+
+        {submitStatus !== "idle" && submitMessage && (
+          <div
+            role={submitStatus === "error" ? "alert" : "status"}
+            aria-live="polite"
+            className={`mt-4 rounded-[14px] border px-4 py-3 font-serif text-[0.78rem] leading-[1.6] ${
+              submitStatus === "success"
+                ? "border-[#BFD9CE] bg-[#F3FAF6] text-[#2F6D55]"
+                : "border-[#E5C7C7] bg-[#FFF7F7] text-[#9B4A4A]"
+            }`}
+          >
+            {submitMessage}
+          </div>
+        )}
+      </motion.form>
+    </div>
+  </div>
+</section>
 
       {/* =====================================================
           SECTION 03 — NOT SURE?
