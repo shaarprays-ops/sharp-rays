@@ -59,6 +59,11 @@ const exploreLinks = [
     title: "Sharp Rays Blog",
   },
   {
+    label: "Pricing",
+    href: "/pricing",
+    title: "Sharp Rays Pricing",
+  },
+  {
     label: "Contact",
     href: "/contact",
     title: "Contact Sharp Rays",

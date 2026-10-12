@@ -82,7 +82,7 @@ const services = [
 
     label: "AI Automation",
 
-    href: "/services/AI-Automation",
+    href: "/services/ai-automation",
 
     linkTitle: "Explore AI Automation Services",
 
