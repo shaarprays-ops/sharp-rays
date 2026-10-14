@@ -32,7 +32,7 @@ const services = [
   },
   {
     label: "AI Video & Video Editing",
-    href: "/services/ai-video-editing",
+    href: "/services/video-and-creative",
     title: "AI Video and Video Editing Services by Sharp Rays",
   },
   {
