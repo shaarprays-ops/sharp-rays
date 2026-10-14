@@ -62,7 +62,7 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical:
-      "https://www.sharprays.com/services/ai-video-editing",
+      "https://www.sharprays.com/services/video-and-creative",
   },
 
   robots: {
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
 
     url:
-      "https://www.sharprays.com/services/ai-video-editing",
+      "https://www.sharprays.com/services/video-and-creative",
 
     siteName: "Sharp Rays",
 
@@ -141,7 +141,7 @@ const aiVideoCoreSchema = {
       "@type": "ImageObject",
 
       "@id":
-        "https://www.sharprays.com/services/ai-video-editing#primaryimage",
+        "https://www.sharprays.com/services/video-and-creative#primaryimage",
 
       url:
         "https://www.sharprays.com/og/services-ai-video-editing.webp",
@@ -301,10 +301,10 @@ const aiVideoCoreSchema = {
       "@type": "WebPage",
 
       "@id":
-        "https://www.sharprays.com/services/ai-video-editing#webpage",
+        "https://www.sharprays.com/services/video-and-creative#webpage",
 
       url:
-        "https://www.sharprays.com/services/ai-video-editing",
+        "https://www.sharprays.com/services/video-and-creative",
 
       name:
         "AI Video Production Company in India for Brands | Sharp Rays",
@@ -325,17 +325,17 @@ const aiVideoCoreSchema = {
 
       about: {
         "@id":
-          "https://www.sharprays.com/services/ai-video-editing#service",
+          "https://www.sharprays.com/services/video-and-creative#service",
       },
 
       mainEntity: {
         "@id":
-          "https://www.sharprays.com/services/ai-video-editing#service",
+          "https://www.sharprays.com/services/video-and-creative#service",
       },
 
       primaryImageOfPage: {
         "@id":
-          "https://www.sharprays.com/services/ai-video-editing#primaryimage",
+          "https://www.sharprays.com/services/video-and-creative#primaryimage",
       },
 
       publisher: {
@@ -345,18 +345,18 @@ const aiVideoCoreSchema = {
 
       breadcrumb: {
         "@id":
-          "https://www.sharprays.com/services/ai-video-editing#breadcrumb",
+          "https://www.sharprays.com/services/video-and-creative#breadcrumb",
       },
 
       hasPart: [
         {
           "@id":
-            "https://www.sharprays.com/services/ai-video-editing#plans",
+            "https://www.sharprays.com/services/video-and-creative#plans",
         },
 
         {
           "@id":
-            "https://www.sharprays.com/services/ai-video-editing#faq",
+            "https://www.sharprays.com/services/video-and-creative#faq",
         },
       ],
 
@@ -427,8 +427,8 @@ const aiVideoCoreSchema = {
 
       significantLink: [
         "https://www.sharprays.com/services",
-        "https://www.sharprays.com/services/ai-video-editing/short-form-video-editing",
-        "https://www.sharprays.com/services/ai-video-editing/advertising-performance-video",
+        "https://www.sharprays.com/services/video-and-creative/short-form-video-editing",
+        "https://www.sharprays.com/services/video-and-creative/advertising-performance-video",
         "https://www.sharprays.com/free-audit",
         "https://www.sharprays.com/contact",
       ],
@@ -456,7 +456,7 @@ const aiVideoServiceSchema = {
   "@type": "Service",
 
   "@id":
-    "https://www.sharprays.com/services/ai-video-editing#service",
+    "https://www.sharprays.com/services/video-and-creative#service",
 
   name:
     "AI Video Production & Video Editing",
@@ -465,7 +465,7 @@ const aiVideoServiceSchema = {
     "AI Video and Professional Video Editing Services",
 
   url:
-    "https://www.sharprays.com/services/ai-video-editing",
+    "https://www.sharprays.com/services/video-and-creative",
 
   serviceType:
     "AI Video Production and Video Editing",
@@ -559,7 +559,7 @@ const aiVideoServiceSchema = {
 
   hasOfferCatalog: {
     "@id":
-      "https://www.sharprays.com/services/ai-video-editing#plans",
+      "https://www.sharprays.com/services/video-and-creative#plans",
   },
 };
 
@@ -573,13 +573,13 @@ const aiVideoPlansSchema = {
   "@type": "OfferCatalog",
 
   "@id":
-    "https://www.sharprays.com/services/ai-video-editing#plans",
+    "https://www.sharprays.com/services/video-and-creative#plans",
 
   name:
     "Sharp Rays AI Video and Video Editing Plans",
 
   url:
-    "https://www.sharprays.com/services/ai-video-editing",
+    "https://www.sharprays.com/services/video-and-creative",
 
   description:
     "Monthly professional video editing and AI video creation plans for brands, startups, creators and marketing teams.",
@@ -602,7 +602,7 @@ const aiVideoPlansSchema = {
         "Edit Starter",
 
       url:
-        "https://www.sharprays.com/contact?service=ai-video-editing",
+        "https://www.sharprays.com/contact?service=video-and-creative",
 
       seller: {
         "@id":
@@ -661,7 +661,7 @@ const aiVideoPlansSchema = {
         "Edit Growth",
 
       url:
-        "https://www.sharprays.com/contact?service=ai-video-editing",
+        "https://www.sharprays.com/contact?service=video-and-creative",
 
       seller: {
         "@id":
@@ -710,7 +710,7 @@ const aiVideoPlansSchema = {
         "Edit Scale",
 
       url:
-        "https://www.sharprays.com/contact?service=ai-video-editing",
+        "https://www.sharprays.com/contact?service=video-and-creative",
 
       seller: {
         "@id":
@@ -759,7 +759,7 @@ const aiVideoPlansSchema = {
         "AI Starter",
 
       url:
-        "https://www.sharprays.com/contact?service=ai-video-editing",
+        "https://www.sharprays.com/contact?service=video-and-creative",
 
       seller: {
         "@id":
@@ -818,7 +818,7 @@ const aiVideoPlansSchema = {
         "AI Growth",
 
       url:
-        "https://www.sharprays.com/contact?service=ai-video-editing",
+        "https://www.sharprays.com/contact?service=video-and-creative",
 
       seller: {
         "@id":
@@ -867,7 +867,7 @@ const aiVideoPlansSchema = {
         "AI Scale",
 
       url:
-        "https://www.sharprays.com/contact?service=ai-video-editing",
+        "https://www.sharprays.com/contact?service=video-and-creative",
 
       seller: {
         "@id":
@@ -917,7 +917,7 @@ const breadcrumbSchema = {
   "@type": "BreadcrumbList",
 
   "@id":
-    "https://www.sharprays.com/services/ai-video-editing#breadcrumb",
+    "https://www.sharprays.com/services/video-and-creative#breadcrumb",
 
   itemListElement: [
     {
@@ -977,10 +977,10 @@ const faqSchema = {
   "@type": "FAQPage",
 
   "@id":
-    "https://www.sharprays.com/services/ai-video-editing#faq",
+    "https://www.sharprays.com/services/video-and-creative#faq",
 
   url:
-    "https://www.sharprays.com/services/ai-video-editing#ai-video-editing-faq",
+    "https://www.sharprays.com/services/video-and-creative#video-and-creative-faq",
 
   name:
     "AI Video & Editing FAQs",
@@ -990,12 +990,12 @@ const faqSchema = {
 
   isPartOf: {
     "@id":
-      "https://www.sharprays.com/services/ai-video-editing#webpage",
+      "https://www.sharprays.com/services/video-and-creative#webpage",
   },
 
   about: {
     "@id":
-      "https://www.sharprays.com/services/ai-video-editing#service",
+      "https://www.sharprays.com/services/video-and-creative#service",
   },
 
   publisher: {
