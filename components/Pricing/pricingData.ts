@@ -318,7 +318,7 @@ export const pricingServices: PricingService[] = [
     note:
       "Automation platforms, AI usage, APIs and WhatsApp message charges are paid separately.",
     detailsLabel: "See AI automation details",
-    detailsHref: "/services/AI-Automation",
+    detailsHref: "/services/ai-automation",
   },
 
   {
