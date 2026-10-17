@@ -3,18 +3,15 @@
 import { motion, useReducedMotion } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
 import {
-  CirclePlay,
+  ArrowDown,
+  Boxes,
   Clapperboard,
   Film,
   Layers3,
   Megaphone,
-  MonitorSmartphone,
   Package,
-  Plus,
-  Scissors,
   Sparkles,
-  Smartphone,
-  Video,
+  WandSparkles,
 } from "lucide-react";
 
 const newYorkFont = {
@@ -23,100 +20,72 @@ const newYorkFont = {
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-/* =========================================================
-   TYPES
-========================================================= */
-
-type OutputItem = {
+type Capability = {
   title: string;
+  description: string;
   icon: LucideIcon;
-
   bg: string;
   border: string;
   iconBg: string;
   iconColor: string;
 };
 
-/* =========================================================
-   OUTPUT DATA
-========================================================= */
-
-const outputs: OutputItem[] = [
+const capabilities: Capability[] = [
   {
-    title: "Short-form Videos",
-    icon: CirclePlay,
-    bg: "#F4F9FE",
-    border: "#C9DDEF",
-    iconBg: "#E2EFFA",
-    iconColor: "#0B2A52",
-  },
-  {
-    title: "Social Media Content",
-    icon: MonitorSmartphone,
-    bg: "#FFF9F1",
-    border: "#EAD8BD",
-    iconBg: "#F5E7D2",
-    iconColor: "#9A6829",
-  },
-  {
-    title: "Advertising Creative",
+    title: "AI Video Ads",
+    description:
+      "Create campaign-ready video concepts around products, offers and audience hooks.",
     icon: Megaphone,
-    bg: "#F3FAF6",
-    border: "#CEE4D6",
-    iconBg: "#DFF0E6",
-    iconColor: "#247B5B",
-  },
-  {
-    title: "Product Videos",
-    icon: Package,
-    bg: "#FFF4F7",
-    border: "#EFD3DC",
-    iconBg: "#FBE1E8",
-    iconColor: "#C33A60",
-  },
-  {
-    title: "Explainers",
-    icon: Video,
     bg: "#F4F9FE",
     border: "#C9DDEF",
     iconBg: "#E2EFFA",
     iconColor: "#0B2A52",
   },
   {
-    title: "Campaign Variations",
-    icon: Layers3,
+    title: "AI Product Videos",
+    description:
+      "Turn product images and ideas into launch, lifestyle and promotional visuals.",
+    icon: Package,
     bg: "#FFF9F1",
     border: "#EAD8BD",
     iconBg: "#F5E7D2",
     iconColor: "#9A6829",
   },
   {
-    title: "Motion-led Visuals",
-    icon: Sparkles,
-    bg: "#F4F9FE",
-    border: "#C9DDEF",
-    iconBg: "#E2EFFA",
-    iconColor: "#0B2A52",
-  },
-  {
-    title: "Branded Edits",
+    title: "AI UGC Creative",
+    description:
+      "Develop creator-style video concepts for social media and advertising campaigns.",
     icon: Clapperboard,
-    bg: "#FFF4F7",
-    border: "#EFD3DC",
-    iconBg: "#FBE1E8",
-    iconColor: "#C33A60",
-  },
-  {
-    title: "Content Cutdowns",
-    icon: Scissors,
     bg: "#F3FAF6",
     border: "#CEE4D6",
     iconBg: "#DFF0E6",
     iconColor: "#247B5B",
   },
   {
-    title: "Platform-Specific Versions",
-    icon: Smartphone,
+    title: "AI Brand Films",
+    description:
+      "Build cinematic visual stories for launches, campaigns and brand storytelling.",
+    icon: Film,
+    bg: "#FFF4F7",
+    border: "#EFD3DC",
+    iconBg: "#FBE1E8",
+    iconColor: "#C33A60",
+  },
+  {
+    title: "Campaign Visuals",
+    description:
+      "Create multiple creative directions, scenes and visual ideas from one campaign brief.",
+    icon: Layers3,
+    bg: "#F4F9FE",
+    border: "#C9DDEF",
+    iconBg: "#E2EFFA",
+    iconColor: "#0B2A52",
+  },
+  {
+    title: "Concept Visualisation",
+    description:
+      "Visualise products, environments and ideas before a traditional production exists.",
+    icon: Boxes,
     bg: "#FFF9F1",
     border: "#EAD8BD",
     iconBg: "#F5E7D2",
@@ -124,749 +93,247 @@ const outputs: OutputItem[] = [
   },
 ];
 
-/* =========================================================
-   COMPONENT
-========================================================= */
+const process = [
+  "Brief",
+  "Concept",
+  "Visual Direction",
+  "AI Generation",
+  "Final Creative",
+];
 
 export default function AiVideoExplained() {
   const reduceMotion = Boolean(useReducedMotion());
 
   return (
     <section
-      id="ai-video-explained"
-      aria-labelledby="ai-video-explained-heading"
-      className="
-        relative
-        isolate
-        overflow-hidden
-        bg-white
-
-        py-16
-        sm:py-20
-        md:py-24
-        lg:py-28
-        xl:py-32
-      "
+      id="ai-video-production"
+      aria-labelledby="ai-video-production-heading"
+      className="relative isolate overflow-hidden bg-white py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32"
     >
-   
+      {/* SOFT BACKGROUND DETAILS */}
 
-      
+      <div className="pointer-events-none absolute -left-[140px] top-[18%] h-[340px] w-[340px] rounded-full bg-[#DDECF8]/45 blur-[100px]" />
+      <div className="pointer-events-none absolute -right-[150px] bottom-[10%] h-[380px] w-[380px] rounded-full bg-[#F4E5D1]/45 blur-[110px]" />
 
-      {/* =====================================================
-          CONTAINER
-      ===================================================== */}
+      <div className="relative z-20 mx-auto w-full max-w-[1450px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-14 2xl:px-16">
 
-      <div
-        className="
-          relative
-          z-20
-
-          mx-auto
-          w-full
-          max-w-[1450px]
-
-          px-4
-          sm:px-6
-          md:px-8
-          lg:px-12
-          xl:px-14
-          2xl:px-16
-        "
-      >
         {/* =====================================================
             HEADER
         ===================================================== */}
 
-        <div className="mx-auto max-w-[1040px] text-center">
-          {/* EYEBROW */}
-
+        <div className="mx-auto max-w-[980px] text-center">
           <motion.div
-            initial={
-              reduceMotion
-                ? false
-                : {
-                    opacity: 0,
-                    y: 18,
-                  }
-            }
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-              amount: 0.5,
-            }}
-            transition={{
-              duration: reduceMotion ? 0 : 0.7,
-              ease,
-            }}
-            className="
-              mx-auto
-              flex
-              w-fit
-              items-center
-              gap-3
-              sm:gap-4
-            "
+            initial={reduceMotion ? false : { opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: reduceMotion ? 0 : 0.7, ease }}
+            className="mx-auto flex w-fit items-center gap-3 sm:gap-4"
           >
             <span className="h-px w-7 bg-[#B79A72] sm:w-11" />
 
             <span
               style={newYorkFont}
-              className="
-                text-[9px]
-                font-medium
-                uppercase
-                tracking-[0.32em]
-
-                text-[#A4774C]
-
-                sm:text-[10px]
-                md:text-[11px]
-              "
+              className="text-[9px] font-medium uppercase tracking-[0.32em] text-[#A4774C] sm:text-[10px] md:text-[11px]"
             >
-              AI Video Explained
+              AI Video Production
             </span>
 
             <span className="h-px w-7 bg-[#B79A72] sm:w-11" />
           </motion.div>
 
-          {/* HEADING */}
-
           <motion.h2
-            id="ai-video-explained-heading"
-            initial={
-              reduceMotion
-                ? false
-                : {
-                    opacity: 0,
-                    y: 30,
-                  }
-            }
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-              amount: 0.4,
-            }}
+            id="ai-video-production-heading"
+            initial={reduceMotion ? false : { opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
             transition={{
               duration: reduceMotion ? 0 : 0.85,
               delay: reduceMotion ? 0 : 0.05,
               ease,
             }}
             style={newYorkFont}
-            className="
-              mx-auto
-              mt-6
-              max-w-[1000px]
-
-              text-[2.2rem]
-              font-light
-              leading-[1.02]
-              tracking-[-0.05em]
-
-              text-[#0B2A52]
-
-              sm:text-[2.6rem]
-              md:text-[2.95rem]
-              lg:text-[3.1rem]
-              xl:text-[3.35rem]
-            "
+            className="mx-auto mt-6 max-w-[900px] text-[2.2rem] font-light leading-[1.02] tracking-[-0.05em] text-[#0B2A52] sm:text-[2.6rem] md:text-[2.95rem] lg:text-[3.1rem] xl:text-[3.35rem]"
           >
-            What Are AI Video and{" "}
+            Video Production{" "}
             <span className="text-[#B18458]">
-              Video Editing Services?
+              Without Starting With a Camera.
             </span>
           </motion.h2>
 
-          {/* DESCRIPTION */}
-
-          <motion.div
-            initial={
-              reduceMotion
-                ? false
-                : {
-                    opacity: 0,
-                    y: 22,
-                  }
-            }
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              once: true,
-              amount: 0.35,
-            }}
+          <motion.p
+            initial={reduceMotion ? false : { opacity: 0, y: 22 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
             transition={{
               duration: reduceMotion ? 0 : 0.75,
               delay: reduceMotion ? 0 : 0.12,
               ease,
             }}
             style={newYorkFont}
-            className="
-              mx-auto
-              mt-5
-              max-w-[940px]
-
-              text-[13px]
-
-              sm:mt-6
-              sm:text-[15px]
-              leading-[1.68]
-
-              text-[#49657E]
-
-              md:text-[16px]
-            "
+            className="mx-auto mt-5 max-w-[790px] text-[13px] leading-[1.72] text-[#49657E] sm:mt-6 sm:text-[15px] md:text-[16px]"
           >
-            <p>
-              AI video services use generative and AI-assisted tools to help
-              create, transform or enhance visual content.
-            </p>
-
-            <p className="mt-1">
-              Professional video editing takes footage, generated visuals,
-              audio and other creative assets and turns them into a finished
-              story designed for a specific audience, platform and objective.
-            </p>
-          </motion.div>
+            AI video production uses generative technology and creative
+            direction to turn ideas, product images and campaign briefs into
+            finished video creative for advertising, social media, websites
+            and brand campaigns.
+          </motion.p>
         </div>
 
         {/* =====================================================
-            SERVICE PANELS
+            MAIN VISUAL — IDEA TO VIDEO
         ===================================================== */}
 
-        <div
-          className="
-            relative
-            mx-auto
-            mt-8
-            max-w-[1240px]
-
-            sm:mt-10
-            lg:mt-12
-          "
+        <motion.div
+          initial={reduceMotion ? false : { opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{
+            duration: reduceMotion ? 0 : 0.85,
+            delay: reduceMotion ? 0 : 0.15,
+            ease,
+          }}
+          className="relative mx-auto mt-10 max-w-[1180px] overflow-hidden rounded-[30px] border border-[#D7E3EC] bg-[linear-gradient(135deg,#F7FBFE_0%,#FFFFFF_48%,#FCF8F2_100%)] px-5 py-8 shadow-[0_24px_70px_rgba(11,42,82,0.07)] sm:mt-12 sm:px-8 sm:py-10 lg:px-12 lg:py-12"
         >
-          <div
-            className="
-              grid
-              grid-cols-1
-              gap-5
+          <div className="pointer-events-none absolute left-1/2 top-[-80px] h-[220px] w-[420px] -translate-x-1/2 rounded-full bg-[#DDECF8]/65 blur-[80px]" />
 
-              lg:grid-cols-2
-              lg:gap-12
-            "
-          >
-            {/* =================================================
-                AI VIDEO
-            ================================================= */}
+          <div className="relative z-10 grid items-center gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-14">
 
-            <motion.article
-              initial={
-                reduceMotion
-                  ? false
-                  : {
-                      opacity: 0,
-                      x: -38,
-                    }
-              }
-              whileInView={{
-                opacity: 1,
-                x: 0,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.25,
-              }}
-              transition={{
-                duration: reduceMotion ? 0 : 0.8,
-                ease,
-              }}
-              whileHover={
-                reduceMotion
-                  ? undefined
-                  : {
-                      y: -4,
-                    }
-              }
-              className="
-                relative
-                overflow-hidden
+            {/* LEFT */}
 
-                rounded-[24px]
+            <div>
+              <div className="flex h-14 w-14 items-center justify-center rounded-[18px] bg-[#E6F1FA] text-[#0B2A52]">
+                <WandSparkles size={25} strokeWidth={1.4} />
+              </div>
 
-                border
-                border-[#BCD9EE]
-
-                bg-[linear-gradient(110deg,#EFF7FD_0%,#F8FCFE_100%)]
-
-                p-6
-
-                shadow-[0_16px_42px_rgba(11,42,82,0.045)]
-
-                sm:p-7
-                md:p-8
-              "
-            >
-              <div
-                className="
-                  pointer-events-none
-                  absolute
-                  -left-14
-                  -top-20
-
-                  h-[230px]
-                  w-[230px]
-
-                  rounded-full
-
-                  bg-[#D9EAF7]
-
-                  blur-[62px]
-                "
-              />
-
-              <div
-                className="
-                  relative
-                  z-10
-
-                  grid
-                  gap-6
-
-                  sm:grid-cols-[135px_1fr]
-                  sm:items-center
-                "
+              <h3
+                style={newYorkFont}
+                className="mt-6 max-w-[430px] text-[1.75rem] font-light leading-[1.08] tracking-[-0.04em] text-[#0B2A52] sm:text-[2rem]"
               >
-                {/* AI ICON */}
+                Start With an Idea.{" "}
+                <span className="italic text-[#B18458]">
+                  Build the Visual Around It.
+                </span>
+              </h3>
 
-                <div
-                  className="
-                    flex
-                    h-[135px]
-                    w-[135px]
-                    items-center
-                    justify-center
+              <p
+                style={newYorkFont}
+                className="mt-4 max-w-[470px] text-[0.9rem] leading-[1.7] text-[#557087] sm:text-[0.96rem]"
+              >
+                Instead of beginning with locations, sets and cameras, AI video
+                can begin with the message you want to communicate and the
+                visual world you want to create.
+              </p>
+            </div>
 
-                    rounded-[36px]
+            {/* RIGHT — PROCESS */}
 
-                    bg-[linear-gradient(145deg,#DCEBFA,#EBF5FC)]
-
-                    text-[#0B2A52]
-
-                    shadow-[inset_0_1px_0_rgba(255,255,255,0.9)]
-                  "
-                >
+            <div className="relative">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-5">
+                {process.map((item, index) => (
                   <motion.div
-                    animate={
+                    key={item}
+                    initial={
                       reduceMotion
-                        ? undefined
+                        ? false
                         : {
-                            y: [0, -5, 0],
-                            scale: [1, 1.04, 1],
+                            opacity: 0,
+                            y: 18,
                           }
                     }
-                    transition={{
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut",
+                    whileInView={{
+                      opacity: 1,
+                      y: 0,
                     }}
-                  >
-                    <Sparkles size={48} strokeWidth={1.35} />
-                  </motion.div>
-                </div>
-
-                {/* TEXT */}
-
-                <div>
-                  <h3
-                    style={newYorkFont}
-                    className="
-                      text-[1.65rem]
-                      font-light
-                      leading-[1.1]
-                      tracking-[-0.035em]
-
-                      text-[#0B2A52]
-
-                      sm:text-[1.85rem]
-                    "
-                  >
-                    AI Video Services
-                  </h3>
-
-                  <p
-                    style={newYorkFont}
-                    className="
-                      mt-4
-                      max-w-[410px]
-
-                      text-[0.9rem]
-                      leading-[1.65]
-
-                      text-[#506C84]
-
-                      sm:text-[0.96rem]
-                    "
-                  >
-                    Use generative and AI-assisted tools to help create,
-                    transform or enhance visual content.
-                  </p>
-                </div>
-              </div>
-            </motion.article>
-
-            {/* =================================================
-                VIDEO EDITING
-            ================================================= */}
-
-            <motion.article
-              initial={
-                reduceMotion
-                  ? false
-                  : {
-                      opacity: 0,
-                      x: 38,
-                    }
-              }
-              whileInView={{
-                opacity: 1,
-                x: 0,
-              }}
-              viewport={{
-                once: true,
-                amount: 0.25,
-              }}
-              transition={{
-                duration: reduceMotion ? 0 : 0.8,
-                ease,
-              }}
-              whileHover={
-                reduceMotion
-                  ? undefined
-                  : {
-                      y: -4,
-                    }
-              }
-              className="
-                relative
-                overflow-hidden
-
-                rounded-[24px]
-
-                border
-                border-[#E8D2B2]
-
-                bg-[linear-gradient(110deg,#FCF7EF_0%,#FFFCF7_100%)]
-
-                p-6
-
-                shadow-[0_16px_42px_rgba(11,42,82,0.045)]
-
-                sm:p-7
-                md:p-8
-              "
-            >
-              <div
-                className="
-                  pointer-events-none
-                  absolute
-                  -right-14
-                  -top-20
-
-                  h-[230px]
-                  w-[230px]
-
-                  rounded-full
-
-                  bg-[#F3E5D1]
-
-                  blur-[62px]
-                "
-              />
-
-              <div
-                className="
-                  relative
-                  z-10
-
-                  grid
-                  gap-6
-
-                  sm:grid-cols-[1fr_135px]
-                  sm:items-center
-                "
-              >
-                {/* TEXT */}
-
-                <div>
-                  <h3
-                    style={newYorkFont}
-                    className="
-                      text-[1.65rem]
-                      font-light
-                      leading-[1.1]
-                      tracking-[-0.035em]
-
-                      text-[#0B2A52]
-
-                      sm:text-[1.85rem]
-                    "
-                  >
-                    Video Editing Services
-                  </h3>
-
-                  <p
-                    style={newYorkFont}
-                    className="
-                      mt-4
-                      max-w-[430px]
-
-                      text-[0.9rem]
-                      leading-[1.65]
-
-                      text-[#506C84]
-
-                      sm:text-[0.96rem]
-                    "
-                  >
-                    Take footage, generated visuals, audio and other creative
-                    assets and turn them into a finished story for a specific
-                    audience, platform and objective.
-                  </p>
-                </div>
-
-                {/* ICON */}
-
-                <div
-                  className="
-                    flex
-                    h-[135px]
-                    w-[135px]
-                    items-center
-                    justify-center
-
-                    rounded-[36px]
-
-                    bg-[linear-gradient(145deg,#F4E5D0,#FCF5EA)]
-
-                    text-[#7E5728]
-
-                    shadow-[inset_0_1px_0_rgba(255,255,255,0.9)]
-                  "
-                >
-                  <motion.div
-                    animate={
-                      reduceMotion
-                        ? undefined
-                        : {
-                            y: [0, -5, 0],
-                            scale: [1, 1.04, 1],
-                          }
-                    }
+                    viewport={{ once: true }}
                     transition={{
-                      duration: 4.2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
+                      duration: reduceMotion ? 0 : 0.55,
+                      delay: reduceMotion ? 0 : index * 0.07,
+                      ease,
                     }}
+                    className="relative flex min-h-[108px] flex-col justify-between rounded-[18px] border border-[#D8E5EE] bg-white/80 p-4 backdrop-blur-sm"
                   >
-                    <Film size={48} strokeWidth={1.35} />
+                    <span
+                      style={newYorkFont}
+                      className="text-[9px] font-medium tracking-[0.17em] text-[#B18458]"
+                    >
+                      0{index + 1}
+                    </span>
+
+                    <span
+                      style={newYorkFont}
+                      className="mt-6 text-[0.88rem] font-medium leading-[1.25] text-[#0B2A52]"
+                    >
+                      {item}
+                    </span>
+
+                    {index < process.length - 1 && (
+                      <span className="absolute -right-[8px] top-1/2 z-20 hidden h-[16px] w-[16px] -translate-y-1/2 items-center justify-center rounded-full border border-[#D8E5EE] bg-white text-[#B18458] sm:flex">
+                        <span className="text-[10px]">→</span>
+                      </span>
+                    )}
                   </motion.div>
-                </div>
+                ))}
               </div>
-            </motion.article>
+            </div>
           </div>
-
-          {/* =================================================
-              PLUS
-          ================================================= */}
-
-          <motion.div
-            initial={
-              reduceMotion
-                ? false
-                : {
-                    opacity: 0,
-                    scale: 0.72,
-                  }
-            }
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-            }}
-            viewport={{ once: true }}
-            transition={{
-              duration: reduceMotion ? 0 : 0.5,
-              delay: reduceMotion ? 0 : 0.25,
-              ease,
-            }}
-            className="
-              absolute
-              left-1/2
-              top-1/2
-              z-30
-
-              hidden
-              h-[78px]
-              w-[78px]
-
-              -translate-x-1/2
-              -translate-y-1/2
-
-              items-center
-              justify-center
-
-              rounded-full
-
-              border-[8px]
-              border-white
-
-              bg-[#F4F9FD]
-
-              text-[#0B2A52]
-
-              shadow-[0_12px_30px_rgba(11,42,82,0.09)]
-
-              lg:flex
-            "
-          >
-            <Plus size={28} strokeWidth={1.45} />
-          </motion.div>
-        </div>
+        </motion.div>
 
         {/* =====================================================
             CONNECTOR
         ===================================================== */}
 
-        <div
-          className="
-            relative
-            mx-auto
-
-            flex
-            h-[52px]
-            justify-center
-          "
-        >
-          <motion.span
-            initial={{
-              scaleY: reduceMotion ? 1 : 0,
-            }}
-            whileInView={{
-              scaleY: 1,
-            }}
-            viewport={{
-              once: true,
-            }}
+        <div className="mx-auto flex h-[68px] justify-center">
+          <motion.div
+            initial={{ scaleY: reduceMotion ? 1 : 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true }}
             transition={{
               duration: reduceMotion ? 0 : 0.6,
               ease,
             }}
-            className="
-              h-full
-              w-px
-
-              origin-top
-
-              bg-[#B79A72]/65
-            "
-          />
-
-          <span
-            className="
-              absolute
-              bottom-0
-
-              h-1.5
-              w-1.5
-
-              rounded-full
-
-              bg-[#B79A72]
-            "
-          />
+            className="relative h-full w-px origin-top bg-[#B79A72]/55"
+          >
+            <span className="absolute -bottom-2 left-1/2 flex h-5 w-5 -translate-x-1/2 items-center justify-center rounded-full border border-[#E2D5C3] bg-white text-[#B18458]">
+              <ArrowDown size={10} strokeWidth={1.6} />
+            </span>
+          </motion.div>
         </div>
 
         {/* =====================================================
-            OUTPUT TITLE
+            CAPABILITY HEADER
         ===================================================== */}
 
         <motion.div
-          initial={
-            reduceMotion
-              ? false
-              : {
-                  opacity: 0,
-                  y: 15,
-                }
-          }
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.5,
-          }}
-          transition={{
-            duration: reduceMotion ? 0 : 0.65,
-            ease,
-          }}
-          className="
-            mx-auto
-
-            flex
-            max-w-[680px]
-            items-center
-            gap-5
-          "
+          initial={reduceMotion ? false : { opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: reduceMotion ? 0 : 0.65, ease }}
+          className="mx-auto max-w-[840px] text-center"
         >
-          <span className="h-px flex-1 bg-[#B79A72]" />
-
-          <p
+          <span
             style={newYorkFont}
-            className="
-              text-center
-              text-[8px]
-              font-medium
-              uppercase
-              tracking-[0.27em]
-
-              text-[#A4774C]
-
-              sm:text-[9px]
-            "
+            className="text-[9px] font-medium uppercase tracking-[0.27em] text-[#A4774C]"
           >
-            Together, They Can Help Businesses Create:
-          </p>
+            What You Can Create
+          </span>
 
-          <span className="h-px flex-1 bg-[#B79A72]" />
+          <h3
+            style={newYorkFont}
+            className="mx-auto mt-3 max-w-[760px] text-[1.65rem] font-light leading-[1.15] tracking-[-0.035em] text-[#0B2A52] sm:text-[1.95rem] md:text-[2.2rem]"
+          >
+            AI Video Creative for{" "}
+            <span className="text-[#B18458]">
+              Different Marketing Goals.
+            </span>
+          </h3>
         </motion.div>
 
         {/* =====================================================
-            COLORFUL OUTPUTS
+            CAPABILITIES
         ===================================================== */}
 
-        <div
-          className="
-            mx-auto
-            mt-7
-
-            grid
-            max-w-[1280px]
-
-            grid-cols-1
-            gap-3
-
-            sm:grid-cols-2
-            lg:grid-cols-5
-          "
-        >
-          {outputs.map((item, index) => {
+        <div className="mx-auto mt-7 grid max-w-[1240px] grid-cols-1 gap-3 sm:grid-cols-2 lg:mt-9 lg:grid-cols-3">
+          {capabilities.map((item, index) => {
             const Icon = item.icon;
 
             return (
@@ -877,7 +344,7 @@ export default function AiVideoExplained() {
                     ? false
                     : {
                         opacity: 0,
-                        y: 20,
+                        y: 22,
                       }
                 }
                 whileInView={{
@@ -889,8 +356,8 @@ export default function AiVideoExplained() {
                   amount: 0.2,
                 }}
                 transition={{
-                  duration: reduceMotion ? 0 : 0.5,
-                  delay: reduceMotion ? 0 : index * 0.045,
+                  duration: reduceMotion ? 0 : 0.55,
+                  delay: reduceMotion ? 0 : index * 0.05,
                   ease,
                 }}
                 whileHover={
@@ -904,256 +371,95 @@ export default function AiVideoExplained() {
                   backgroundColor: item.bg,
                   borderColor: item.border,
                 }}
-                className="
-                  group
-                  relative
-
-                  flex
-                  min-h-[88px]
-                  items-center
-                  gap-4
-
-                  overflow-hidden
-
-                  rounded-[15px]
-
-                  border
-
-                  px-4
-                  py-4
-
-                  shadow-[0_8px_25px_rgba(11,42,82,0.025)]
-
-                  transition-shadow
-                  duration-300
-
-                  hover:shadow-[0_15px_34px_rgba(11,42,82,0.07)]
-                "
+                className="group relative overflow-hidden rounded-[20px] border p-5 shadow-[0_8px_25px_rgba(11,42,82,0.025)] transition-shadow duration-300 hover:shadow-[0_18px_40px_rgba(11,42,82,0.08)] sm:p-6"
               >
-                {/* ICON */}
+                <div className="flex items-start gap-4">
+                  <motion.div
+                    whileHover={
+                      reduceMotion
+                        ? undefined
+                        : {
+                            scale: 1.06,
+                            rotate: 3,
+                          }
+                    }
+                    style={{
+                      backgroundColor: item.iconBg,
+                      color: item.iconColor,
+                    }}
+                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[16px]"
+                  >
+                    <Icon size={21} strokeWidth={1.45} />
+                  </motion.div>
 
-                <motion.span
-                  whileHover={
-                    reduceMotion
-                      ? undefined
-                      : {
-                          scale: 1.08,
-                          rotate: 4,
-                        }
-                  }
-                  style={{
-                    backgroundColor: item.iconBg,
-                    color: item.iconColor,
-                  }}
-                  className="
-                    flex
-                    h-12
-                    w-12
-                    shrink-0
-                    items-center
-                    justify-center
+                  <div>
+                    <h4
+                      style={newYorkFont}
+                      className="text-[1rem] font-medium leading-[1.25] text-[#0B2A52] sm:text-[1.05rem]"
+                    >
+                      {item.title}
+                    </h4>
 
-                    rounded-full
-                  "
-                >
-                  <Icon size={21} strokeWidth={1.55} />
-                </motion.span>
+                    <p
+                      style={newYorkFont}
+                      className="mt-2 text-[0.79rem] leading-[1.6] text-[#587087] sm:text-[0.84rem]"
+                    >
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
 
-                {/* TEXT */}
-
-                <h3
-                  style={newYorkFont}
-                  className="
-                    text-[0.9rem]
-                    font-medium
-                    leading-[1.26]
-
-                    text-[#0B2A52]
-
-                    xl:text-[0.96rem]
-                  "
-                >
-                  {item.title}
-                </h3>
-
-                {/* HOVER GOLD LINE */}
-
-                <span
-                  className="
-                    absolute
-                    bottom-0
-                    left-0
-
-                    h-[2px]
-                    w-0
-
-                    bg-[#B79A72]
-
-                    transition-all
-                    duration-500
-
-                    group-hover:w-full
-                  "
-                />
+                <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#B79A72] transition-all duration-500 group-hover:w-full" />
               </motion.article>
             );
           })}
         </div>
 
         {/* =====================================================
-            SHARP RAYS — OPEN ENDING / NO CARD
+            ENDING STATEMENT
         ===================================================== */}
 
         <motion.div
-          initial={
-            reduceMotion
-              ? false
-              : {
-                  opacity: 0,
-                  y: 22,
-                }
-          }
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.3,
-          }}
+          initial={reduceMotion ? false : { opacity: 0, y: 22 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{
             duration: reduceMotion ? 0 : 0.7,
             ease,
           }}
-          className="
-            mx-auto
-            mt-10
-            max-w-[980px]
-
-            px-1
-            text-center
-
-            sm:mt-12
-            sm:px-3
-
-            md:mt-14
-          "
+          className="mx-auto mt-11 max-w-[900px] text-center sm:mt-14"
         >
-          {/* LABEL */}
-
-          <div
-            className="
-              flex
-              items-center
-              justify-center
-              gap-3
-
-              sm:gap-4
-            "
-          >
-            <span
-              className="
-                h-px
-                w-7
-
-                bg-gradient-to-r
-                from-transparent
-                to-[#B79A72]
-
-                sm:w-10
-              "
-            />
+          <div className="flex items-center justify-center gap-3 sm:gap-4">
+            <span className="h-px w-7 bg-gradient-to-r from-transparent to-[#B79A72] sm:w-10" />
 
             <span
               style={newYorkFont}
-              className="
-                text-[8px]
-                font-medium
-                uppercase
-                tracking-[0.22em]
-
-                text-[#A4774C]
-
-                sm:text-[9px]
-                sm:tracking-[0.27em]
-              "
+              className="text-[8px] font-medium uppercase tracking-[0.25em] text-[#A4774C] sm:text-[9px]"
             >
               At Sharp Rays
             </span>
 
-            <span
-              className="
-                h-px
-                w-7
-
-                bg-gradient-to-l
-                from-transparent
-                to-[#B79A72]
-
-                sm:w-10
-              "
-            />
+            <span className="h-px w-7 bg-gradient-to-l from-transparent to-[#B79A72] sm:w-10" />
           </div>
-
-          {/* MAIN STATEMENT */}
 
           <h3
             style={newYorkFont}
-            className="
-              mx-auto
-              mt-4
-              max-w-[850px]
-
-              text-[1.45rem]
-              font-light
-              leading-[1.18]
-              tracking-[-0.035em]
-
-              text-[#0B2A52]
-
-              min-[390px]:text-[1.6rem]
-              sm:mt-5
-              sm:text-[1.85rem]
-              md:text-[2.05rem]
-              lg:text-[2.25rem]
-            "
+            className="mx-auto mt-4 max-w-[760px] text-[1.45rem] font-light leading-[1.18] tracking-[-0.035em] text-[#0B2A52] sm:text-[1.8rem] md:text-[2rem]"
           >
-            AI is part of the{" "}
+            AI generates the possibilities.{" "}
             <span className="font-normal italic text-[#B18458]">
-              production toolkit.
+              Creative direction decides what is worth making.
             </span>
           </h3>
 
-          {/* SUPPORT COPY */}
-
           <p
             style={newYorkFont}
-            className="
-              mx-auto
-              mt-3
-              max-w-[720px]
-
-              text-[0.78rem]
-              leading-[1.65]
-
-              text-[#5B7286]
-
-              sm:mt-4
-              sm:text-[0.88rem]
-
-              md:text-[0.94rem]
-            "
+            className="mx-auto mt-3 max-w-[660px] text-[0.8rem] leading-[1.65] text-[#5B7286] sm:text-[0.9rem]"
           >
-            The final creative direction still starts with the message,
-            audience and purpose.
+            Every project starts with the audience, message and purpose — not
+            the AI tool.
           </p>
-
-          {/* SUPPORTING LINE */}
-
-          
-             
         </motion.div>
-
       </div>
     </section>
   );
