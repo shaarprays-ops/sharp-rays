@@ -9,11 +9,11 @@ import {
   Package,
   Rocket,
   Smartphone,
-  Users,
+  Sparkles,
 } from "lucide-react";
 
 const newYorkFont = {
-  fontFamily: '"New York", "", Georgia, serif',
+  fontFamily: '"New York", ui-serif, Georgia, serif',
 };
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -30,46 +30,46 @@ type UseCase = {
 const useCases: UseCase[] = [
   {
     number: "01",
-    title: "Social Media",
+    title: "Paid Advertising",
     description:
-      "Reels, Shorts, educational clips, branded series and platform-native videos.",
-    icon: Smartphone,
+      "AI video ads, product hooks, offer-led creative and campaign variations for paid social and digital advertising.",
+    icon: Megaphone,
     accent: "#3976B6",
     soft: "#EAF4FE",
   },
   {
     number: "02",
-    title: "Paid Advertising",
+    title: "Product Launches",
     description:
-      "Creative variations, hooks, product videos and conversion-focused edits.",
-    icon: Megaphone,
+      "Launch films, teasers, product reveals and visual concepts designed to introduce something new.",
+    icon: Rocket,
     accent: "#C7794A",
     soft: "#FFF1E7",
   },
   {
     number: "03",
-    title: "Products",
+    title: "Social Media",
     description:
-      "Demonstrations, concept visuals, feature videos and launch creative.",
-    icon: Package,
+      "AI-powered Reels, Shorts and social creative built around hooks, attention and platform-native formats.",
+    icon: Smartphone,
     accent: "#7B61C9",
     soft: "#F2EEFF",
   },
   {
     number: "04",
-    title: "Services",
+    title: "E-commerce & D2C",
     description:
-      "Explainers that make difficult or intangible offers easier to understand.",
-    icon: Briefcase,
+      "Product showcases, lifestyle visuals, demonstrations and campaign creative built around products and offers.",
+    icon: Package,
     accent: "#3F9A7A",
     soft: "#EAF8F2",
   },
   {
     number: "05",
-    title: "Founders & Experts",
+    title: "Brand Campaigns",
     description:
-      "Interviews, talking-head edits, insights, thought leadership and repurposed content.",
-    icon: Users,
+      "Cinematic concepts, branded visual worlds and story-led creative designed to strengthen brand identity.",
+    icon: Sparkles,
     accent: "#C49A3E",
     soft: "#FFF8E5",
   },
@@ -77,17 +77,17 @@ const useCases: UseCase[] = [
     number: "06",
     title: "Websites",
     description:
-      "Hero videos, service explainers, background visuals and product demonstrations.",
+      "Hero visuals, product loops, service explainers and AI-generated background video for digital experiences.",
     icon: Monitor,
     accent: "#4E9AA8",
     soft: "#EAF8FA",
   },
   {
     number: "07",
-    title: "Campaigns",
+    title: "Services & SaaS",
     description:
-      "Visual concepts, launch assets and multiple creative formats around one central idea.",
-    icon: Rocket,
+      "Explain intangible services, software and complex ideas through clearer visual storytelling.",
+    icon: Briefcase,
     accent: "#C86F86",
     soft: "#FFF0F4",
   },
@@ -127,46 +127,11 @@ function UseCaseItem({
         delay: reduceMotion ? 0 : index * 0.05,
         ease,
       }}
-      className="
-        group
-        relative
-        border-b
-        border-[#DCE6ED]
-        py-5
-
-        transition-colors
-        duration-300
-
-        sm:py-6
-
-        lg:border-b-0
-        lg:border-r
-        lg:px-5
-        lg:py-1
-        lg:last:border-r-0
-      "
+      className="group relative border-b border-[#DCE6ED] py-5 transition-colors duration-300 sm:py-6 lg:border-b-0 lg:border-r lg:px-5 lg:py-1 lg:last:border-r-0"
     >
       <div className="flex items-start gap-4 lg:block">
         <span
-          className="
-            flex
-            h-10
-            w-10
-            shrink-0
-            items-center
-            justify-center
-            rounded-[12px]
-            border
-            border-black/[0.06]
-
-            shadow-[0_6px_18px_rgba(11,42,82,0.035)]
-
-            transition-all
-            duration-300
-            group-hover:-translate-y-1
-            lg:h-11
-            lg:w-11
-          "
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] border border-black/[0.06] shadow-[0_6px_18px_rgba(11,42,82,0.035)] transition-all duration-300 group-hover:-translate-y-1 lg:h-11 lg:w-11"
           style={{
             backgroundColor: item.soft,
             color: item.accent,
@@ -182,60 +147,28 @@ function UseCaseItem({
                 ...newYorkFont,
                 color: item.accent,
               }}
-              className="
-                text-[0.47rem]
-                font-medium
-                uppercase
-                tracking-[0.18em]
-              "
+              className="text-[0.47rem] font-medium uppercase tracking-[0.18em]"
             >
-              Use Case
+              Marketing Use
             </span>
-
           </div>
 
           <h3
             style={newYorkFont}
-            className="
-              mt-2
-              text-[1.12rem]
-              font-normal
-              leading-[1.15]
-              tracking-[-0.025em]
-              text-[#0B2A52]
-              sm:text-[1.2rem]
-              lg:text-[1.18rem]
-              xl:text-[1.28rem]
-            "
+            className="mt-2 text-[1.12rem] font-normal leading-[1.15] tracking-[-0.025em] text-[#0B2A52] sm:text-[1.2rem] lg:text-[1.18rem] xl:text-[1.28rem]"
           >
             {item.title}
           </h3>
 
           <p
             style={newYorkFont}
-            className="
-              mt-2.5
-              max-w-[340px]
-              text-[0.73rem]
-              leading-[1.6]
-              text-[#60758A]
-              sm:text-[0.77rem]
-            "
+            className="mt-2.5 max-w-[340px] text-[0.73rem] leading-[1.6] text-[#60758A] sm:text-[0.77rem]"
           >
             {item.description}
           </p>
 
           <span
-            className="
-              mt-4
-              block
-              h-[2px]
-              w-7
-              rounded-full
-              transition-all
-              duration-300
-              group-hover:w-12
-            "
+            className="mt-4 block h-[2px] w-7 rounded-full transition-all duration-300 group-hover:w-12"
             style={{
               backgroundColor: item.accent,
             }}
@@ -253,70 +186,26 @@ export default function AiVideoUseCases() {
     <section
       id="ai-video-use-cases"
       aria-labelledby="ai-video-use-cases-heading"
-      className="
-        relative
-        isolate
-        overflow-hidden
-        bg-white
-        py-16
-        sm:py-20
-        md:py-24
-        lg:py-28
-      "
+      className="relative isolate overflow-hidden bg-white py-16 sm:py-20 md:py-24 lg:py-28"
     >
+      {/* =========================================================
+          BACKGROUND
+      ========================================================= */}
+
       <div
         aria-hidden="true"
-        className="
-          pointer-events-none
-          absolute
-          inset-0
-          -z-10
-          hidden
-          sm:block
-        "
+        className="pointer-events-none absolute inset-0 -z-10 hidden sm:block"
       >
-        <div
-          className="
-            absolute
-            left-1/2
-            top-[-260px]
-            h-[500px]
-            w-[900px]
-            -translate-x-1/2
-            rounded-full
-            bg-[#EEF5FA]
-            blur-[140px]
-          "
-        />
+        <div className="absolute left-1/2 top-[-260px] h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-[#EEF5FA] blur-[140px]" />
 
-        <div
-          className="
-            absolute
-            -right-[240px]
-            bottom-[-180px]
-            h-[420px]
-            w-[420px]
-            rounded-full
-            bg-[#B79A72]/[0.04]
-            blur-[120px]
-          "
-        />
+        <div className="absolute -right-[240px] bottom-[-180px] h-[420px] w-[420px] rounded-full bg-[#B79A72]/[0.04] blur-[120px]" />
       </div>
 
-      <div
-        className="
-          relative
-          z-10
-          mx-auto
-          w-full
-          max-w-[1380px]
-          px-4
-          sm:px-6
-          md:px-8
-          lg:px-12
-          xl:px-14
-        "
-      >
+      <div className="relative z-10 mx-auto w-full max-w-[1380px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-14">
+        {/* =========================================================
+            HEADER
+        ========================================================= */}
+
         <motion.div
           initial={
             reduceMotion
@@ -341,84 +230,42 @@ export default function AiVideoUseCases() {
           className="mx-auto max-w-[920px] text-center"
         >
           <div className="flex items-center justify-center gap-3">
-            <span
-              className="
-                h-px
-                w-7
-                bg-gradient-to-r
-                from-transparent
-                to-[#B79A72]
-                sm:w-10
-              "
-            />
+            <span className="h-px w-7 bg-gradient-to-r from-transparent to-[#B79A72] sm:w-10" />
 
             <span
               style={newYorkFont}
-              className="
-                text-[9px]
-                font-medium
-                uppercase
-                tracking-[0.23em]
-                text-[#B79A72]
-                sm:text-[10px]
-                sm:tracking-[0.27em]
-              "
+              className="text-[9px] font-medium uppercase tracking-[0.23em] text-[#B79A72] sm:text-[10px] sm:tracking-[0.27em]"
             >
-              Where AI Video Can Fit
+              Where AI Video Works
             </span>
 
-            <span
-              className="
-                h-px
-                w-7
-                bg-gradient-to-l
-                from-transparent
-                to-[#B79A72]
-                sm:w-10
-              "
-            />
+            <span className="h-px w-7 bg-gradient-to-l from-transparent to-[#B79A72] sm:w-10" />
           </div>
 
           <h2
             id="ai-video-use-cases-heading"
             style={newYorkFont}
-            className="
-              mx-auto
-              mt-5
-              max-w-[920px]
-              text-[2.2rem]
-              font-light
-              leading-[1.04]
-              tracking-[-0.045em]
-              text-[#0B2A52]
-              sm:text-[2.6rem]
-              md:text-[2.95rem]
-              lg:text-[3.1rem]
-              xl:text-[3.35rem]
-            "
+            className="mx-auto mt-5 max-w-[920px] text-[2.2rem] font-light leading-[1.04] tracking-[-0.045em] text-[#0B2A52] sm:text-[2.6rem] md:text-[2.95rem] lg:text-[3.1rem] xl:text-[3.35rem]"
           >
-            One Production System.{" "}
+            Different Marketing Goals.{" "}
             <span className="font-normal italic text-[#B79A72]">
-              Different Business Jobs.
+              Different AI Creative.
             </span>
           </h2>
 
           <p
             style={newYorkFont}
-            className="
-              mx-auto
-              mt-5
-              max-w-[700px]
-              text-[0.86rem]
-              leading-[1.68]
-              text-[#5D7286]
-              sm:text-[0.94rem]
-            "
+            className="mx-auto mt-5 max-w-[720px] text-[0.86rem] leading-[1.68] text-[#5D7286] sm:text-[0.94rem]"
           >
-            AI video and editing can support different parts of your marketing.
-            The format changes around the job while the brand stays consistent.
+            AI video can support advertising, product launches, social content,
+            websites and brand campaigns. The format changes around the
+            objective while the creative direction stays consistent.
           </p>
         </motion.div>
+
+        {/* =========================================================
+            SYSTEM LABEL
+        ========================================================= */}
 
         <motion.div
           initial={
@@ -442,79 +289,32 @@ export default function AiVideoUseCases() {
             delay: reduceMotion ? 0 : 0.08,
             ease,
           }}
-          className="
-            mx-auto
-            mt-10
-            max-w-[1160px]
-            sm:mt-16
-          "
+          className="mx-auto mt-10 max-w-[1160px] sm:mt-16"
         >
           <div className="flex items-center gap-3 sm:gap-4">
             <span className="h-px flex-1 bg-[#D7E3EB]" />
 
-            <div
-              className="
-                flex
-                shrink-0
-                items-center
-                gap-3
-                rounded-full
-                border
-                border-[#C9D9E5]
-                bg-white
-                px-4
-                py-2.5
-                shadow-[0_8px_26px_rgba(11,42,82,0.05)]
-                sm:px-5
-              "
-            >
+            <div className="flex shrink-0 items-center gap-3 rounded-full border border-[#C9D9E5] bg-white px-4 py-2.5 shadow-[0_8px_26px_rgba(11,42,82,0.05)] sm:px-5">
               <span className="h-2 w-2 rounded-full bg-[#B79A72]" />
 
               <span
                 style={newYorkFont}
-                className="
-                  text-[0.5rem]
-                  font-medium
-                  uppercase
-                  tracking-[0.18em]
-                  text-[#0B2A52]
-                  sm:text-[0.55rem]
-                "
+                className="text-[0.5rem] font-medium uppercase tracking-[0.18em] text-[#0B2A52] sm:text-[0.55rem]"
               >
-                One Production System
+                One Creative System
               </span>
             </div>
 
             <span className="h-px flex-1 bg-[#D7E3EB]" />
           </div>
-
-       
         </motion.div>
 
-        <div
-          className="
-            mx-auto
-            mt-12
-            max-w-[1220px]
-            border-t
-            border-[#DCE6ED]
-            sm:mt-12
-          "
-        >
-          <div
-            className="
-              grid
-              grid-cols-1
+        {/* =========================================================
+            USE CASES
+        ========================================================= */}
 
-              pb-8
-
-              sm:grid-cols-2
-              sm:pb-10
-
-              lg:grid-cols-4
-              lg:pb-12
-            "
-          >
+        <div className="mx-auto mt-12 max-w-[1220px] border-t border-[#DCE6ED] sm:mt-12">
+          <div className="grid grid-cols-1 pb-8 sm:grid-cols-2 sm:pb-10 lg:grid-cols-4 lg:pb-12">
             {useCases.slice(0, 4).map((item, index) => (
               <UseCaseItem
                 key={item.number}
@@ -525,26 +325,7 @@ export default function AiVideoUseCases() {
             ))}
           </div>
 
-          <div
-            className="
-              relative
-
-              grid
-              grid-cols-1
-
-              border-t
-              border-[#DCE6ED]
-
-              pt-8
-
-              sm:grid-cols-2
-              sm:pt-10
-
-              lg:grid-cols-3
-              lg:px-[12.5%]
-              lg:pt-12
-            "
-          >
+          <div className="relative grid grid-cols-1 border-t border-[#DCE6ED] pt-8 sm:grid-cols-2 sm:pt-10 lg:grid-cols-3 lg:px-[12.5%] lg:pt-12">
             {useCases.slice(4).map((item, index) => (
               <UseCaseItem
                 key={item.number}
@@ -555,6 +336,10 @@ export default function AiVideoUseCases() {
             ))}
           </div>
         </div>
+
+        {/* =========================================================
+            ENDING PRINCIPLE
+        ========================================================= */}
 
         <motion.div
           initial={
@@ -577,26 +362,14 @@ export default function AiVideoUseCases() {
             duration: reduceMotion ? 0 : 0.6,
             ease,
           }}
-          className="
-            mx-auto
-            mt-14
-            max-w-[900px]
-            text-center
-            sm:mt-14
-          "
+          className="mx-auto mt-14 max-w-[900px] text-center sm:mt-14"
         >
           <div className="flex items-center justify-center gap-3">
             <span className="h-px w-7 bg-[#B79A72]/60" />
 
             <span
               style={newYorkFont}
-              className="
-                text-[8px]
-                font-medium
-                uppercase
-                tracking-[0.2em]
-                text-[#B79A72]
-              "
+              className="text-[8px] font-medium uppercase tracking-[0.2em] text-[#B79A72]"
             >
               The Principle
             </span>
@@ -606,20 +379,9 @@ export default function AiVideoUseCases() {
 
           <p
             style={newYorkFont}
-            className="
-              mx-auto
-              mt-4
-              max-w-[820px]
-              text-[1.25rem]
-              font-light
-              leading-[1.32]
-              tracking-[-0.025em]
-              text-[#0B2A52]
-              sm:text-[1.5rem]
-              md:text-[1.7rem]
-            "
+            className="mx-auto mt-4 max-w-[820px] text-[1.25rem] font-light leading-[1.32] tracking-[-0.025em] text-[#0B2A52] sm:text-[1.5rem] md:text-[1.7rem]"
           >
-            Different channels need different edits.{" "}
+            The format should change with the marketing goal.{" "}
             <span className="italic text-[#B79A72]">
               The brand should still feel like the same brand.
             </span>

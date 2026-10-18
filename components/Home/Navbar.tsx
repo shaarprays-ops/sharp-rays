@@ -70,9 +70,9 @@ const services = [
 
   {
 
-    label: "AI Video & Video Editing",
+    label: "AI Video and Creative",
 
-    href: "/services/video-and-creative",
+    href: "/services/ai-video-and-creative",
 
     linkTitle: "Explore AI Video and Video Editing Services",
 
