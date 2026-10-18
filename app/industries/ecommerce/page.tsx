@@ -38,8 +38,7 @@ export default function Ecommerce() {
         <EcommerceGrowthStack />
         <EcommerceFinalCTA />
         <EcommerceFAQ />
-     
-
+        <Footer/>
       {/* Next sections will be added here */}
     </main>
   );
