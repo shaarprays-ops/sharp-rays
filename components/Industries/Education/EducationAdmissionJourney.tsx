@@ -102,9 +102,7 @@ export default function EducationAdmissionJourney() {
                   </span>
                 )}
 
-                <p className="mt-5 text-[10px] font-medium tracking-[0.16em] text-[#B79A72]">
-                  {number}
-                </p>
+                
 
                 <h3 className="mt-2 text-[21px] font-medium tracking-[-0.025em]">
                   {title}
