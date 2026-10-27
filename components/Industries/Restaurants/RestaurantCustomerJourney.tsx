@@ -122,9 +122,10 @@ export default function RestaurantCustomerJourney() {
 
           <h2
             id="restaurant-journey-heading"
-            className="mt-6 font-serif text-[2.1rem] font-normal leading-[1.15] tracking-[-0.04em] sm:text-[2.6rem] md:text-[2.95rem] lg:text-[3.1rem] xl:text-[3.35rem]"
+            className="mt-6  text-[29px] leading-[1.15] tracking-[-0.04em] sm:text-[32px] md:text-[34px] lg:text-[35px] "
           >
-            Great Food Gets Attention.{" "}
+            Great Food Gets Attention.
+            <br></br>
             <span className="text-[#B79A72]">
               The Right Experience Gets Customers Through Your Door.
             </span>

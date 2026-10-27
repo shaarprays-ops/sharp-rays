@@ -460,18 +460,7 @@ export default function RestaurantSearchOpportunities() {
                       </div>
 
                       {/* Search Disclaimer */}
-                      <div className="mt-5 flex items-center gap-2 border-t border-[#E9EDF1] pt-4">
-                        <Check
-                          size={13}
-                          strokeWidth={2}
-                          className="shrink-0 text-[#B79A72]"
-                        />
-
-                        <p className="text-[10px] leading-5 text-[#98A4B1]">
-                          Illustrative search patterns — not live search data
-                          or rankings.
-                        </p>
-                      </div>
+                     
                     </div>
                   </div>
 
