@@ -4,6 +4,7 @@ const newYorkFont = {
   fontFamily: '"New York", "", Georgia, serif',
 };
 
+
 const services = [
   {
     label: "Social Media Marketing",
@@ -26,14 +27,14 @@ const services = [
     title: "Website Development and Management Services by Sharp Rays",
   },
   {
-    label: "Content Marketing",
-    href: "/services/content-marketing",
-    title: "Content Marketing Services by Sharp Rays",
+    label: "AI Video and Creative",
+    href: "/services/ai-video-and-creative",
+    title: "AI Video and Creative Services by Sharp Rays",
   },
   {
-    label: "AI Video & Video Editing",
-    href: "/services/video-and-creative",
-    title: "AI Video and Video Editing Services by Sharp Rays",
+    label: "Professional Video Editing",
+    href: "/services/video-editing",
+    title: "Professional Video Editing Services by Sharp Rays",
   },
   {
     label: "AI Automation",
@@ -41,6 +42,7 @@ const services = [
     title: "AI Automation Services by Sharp Rays",
   },
 ];
+
 
 const exploreLinks = [
   {
