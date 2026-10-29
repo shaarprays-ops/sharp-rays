@@ -88,7 +88,7 @@ const models = [
     description:
       "Focus on room enquiries, direct booking opportunities and the efficiency of guest acquisition.",
     icon: Hotel,
-    image: "/images/industries/travel-hospitality/hotel-performance.webp",
+    image: "/industries/travel-hospitality/hotel-performance.webp",
     imageAlt:
       "Premium resort property overlooking a swimming pool and natural surroundings",
     imageTitle: "Hotel and Resort Booking Performance",
@@ -138,7 +138,7 @@ const models = [
     description:
       "Focus on qualified package enquiries, traveller intent and confirmed trip opportunities.",
     icon: PlaneTakeoff,
-    image: "/images/industries/travel-hospitality/travel-performance.webp",
+    image: "/industries/travel-hospitality/travel-performance.webp",
     imageAlt:
       "Scenic tropical beach and holiday destination representing travel package marketing",
     imageTitle: "Tour Operator and Travel Agency Marketing Performance",
