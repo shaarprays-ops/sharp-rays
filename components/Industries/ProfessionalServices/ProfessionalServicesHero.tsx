@@ -106,6 +106,7 @@ className="relative isolate overflow-hidden bg-[#F8FBFD] pb-16 pt-20 text-[#0B2A
 
               <Link
                 href="#professional-services-opportunities"
+                title="Professional services opportunities"
                 className="group inline-flex items-center gap-2 text-[12px] font-medium text-[#0B2A52] transition-colors hover:text-[#B79A72]"
               >
                 <span className="border-b border-[#B79A72]/60 pb-1">

@@ -217,6 +217,7 @@ export default function ManufacturingHero() {
                 <Image
                   src="/industries/manufacturing/manufacturing_hero.webp"
                   alt="Modern industrial manufacturing facility with production machinery"
+                  title="Modern industrial manufacturing facility with production machinery"
                   fill
                   priority
                   sizes="(max-width: 1024px) 90vw, 450px"

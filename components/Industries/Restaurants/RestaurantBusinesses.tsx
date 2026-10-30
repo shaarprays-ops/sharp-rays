@@ -23,6 +23,7 @@ const restaurantBusinesses = [
     image:
       "https://images.openai.com/static-rsc-4/Ohry01P5NHuVzvUtgpll8v5iC9chaHE5ef84juTHwgcKboxFgqaNYzHvtYaBPcfdFFsrAh2HZ4ARucnf8qcB5GR2yL1a91Tro2wVgB0G9zjn2uXpBz1Xzf-Z93LzL8a7GuLB_21_QKbyyF7sFEhX9km0h0PffEHy6xix_wdhud4?purpose=inline",
     imageAlt: "Premium café and coffee shop",
+    imageTitle: "Cafés and Coffee Shops | Restaurant Digital Marketing by Sharp Rays",
     size: "large",
     position: "object-center",
   },
@@ -36,6 +37,7 @@ const restaurantBusinesses = [
     image:
       "https://images.openai.com/static-rsc-4/m5-PXwISYWuZVCciSpAplV48I40na_CyWfzQyAWdTBJe0SvFJTC134UbyfimnlWYFB9QZ1cr0P4MoCrLC5j1vI68IGFPtTQDN3-oNOkACOE1RcFfTYAiL6_LuaJC5AX4DjPyzUz6tJaWk9OSUCbUeaJETnLduer0UXOKufIiq-E?purpose=inline",
     imageAlt: "Premium restaurant dining experience",
+    imageTitle: "Fine Dining and Premium Restaurants | Sharp Rays",
     size: "medium",
     position: "object-center",
   },
@@ -49,6 +51,7 @@ const restaurantBusinesses = [
     image:
       "https://images.openai.com/static-rsc-4/1CSPID_pdbr-gNn-HWM8nQ2TchjP3BH881jWs4fibm6-3EJHeQrgnEsMyo3ZconpGhIX_nltv48ycKKexH5wzxG_IK4lg8hogF2GsUQxmiJeqeX_qTCC7d4CS-JWow2HJbI6CCGe5IKPQ-D-Koxgeuje0PkoeDL-tbHuIjwtTX8?purpose=inline",
     imageAlt: "Cloud kitchen food preparation and delivery",
+    imageTitle: "Cloud Kitchens and Delivery Brands | Sharp Rays",
     size: "small",
     position: "object-center",
   },
@@ -62,6 +65,7 @@ const restaurantBusinesses = [
     image:
       "https://images.openai.com/static-rsc-4/h33YTSls1BEWgTdmMeU5-GuH24L9LWtlSQr9hHKaoG0Ef47bRPnUbfuw3adxaks1gpmT5KLBxm-pnOT0HvYxKy2Ig9bqaLTiLBCXhs0G1ZjIwb8Or_zNwR_Nz5PrkrBqAl7lZCGVbG6CX33MyvB0XfljQMGBr-ENb9Ja53P_lBo?purpose=inline",
     imageAlt: "Fast casual restaurant food experience",
+    imageTitle: "QSR and Fast-Casual Restaurants | Sharp Rays",
     size: "small",
     position: "object-center",
   },
@@ -75,6 +79,7 @@ const restaurantBusinesses = [
     image:
       "https://images.openai.com/static-rsc-4/A9SUcghDh05EcxpZkArxRQ-O-C9dD3s9qgj8K8vjAy5AJ6Djbsn9ssSjFNvAvX1f7UYdSkblFbtvyiY2MQS9vkZbrLTmlD9eFDRcGjeZ1FRBeu5Au-eGZKWjKQovxxUKQkXSnHYvYQd_SqtSK9NXXtDcxjO9zNK7ALqQwJKQaTo?purpose=inline",
     imageAlt: "Artisan bakery and dessert presentation",
+    imageTitle: "Bakeries and Dessert Businesses | Sharp Rays",
     size: "small",
     position: "object-center",
   },
@@ -88,6 +93,7 @@ const restaurantBusinesses = [
     image:
       "https://images.openai.com/static-rsc-4/Rx6u2Mj74B05oXERkwLqTPQ0-gAYJn9CthtxE2GvP2fgj4_WXQebdVy23SgyEl-KyIv5ItgZsFlxarW_e5XrAxUEJ2nzohDJ7YAJHQnRNaeGyg_i5JjxaTCyK82rNfJ-jWHYN1AZT1wcpstTUpetwe1JhzvokzsgU-aU7BWHhG0?purpose=inline",
     imageAlt: "Restaurant chain and branded dining experience",
+    imageTitle: "Restaurant Chains and Multi-Location Brands | Sharp Rays",
     size: "wide",
     position: "object-center",
   },
@@ -216,6 +222,7 @@ export default function RestaurantBusinesses() {
                   <Image
                     src={business.image}
                     alt={business.imageAlt}
+                    title={business.imageTitle}
                     fill
                     unoptimized
                     sizes={

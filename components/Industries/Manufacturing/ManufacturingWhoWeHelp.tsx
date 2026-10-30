@@ -17,6 +17,7 @@ const manufacturingIndustries = [
       "Improve visibility for technical components, engineering capabilities, product specifications and custom manufacturing enquiries.",
     image: "/industries/manufacturing/oem-manufacturing.webp",
     alt: "Precision manufacturing machinery producing industrial components",
+    imageTitle: "OEM and Component Manufacturing Services",
     tag: "Precision & Components",
   },
   {
@@ -25,6 +26,7 @@ const manufacturingIndustries = [
       "Help buyers discover your machinery, understand product features, compare applications and submit quotation requests.",
     image: "/industries/manufacturing/machinery-manufacturing.webp",
     alt: "Industrial machinery and manufacturing equipment",
+    imageTitle: "Machinery and Equipment Manufacturers",
     tag: "Machinery & Equipment",
   },
   {
@@ -33,6 +35,7 @@ const manufacturingIndustries = [
       "Reach businesses searching for CNC machining, metal fabrication, component production and custom manufacturing services.",
     image: "/industries/manufacturing/fabrication-manufacturing.webp",
     alt: "Industrial metal fabrication and contract manufacturing facility",
+    imageTitle: "Fabrication and Contract Manufacturing Services",
     tag: "Custom Production",
   },
   {
@@ -41,6 +44,7 @@ const manufacturingIndustries = [
       "Improve discoverability for product sourcing searches and develop clear supplier information for domestic and international markets.",
     image: "/industries/manufacturing/industrial-exporters.webp",
     alt: "Industrial products prepared for logistics and export",
+    imageTitle: "Industrial Suppliers and Exporters",
     tag: "Supply & Export",
   },
 ];
@@ -116,6 +120,7 @@ export default function ManufacturingWhoWeHelp() {
                 <Image
                   src={industry.image}
                   alt={industry.alt}
+                  title={industry.imageTitle}
                   fill
                   sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 25vw"
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.045]"
