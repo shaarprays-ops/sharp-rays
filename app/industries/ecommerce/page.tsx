@@ -15,7 +15,7 @@ import EcommerceFAQ from "@/components/Industries/Ecommerce/EcommerceFAQ";
 const SITE_URL = "https://www.sharprays.com";
 const PAGE_PATH = "/industries/ecommerce";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
-const OG_IMAGE = `${SITE_URL}/og/ecommerce.webp`;
+const OG_IMAGE = `${SITE_URL}/og/ecommerce-og.webp`;
 const PAGE_TITLE = "Ecommerce Digital Marketing Agency in India | Sharp Rays";
 const PAGE_DESCRIPTION = "Ecommerce digital marketing services for online stores and D2C brands. Grow qualified traffic and sales with ecommerce SEO, Google Shopping Ads, Meta Ads and automation.";
 const INDUSTRY_NAME = "Ecommerce";

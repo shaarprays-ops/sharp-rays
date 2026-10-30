@@ -35,13 +35,18 @@ const services = [
   },
   {
     label: "AI Video and Creative",
-    href: "/services/ai-video-and-creative",
+    href: "/services/video-and-creative",
     linkTitle: "Explore AI Video and Creative Services",
   },
   {
     label: "Professional Video Editing",
-    href: "/services/video-editing",
+    href: "/services/professional-video-editing",
     linkTitle: "Explore Professional Video Editing Services",
+  },
+  {
+    label: "Content Marketing",
+    href: "/services/content-marketing",
+    linkTitle: "Explore Content Marketing Services",
   },
   {
     label: "AI Automation",
@@ -80,7 +85,6 @@ export default function Navbar() {
 
   /* ACTIVE STATES */
 
-  const isHome = pathname === "/";
   const isAbout = pathname === "/about" || pathname.startsWith("/about/");
   const isServices =
     pathname === "/services" || pathname.startsWith("/services/");
@@ -184,13 +188,6 @@ export default function Navbar() {
           ================================================= */}
 
           <div className="absolute left-1/2 top-1/2 z-[110] hidden -translate-x-1/2 -translate-y-1/2 items-center gap-5 lg:flex xl:gap-7">
-            <NavLink
-              href="/"
-              label="Home"
-              linkTitle="Sharp Rays Home"
-              active={isHome}
-            />
-
             <NavLink
               href="/about"
               label="About"
@@ -300,7 +297,17 @@ export default function Navbar() {
                   })}
                 </div>
 
-                <div className="mt-2 border-t border-[#0B2A52]/[0.07] pt-2" />
+                <div className="mt-2 border-t border-[#0B2A52]/[0.08] px-3 pt-3 pb-1">
+                  <Link
+                    href="/services"
+                    title="Explore All Sharp Rays Services"
+                    onClick={() => setServicesOpen(false)}
+                    style={newYorkFont}
+                    className="inline-flex items-center gap-2 text-[12px] font-medium text-[#B79A72] transition-colors hover:text-[#0B2A52]"
+                  >
+                    All Services <span aria-hidden="true">→</span>
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -334,28 +341,42 @@ export default function Navbar() {
 
               <div
                 id="sharp-rays-desktop-industries"
-                className={`absolute left-1/2 top-full w-[330px] -translate-x-1/2 pt-5 transition-all duration-300 ${industriesOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0 pointer-events-none"}`}
+                className={`absolute left-1/2 top-full w-[520px] -translate-x-1/2 pt-5 transition-all duration-300 ${industriesOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0 pointer-events-none"}`}
               >
-                <div className="max-h-[min(70vh,620px)] overflow-y-auto rounded-[20px] border border-[#0B2A52]/[0.09] bg-white/95 p-3 shadow-[0_24px_70px_rgba(11,42,82,0.14)] backdrop-blur-xl">
-                  <div className="mb-2 px-3 pb-2 pt-2">
+                <div className="rounded-[20px] border border-[#0B2A52]/[0.09] bg-white/95 px-5 py-5 shadow-[0_24px_70px_rgba(11,42,82,0.14)] backdrop-blur-xl">
+                  <div className="mb-4 px-2">
                     <span style={newYorkFont} className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#B79A72]">Industries We Help</span>
                   </div>
-                  <div className="flex flex-col">
+                  <div className="grid grid-cols-2 gap-x-3 gap-y-1">
                     {industries.map((industry) => {
                       const active = pathname === industry.href || pathname.startsWith(`${industry.href}/`);
                       return (
-                        <Link key={industry.href} href={industry.href}
+                        <Link
+                          key={industry.href}
+                          href={industry.href}
                           title={`Digital Marketing for ${industry.label}`}
                           aria-label={`Digital Marketing for ${industry.label}`}
                           onClick={() => setIndustriesOpen(false)}
                           style={newYorkFont}
-                          className={`group flex items-center rounded-[12px] px-3 py-[10px] transition-all duration-300 ${active ? "bg-[#6285AD]/[0.08]" : "hover:bg-[#6285AD]/[0.06]"}`}>
-                          <span className={`text-[13px] font-medium leading-[1.35] transition-all duration-300 ${active ? "translate-x-1 text-[#6285AD]" : "text-[#0B2A52] group-hover:translate-x-1 group-hover:text-[#6285AD]"}`}>
+                          className={`group flex min-h-[40px] items-center rounded-[10px] px-3 py-2 transition-all duration-300 ${active ? "bg-[#6285AD]/[0.08]" : "hover:bg-[#6285AD]/[0.06]"}`}
+                        >
+                          <span className={`text-[13px] font-medium leading-[1.35] transition-all duration-300 ${active ? "text-[#6285AD]" : "text-[#0B2A52] group-hover:text-[#6285AD]"}`}>
                             {industry.label}
                           </span>
                         </Link>
                       );
                     })}
+                  </div>
+                  <div className="mt-4 border-t border-[#0B2A52]/[0.08] px-2 pt-4">
+                    <Link
+                      href="/industries"
+                      title="Explore All Industries Sharp Rays Serves"
+                      onClick={() => setIndustriesOpen(false)}
+                      style={newYorkFont}
+                      className="inline-flex items-center gap-2 text-[12px] font-medium text-[#B79A72] transition-colors hover:text-[#0B2A52]"
+                    >
+                      All Industries <span aria-hidden="true">→</span>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -523,19 +544,10 @@ export default function Navbar() {
 
           <div className="flex flex-col border-t border-[#0B2A52]/[0.08]">
             <MobileNavLink
-              label="Home"
-              href="/"
-              linkTitle="Sharp Rays Home"
-              index={1}
-              active={isHome}
-              onClick={closeMobileMenu}
-            />
-
-            <MobileNavLink
               label="About"
               href="/about"
               linkTitle="Learn More About Sharp Rays"
-              index={2}
+              index={1}
               active={isAbout}
               onClick={closeMobileMenu}
             />
@@ -575,7 +587,7 @@ export default function Navbar() {
 
                 <div className="flex shrink-0 items-center gap-4">
                   <span className="hidden text-[9px] tracking-[0.18em] text-[#0B2A52]/35 min-[360px]:block sm:text-[10px]">
-                    03
+                    02
                   </span>
 
                   <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#0B2A52]/[0.08] bg-white/70 text-[#0B2A52]/65 sm:h-9 sm:w-9">
@@ -685,7 +697,7 @@ export default function Navbar() {
                   <span style={newYorkFont} className={`text-[28px] font-medium leading-none tracking-[-0.035em] transition-colors duration-300 min-[380px]:text-[30px] sm:text-[35px] md:text-[39px] ${isIndustries ? "text-[#6285AD]" : "text-[#0B2A52]"}`}>Industries</span>
                 </div>
                 <div className="flex shrink-0 items-center gap-4">
-                  <span className="hidden text-[9px] tracking-[0.18em] text-[#0B2A52]/35 min-[360px]:block sm:text-[10px]">04</span>
+                  <span className="hidden text-[9px] tracking-[0.18em] text-[#0B2A52]/35 min-[360px]:block sm:text-[10px]">03</span>
                   <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#0B2A52]/[0.08] bg-white/70 text-[#0B2A52]/65 sm:h-9 sm:w-9">
                     <svg width="14" height="14" viewBox="0 0 18 18" fill="none" aria-hidden="true" className={`transition-transform duration-300 ${industriesOpen ? "rotate-180" : ""}`}>
                       <path d="M4 7L9 12L14 7" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
@@ -711,6 +723,17 @@ export default function Navbar() {
                         </Link>
                       );
                     })}
+                    <Link
+                      href="/industries"
+                      title="Explore All Sharp Rays Industries"
+                      aria-label="View All Industries"
+                      onClick={closeMobileMenu}
+                      tabIndex={industriesOpen ? 0 : -1}
+                      style={newYorkFont}
+                      className="group mt-4 inline-flex items-center gap-2 text-[13px] font-medium text-[#6285AD] sm:text-[14px]"
+                    >
+                      All Industries <span aria-hidden="true" className="text-[#B79A72]">→</span>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -720,7 +743,7 @@ export default function Navbar() {
               label="Work"
               href="/work"
               linkTitle="View Sharp Rays Work and Case Studies"
-              index={5}
+              index={4}
               active={isWork}
               onClick={closeMobileMenu}
             />
@@ -729,7 +752,7 @@ export default function Navbar() {
               label="Blog"
               href="/blog"
               linkTitle="Explore Sharp Rays Insights and Blog"
-              index={6}
+              index={5}
               active={isBlog}
               onClick={closeMobileMenu}
             />
@@ -738,7 +761,7 @@ export default function Navbar() {
               label="Contact"
               href="/contact"
               linkTitle="Contact Sharp Rays"
-              index={7}
+              index={6}
               active={isContact}
               onClick={closeMobileMenu}
             />

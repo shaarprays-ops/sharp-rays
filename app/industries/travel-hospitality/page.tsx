@@ -13,7 +13,7 @@ import TravelHospitalityWhoWeHelp from "@/components/Industries/TravelHospitalit
 const SITE_URL = "https://www.sharprays.com";
 const PAGE_PATH = "/industries/travel-hospitality";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
-const OG_IMAGE = `${SITE_URL}/og/travel-hospitality.webp`;
+const OG_IMAGE = `${SITE_URL}/og/travel-hospitality-og.webp`;
 const HERO_IMAGE = `${SITE_URL}/industries/travel-hospitality/resort.webp`;
 
 const PAGE_TITLE = "Travel & Hospitality Digital Marketing Agency | Sharp Rays";

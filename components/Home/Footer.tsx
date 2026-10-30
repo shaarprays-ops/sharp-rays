@@ -1,418 +1,120 @@
+
 import Link from "next/link";
+import Image from "next/image";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Mail,
+  Phone,
+  MapPin,
+  MessageCircle,
+} from "lucide-react";
 
 const newYorkFont = {
-  fontFamily: '"New York", "", Georgia, serif',
+  fontFamily: '"New York", ui-serif, Georgia, serif',
 };
-
 
 const services = [
   {
     label: "Social Media Marketing",
     href: "/services/social-media-marketing",
-    title: "Social Media Marketing Services by Sharp Rays",
   },
   {
     label: "Search Engine Optimization (SEO)",
     href: "/services/search-engine-optimization",
-    title: "SEO Services by Sharp Rays",
   },
   {
     label: "Performance Marketing / Paid Media",
     href: "/services/performance-marketing",
-    title: "Performance Marketing and Paid Media Services by Sharp Rays",
   },
   {
     label: "Website Development & Management",
     href: "/services/website-development",
-    title: "Website Development and Management Services by Sharp Rays",
   },
   {
-    label: "AI Video and Creative",
-    href: "/services/ai-video-and-creative",
-    title: "AI Video and Creative Services by Sharp Rays",
-  },
-  {
-    label: "Professional Video Editing",
-    href: "/services/video-editing",
-    title: "Professional Video Editing Services by Sharp Rays",
+    label: "Content Marketing",
+    href: "/services/content-marketing",
   },
   {
     label: "AI Automation",
     href: "/services/ai-automation",
-    title: "AI Automation Services by Sharp Rays",
+  },
+  {
+    label: "AI Video & Creative",
+    href: "/services/video-and-creative",
+  },
+  {
+    label: "Professional Video Editing",
+    href: "/services/professional-video-editing",
   },
 ];
 
-
-const exploreLinks = [
+const industries = [
   {
-    label: "Work",
-    href: "/work",
-    title: "View Sharp Rays Client Work and Case Studies",
+    label: "Beauty & Wellness",
+    href: "/industries/beauty-wellness",
   },
   {
-    label: "About",
-    href: "/about",
-    title: "About Sharp Rays",
+    label: "Ecommerce",
+    href: "/industries/ecommerce",
   },
   {
-    label: "Blog",
-    href: "/blog",
-    title: "Sharp Rays Blog",
+    label: "Education",
+    href: "/industries/education",
   },
   {
-    label: "Pricing",
-    href: "/pricing",
-    title: "Sharp Rays Pricing",
+    label: "Healthcare",
+    href: "/industries/healthcare",
   },
   {
-    label: "Contact",
-    href: "/contact",
-    title: "Contact Sharp Rays",
+    label: "Manufacturing",
+    href: "/industries/manufacturing",
+  },
+  {
+    label: "Professional Services",
+    href: "/industries/professional-services",
+  },
+  {
+    label: "Real Estate",
+    href: "/industries/real-estate",
+  },
+  {
+    label: "Restaurants",
+    href: "/industries/restaurants",
+  },
+  {
+    label: "Startups",
+    href: "/industries/startup",
+  },
+  {
+    label: "Travel & Hospitality",
+    href: "/industries/travel-hospitality",
   },
 ];
 
-const socialLinks = [
+const explore = [
+  { label: "About Sharp Rays", href: "/about" },
+  { label: "Our Work", href: "/work" },
+  { label: "Blog & Insights", href: "/blog" },
+  { label: "Pricing & Packages", href: "/pricing" },
+  { label: "Free Digital Audit", href: "/free-audit" },
+  { label: "Contact Us", href: "/contact" },
+];
+
+const socials = [
   {
-    href: "https://www.linkedin.com/company/sharp-rays/",
-    icon: "linkedin",
     label: "LinkedIn",
+    href: "https://www.linkedin.com/company/sharp-rays/",
   },
   {
-    href: "https://www.instagram.com/sharpraysdigital/",
-    icon: "instagram",
     label: "Instagram",
+    href: "https://www.instagram.com/sharpraysdigital/",
   },
   {
-    href: "https://www.facebook.com/profile.php?id=61594116386615",
-    icon: "facebook",
     label: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61594116386615",
   },
-] as const;
-
-export default function Footer() {
-  return (
-    <footer className="relative overflow-hidden border-t border-[#0B2A52]/[0.08] bg-[#FAFCFE] text-[#0B2A52]">
-      {/* =====================================================
-          VERY SUBTLE BACKGROUND
-      ===================================================== */}
-
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-      >
-        <div className="absolute -left-[160px] top-[-160px] h-[340px] w-[340px] rounded-full bg-[#EEF5FA]/75 blur-[110px]" />
-
-        <div className="absolute -right-[180px] bottom-[-200px] h-[380px] w-[380px] rounded-full bg-[#B79A72]/[0.04] blur-[120px]" />
-      </div>
-
-      {/* =====================================================
-          MAIN FOOTER
-      ===================================================== */}
-
-      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-4 py-12 sm:px-6 sm:py-14 md:px-8 md:py-16 lg:px-12 lg:py-18 xl:px-14">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 lg:grid-cols-[1.15fr_1.15fr_0.7fr_1fr] lg:gap-10 xl:gap-14">
-          {/* =================================================
-              BRAND
-          ================================================= */}
-
-          <div>
-            <Link
-              href="/"
-              aria-label="Sharp Rays Home"
-              title="Sharp Rays Home"
-              className="mt-5 inline-flex items-center"
-            >
-              <img
-                src="/logo/sharp-rays-logo.png"
-                alt="Sharp Rays"
-                title="Sharp Rays"
-                className="h-auto w-[165px] object-contain object-left sm:w-[180px] lg:w-[195px]"
-              />
-            </Link>
-
-            <p
-              style={newYorkFont}
-              className="mt-6 max-w-[260px] text-[1.35rem] font-light leading-[1.35] tracking-[-0.025em] text-[#0B2A52] sm:text-[1.5rem]"
-            >
-              Digital growth,{" "}
-              <span className="italic text-[#B79A72]">
-                without the guesswork.
-              </span>
-            </p>
-
-            {/* SOCIAL */}
-
-            <div className="mt-7 flex flex-wrap gap-x-5 gap-y-3">
-              {socialLinks.map((item) => (
-                <a
-                  key={item.icon}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Visit Sharp Rays on ${item.label}`}
-                  title={`Visit Sharp Rays on ${item.label}`}
-                  style={newYorkFont}
-                  className="group inline-flex items-center gap-2 text-[12px] font-medium text-[#60758A] transition-all duration-300 hover:-translate-y-[1px] hover:text-[#0B2A52]"
-                >
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#6285AD]/25 bg-white/80 text-[#0B2A52] shadow-[0_5px_16px_rgba(11,42,82,0.05)] transition-all duration-300 group-hover:border-[#6285AD]/40 group-hover:bg-[#F5F8FC] group-hover:text-[#6285AD]">
-                    <SocialIcon
-                      name={item.icon}
-                      className="h-[14px] w-[14px]"
-                    />
-                  </span>
-
-                  <span>{item.label}</span>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* =================================================
-              SERVICES
-          ================================================= */}
-
-          <div>
-            <FooterHeading>Services</FooterHeading>
-
-            <nav
-              aria-label="Footer services"
-              className="mt-5 flex flex-col gap-3"
-            >
-              {services.map((service) => (
-                <FooterLink
-                  key={service.href}
-                  href={service.href}
-                  title={service.title}
-                >
-                  {service.label}
-                </FooterLink>
-              ))}
-            </nav>
-          </div>
-
-          {/* =================================================
-              EXPLORE
-          ================================================= */}
-
-          <div>
-            <FooterHeading>Explore</FooterHeading>
-
-            <nav
-              aria-label="Footer navigation"
-              className="mt-5 flex flex-col gap-3"
-            >
-              {exploreLinks.map((item) => (
-                <FooterLink
-                  key={item.href}
-                  href={item.href}
-                  title={item.title}
-                >
-                  {item.label}
-                </FooterLink>
-              ))}
-            </nav>
-          </div>
-
-          {/* =================================================
-              CONNECT
-          ================================================= */}
-
-          <div>
-            <FooterHeading>Connect</FooterHeading>
-
-            <div className="mt-5">
-              <p
-                style={newYorkFont}
-                className="text-[11px] leading-[1.6] text-[#8796A3]"
-              >
-                Have a project, problem or opportunity in mind?
-              </p>
-
-              {/* EMAIL */}
-
-              <a
-                href="mailto:info@sharprays.com"
-                title="Email Sharp Rays"
-                aria-label="Email Sharp Rays"
-                style={newYorkFont}
-                className="group mt-4 inline-flex items-center text-[14px] font-medium text-[#0B2A52] transition-colors duration-300 hover:text-[#6285AD] sm:text-[15px]"
-              >
-                info@sharprays.com
-              </a>
-
-              {/* PHONE */}
-
-              <a
-                href="tel:+919415951060"
-                title="Call Sharp Rays"
-                aria-label="Call Sharp Rays at +91 94159 51060"
-                style={newYorkFont}
-                className="mt-3 block w-fit text-[14px] font-medium text-[#0B2A52] transition-colors duration-300 hover:text-[#6285AD] sm:text-[15px]"
-              >
-                +91 94159 51060
-              </a>
-
-              {/* LOCATION */}
-
-              <div className="mt-5 border-t border-[#0B2A52]/[0.08] pt-5">
-                <p
-                  style={newYorkFont}
-                  className="text-[9px] font-medium uppercase tracking-[0.18em] text-[#B79A72]"
-                >
-                  Location
-                </p>
-
-                <address
-                  style={newYorkFont}
-                  className="mt-3 not-italic text-[12px] leading-[1.75] text-[#60758A]"
-                >
-                  <span className="font-medium text-[#0B2A52]">
-                    Sharp Rays
-                  </span>
-                  <br />
-                  Naigaon East, Vasai-Virar
-                  <br />
-                  Palghar, Maharashtra 401208
-                </address>
-
-                <p
-                  style={newYorkFont}
-                  className="mt-3 max-w-[230px] text-[11px] leading-[1.6] text-[#8796A3]"
-                >
-                  Serving businesses across Maharashtra & India
-                </p>
-              </div>
-
-              <div className="mt-5 h-px w-10 bg-[#B79A72]" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* =====================================================
-          BOTTOM BAR
-      ===================================================== */}
-
-      <div className="relative z-10 border-t border-[#0B2A52]/[0.08]">
-        <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-5 px-4 py-5 sm:px-6 md:flex-row md:items-center md:justify-between md:gap-8 md:px-8 lg:px-12 xl:px-14">
-          {/* COPYRIGHT */}
-
-          <p
-            style={newYorkFont}
-            className="text-[10px] uppercase tracking-[0.12em] text-[#60758A]"
-          >
-            © 2026 Sharp Rays
-          </p>
-
-          {/* LEGAL */}
-
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 md:justify-center">
-            <Link
-              href="/privacy-policy"
-              title="Privacy Policy"
-              aria-label="Privacy Policy"
-              style={newYorkFont}
-              className="text-[10px] text-[#60758A] transition-colors duration-300 hover:text-[#0B2A52]"
-            >
-              Privacy Policy
-            </Link>
-
-            <span
-              aria-hidden="true"
-              className="hidden h-1 w-1 rounded-full bg-[#B79A72]/60 sm:block"
-            />
-
-            <Link
-              href="/terms-and-conditions"
-              title="Terms and Conditions"
-              aria-label="Terms and Conditions"
-              style={newYorkFont}
-              className="text-[10px] text-[#60758A] transition-colors duration-300 hover:text-[#0B2A52]"
-            >
-              Terms & Conditions
-            </Link>
-          </div>
-
-          {/* SIGN-OFF */}
-
-          <p
-            style={newYorkFont}
-            className="text-[10px] italic text-[#8A96A6] md:text-right"
-          >
-            Made with intention.
-          </p>
-        </div>
-      </div>
-    </footer>
-  );
-}
-
-/* =========================================================
-   SOCIAL BRAND ICONS
-   Inline SVGs — no extra icon package required
-========================================================= */
-
-function SocialIcon({
-  name,
-  className = "",
-}: {
-  name: "linkedin" | "instagram" | "facebook";
-  className?: string;
-}) {
-  if (name === "linkedin") {
-    return (
-      <svg
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        aria-hidden="true"
-        className={className}
-      >
-        <path d="M5.37 3.5A1.87 1.87 0 1 1 5.36 7.24 1.87 1.87 0 0 1 5.37 3.5ZM3.75 8.65h3.23V19H3.75V8.65ZM8.95 8.65h3.1v1.41h.04c.43-.82 1.49-1.69 3.07-1.69 3.28 0 3.89 2.16 3.89 4.97V19h-3.23v-5.02c0-1.2-.02-2.74-1.67-2.74-1.67 0-1.93 1.31-1.93 2.65V19H8.95V8.65Z" />
-      </svg>
-    );
-  }
-
-  if (name === "instagram") {
-    return (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-        className={className}
-      >
-        <rect x="3" y="3" width="18" height="18" rx="5" />
-        <circle cx="12" cy="12" r="4.2" />
-        <circle
-          cx="17.4"
-          cy="6.6"
-          r="1"
-          fill="currentColor"
-          stroke="none"
-        />
-      </svg>
-    );
-  }
-
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden="true"
-      className={className}
-    >
-      <path d="M13.5 22v-9h3l.5-3.5h-3.5V7.25c0-1.01.28-1.7 1.75-1.7H17V2.42C16.7 2.38 15.67 2.3 14.47 2.3c-2.5 0-4.22 1.53-4.22 4.34V9.5H7.4V13h2.85v9h3.25Z" />
-    </svg>
-  );
-}
-
-/* =========================================================
-   SMALL REUSABLE COMPONENTS
-========================================================= */
+];
 
 function FooterHeading({
   children,
@@ -420,42 +122,414 @@ function FooterHeading({
   children: React.ReactNode;
 }) {
   return (
-    <div>
-      <span
+    <div className="mb-6">
+      <h3
         style={newYorkFont}
-        className="text-[9px] font-medium uppercase tracking-[0.2em] text-[#B79A72]"
+        className="text-[17px] font-medium tracking-[-0.015em] text-[#0B2A52]"
       >
         {children}
-      </span>
-
-      <span className="mt-3 block h-px w-7 bg-[#B79A72]/70" />
+      </h3>
+      <div className="mt-3 h-px w-7 bg-[#B79A72]" />
     </div>
   );
 }
 
 function FooterLink({
   href,
-  title,
   children,
 }: {
   href: string;
-  title: string;
   children: React.ReactNode;
 }) {
   return (
     <Link
       href={href}
-      title={title}
-      aria-label={title}
-      style={newYorkFont}
-      className="group relative w-fit text-[13px] leading-[1.45] text-[#445D74] transition-colors duration-300 hover:text-[#0B2A52] sm:text-[14px]"
+      title={`Explore ${String(children)} at Sharp Rays`}
+      className="group inline-flex w-fit items-start gap-2 text-[12px] leading-[1.85] text-[#52677F] transition-colors duration-300 hover:text-[#0B2A52] sm:text-[13px]"
     >
-      <span>{children}</span>
-
-      <span
-        aria-hidden="true"
-        className="absolute -bottom-1 left-0 h-px w-0 bg-[#B79A72] transition-all duration-300 group-hover:w-full"
+      <span className="relative">
+        {children}
+        <span className="absolute bottom-0 left-0 h-px w-0 bg-[#B79A72] transition-all duration-300 group-hover:w-full" />
+      </span>
+      <ArrowUpRight
+        size={12}
+        strokeWidth={1.5}
+        className="mt-[5px] shrink-0 text-[#B79A72] opacity-0 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100"
       />
     </Link>
+  );
+}
+
+export default function Footer() {
+  return (
+    <footer className="relative isolate overflow-hidden border-t border-[#E5EBF0] bg-white text-[#0B2A52]">
+      {/* Subtle background decoration */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-40 top-0 h-[430px] w-[430px] rounded-full bg-[#EEF5FB]/55 blur-[110px]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-44 -left-32 h-[400px] w-[400px] rounded-full bg-[#F6F0E7]/50 blur-[110px]"
+      />
+
+      <div className="relative mx-auto w-full max-w-[1560px] px-5 sm:px-8 lg:px-12 xl:px-16 2xl:px-20">
+        {/* ===============================================
+            01 — BRAND INTRODUCTION
+        =============================================== */}
+
+        <div className="grid gap-9 border-b border-[#E5EBF0] pb-12 pt-16 sm:pt-20 lg:grid-cols-[1.25fr_0.75fr] lg:items-end lg:gap-16 lg:pb-16 lg:pt-24">
+          <div>
+            <Link
+              href="/"
+              title="Sharp Rays Digital Marketing Agency Home"
+              aria-label="Sharp Rays Home"
+              className="inline-flex w-fit items-center"
+            >
+              <Image
+                src="/logo/sharp-rays-logo.png"
+                alt="Sharp Rays Digital Marketing Agency logo"
+                title="Sharp Rays Digital Marketing Agency"
+                width={225}
+                height={80}
+                sizes="(max-width: 640px) 180px, 225px"
+                className="h-auto w-[180px] object-contain sm:w-[210px] lg:w-[225px]"
+              />
+            </Link>
+
+            <h2
+              style={newYorkFont}
+              className="mt-8 max-w-[750px] text-[clamp(2rem,3.4vw,3.8rem)] font-normal leading-[1.15] tracking-[-0.04em] text-[#0B2A52]"
+            >
+              Digital growth,{" "}
+              <span className="italic text-[#B79A72]">
+                without the guesswork.
+              </span>
+            </h2>
+
+            <p className="mt-5 max-w-[610px] text-[13px] leading-[1.95] text-[#60748A] sm:text-[14px]">
+              We help ambitious businesses build stronger online
+              visibility, connect with the right customers and
+              create meaningful growth through SEO, performance
+              marketing, websites, content and AI-powered
+              solutions.
+            </p>
+          </div>
+
+          <div className="lg:justify-self-end">
+            <p className="mb-4 text-[10px] font-medium uppercase tracking-[0.2em] text-[#B79A72]">
+              Have a growth opportunity in mind?
+            </p>
+
+            <Link
+              href="/contact"
+              title="Start a Conversation with Sharp Rays"
+              className="group inline-flex min-h-[52px] items-center justify-between gap-8 rounded-[13px] bg-[#0B2A52] px-6 py-4 text-[12px] font-medium text-white transition-all duration-300 hover:bg-[#153B69] hover:shadow-[0_14px_30px_rgba(11,42,82,0.13)] sm:min-w-[265px]"
+            >
+              <span>Start a Conversation</span>
+              <ArrowUpRight
+                size={17}
+                strokeWidth={1.6}
+                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
+            </Link>
+
+            <p className="mt-4 max-w-[320px] text-[11px] leading-[1.75] text-[#8391A0]">
+              Tell us about your business, your challenges and
+              what you want to achieve next.
+            </p>
+          </div>
+        </div>
+
+        {/* ===============================================
+            02 — MAIN FOOTER COLUMNS
+        =============================================== */}
+
+        <div className="grid grid-cols-1 gap-x-9 gap-y-12 py-14 sm:grid-cols-2 sm:gap-y-14 lg:grid-cols-[1.2fr_1.1fr_0.8fr_1.1fr] lg:gap-x-12 lg:py-20 xl:gap-x-16">
+          {/* SERVICES */}
+
+          <div>
+            <FooterHeading>Services</FooterHeading>
+
+            <nav aria-label="Footer services">
+              <ul className="space-y-3">
+                {services.map((service) => (
+                  <li key={service.href}>
+                    <FooterLink href={service.href}>
+                      {service.label}
+                    </FooterLink>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <Link
+              href="/services"
+              title="Explore All Sharp Rays Services"
+              className="group mt-7 inline-flex items-center gap-2 border-b border-[#B79A72]/55 pb-1.5 text-[12px] font-medium text-[#0B2A52] transition-colors hover:text-[#B79A72]"
+            >
+              All Services
+              <ArrowRight
+                size={14}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </Link>
+          </div>
+
+          {/* INDUSTRIES */}
+
+          <div>
+            <FooterHeading>Industries We Help</FooterHeading>
+
+            <nav aria-label="Footer industries">
+              <ul className="space-y-3">
+                {industries.map((industry) => (
+                  <li key={industry.href}>
+                    <FooterLink href={industry.href}>
+                      {industry.label}
+                    </FooterLink>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <Link
+              href="/industries"
+              title="Explore All Industries Sharp Rays Helps"
+              className="group mt-7 inline-flex items-center gap-2 border-b border-[#B79A72]/55 pb-1.5 text-[12px] font-medium text-[#0B2A52] transition-colors hover:text-[#B79A72]"
+            >
+              All Industries
+              <ArrowRight
+                size={14}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </Link>
+          </div>
+
+          {/* EXPLORE */}
+
+          <div>
+            <FooterHeading>Explore</FooterHeading>
+
+            <nav aria-label="Footer navigation">
+              <ul className="space-y-3">
+                {explore.map((item) => (
+                  <li key={item.href}>
+                    <FooterLink href={item.href}>
+                      {item.label}
+                    </FooterLink>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <div className="mt-9 border-t border-[#E7EBF0] pt-6">
+              <p className="text-[10px] font-medium uppercase tracking-[0.17em] text-[#B79A72]">
+                Connect With Us
+              </p>
+
+              <div className="mt-4 flex flex-wrap gap-x-4 gap-y-3">
+                {socials.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    title={`Visit Sharp Rays on ${social.label}`}
+                    aria-label={`Sharp Rays on ${social.label}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-1 text-[11px] text-[#60748A] transition-colors hover:text-[#0B2A52]"
+                  >
+                    {social.label}
+                    <ArrowUpRight
+                      size={11}
+                      className="text-[#B79A72] transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* CONTACT */}
+
+          <div>
+            <FooterHeading>Connect</FooterHeading>
+
+            <p
+              style={newYorkFont}
+              className="max-w-[300px] text-[21px] font-normal leading-[1.4] tracking-[-0.02em] text-[#0B2A52]"
+            >
+              Have a project, problem or opportunity in mind?
+            </p>
+
+            <div className="mt-7 space-y-6">
+              {/* EMAIL */}
+
+              <a
+                href="mailto:info@sharprays.com"
+                title="Email Sharp Rays"
+                className="group flex items-start gap-3"
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] border border-[#E4E9EF] bg-[#F8FAFC] text-[#B79A72]">
+                  <Mail size={16} strokeWidth={1.6} />
+                </span>
+
+                <span className="min-w-0 pt-0.5">
+                  <span className="block text-[10px] uppercase tracking-[0.14em] text-[#8794A1]">
+                    Email Us
+                  </span>
+                  <span className="mt-1 block break-all text-[12px] font-medium text-[#0B2A52] transition-colors group-hover:text-[#B79A72] sm:text-[13px]">
+                    info@sharprays.com
+                  </span>
+                </span>
+              </a>
+
+              {/* PHONE */}
+
+              <a
+                href="tel:+919415951060"
+                title="Call Sharp Rays at +91 94159 51060"
+                className="group flex items-start gap-3"
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] border border-[#E4E9EF] bg-[#F8FAFC] text-[#B79A72]">
+                  <Phone size={16} strokeWidth={1.6} />
+                </span>
+
+                <span className="min-w-0 pt-0.5">
+                  <span className="block text-[10px] uppercase tracking-[0.14em] text-[#8794A1]">
+                    Call Us
+                  </span>
+                  <span className="mt-1 block text-[12px] font-medium text-[#0B2A52] transition-colors group-hover:text-[#B79A72] sm:text-[13px]">
+                    +91 94159 51060
+                  </span>
+                </span>
+              </a>
+
+              {/* WHATSAPP */}
+
+              <a
+                href="https://wa.me/919415951060?text=Hello%20Sharp%20Rays%2C%20I%20would%20like%20to%20discuss%20digital%20marketing%20services."
+                title="Chat with Sharp Rays on WhatsApp"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-start gap-3"
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] border border-[#E4E9EF] bg-[#F8FAFC] text-[#B79A72]">
+                  <MessageCircle size={16} strokeWidth={1.6} />
+                </span>
+
+                <span className="min-w-0 pt-0.5">
+                  <span className="block text-[10px] uppercase tracking-[0.14em] text-[#8794A1]">
+                    WhatsApp
+                  </span>
+                  <span className="mt-1 inline-flex items-center gap-2 text-[12px] font-medium text-[#0B2A52] transition-colors group-hover:text-[#B79A72] sm:text-[13px]">
+                    Start a Chat
+                    <ArrowUpRight size={13} />
+                  </span>
+                </span>
+              </a>
+
+              {/* LOCATION */}
+
+              <div className="flex items-start gap-3">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] border border-[#E4E9EF] bg-[#F8FAFC] text-[#B79A72]">
+                  <MapPin size={16} strokeWidth={1.6} />
+                </span>
+
+                <div className="min-w-0 pt-0.5">
+                  <span className="block text-[10px] uppercase tracking-[0.14em] text-[#8794A1]">
+                    Location
+                  </span>
+
+                  <address className="mt-1 text-[12px] not-italic leading-[1.9] text-[#52677F] sm:text-[13px]">
+                    <span className="font-medium text-[#0B2A52]">
+                      Sharp Rays
+                    </span>
+                    {" "}
+                    Naigaon East, Vasai-Virar
+                    {" "}
+                    Palghar, Maharashtra 401208
+                  </address>
+
+                  <p className="mt-2 text-[11px] leading-[1.7] text-[#8794A1]">
+                    Serving businesses across Maharashtra & India
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ===============================================
+            03 — SECONDARY CTA STRIP
+        =============================================== */}
+
+        <div className="flex flex-col gap-6 border-y border-[#E5EBF0] py-8 sm:flex-row sm:items-center sm:justify-between sm:gap-10 lg:py-10">
+          <div>
+            <p className="text-[10px] font-medium uppercase tracking-[0.17em] text-[#B79A72]">
+              Your Next Step
+            </p>
+
+            <h3
+              style={newYorkFont}
+              className="mt-2 text-[21px] font-normal leading-[1.35] tracking-[-0.025em] text-[#0B2A52] sm:text-[25px]"
+            >
+              Not sure where your growth opportunity is?
+            </h3>
+
+            <p className="mt-2 text-[12px] leading-[1.8] text-[#758699]">
+              Start with a review of your current digital presence.
+            </p>
+          </div>
+
+          <Link
+            href="/free-audit"
+            title="Request a Free Digital Marketing Audit"
+            className="group inline-flex min-h-[47px] shrink-0 items-center justify-center gap-3 rounded-[12px] border border-[#D7E1EB] bg-[#F8FAFC] px-5 py-3 text-[12px] font-medium text-[#0B2A52] transition-all duration-300 hover:border-[#B79A72] hover:bg-[#F8F3EC]"
+          >
+            Get My Free Audit
+            <ArrowUpRight
+              size={15}
+              className="text-[#B79A72] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
+          </Link>
+        </div>
+
+        {/* ===============================================
+            04 — COPYRIGHT & LEGAL
+        =============================================== */}
+
+        <div className="flex flex-col gap-5 py-7 sm:flex-row sm:items-center sm:justify-between sm:gap-6 lg:py-9">
+          <p className="text-[11px] text-[#7B8A99]">
+            © {new Date().getFullYear()} Sharp Rays. All rights reserved.
+          </p>
+
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+            <Link
+              href="/privacy-policy"
+              title="Sharp Rays Privacy Policy"
+              className="text-[11px] text-[#7B8A99] transition-colors hover:text-[#0B2A52]"
+            >
+              Privacy Policy
+            </Link>
+
+            <Link
+              href="/terms-and-conditions"
+              title="Sharp Rays Terms and Conditions"
+              className="text-[11px] text-[#7B8A99] transition-colors hover:text-[#0B2A52]"
+            >
+              Terms & Conditions
+            </Link>
+          </div>
+
+          <p
+            style={newYorkFont}
+            className="text-[12px] italic text-[#B79A72]"
+          >
+            Made with intention.
+          </p>
+        </div>
+      </div>
+    </footer>
   );
 }

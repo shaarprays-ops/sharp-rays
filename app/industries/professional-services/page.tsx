@@ -14,7 +14,7 @@ import ProfessionalServicesTrust from "@/components/Industries/ProfessionalServi
 const SITE_URL = "https://www.sharprays.com";
 const PAGE_PATH = "/industries/professional-services";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
-const OG_IMAGE = `${SITE_URL}/og/professional-services.webp`;
+const OG_IMAGE = `${SITE_URL}/og/professional-services-og.webp`;
 
 const PAGE_TITLE =
   "Professional Services Digital Marketing Agency | Sharp Rays";

@@ -14,7 +14,7 @@ import RealEstateWhoWeHelp from "@/components/Industries/RealEstate/RealEstateWh
 const SITE_URL = "https://www.sharprays.com";
 const PAGE_PATH = "/industries/real-estate";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
-const OG_IMAGE = `${SITE_URL}/og/real-estate.webp`;
+const OG_IMAGE = `${SITE_URL}/og/real-estate-og.webp`;
 
 const PAGE_TITLE =
   "Real Estate Digital Marketing Agency in India | Sharp Rays";
@@ -71,6 +71,8 @@ export const metadata: Metadata = {
     siteName: "Sharp Rays",
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Sharp Rays Real-State digital marketing", type: "image/webp" }],
+
   },
 
   twitter: {

@@ -13,7 +13,7 @@ import StartupContactFields from "@/components/Industries/Startup/StartupContact
 const SITE_URL = "https://www.sharprays.com";
 const PAGE_PATH = "/industries/startup";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
-const OG_IMAGE = `${SITE_URL}/og/startups.webp`;
+const OG_IMAGE = `${SITE_URL}/og/startups-og.webp`;
 const PAGE_TITLE = "Startup Digital Marketing Agency in India | Sharp Rays";
 const PAGE_DESCRIPTION = "Digital marketing for startups in India. Build visibility, attract qualified customers and grow with SEO, Google & Meta Ads, website development, content and AI automation.";
 const INDUSTRY_NAME = "Startups";

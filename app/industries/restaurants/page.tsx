@@ -13,7 +13,7 @@ import RestaurantServices from "@/components/Industries/Restaurants/RestaurantSe
 const SITE_URL = "https://www.sharprays.com";
 const PAGE_PATH = "/industries/restaurants";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
-const OG_IMAGE = `${SITE_URL}/og/restaurants.webp`;
+const OG_IMAGE = `${SITE_URL}/og/restaurants-og.webp`;
 
 const PAGE_TITLE =
   "Restaurant Digital Marketing Agency in India | Sharp Rays";

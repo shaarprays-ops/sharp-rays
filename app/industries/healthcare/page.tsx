@@ -16,7 +16,7 @@ import HealthcareWhoWeHelp from "@/components/Industries/Healthcare/HealthcareWh
 const SITE_URL = "https://www.sharprays.com";
 const PAGE_PATH = "/industries/healthcare";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
-const OG_IMAGE = `${SITE_URL}/og/healthcare.webp`;
+const OG_IMAGE = `${SITE_URL}/og/healthcare-og.webp`;
 
 const PAGE_TITLE = "Healthcare Digital Marketing Agency in India | Sharp Rays";
 const PAGE_DESCRIPTION =

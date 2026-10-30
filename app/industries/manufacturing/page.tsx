@@ -13,7 +13,7 @@ import ManufacturingWhoWeHelp from "@/components/Industries/Manufacturing/Manufa
 const SITE_URL = "https://www.sharprays.com";
 const PAGE_PATH = "/industries/manufacturing";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
-const OG_IMAGE = `${SITE_URL}/og/manufacturing.webp`;
+const OG_IMAGE = `${SITE_URL}/og/manufacturing-og.webp`;
 
 const PAGE_TITLE =
   "Manufacturing Digital Marketing Agency in India | Sharp Rays";

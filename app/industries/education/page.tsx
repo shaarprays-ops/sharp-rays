@@ -15,7 +15,7 @@ import EducationFAQ from "@/components/Industries/Education/EducationFAQ";
 const SITE_URL = "https://www.sharprays.com";
 const PAGE_PATH = "/industries/education";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
-const OG_IMAGE = `${SITE_URL}/og/education.webp`;
+const OG_IMAGE = `${SITE_URL}/og/education-og.webp`;
 const PAGE_TITLE = "Education Digital Marketing Agency in India | Sharp Rays";
 const PAGE_DESCRIPTION = "Digital marketing for schools, colleges, coaching institutes and EdTech brands. Improve search visibility, attract student enquiries and support admissions with Sharp Rays.";
 const INDUSTRY_NAME = "Education";
