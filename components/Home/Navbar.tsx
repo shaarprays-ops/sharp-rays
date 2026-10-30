@@ -51,6 +51,23 @@ const services = [
 ];
 
 /* =========================================================
+   INDUSTRIES
+========================================================= */
+
+const industries = [
+  { label: "Beauty & Wellness", href: "/industries/beauty-wellness" },
+  { label: "Ecommerce", href: "/industries/ecommerce" },
+  { label: "Education", href: "/industries/education" },
+  { label: "Healthcare", href: "/industries/healthcare" },
+  { label: "Manufacturing", href: "/industries/manufacturing" },
+  { label: "Professional Services", href: "/industries/professional-services" },
+  { label: "Real Estate", href: "/industries/real-estate" },
+  { label: "Restaurants", href: "/industries/restaurants" },
+  { label: "Startups", href: "/industries/startup" },
+  { label: "Travel & Hospitality", href: "/industries/travel-hospitality" },
+];
+
+/* =========================================================
    NAVBAR
 ========================================================= */
 
@@ -59,6 +76,7 @@ export default function Navbar() {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [industriesOpen, setIndustriesOpen] = useState(false);
 
   /* ACTIVE STATES */
 
@@ -66,6 +84,7 @@ export default function Navbar() {
   const isAbout = pathname === "/about" || pathname.startsWith("/about/");
   const isServices =
     pathname === "/services" || pathname.startsWith("/services/");
+  const isIndustries = pathname === "/industries" || pathname.startsWith("/industries/");
   const isWork = pathname === "/work" || pathname.startsWith("/work/");
   const isBlog = pathname === "/blog" || pathname.startsWith("/blog/");
   const isContact =
@@ -76,6 +95,7 @@ export default function Navbar() {
   useEffect(() => {
     setMenuOpen(false);
     setServicesOpen(false);
+    setIndustriesOpen(false);
   }, [pathname]);
 
   /* LOCK BODY SCROLL */
@@ -101,6 +121,7 @@ export default function Navbar() {
       if (event.key === "Escape") {
         setMenuOpen(false);
         setServicesOpen(false);
+    setIndustriesOpen(false);
       }
     };
 
@@ -114,6 +135,7 @@ export default function Navbar() {
   const closeMobileMenu = () => {
     setMenuOpen(false);
     setServicesOpen(false);
+    setIndustriesOpen(false);
   };
 
   return (
@@ -161,7 +183,7 @@ export default function Navbar() {
               DESKTOP NAVIGATION
           ================================================= */}
 
-          <div className="absolute left-1/2 top-1/2 z-[110] hidden -translate-x-1/2 -translate-y-1/2 items-center gap-8 lg:flex xl:gap-11">
+          <div className="absolute left-1/2 top-1/2 z-[110] hidden -translate-x-1/2 -translate-y-1/2 items-center gap-5 lg:flex xl:gap-7">
             <NavLink
               href="/"
               label="Home"
@@ -282,6 +304,63 @@ export default function Navbar() {
               </div>
             </div>
 
+            {/* DESKTOP INDUSTRIES */}
+            <div
+              className="relative"
+              onMouseEnter={() => { setIndustriesOpen(true); setServicesOpen(false); }}
+              onMouseLeave={() => setIndustriesOpen(false)}
+            >
+              <button
+                type="button"
+                title="Explore Industries We Help"
+                aria-label="Explore Industries We Help"
+                aria-expanded={industriesOpen}
+                aria-haspopup="true"
+                aria-controls="sharp-rays-desktop-industries"
+                onClick={() => {
+                  setIndustriesOpen((prev) => !prev);
+                  setServicesOpen(false);
+                }}
+                style={{ ...newYorkFont, color: isIndustries ? "#6285AD" : "#0B2A52" }}
+                className="group relative flex items-center gap-2 whitespace-nowrap text-[15px] font-medium tracking-[-0.01em] transition-colors duration-300 xl:text-[17px]"
+              >
+                <span>Industries</span>
+                <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"
+                  className={`transition-transform duration-300 ${industriesOpen ? "rotate-180" : ""}`}>
+                  <path d="M2.2 4L5.5 7.2L8.8 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <span className={`absolute -bottom-[10px] left-1/2 h-[2px] -translate-x-1/2 bg-[#B79A72] transition-all duration-300 ${isIndustries ? "w-6 opacity-100" : "w-0 opacity-0 group-hover:w-6 group-hover:opacity-100"}`} />
+              </button>
+
+              <div
+                id="sharp-rays-desktop-industries"
+                className={`absolute left-1/2 top-full w-[330px] -translate-x-1/2 pt-5 transition-all duration-300 ${industriesOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0 pointer-events-none"}`}
+              >
+                <div className="max-h-[min(70vh,620px)] overflow-y-auto rounded-[20px] border border-[#0B2A52]/[0.09] bg-white/95 p-3 shadow-[0_24px_70px_rgba(11,42,82,0.14)] backdrop-blur-xl">
+                  <div className="mb-2 px-3 pb-2 pt-2">
+                    <span style={newYorkFont} className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#B79A72]">Industries We Help</span>
+                  </div>
+                  <div className="flex flex-col">
+                    {industries.map((industry) => {
+                      const active = pathname === industry.href || pathname.startsWith(`${industry.href}/`);
+                      return (
+                        <Link key={industry.href} href={industry.href}
+                          title={`Digital Marketing for ${industry.label}`}
+                          aria-label={`Digital Marketing for ${industry.label}`}
+                          onClick={() => setIndustriesOpen(false)}
+                          style={newYorkFont}
+                          className={`group flex items-center rounded-[12px] px-3 py-[10px] transition-all duration-300 ${active ? "bg-[#6285AD]/[0.08]" : "hover:bg-[#6285AD]/[0.06]"}`}>
+                          <span className={`text-[13px] font-medium leading-[1.35] transition-all duration-300 ${active ? "translate-x-1 text-[#6285AD]" : "text-[#0B2A52] group-hover:translate-x-1 group-hover:text-[#6285AD]"}`}>
+                            {industry.label}
+                          </span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <NavLink
               href="/work"
               label="Work"
@@ -378,6 +457,7 @@ export default function Navbar() {
 
               if (menuOpen) {
                 setServicesOpen(false);
+    setIndustriesOpen(false);
               }
             }}
             className="relative z-[140] flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#0B2A52]/[0.08] bg-white/70 transition-all duration-300 hover:border-[#6285AD]/30 hover:bg-[#F5F8FC] lg:hidden"
@@ -589,11 +669,58 @@ export default function Navbar() {
               </div>
             </div>
 
+            {/* MOBILE INDUSTRIES */}
+            <div className="border-b border-[#0B2A52]/[0.08]">
+              <button
+                type="button"
+                title="Explore Industries We Help"
+                aria-label="Explore Industries We Help"
+                aria-expanded={industriesOpen}
+                aria-controls="sharp-rays-mobile-industries"
+                onClick={() => { setIndustriesOpen((prev) => !prev); setServicesOpen(false); }}
+                className="flex w-full items-center justify-between gap-5 py-[18px] text-left min-[380px]:py-5 sm:py-[22px] md:py-6"
+              >
+                <div className="flex min-w-0 items-center gap-4 sm:gap-5">
+                  <span className={`h-[28px] w-[2px] shrink-0 rounded-full transition-all duration-300 ${isIndustries ? "bg-[#B79A72] opacity-100" : "bg-transparent opacity-0"}`} />
+                  <span style={newYorkFont} className={`text-[28px] font-medium leading-none tracking-[-0.035em] transition-colors duration-300 min-[380px]:text-[30px] sm:text-[35px] md:text-[39px] ${isIndustries ? "text-[#6285AD]" : "text-[#0B2A52]"}`}>Industries</span>
+                </div>
+                <div className="flex shrink-0 items-center gap-4">
+                  <span className="hidden text-[9px] tracking-[0.18em] text-[#0B2A52]/35 min-[360px]:block sm:text-[10px]">04</span>
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#0B2A52]/[0.08] bg-white/70 text-[#0B2A52]/65 sm:h-9 sm:w-9">
+                    <svg width="14" height="14" viewBox="0 0 18 18" fill="none" aria-hidden="true" className={`transition-transform duration-300 ${industriesOpen ? "rotate-180" : ""}`}>
+                      <path d="M4 7L9 12L14 7" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                </div>
+              </button>
+              <div id="sharp-rays-mobile-industries" className={`grid transition-all duration-500 ease-in-out ${industriesOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+                <div className="overflow-hidden">
+                  <div className="mb-5 ml-[18px] border-l border-[#B79A72]/40 pl-5 sm:mb-6 sm:ml-[22px] sm:pl-7">
+                    {industries.map((industry, index) => {
+                      const active = pathname === industry.href || pathname.startsWith(`${industry.href}/`);
+                      return (
+                        <Link key={industry.href} href={industry.href}
+                          title={`Digital Marketing for ${industry.label}`}
+                          aria-label={`Digital Marketing for ${industry.label}`}
+                          onClick={closeMobileMenu}
+                          tabIndex={industriesOpen ? 0 : -1}
+                          style={newYorkFont}
+                          className="group flex items-start justify-between gap-4 border-b border-[#0B2A52]/[0.055] py-[11px] sm:py-[13px]">
+                          <span className={`max-w-[82%] text-[13px] font-medium leading-[1.45] transition-colors duration-300 min-[380px]:text-[14px] sm:text-[15px] ${active ? "text-[#6285AD]" : "text-[#0B2A52]/70 group-hover:text-[#6285AD]"}`}>{industry.label}</span>
+                          <span className="mt-[2px] shrink-0 text-[9px] tracking-[0.15em] text-[#B79A72] sm:text-[10px]">{String(index + 1).padStart(2, "0")}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <MobileNavLink
               label="Work"
               href="/work"
               linkTitle="View Sharp Rays Work and Case Studies"
-              index={4}
+              index={5}
               active={isWork}
               onClick={closeMobileMenu}
             />
@@ -602,7 +729,7 @@ export default function Navbar() {
               label="Blog"
               href="/blog"
               linkTitle="Explore Sharp Rays Insights and Blog"
-              index={5}
+              index={6}
               active={isBlog}
               onClick={closeMobileMenu}
             />
@@ -611,7 +738,7 @@ export default function Navbar() {
               label="Contact"
               href="/contact"
               linkTitle="Contact Sharp Rays"
-              index={6}
+              index={7}
               active={isContact}
               onClick={closeMobileMenu}
             />
