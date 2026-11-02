@@ -1,0 +1,231 @@
+# Sharp Rays — Detailed Agency Information
+
+> Sharp Rays is a digital marketing agency in India offering SEO, websites, social media, paid ads, AI video and AI automation for startups, small businesses and D2C brands. Based in Naigaon East (Mumbai region), serving businesses across India.
+
+This optional expanded companion to https://www.sharprays.com/llms.txt preserves the agency information and pricing captured from Sharp Rays pages on 23 October 2026. Updated to include the industry coverage and service distinctions as of 2 November 2026. Verify current prices, page availability and policies on the live official pages before relying on them.
+
+## 1. About and contact
+
+Sources: https://www.sharprays.com/about, https://www.sharprays.com/contact
+
+- Sharp Rays (also written SHARPRAYS) describes itself as a digital growth company that combines strategy, SEO, ads, websites, AI video and automation in one system.
+- Founder: Ravish Kumar.
+- On its work page, Sharp Rays describes itself as a growing digital agency building its portfolio project by project.
+- Address: Naigaon East, Vasai-Virar, Palghar, Maharashtra 401208, India. Serves businesses across India.
+- Hours: Monday–Saturday, 10:00–19:00 IST.
+- Phone: +91 94159 51060
+- Email: info@sharprays.com
+- Enquiries: contact form at /contact; free audit request at https://www.sharprays.com/free-audit (review of website, SEO, social media and ads with prioritised next steps).
+- Clients do not need a full brief or to know which service they need ("Not Sure Yet" is an option). A single-service engagement is possible.
+
+## 2. Services
+
+### Search Engine Optimization (SEO)
+Source: https://www.sharprays.com/services/search-engine-optimization
+- For: small businesses and startups.
+- Scope: SEO audit and strategy, technical SEO, on-page SEO, SEO content strategy and optimisation, authority and digital PR, local SEO, AI search and generative discovery, SEO analytics.
+- Process: understand the business, find gaps, build the SEO roadmap, implement, review changes, iterate.
+- Position: no ranking guarantees; technical and content work done together; scope defined in the proposal.
+- SEO work shown on the page: Double Trouble Studio (dtsworld.in) and RNK Rentals.
+
+### Website Development & Management
+Source: https://www.sharprays.com/services/website-development
+- For: small businesses and startups.
+- Scope: website strategy and architecture, UX and interface design, custom development, Next.js development, responsive development, landing page development, redesign and redevelopment, CMS, integrations, e-commerce, maintenance and support.
+- Also covers: Core Web Vitals performance (LCP, INP, CLS) and SEO foundations (crawlable content, page architecture, semantic structure, internal linking, metadata and indexing).
+
+### Social Media Marketing
+Source: https://www.sharprays.com/services/social-media-marketing
+- For: small businesses in India.
+- Scope: social media strategy, content strategy and planning, content creation including Reels, publishing and management, community management, reporting and optimisation.
+- Platforms discussed: Instagram, LinkedIn, Facebook and others, chosen according to the business.
+- Process: business discussion, agreed plan, content review, launch and improvement.
+- Social media work shown on the page: DTS World (@doubletrouble_studio), Brownie Point (@browniepointindia), Shruti Chadha (@shrutichadha_).
+
+### Performance Marketing / Paid Media
+Source: https://www.sharprays.com/services/performance-marketing
+- For: startups and D2C brands.
+- Scope: paid media strategy, Google Ads management, paid social advertising, performance creative, landing page optimisation, conversion tracking and measurement, retargeting, campaign optimisation.
+- Metrics reported include CTR, CPC, conversion rate, cost per lead, cost per acquisition, lead quality and return on ad spend.
+
+### AI Automation
+Source: https://www.sharprays.com/services/ai-automation
+- For: businesses in India, including small businesses.
+- Scope: workflow automation, AI agent development, lead qualification, CRM, sales, customer support, marketing, email, document processing, reporting and data, and internal knowledge automation.
+- Approach: humans stay involved for exceptions and important decisions; usually connects existing tools instead of replacing them.
+
+### Content Marketing
+Source: https://www.sharprays.com/services/content-marketing
+- For: startups and B2B brands.
+- Scope: content strategy, audience and topic research, SEO content strategy, website content, blog and editorial content, thought leadership, case studies and customer stories, content optimisation.
+- Scope includes content for Google Search, AI Overviews and AI-assisted search; inclusion is not guaranteed.
+
+### AI Video & Creative
+Source to confirm when live: https://www.sharprays.com/services/ai-video-and-creative
+- Creative production using AI-assisted video workflows for marketing materials; scope and revisions are defined by the agreed package.
+- AI video creation plans are listed in section 3; availability, deliverables and prices should be confirmed on the live pricing page.
+
+### Professional Video Editing
+Source: https://www.sharprays.com/pricing
+- A separate Sharp Rays service from AI Video & Creative.
+- Editing client-provided footage for Reels, Shorts, promotional and advertising formats.
+- Published pricing includes Edit Starter, Edit Growth and Edit Scale packages (see section 3).
+- Add the standalone professional-video-editing page after its canonical route is verified.
+
+## 2A. Industries served
+
+These service areas have dedicated or planned industry-focused pages. Confirm that each linked page is published before deploying this file.
+
+- [Beauty & Wellness](https://www.sharprays.com/industries/beauty-and-wellness): Salon, spa and wellness discovery, local visibility, appointments and repeat bookings.
+- [Ecommerce](https://www.sharprays.com/industries/ecommerce): Product searches, Google Shopping and Meta Ads, conversion-focused pages and retention.
+- [Education](https://www.sharprays.com/industries/education): Programme visibility, relevant student enquiries and admissions journeys.
+- [Healthcare](https://www.sharprays.com/industries/healthcare): Service and location visibility, patient enquiries and clear clinic information.
+- [Manufacturing](https://www.sharprays.com/industries/manufacturing): Product and capability discovery, procurement, technical buyers and RFQs.
+- [Restaurants](https://www.sharprays.com/industries/restaurants): Local search, discovery, orders, reservations and repeat visits.
+- [Professional Services](https://www.sharprays.com/industries/professional-services): Marketing for consultants, advisors and B2B specialists with trust-led messaging.
+- [Startups](https://www.sharprays.com/industries/startups): Early traction, signups, acquisition and stage-aware growth planning.
+- [Travel & Hospitality](https://www.sharprays.com/industries/travel-and-hospitality): Destination and accommodation discovery, guest enquiries and bookings.
+- [Real Estate](https://www.sharprays.com/industries/real-estate): Project and location visibility, relevant buyer enquiries and site-visit opportunities.
+
+These descriptions indicate positioning and possible services, not promises of business results.
+
+## 3. Pricing
+
+Source: https://www.sharprays.com/pricing
+
+General terms:
+- Prices are starting prices, confirmed in writing, and exclude applicable taxes.
+- SEO, social media, ads, video editing and content are monthly plans. Websites are a monthly plan with design and build included (6-month minimum for new builds). AI automation builds are one-time projects.
+- Third-party costs (paid tools, domains, plugins, shoots) are billed by the provider or quoted separately.
+- The client owns their website, ad accounts, content and data.
+
+### Websites (monthly)
+| Plan | Price | Includes |
+|---|---|---|
+| Launch | from ₹9,999/month | Up to 5 pages, mobile-responsive, enquiry form, WhatsApp and call buttons, basic on-page SEO, GA and Search Console setup, hosting/SSL support, up to 2 updates/month |
+| Growth | from ₹14,999/month | Up to 10 pages, custom UI/UX, CMS, blog, advanced lead forms, technical SEO, conversion tracking, monthly health review, up to 4 updates/month |
+| Scale | from ₹24,999/month | Up to 15 pages, advanced design, up to 2 integrations, starter e-commerce (catalogue, cart, checkout, payment gateway), speed optimisation, up to 6 updates/month |
+Not included: domain, paid plugins, photography, copywriting. Large stores, portals and web apps quoted on request. 6-month minimum for new builds.
+
+### SEO (monthly; 10% off with quarterly billing; free SEO Opportunity Review)
+| Plan | Price | Includes |
+|---|---|---|
+| Foundation | from ₹14,999/month | Up to 5 priority page optimisations/month, audit and plan, keyword research, technical and on-page SEO, meta and internal links, monthly report |
+| Growth | from ₹24,999/month | Up to 10 pages/month, competitor and content gap analysis, 2 content briefs/month, schema and AI search readiness |
+| Scale | from ₹39,999/month | Up to 15 pages/month, topic clusters, local SEO, schema strategy, AI Overview optimisation, digital PR mapping, priority support |
+Not included: new content writing and development work (scoped separately). The page states that most businesses see early progress in 3–6 months.
+
+### Social media (monthly)
+| Plan | Price | Includes |
+|---|---|---|
+| Starter | from ₹12,999/month | 1 platform, up to 12 pieces incl. 2 Reels, calendar, captions, publishing, profile optimisation, monthly report |
+| Growth | from ₹21,999/month | Up to 2 platforms, up to 20 pieces incl. 4–6 Reels, Stories, community engagement |
+| Scale | from ₹34,999/month | Up to 3 platforms, up to 30 pieces incl. 8–10 Reels, campaign content, active community management, competitor review |
+Not included: shoots, paid ads, influencer fees.
+
+### Google Ads & Meta Ads management (monthly)
+| Plan | Price | Includes |
+|---|---|---|
+| Starter | from ₹9,999/month | 1 platform (Google or Meta), setup, management, tracking, monthly report |
+| Growth | from ₹16,999/month | Up to 2 platforms, retargeting, creative testing, landing page recommendations (saves ₹2,999 vs two Starter plans) |
+| Scale | from ₹23,999/month | Up to 3 platforms, attribution, funnel review, ROAS analysis, priority support (saves ₹5,998 vs three Starter plans) |
+Not included: ad spend (paid directly to the platform).
+
+### AI automation (one-time)
+| Plan | Price | Includes |
+|---|---|---|
+| Starter | from ₹14,999 | 1 workflow, up to 2 tools, triggers, notifications, basic CRM/sheet automation |
+| Growth | from ₹29,999 | Up to 3 workflows, up to 4 integrations, lead qualification and routing, AI summaries, error alerts |
+| Scale | from ₹49,999 | Up to 5 workflows, API connections, document processing, reporting and support automation with human-in-the-loop |
+| Automation Care | from ₹4,999/month | Monitoring, error checks, minor changes after the included support period |
+Not included: automation platform, AI usage, API and WhatsApp message charges.
+
+### Video editing (monthly, client footage)
+| Plan | Price | Includes |
+|---|---|---|
+| Edit Starter | from ₹9,999/month | Up to 6 videos, captions, sound, colour, Reels/Shorts formatting, 2 revisions per video |
+| Edit Growth | from ₹17,999/month | Up to 12 videos, motion graphics, hook optimisation, repurposing, basic ad edits |
+| Edit Scale | from ₹27,999/month | Up to 20 videos, advanced motion graphics, ad variations, creative testing |
+
+### AI video creation (no footage needed)
+AI Starter up to 3 videos from ₹9,999/month; AI Growth up to 6 from ₹17,999/month; AI Scale up to 10 from ₹27,999/month.
+
+### Content marketing
+Blogs, service-page copy and SEO content from ₹12,999/month.
+
+## 4. Work
+
+Source: https://www.sharprays.com/work
+- Projects are labelled Client Work, Internal Project or Concept Project. Results are shown only where verified data exists.
+- Car rental brand: social content presenting the fleet clearly with a consistent feed.
+- Digital marketing brand: educational, promotional and brand content in one publishing system.
+- Cake and dessert brand: product-led social content with a consistent visual identity.
+- Food brand: food creative, Reels and offer content for a restaurant presence.
+- Interior designer: editorial-style social content showcasing projects.
+- Event brand: social content covering weddings, launches and branded experiences.
+- Services used across these projects: content planning, social creative, Reels, captions and publishing.
+
+## 5. FAQs (from site pages, condensed)
+
+General (https://www.sharprays.com/, /contact, /work)
+- Cost? Depends on needs; goals and scope come first.
+- Startups? Yes, and established businesses too. A single service is fine.
+- Guarantees? No promised numbers; strategy, execution and transparent reporting instead.
+- Existing website or internal team? Yes, both possible.
+- Are all projects client work? No; projects are labelled Client, Internal or Concept.
+
+Pricing (https://www.sharprays.com/pricing)
+- Monthly cost in India? Single-service plans from ₹9,999/month; most growing businesses combine 2–3 services.
+- Ad spend included? No; the fee covers strategy, setup, management and reporting. Prices exclude taxes.
+- Rankings or leads guaranteed? No.
+- Best starting package? Usually a website plus one channel (SEO or ads); a free audit is offered.
+
+SEO (https://www.sharprays.com/services/search-engine-optimization)
+- Timeline? No universal timeline; depends on site condition, competition and authority.
+- First-page guarantee? No.
+- AI Overviews? Good SEO helps clarity and discovery, but appearing in AI answers cannot be guaranteed.
+- SEO vs Google Ads? Ads give immediate paid visibility; SEO builds long-term organic discovery. Many businesses use both.
+
+Website (https://www.sharprays.com/services/website-development)
+- Design and development? Both, as one connected process, scoped before work starts.
+- Custom websites? Yes, where the project needs it.
+
+AI automation (https://www.sharprays.com/services/ai-automation)
+- What can be automated? Lead capture, CRM updates, support routing, follow-ups, reporting, documents, notifications.
+- Replace existing software? Usually not; existing systems are connected.
+- Replace employees? Aim is to reduce repetitive work; people stay for judgement and exceptions.
+- Cost and timeline? Depend on workflows, integrations and complexity; defined after discovery.
+
+Content (https://www.sharprays.com/services/content-marketing)
+- SEO content, website copy, blogs, thought leadership? Yes, within agreed scope.
+- AI content? AI may assist; human review and real expertise are required.
+- Publishing frequency? No universal cadence; quality over volume.
+
+## 7. Privacy and terms
+
+Privacy Policy (https://www.sharprays.com/privacy-policy), effective 1 October 2026:
+- Collects information submitted through enquiries, audit requests and calls (such as name and email), plus automatically collected usage data.
+- Uses cookies and analytics, such as Google Analytics and Google Tag Manager.
+- Does not sell personal information. Data is shared only with service providers (hosting, analytics, CRM, payments) or when required by law.
+- Data is kept only as long as reasonably necessary. Users may request access, correction, deletion or restriction.
+
+Terms & Conditions (https://www.sharprays.com/terms-and-conditions):
+- Scope, fees and payment schedules are set in each proposal or agreement. Work may pause if payments are overdue. Taxes, ad spend and third-party costs may be charged separately.
+- Cancellation and refunds vary by engagement. Payments for completed work, committed resources or third-party costs may be non-refundable.
+- Sharp Rays keeps its pre-existing methods and tools. Rights in client deliverables transfer per the agreement, after full payment.
+- No guarantee of rankings, traffic, leads, revenue or ROAS unless agreed in writing.
+- The terms are intended to operate under the applicable laws of India; jurisdiction is set per contract.
+
+## 8. Additional official resources and content maintenance
+
+- Main index: https://www.sharprays.com/llms.txt
+- Official website: https://www.sharprays.com/
+- Blog index: https://www.sharprays.com/blog
+- Free audit: https://www.sharprays.com/free-audit
+- Sitemap: https://www.sharprays.com/sitemap.xml
+
+Content maintenance notes:
+- The blog summaries in section 6 are a snapshot, not a live feed. When new Sanity posts are published, update this static document or implement a separate dynamic Next.js route backed by the existing Sanity dataset.
+- Preserve the distinction between verified client work, internal work and concept work.
+- Do not assert guarantees of leads, rankings, ROI or AI-answer appearances.
+- Verify prices, hours, contact details, policy dates and published routes against live pages after changes.
