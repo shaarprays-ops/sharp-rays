@@ -25,6 +25,7 @@ import SharpRaysComparisonSection from "@/components/Home/SharpRaysComparisonSec
 import WhatCouldWeDoSection from "@/components/Home/WhatCouldWeDoSection";
 
 import YourMethodSection from "@/components/Home/YourMethodSection";
+import HomeIndustries from "@/components/Home/HomeIndustries";
 
 /* =========================================================
 
@@ -1387,6 +1388,8 @@ export default function Home() {
         <BigIdeaSection />
 
         <WhatCouldWeDoSection />
+
+        <HomeIndustries />
 
         <DifferenceSection />
 

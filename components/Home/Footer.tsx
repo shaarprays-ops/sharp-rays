@@ -32,6 +32,10 @@ const services = [
     href: "/services/website-development",
   },
   {
+    label: "Digital PR & Media Relations",
+    href: "/services/digital-pr-and-media-relations",
+  },
+  {
     label: "Content Marketing",
     href: "/services/content-marketing",
   },

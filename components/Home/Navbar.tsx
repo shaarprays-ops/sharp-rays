@@ -34,6 +34,11 @@ const services = [
     linkTitle: "Explore Website Development and Management Services",
   },
   {
+    label: "Digital PR & Media Relations",
+    href: "/services/digital-pr-and-media-relations",
+    linkTitle: "Explore Digital PR and Media Relations Services",
+  },
+  {
     label: "AI Video and Creative",
     href: "/services/video-and-creative",
     linkTitle: "Explore AI Video and Creative Services",
