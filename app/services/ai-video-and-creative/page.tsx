@@ -1,4 +1,4 @@
-// app/services/ai-video-editing/page.tsx
+
 
 import type { Metadata } from "next";
 
@@ -425,13 +425,11 @@ const aiVideoCoreSchema = {
         },
       ],
 
-      significantLink: [
-        "https://www.sharprays.com/services",
-        "https://www.sharprays.com/services/video-and-creative/short-form-video-editing",
-        "https://www.sharprays.com/services/video-and-creative/advertising-performance-video",
-        "https://www.sharprays.com/free-audit",
-        "https://www.sharprays.com/contact",
-      ],
+     significantLink: [
+  "https://www.sharprays.com/services",
+  "https://www.sharprays.com/free-audit",
+  "https://www.sharprays.com/contact",
+],
 
       copyrightYear: 2026,
 
@@ -953,10 +951,10 @@ const breadcrumbSchema = {
         3,
 
       name:
-        "AI Video & Video Editing",
+        "AI video and Creative",
 
       item:
-        "https://www.sharprays.com/services/ai-video-editing",
+        "https://www.sharprays.com/services/ai-video-and-creative",
     },
   ],
 };

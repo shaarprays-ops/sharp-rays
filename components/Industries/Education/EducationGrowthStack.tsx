@@ -66,7 +66,7 @@ const services = [
     description:
       "Create programme promotions, admission campaigns and engaging educational content.",
     icon: Video,
-    href: "/services/ai-video-editing",
+    href: "/services/ai-video-and-creative",
   },
 ];
 

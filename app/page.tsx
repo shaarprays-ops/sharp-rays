@@ -1021,45 +1021,15 @@ const selectedWorkSchema = {
 
   itemListElement: [
 
+   
+
+  
+
     {
 
       "@type": "ListItem",
 
       position: 1,
-
-      item: {
-
-        "@type": "CreativeWork",
-
-        "@id":
-
-          "https://www.sharprays.com/work/sharp-rays-website#project",
-
-        name: "Sharp Rays Website",
-
-        url:
-
-          "https://www.sharprays.com/work/sharp-rays-website",
-
-        description:
-
-          "Clearer service journeys, responsive development and scalable website architecture built around multiple Sharp Rays services.",
-
-        creator: {
-
-          "@id": "https://www.sharprays.com/#organization",
-
-        },
-
-      },
-
-    },
-
-    {
-
-      "@type": "ListItem",
-
-      position: 2,
 
       item: {
 
@@ -1093,7 +1063,7 @@ const selectedWorkSchema = {
 
       "@type": "ListItem",
 
-      position: 3,
+      position: 2,
 
       item: {
 

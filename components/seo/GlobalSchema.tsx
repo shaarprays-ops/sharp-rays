@@ -346,7 +346,7 @@ const globalSchema = {
             "@type": "Service",
 
             "@id":
-              "https://www.sharprays.com/services/ai-video-editing#service",
+              "https://www.sharprays.com/services/ai-video-and-creative#service",
 
             name:
               "AI Video & Video Editing",
@@ -355,7 +355,7 @@ const globalSchema = {
               "AI Video Creation and Professional Video Editing",
 
             url:
-              "https://www.sharprays.com/services/ai-video-editing",
+              "https://www.sharprays.com/services/ai-video-and-creative",
 
             provider: {
               "@id":

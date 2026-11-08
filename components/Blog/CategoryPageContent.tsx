@@ -442,6 +442,126 @@ export default function CategoryPageContent({
         </section>
       )}
 
+      
+      {/* =================================================
+          PERFORMANCE MARKETING GUIDE
+      ================================================= */}
+
+      {category.slug === "performance-marketing" && (
+        <section className="bg-white px-5 py-16 sm:px-8 md:px-10 lg:px-14 lg:py-20">
+          <div className="mx-auto max-w-[1280px]">
+
+            <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+
+              <div>
+                <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-[#6285AD]">
+                  A Practical Business Guide
+                </p>
+
+                <h2 className="mt-4 max-w-[480px] font-serif text-[2.4rem] leading-[1.02] tracking-[-0.04em] text-[#0B2A52] sm:text-[2.8rem]">
+                  Performance Marketing That Starts With Measurable Growth.
+                </h2>
+
+                <p className="mt-6 max-w-[440px] text-[14px] leading-7 text-[#0B2A52]/65">
+                  Performance marketing connects advertising activity
+                  with measurable business outcomes. Instead of judging
+                  campaigns by clicks or impressions alone, businesses
+                  examine whether their marketing generates meaningful
+                  enquiries, sales and customer actions.
+                </p>
+              </div>
+
+              <div className="grid gap-7 sm:grid-cols-2">
+
+                <div className="border-t border-[#0B2A52]/15 pt-5">
+                  <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-[#6285AD]">
+                    01 / Search Advertising
+                  </span>
+
+                  <h3 className="mt-3 font-serif text-[1.5rem] text-[#0B2A52]">
+                    Google Ads
+                  </h3>
+
+                  <p className="mt-3 text-[13px] leading-6 text-[#0B2A52]/60">
+                    Reach people actively searching for products,
+                    services or solutions. Relevant keywords,
+                    useful landing pages and accurate conversion
+                    tracking help businesses evaluate campaign quality.
+                  </p>
+                </div>
+
+                <div className="border-t border-[#0B2A52]/15 pt-5">
+                  <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-[#6285AD]">
+                    02 / Social Advertising
+                  </span>
+
+                  <h3 className="mt-3 font-serif text-[1.5rem] text-[#0B2A52]">
+                    Meta Ads
+                  </h3>
+
+                  <p className="mt-3 text-[13px] leading-6 text-[#0B2A52]/60">
+                    Introduce offers and products to relevant audiences
+                    through Facebook and Instagram. Creative quality,
+                    audience relevance and a clear next step influence
+                    the enquiries a campaign generates.
+                  </p>
+                </div>
+
+                <div className="border-t border-[#0B2A52]/15 pt-5">
+                  <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-[#6285AD]">
+                    03 / Campaign Measurement
+                  </span>
+
+                  <h3 className="mt-3 font-serif text-[1.5rem] text-[#0B2A52]">
+                    Measure What Matters
+                  </h3>
+
+                  <p className="mt-3 text-[13px] leading-6 text-[#0B2A52]/60">
+                    Monitor cost per lead, conversion rate, customer
+                    acquisition cost and return on ad spend where
+                    reliable revenue data is available. Look beyond
+                    clicks to understand actual business outcomes.
+                  </p>
+                </div>
+
+                <div className="border-t border-[#0B2A52]/15 pt-5">
+                  <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-[#6285AD]">
+                    04 / Lead Quality
+                  </span>
+
+                  <h3 className="mt-3 font-serif text-[1.5rem] text-[#0B2A52]">
+                    Focus on Better Enquiries
+                  </h3>
+
+                  <p className="mt-3 text-[13px] leading-6 text-[#0B2A52]/60">
+                    Define your ideal customer, communicate a specific
+                    offer, use relevant landing pages and review which
+                    enquiries become genuine sales opportunities.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+            <div className="mt-12 border border-[#0B2A52]/10 bg-[#F8FBFE] p-6 sm:p-8">
+              <h3 className="font-serif text-[1.6rem] text-[#0B2A52]">
+                Before Increasing Your Advertising Budget
+              </h3>
+
+              <p className="mt-3 max-w-[850px] text-[13px] leading-7 text-[#0B2A52]/60">
+                Check that conversion tracking works, your landing page
+                communicates the offer clearly, enquiries are being
+                followed up and campaign results are reviewed against
+                business goals. Increasing spend before understanding
+                these fundamentals can make existing problems more costly.
+              </p>
+            </div>
+
+          </div>
+        </section>
+      )}
+
+
       {/* =================================================
           CATEGORY ARTICLES
       ================================================= */}

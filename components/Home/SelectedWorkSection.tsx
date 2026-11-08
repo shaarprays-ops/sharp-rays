@@ -23,7 +23,7 @@ const projects = [
     services: ["Website Development", "SEO"],
     description:
       "Clearer service journeys, responsive development and scalable website architecture built around multiple Sharp Rays services.",
-    href: "/work/sharp-rays-website",
+    href: "/contact",
     icon: Code2,
     accent: "#4E8FA1",
     soft: "#ECF7FA",
@@ -36,7 +36,7 @@ const projects = [
     services: ["SEO", "Website"],
     description:
       "Search strategy, technical optimization, service-page improvements and a clearer content structure designed to strengthen organic visibility.",
-    href: "/work/dts-seo",
+    href: "/contact",
     icon: Search,
     accent: "#3F8A72",
     soft: "#EAF7F1",
@@ -49,7 +49,7 @@ const projects = [
     services: ["SEO", "Social", "Website"],
     description:
       "Improving rental-service visibility through SEO, clearer website journeys and a more consistent digital presence across social channels.",
-    href: "/work/rnk-rentals-seo",
+    href: "/contact",
     icon: Megaphone,
     accent: "#3976B6",
     soft: "#EAF4FE",
@@ -504,8 +504,8 @@ export default function SelectedWorkSection() {
 
               <Link
   href={project.href}
-  title={`View ${project.title} Case Study`}
-  aria-label={`View ${project.title} Case Study`}
+  title={`Discuss a Project Like ${project.title}`}
+  aria-label={`Discuss a Project Like ${project.title}`}
   style={newYorkFont}
                   className="
                     relative
@@ -527,7 +527,7 @@ export default function SelectedWorkSection() {
                     text-[#0B2A52]
                   "
                 >
-                  <span>View Case Study</span>
+                  <span>Discuss a Project</span>
 
                   <ArrowRight
                     size={12}

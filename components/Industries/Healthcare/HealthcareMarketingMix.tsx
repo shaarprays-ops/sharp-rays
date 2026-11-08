@@ -57,7 +57,7 @@ const healthcareServices = [
     title: "AI Video & Creative",
     description:
       "Develop clear, professionally approved educational videos and visual assets where appropriate and permitted.",
-    href: "/services/ai-video-editing",
+    href: "/services/ai-video-and-creative",
     icon: Video,
     label: "Visual Communication",
   },
