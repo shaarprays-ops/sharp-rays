@@ -40,12 +40,12 @@ const services = [
   },
   {
     label: "AI Video and Creative",
-    href: "/services/video-and-creative",
+    href: "/services/ai-video-and-creative",
     linkTitle: "Explore AI Video and Creative Services",
   },
   {
     label: "Professional Video Editing",
-    href: "/services/professional-video-editing",
+    href: "/services/video-editing",
     linkTitle: "Explore Professional Video Editing Services",
   },
   {
