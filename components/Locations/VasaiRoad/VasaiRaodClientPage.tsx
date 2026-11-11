@@ -98,7 +98,7 @@ function SectionTitle({ eyebrow, title, copy, light = false, center = false }: {
   return <div className={`${center ? "mx-auto text-center" : ""} max-w-[760px]`}>
     <div className={center ? "flex justify-center" : ""}><Eyebrow light={light}>{eyebrow}</Eyebrow></div>
     <h2 className={`mt-5 font-serif text-[34px] font-normal leading-[1.12] tracking-[-.045em] sm:text-[43px] lg:text-[52px] ${light ? "text-white" : "text-[#122847]"}`}>{title}</h2>
-    {copy && <p className={`mt-5 max-w-[680px] text-[14px] leading-[1.9] ${center ? "mx-auto" : ""} ${light ? "text-white/65" : "text-[#657487]"}`}>{copy}</p>}
+    {copy && <p className={`mt-5 max-w-[680px] text-[14px] leading-[1.9] ${center ? "mx-auto" : ""} ${light ? "text-[#68798A]" : "text-[#657487]"}`}>{copy}</p>}
   </div>;
 }
 
@@ -108,35 +108,35 @@ export default function VasaiRoadClientPage() {
 
   return <main className="overflow-hidden bg-[#FBFAF7] text-[#122847]">
     {/* HERO — editorial layout, not a reused service-page template */}
-    <section className="relative isolate min-h-[760px] overflow-hidden bg-[#122847] px-5 pb-20 pt-32 text-white sm:px-8 sm:pt-36 lg:min-h-[820px] lg:px-12 lg:pb-28">
-      <div className="pointer-events-none absolute inset-0 -z-10 opacity-40" style={{ backgroundImage: "radial-gradient(circle at 78% 28%, rgba(198,167,122,.24), transparent 29%), radial-gradient(circle at 15% 90%, rgba(95,129,157,.24), transparent 32%)" }} />
-      <div className="pointer-events-none absolute -right-40 top-20 -z-10 h-[620px] w-[620px] rounded-full border border-white/10" />
+    <section className="relative isolate min-h-[720px] overflow-hidden bg-[#F8F7F3] px-5 pb-20 pt-32 text-[#122847] sm:px-8 sm:pt-36 lg:min-h-[780px] lg:px-12 lg:pb-28">
+      <div className="pointer-events-none absolute inset-0 -z-10 opacity-40" style={{ backgroundImage: "radial-gradient(circle at 78% 28%, rgba(198,167,122,.20), transparent 29%), radial-gradient(circle at 15% 90%, rgba(172,190,199,.22), transparent 32%)" }} />
+      <div className="pointer-events-none absolute -right-40 top-20 -z-10 h-[620px] w-[620px] rounded-full border border-[#122847]/[.07]" />
       <div className="pointer-events-none absolute -right-20 top-40 -z-10 h-[420px] w-[420px] rounded-full border border-[#C6A77A]/30" />
       <div className="mx-auto grid max-w-[1280px] items-center gap-14 lg:grid-cols-[1.08fr_.92fr] lg:gap-10">
         <Reveal><div className="max-w-[700px]">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[.06] px-4 py-2 text-[10px] uppercase tracking-[.2em] text-[#E2D1B5]"><MapPin size={12} /> Digital partner · Vasai, Maharashtra</div>
-          <h1 className="mt-8 font-serif text-[46px] font-normal leading-[1.04] tracking-[-.05em] sm:text-[58px] lg:text-[70px]">A stronger digital presence for <span className="text-[#D5B98E] italic">Vasai businesses.</span></h1>
-          <p className="mt-7 max-w-[590px] text-[15px] leading-[1.95] text-white/70">Sharp Rays brings SEO, website development, social media marketing and creative digital solutions together to help businesses become easier to discover, understand and contact.</p>
-          <p className="mt-3 max-w-[540px] text-[12px] leading-[1.9] text-white/45">For retailers, manufacturers, startups and professional businesses across Vasai East, Vasai West and nearby areas.</p>
-          <div className="mt-9 flex flex-wrap gap-3"><Link href="/contact?source=vasai-location" className="group inline-flex min-h-12 items-center gap-3 rounded-full bg-[#C6A77A] px-6 text-[12px] font-semibold text-[#122847] transition hover:bg-[#D7BE9A]">Discuss Your Project <ArrowUpRight size={16} className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></Link><Link href="#vasai-services" className="inline-flex min-h-12 items-center gap-3 rounded-full border border-white/25 px-6 text-[12px] text-white transition hover:border-white/60 hover:bg-white/5">Explore Services <ArrowDown size={15} /></Link></div>
-          <div className="mt-12 flex flex-wrap gap-x-7 gap-y-3 border-t border-white/15 pt-6 text-[10px] uppercase tracking-[.15em] text-white/55"><span>Search visibility</span><span>Better websites</span><span>Brand communication</span></div>
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#E6DED2] bg-white/80 px-4 py-2 text-[10px] uppercase tracking-[.2em] text-[#927650] shadow-sm"><MapPin size={12} /> Digital partner · Vasai, Maharashtra</div>
+          <h1 className="mt-8 font-serif text-[46px] font-normal leading-[1.04] tracking-[-.05em] sm:text-[58px] lg:text-[70px]">A stronger digital presence for <span className="text-[#A88659] italic">Vasai businesses.</span></h1>
+          <p className="mt-7 max-w-[590px] text-[15px] leading-[1.95] text-[#596D80]">Sharp Rays brings SEO, website development, social media marketing and creative digital solutions together to help businesses become easier to discover, understand and contact.</p>
+          <p className="mt-3 max-w-[540px] text-[12px] leading-[1.9] text-[#82909B]">For retailers, manufacturers, startups and professional businesses across Vasai East, Vasai West and nearby areas.</p>
+          <div className="mt-9 flex flex-wrap gap-3"><Link href="/contact?source=vasai-location" className="group inline-flex min-h-12 items-center gap-3 rounded-full bg-[#D9C5A7] px-6 text-[12px] font-semibold text-[#122847] shadow-[0_8px_24px_-16px_rgba(18,40,71,.35)] transition hover:bg-[#D7BE9A]">Discuss Your Project <ArrowUpRight size={16} className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></Link><Link href="#vasai-services" className="inline-flex min-h-12 items-center gap-3 rounded-full border border-[#D8D0C4] bg-white/70 px-6 text-[12px] text-[#344A60] transition hover:border-[#C6A77A] hover:bg-white">Explore Services <ArrowDown size={15} /></Link></div>
+          <div className="mt-12 flex flex-wrap gap-x-7 gap-y-3 border-t border-[#E5DED3] pt-6 text-[10px] uppercase tracking-[.15em] text-[#788795]"><span>Search visibility</span><span>Better websites</span><span>Brand communication</span></div>
         </div></Reveal>
         <Reveal delay={0.12}><div className="relative mx-auto w-full max-w-[590px]">
-          <div className="relative aspect-[.94] overflow-hidden rounded-[5px] border border-white/15 bg-[#1C3858] p-5 sm:p-7">
-            <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px)", backgroundSize: "38px 38px" }} />
+          <div className="relative aspect-[.94] overflow-hidden rounded-[5px] border border-[#DED8CD] bg-gradient-to-br from-[#E8EEF1] via-[#F5F2EB] to-[#E8E2D8] p-5 sm:p-7">
+            <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "linear-gradient(rgba(18,40,71,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(18,40,71,.08) 1px, transparent 1px)", backgroundSize: "38px 38px" }} />
             <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-[#C6A77A]/10 blur-3xl" />
             <div className="relative flex h-full flex-col justify-between">
-              <div className="flex items-start justify-between"><span className="text-[9px] uppercase tracking-[.22em] text-[#D8C29F]">The digital landscape</span><Globe2 size={19} className="text-[#C6A77A]" strokeWidth={1.2} /></div>
+              <div className="flex items-start justify-between"><span className="text-[9px] uppercase tracking-[.22em] text-[#9A7950]">The digital landscape</span><Globe2 size={19} className="text-[#C6A77A]" strokeWidth={1.2} /></div>
               <div className="relative mx-auto flex w-full max-w-[390px] flex-col gap-3">
-                <div className="rounded-xl border border-white/15 bg-[#F9F7F1] p-4 text-[#122847] shadow-2xl shadow-black/20">
+                <div className="rounded-xl border border-[#DED8CD] bg-white/95 p-4 text-[#122847] shadow-2xl shadow-black/20">
                   <div className="flex items-center justify-between border-b border-[#E8E1D6] pb-3"><div className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-[#C6A77A]"/><span className="text-[9px] font-semibold tracking-[.15em]">YOUR BUSINESS</span></div><span className="text-[8px] text-[#8B98A5]">ONLINE PRESENCE</span></div>
                   <div className="mt-4 grid grid-cols-[1fr_82px] items-center gap-3"><div><div className="h-2 w-4/5 rounded bg-[#122847]"/><div className="mt-2 h-2 w-3/5 rounded bg-[#C9D1D8]"/><div className="mt-4 inline-flex rounded-full bg-[#C6A77A] px-3 py-2 text-[8px] font-semibold">Explore services</div></div><div className="flex aspect-square items-center justify-center rounded-lg bg-[#E9EDF0]"><Layers3 size={34} strokeWidth={1.1} className="text-[#6E8294]"/></div></div>
                 </div>
                 <div className="grid grid-cols-3 gap-2">
-                  {[{ icon: Search, label: "SEARCH" }, { icon: MonitorSmartphone, label: "WEB" }, { icon: Megaphone, label: "SOCIAL" }].map(({ icon: Icon, label }) => <div key={label} className="flex items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/[.07] py-3 text-[8px] tracking-[.15em] text-white/75"><Icon size={13} className="text-[#D5B98E]"/>{label}</div>)}
+                  {[{ icon: Search, label: "SEARCH" }, { icon: MonitorSmartphone, label: "WEB" }, { icon: Megaphone, label: "SOCIAL" }].map(({ icon: Icon, label }) => <div key={label} className="flex items-center justify-center gap-2 rounded-lg border border-[#DED8CD] bg-white/70 py-3 text-[8px] tracking-[.15em] text-[#52677D]"><Icon size={13} className="text-[#D5B98E]"/>{label}</div>)}
                 </div>
               </div>
-              <div className="flex items-end justify-between"><p className="max-w-[210px] font-serif text-[21px] leading-tight text-white/90">Make every digital touchpoint <span className="text-[#D5B98E] italic">count.</span></p><span className="text-[9px] tracking-[.18em] text-white/45">SHARP RAYS / 01</span></div>
+              <div className="flex items-end justify-between"><p className="max-w-[210px] font-serif text-[21px] leading-tight text-[#344A60]">Make every digital touchpoint <span className="text-[#A88659] italic">count.</span></p><span className="text-[9px] tracking-[.18em] text-[#82909B]">SHARP RAYS / 01</span></div>
             </div>
           </div>
           <div className="absolute -bottom-5 -left-4 hidden max-w-[230px] border border-[#D7C3A5] bg-[#F7F3EB] p-4 text-[#122847] shadow-xl sm:block"><span className="text-[9px] uppercase tracking-[.17em] text-[#9A7950]">Our point of view</span><p className="mt-2 font-serif text-[18px] leading-snug">Strategy first. Design with purpose.</p></div>
@@ -154,33 +154,120 @@ export default function VasaiRoadClientPage() {
     </section>
 
     {/* SERVICES — alternating editorial cards */}
-    <section id="vasai-services" className="scroll-mt-20 bg-[#F0EEE8] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
-      <div className="mx-auto max-w-[1200px]"><Reveal><SectionTitle eyebrow="02 / What we do" title={<>Digital marketing services for your <span className="text-[#A88659] italic">next move.</span></>} copy="Different businesses need different things from digital marketing. Explore the capabilities that can help you establish, improve or strengthen your online presence." /></Reveal>
-        <div className="mt-14 space-y-4">{services.map((service, i) => { const Icon = service.icon; return <Reveal key={service.no} delay={i * 0.035}><article className={`group grid overflow-hidden border border-[#E2DACE] bg-[#FBFAF7] lg:grid-cols-[.72fr_1.28fr] ${i % 2 ? "lg:grid-cols-[1.28fr_.72fr]" : ""}`}>
-          <div className={`relative flex min-h-[230px] flex-col justify-between overflow-hidden bg-gradient-to-br ${service.tone} p-6 sm:min-h-[270px] sm:p-8 ${i % 2 ? "lg:order-2" : ""}`}>
-            <div className="absolute -right-12 -top-12 h-52 w-52 rounded-full border border-[#122847]/10 transition duration-700 group-hover:scale-125"/><div className="absolute -right-2 -top-2 h-36 w-36 rounded-full border border-[#C6A77A]/50"/>
-            <div className="relative flex items-center justify-between"><span className="text-[10px] font-semibold tracking-[.2em] text-[#8D795E]">CAPABILITY / {service.no}</span><Icon size={22} strokeWidth={1.2} className="text-[#9B7C53]"/></div>
-            <div className="relative"><span className="font-serif text-[58px] leading-none tracking-[-.06em] text-[#122847]/15">{service.no}</span><p className="mt-2 max-w-[260px] font-serif text-[24px] leading-tight text-[#122847]">{service.short}<span className="text-[#B08D5C]">.</span></p></div>
-          </div>
-          <div className={`flex flex-col p-6 sm:p-9 lg:p-10 ${i % 2 ? "lg:order-1" : ""}`}>
-            <h3 className="font-serif text-[27px] leading-tight tracking-[-.03em] sm:text-[32px]">{service.title}</h3><p className="mt-3 font-serif text-[18px] leading-snug text-[#A17F53]">{service.line}</p><p className="mt-4 max-w-[650px] text-[12px] leading-[1.95] text-[#68798A] sm:text-[13px]">{service.copy}</p>
-            <div className="mt-6 grid gap-x-5 gap-y-3 sm:grid-cols-2">{service.points.map(point=><div key={point} className="flex items-start gap-2 text-[11px] leading-relaxed text-[#435A70]"><Check size={14} className="mt-0.5 shrink-0 text-[#A88659]"/>{point}</div>)}</div>
-            <div className="mt-8 border-t border-[#E7E0D5] pt-5"><Link href={service.href} className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[.12em] text-[#122847] transition hover:text-[#A17F53]">Explore {service.short} <ArrowUpRight size={15}/></Link></div>
-          </div>
-        </article></Reveal>})}</div>
-      </div>
-    </section>
+  
+<section
+  id="vasai-services"
+  className="scroll-mt-20 bg-[#FAF8F5] px-5 py-20 sm:px-8 lg:px-12 lg:py-28"
+>
+  <div className="mx-auto max-w-[1200px]">
+    <Reveal>
+      <SectionTitle
+        eyebrow="02 / What we do"
+        title={
+          <>
+            Digital marketing services for your{" "}
+            <span className="text-[#A88659] italic">next move.</span>
+          </>
+        }
+        copy="Different businesses need different things from digital marketing. Explore the capabilities that can help you establish, improve or strengthen your online presence."
+      />
+    </Reveal>
+
+    <div className="mt-14 grid gap-5 md:grid-cols-2">
+      {services.map((service, i) => {
+        const Icon = service.icon;
+
+        return (
+          <Reveal key={service.no} delay={i * 0.04}>
+            <article className="group relative flex h-full flex-col overflow-hidden rounded-[5px] border border-[#E9E2D8] bg-[#FFFDF9] p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#D7C5A9] hover:shadow-[0_18px_50px_rgba(50,40,25,0.06)] sm:p-9">
+
+              {/* Subtle top accent */}
+              <div className="absolute left-0 top-0 h-[2px] w-0 bg-[#B79A72] transition-all duration-500 group-hover:w-full" />
+
+              {/* Number and icon */}
+              <div className="flex items-center justify-between">
+                <span className="font-serif text-[13px] tracking-[0.18em] text-[#B49A78]">
+                  {service.no} / 06
+                </span>
+
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#EAE1D4] bg-[#F8F5EF] transition-all duration-500 group-hover:bg-[#EFE8DC]">
+                  <Icon
+                    size={21}
+                    strokeWidth={1.35}
+                    className="text-[#A88659]"
+                  />
+                </div>
+              </div>
+
+              {/* Service content */}
+              <div className="mt-9">
+                <p className="font-serif text-[17px] italic leading-snug text-[#A88659]">
+                  {service.line}
+                </p>
+
+                <h3 className="mt-2 font-serif text-[29px] leading-tight tracking-[-0.035em] text-[#26364A] sm:text-[34px]">
+                  {service.title}
+                  <span className="text-[#B79A72]">.</span>
+                </h3>
+
+                <p className="mt-4 max-w-[480px] text-[12px] leading-[2] text-[#718092] sm:text-[13px]">
+                  {service.copy}
+                </p>
+              </div>
+
+              {/* Service features */}
+              <div className="mt-7 grid gap-x-4 gap-y-3 border-t border-[#EEE7DD] pt-6 sm:grid-cols-2">
+                {service.points.map((point) => (
+                  <div
+                    key={point}
+                    className="flex items-start gap-2 text-[11px] leading-[1.7] text-[#526477]"
+                  >
+                    <Check
+                      size={14}
+                      strokeWidth={1.7}
+                      className="mt-0.5 shrink-0 text-[#B08D5C]"
+                    />
+                    <span>{point}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <div className="mt-auto pt-8">
+                <div className="border-t border-[#EEE7DD] pt-5">
+                  <Link
+                    href={service.href}
+                    className="inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#26364A] transition-colors duration-300 hover:text-[#A88659]"
+                  >
+                    Explore {service.short}
+
+                    <ArrowUpRight
+                      size={15}
+                      className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                    />
+                  </Link>
+                </div>
+              </div>
+
+            </article>
+          </Reveal>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
 
     {/* LOCAL NEEDS */}
-    <section className="bg-[#122847] px-5 py-20 text-white sm:px-8 lg:px-12 lg:py-28">
+    <section className="bg-[#F4F5F2] px-5 py-20 text-[#122847] sm:px-8 lg:px-12 lg:py-28">
       <div className="mx-auto grid max-w-[1200px] gap-12 lg:grid-cols-[.85fr_1.15fr] lg:gap-20">
-        <Reveal><SectionTitle light eyebrow="03 / The local business picture" title={<>One town. Different business <span className="text-[#D5B98E] italic">ambitions.</span></>} copy="A local retailer, an industrial supplier and a professional service provider do not share the same customer journey. Their digital approach should reflect that." /></Reveal>
-        <div className="grid gap-px self-start border border-white/10 bg-white/10 sm:grid-cols-2">{[
+        <Reveal><SectionTitle eyebrow="03 / The local business picture" title={<>One town. Different business <span className="text-[#A88659] italic">ambitions.</span></>} copy="A local retailer, an industrial supplier and a professional service provider do not share the same customer journey. Their digital approach should reflect that." /></Reveal>
+        <div className="grid gap-px self-start border border-[#E5E2DA] bg-[#E5E2DA] sm:grid-cols-2">{[
           ["01", "Be discovered", "Help relevant customers find accurate business and service information."],
           ["02", "Explain your value", "Make products, services and capabilities easier to understand."],
           ["03", "Build confidence", "Use clear information, a professional website and consistent communication."],
           ["04", "Make contact easier", "Create straightforward paths for enquiries, calls and next steps."],
-        ].map(([n,t,d],i)=><Reveal key={n} delay={i*.06}><div className="h-full bg-[#183452] p-6 sm:p-7"><span className="font-serif text-[30px] text-[#C6A77A]">{n}</span><h3 className="mt-5 font-serif text-[22px]">{t}</h3><p className="mt-3 text-[12px] leading-[1.9] text-white/60">{d}</p></div></Reveal>)}</div>
+        ].map(([n,t,d],i)=><Reveal key={n} delay={i*.06}><div className="h-full bg-white p-6 sm:p-7"><span className="font-serif text-[30px] text-[#C6A77A]">{n}</span><h3 className="mt-5 font-serif text-[22px]">{t}</h3><p className="mt-3 text-[12px] leading-[1.9] text-[#718092]">{d}</p></div></Reveal>)}</div>
       </div>
     </section>
 
@@ -192,10 +279,10 @@ export default function VasaiRoadClientPage() {
     </section>
 
     {/* EAST / WEST */}
-    <section className="bg-[#F0EEE8] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+    <section className="bg-[#F5F3EE] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
       <div className="mx-auto max-w-[1200px]"><Reveal><SectionTitle eyebrow="05 / Across Vasai" title={<>Local context makes the strategy <span className="text-[#A88659] italic">more relevant.</span></>} copy="Vasai East and Vasai West include different business settings and customer needs. Location-specific communication should be useful, accurate and grounded in the areas a business genuinely serves." /></Reveal>
         <div className="mt-12 grid gap-5 lg:grid-cols-2">
-          <Reveal><article className="relative min-h-[350px] overflow-hidden bg-[#122847] p-7 text-white sm:p-10"><div className="absolute -right-16 -top-16 h-72 w-72 rounded-full border border-white/10"/><div className="absolute -right-5 top-0 h-52 w-52 rounded-full border border-[#C6A77A]/30"/><div className="relative flex h-full flex-col"><span className="text-[10px] uppercase tracking-[.2em] text-[#D5B98E]">Area focus / 01</span><h3 className="mt-6 font-serif text-[36px]">Vasai <span className="italic text-[#D5B98E]">West</span></h3><p className="mt-4 max-w-[440px] text-[13px] leading-[1.9] text-white/65">Commercial and neighbourhood areas around Ambadi Road and Manickpur include retailers, restaurants, clinics and professional service providers with varied digital requirements.</p><div className="mt-auto grid grid-cols-2 gap-3 border-t border-white/15 pt-6">{["Local SEO", "Business websites", "Social communication", "Clear enquiry paths"].map(x=><div key={x} className="flex items-center gap-2 text-[11px] text-white/80"><span className="h-1 w-1 rounded-full bg-[#C6A77A]"/>{x}</div>)}</div></div></article></Reveal>
+          <Reveal><article className="relative min-h-[350px] overflow-hidden border border-[#E5DED3] bg-gradient-to-br from-[#F0F3F3] via-[#F8F7F2] to-[#F3EEE7] p-7 text-[#122847] sm:p-10"><div className="absolute -right-16 -top-16 h-72 w-72 rounded-full border border-[#122847]/[.07]"/><div className="absolute -right-5 top-0 h-52 w-52 rounded-full border border-[#C6A77A]/30"/><div className="relative flex h-full flex-col"><span className="text-[10px] uppercase tracking-[.2em] text-[#D5B98E]">Area focus / 01</span><h3 className="mt-6 font-serif text-[36px]">Vasai <span className="italic text-[#D5B98E]">West</span></h3><p className="mt-4 max-w-[440px] text-[13px] leading-[1.9] text-[#68798A]">Commercial and neighbourhood areas around Ambadi Road and Manickpur include retailers, restaurants, clinics and professional service providers with varied digital requirements.</p><div className="mt-auto grid grid-cols-2 gap-3 border-t border-[#DED9CF] pt-6">{["Local SEO", "Business websites", "Social communication", "Clear enquiry paths"].map(x=><div key={x} className="flex items-center gap-2 text-[11px] text-[#52677D]"><span className="h-1 w-1 rounded-full bg-[#C6A77A]"/>{x}</div>)}</div></div></article></Reveal>
           <Reveal delay={.08}><article className="relative min-h-[350px] overflow-hidden border border-[#DED4C5] bg-[#F9F7F2] p-7 sm:p-10"><div className="absolute -right-16 -top-16 h-72 w-72 rounded-full border border-[#C6A77A]/35"/><div className="absolute -right-5 top-0 h-52 w-52 rounded-full border border-[#122847]/10"/><div className="relative flex h-full flex-col"><span className="text-[10px] uppercase tracking-[.2em] text-[#9A7950]">Area focus / 02</span><h3 className="mt-6 font-serif text-[36px]">Vasai <span className="italic text-[#A88659]">East</span></h3><p className="mt-4 max-w-[440px] text-[13px] leading-[1.9] text-[#66788A]">Areas around Waliv, Sativali and Gauraipada include industrial and commercial businesses that may need clear company websites, product information and B2B-focused communication.</p><div className="mt-auto grid grid-cols-2 gap-3 border-t border-[#DED4C5] pt-6">{["Company websites", "Product pages", "B2B SEO", "Capability content"].map(x=><div key={x} className="flex items-center gap-2 text-[11px] text-[#52677D]"><span className="h-1 w-1 rounded-full bg-[#A88659]"/>{x}</div>)}</div></div></article></Reveal>
         </div>
         <p className="mt-6 text-[11px] leading-[1.8] text-[#7B8792]">These are examples of local business contexts, not a claim of a physical Sharp Rays office or verified client presence in each area.</p>
@@ -205,7 +292,7 @@ export default function VasaiRoadClientPage() {
     {/* WEBSITE FOUNDATION */}
     <section className="px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
       <div className="mx-auto grid max-w-[1200px] items-center gap-12 lg:grid-cols-[.9fr_1.1fr] lg:gap-20">
-        <Reveal><div className="relative overflow-hidden bg-[#E9EDF0] p-6 sm:p-9"><div className="absolute -right-16 -top-16 h-64 w-64 rounded-full border border-[#122847]/10"/><div className="relative border border-[#D4DCE1] bg-white p-5 shadow-[0_24px_60px_-40px_rgba(18,40,71,.4)] sm:p-7"><div className="flex items-center gap-1.5 border-b border-[#E8ECEF] pb-4"><span className="h-2 w-2 rounded-full bg-[#D8BDA0]"/><span className="h-2 w-2 rounded-full bg-[#D9DDE0]"/><span className="h-2 w-2 rounded-full bg-[#D9DDE0]"/><span className="ml-auto text-[8px] tracking-[.15em] text-[#8997A4]">BUSINESS WEBSITE</span></div><div className="mt-6 grid grid-cols-[1fr_.75fr] gap-4"><div><div className="h-2 w-3/4 rounded bg-[#122847]"/><div className="mt-3 h-2 w-full rounded bg-[#DCE2E6]"/><div className="mt-2 h-2 w-4/5 rounded bg-[#DCE2E6]"/><div className="mt-6 h-8 w-24 rounded-full bg-[#C6A77A]"/></div><div className="aspect-square rounded bg-gradient-to-br from-[#D8E0E5] to-[#AABBC8]"/></div><div className="mt-7 grid grid-cols-3 gap-2">{[1,2,3].map(x=><div key={x} className="h-14 rounded bg-[#F0F2F3]"/>)}</div><div className="mt-6 h-2 w-2/5 rounded bg-[#DCE2E6]"/><div className="mt-2 h-2 w-3/4 rounded bg-[#E8ECEF]"/></div><div className="relative mt-4 flex items-center justify-between border border-[#D7C8B1] bg-[#F9F6EF] p-4"><div><span className="text-[8px] uppercase tracking-[.15em] text-[#9A7950]">A better first impression</span><p className="mt-1 font-serif text-[17px]">Designed around your customer.</p></div><MousePointerClick size={22} className="text-[#A88659]"/></div></div></Reveal>
+        <Reveal><div className="relative overflow-hidden bg-[#E9EDF0] p-6 sm:p-9"><div className="absolute -right-16 -top-16 h-64 w-64 rounded-full border border-[#122847]/10"/><div className="relative border border-[#D4DCE1] bg-white p-5 shadow-[0_24px_60px_-40px_rgba(18,40,71,.4)] sm:p-7"><div className="flex items-center gap-1.5 border-b border-[#E8ECEF] pb-4"><span className="h-2 w-2 rounded-full bg-[#D8BDA0]"/><span className="h-2 w-2 rounded-full bg-[#D9DDE0]"/><span className="h-2 w-2 rounded-full bg-[#D9DDE0]"/><span className="ml-auto text-[8px] tracking-[.15em] text-[#8997A4]">BUSINESS WEBSITE</span></div><div className="mt-6 grid grid-cols-[1fr_.75fr] gap-4"><div><div className="h-2 w-3/4 rounded bg-white"/><div className="mt-3 h-2 w-full rounded bg-[#DCE2E6]"/><div className="mt-2 h-2 w-4/5 rounded bg-[#DCE2E6]"/><div className="mt-6 h-8 w-24 rounded-full bg-[#C6A77A]"/></div><div className="aspect-square rounded bg-gradient-to-br from-[#D8E0E5] to-[#AABBC8]"/></div><div className="mt-7 grid grid-cols-3 gap-2">{[1,2,3].map(x=><div key={x} className="h-14 rounded bg-[#F0F2F3]"/>)}</div><div className="mt-6 h-2 w-2/5 rounded bg-[#DCE2E6]"/><div className="mt-2 h-2 w-3/4 rounded bg-[#E8ECEF]"/></div><div className="relative mt-4 flex items-center justify-between border border-[#D7C8B1] bg-[#F9F6EF] p-4"><div><span className="text-[8px] uppercase tracking-[.15em] text-[#9A7950]">A better first impression</span><p className="mt-1 font-serif text-[17px]">Designed around your customer.</p></div><MousePointerClick size={22} className="text-[#A88659]"/></div></div></Reveal>
         <Reveal delay={.08}><div><SectionTitle eyebrow="06 / Website & SEO foundations" title={<>What should your business website in Vasai <span className="text-[#A88659] italic">actually do?</span></>} copy="A website should do more than display a company name. It should help visitors understand what you offer, why it matters and how to take the next step."/><div className="mt-8 space-y-4">{[
           ["Mobile-first experience", "Responsive layouts that work across phones, tablets and desktops."],
           ["Clear website structure", "Logical navigation, useful headings and well-organised service information."],
@@ -218,7 +305,7 @@ export default function VasaiRoadClientPage() {
     </section>
 
     {/* PROCESS */}
-    <section className="bg-[#EAE7DF] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+    <section className="bg-[#F4F2ED] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
       <div className="mx-auto max-w-[1200px]"><Reveal><SectionTitle eyebrow="07 / How we work" title={<>A thoughtful process, from first conversation to <span className="text-[#A88659] italic">implementation.</span></>} copy="We begin with your business requirements, then identify the work that is relevant to your goals and resources."/></Reveal>
         <div className="mt-14 grid gap-0 border-y border-[#D4C9B8] md:grid-cols-4">{[
           ["01", "Understand", "Discuss your business, audience, current digital presence and priorities.", "Business context"],
@@ -241,10 +328,7 @@ export default function VasaiRoadClientPage() {
       </div>
     </section>
 
-    {/* PORTFOLIO */}
-    <section className="bg-[#122847] px-5 py-20 text-white sm:px-8 lg:px-12 lg:py-24">
-      <div className="mx-auto grid max-w-[1200px] items-center gap-9 lg:grid-cols-[1fr_auto]"><Reveal><Eyebrow light>09 / Selected work</Eyebrow><h2 className="mt-5 max-w-[720px] font-serif text-[36px] leading-[1.12] tracking-[-.04em] sm:text-[46px]">See the thinking behind the <span className="text-[#D5B98E] italic">work.</span></h2><p className="mt-5 max-w-[650px] text-[13px] leading-[1.9] text-white/60">Explore selected website designs, creative projects and digital experiences developed by Sharp Rays. Each published project should show genuine work and accurately describe the contribution.</p></Reveal><Reveal delay={.1}><Link href="/portfolio" className="inline-flex min-h-12 items-center justify-center gap-3 border border-[#C6A77A]/60 px-6 text-[11px] font-semibold uppercase tracking-[.13em] text-[#E4D2B3] transition hover:bg-white/5">Explore our work <ArrowUpRight size={16}/></Link></Reveal></div>
-    </section>
+   
 
     {/* PRICING */}
     <section className="px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
@@ -258,16 +342,61 @@ export default function VasaiRoadClientPage() {
       </div>
     </section>
 
-    {/* FAQ */}
-    <section className="bg-[#F0EEE8] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
-      <div className="mx-auto grid max-w-[1200px] gap-12 lg:grid-cols-[.72fr_1.28fr] lg:gap-20"><Reveal><SectionTitle eyebrow="11 / Good to know" title={<>Questions, answered <span className="text-[#A88659] italic">clearly.</span></>} copy="A few useful details to help you decide what your business needs before starting a conversation."/></Reveal>
-        <div className="border-t border-[#D8CDBD]">{faqs.map(([q,a],i)=><div key={q} className="border-b border-[#D8CDBD]"><button type="button" onClick={()=>setOpenFaq(openFaq===i?null:i)} aria-expanded={openFaq===i} className="flex w-full items-center gap-4 py-5 text-left"><span className="w-7 shrink-0 font-serif text-[17px] text-[#B18E60]">{String(i+1).padStart(2,"0")}</span><span className="flex-1 pr-3 text-[13px] font-medium leading-[1.6] text-[#122847]">{q}</span><ChevronDown size={17} className={`shrink-0 text-[#A88659] transition-transform ${openFaq===i?"rotate-180":""}`}/></button>{openFaq===i&&<div className="pb-6 pl-11 pr-7 text-[12px] leading-[1.95] text-[#6D7C8B]">{a}</div>}</div>)}</div>
-      </div>
-    </section>
+   
+ {/* 09 FAQ */}
+<section
+  className="bg-[#FAF8F5] px-5 py-20 sm:px-8 lg:py-28"
+  aria-labelledby="services-faq-heading"
+>
+  <div className="mx-auto max-w-[1220px]">
+
+   <div className="mx-auto max-w-[800px] text-center">
+  <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#B79A72]">
+    Questions Before You Start
+  </p>
+
+  <h2
+    id="services-faq-heading"
+    className="font-[var(--font-new-york)] text-[clamp(32px,4vw,52px)] font-normal leading-[1.15] tracking-[-0.035em] text-[#26364A]"
+  >
+    Frequently Asked{" "}
+    <span className="text-[#B79A72]">Questions.</span>
+  </h2>
+
+  <p className="mx-auto mt-5 max-w-[560px] text-[13px] leading-[1.9] text-[#718092]">
+    Clear answers about our services, process and how we help
+    businesses grow online.
+  </p>
+</div>
+
+    <div className="mt-12 grid gap-x-12 border-t border-[#E4D9CC] lg:grid-cols-2">
+      {faqs.map(([q, a], i) => (
+        <div key={q}>
+          <article className="flex h-full gap-4 border-b border-[#E4D9CC] py-7 sm:py-8">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#E0D2BF] bg-white font-[var(--font-new-york)] text-[15px] text-[#B79A72]">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+
+            <div>
+              <h3 className="font-[var(--font-new-york)] text-[19px] leading-[1.4] text-[#26364A] sm:text-[21px]">
+                {q}
+              </h3>
+
+              <p className="mt-3 text-[12px] leading-[1.95] text-[#708092]">
+                {a}
+              </p>
+            </div>
+          </article>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
 
     {/* FINAL CTA */}
     <section className="px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
-      <div className="relative mx-auto max-w-[1200px] overflow-hidden bg-[#122847] px-7 py-12 text-white sm:px-12 sm:py-16 lg:px-16"><div className="pointer-events-none absolute -right-24 -top-36 h-[480px] w-[480px] rounded-full border border-[#C6A77A]/30"/><div className="pointer-events-none absolute -right-5 -top-16 h-[330px] w-[330px] rounded-full border border-white/10"/><div className="relative grid gap-10 lg:grid-cols-[1fr_.7fr] lg:items-end"><Reveal><Eyebrow light>12 / Let's build something better</Eyebrow><h2 className="mt-6 max-w-[700px] font-serif text-[38px] leading-[1.08] tracking-[-.045em] sm:text-[50px]">Ready to move your business <span className="text-[#D5B98E] italic">forward?</span></h2><p className="mt-5 max-w-[610px] text-[13px] leading-[1.95] text-white/65">Whether you need a professional website, stronger visibility on Google or a more consistent social media presence, let's understand your goals and identify a useful next step.</p></Reveal><Reveal delay={.1}><div className="border-t border-white/20 pt-7 lg:border-l lg:border-t-0 lg:pl-9"><p className="font-serif text-[23px] leading-snug">Tell us what you're building.</p><p className="mt-3 text-[11px] leading-[1.8] text-white/55">Share your business, website and the challenge you'd like to solve.</p><div className="mt-6 flex flex-col gap-3"><Link href="/contact?source=vasai-location" className="inline-flex min-h-12 items-center justify-center gap-2 bg-[#C6A77A] px-5 text-[11px] font-semibold text-[#122847] transition hover:bg-[#D8C09B]">Get a Free Consultation <ArrowUpRight size={15}/></Link><Link href="/services" className="inline-flex min-h-12 items-center justify-center gap-2 border border-white/25 px-5 text-[11px] text-white transition hover:bg-white/5">Explore all services <ArrowRight size={15}/></Link></div></div></Reveal></div><div className="relative mt-12 flex flex-wrap items-center justify-between gap-3 border-t border-white/15 pt-5 text-[9px] uppercase tracking-[.18em] text-white/40"><span>SHARP RAYS — WE CREATE THE “OH, WOW.”!</span><span>VASAI · MAHARASHTRA</span></div></div>
+      <div className="relative mx-auto max-w-[1200px] overflow-hidden border border-[#E8DED0] bg-gradient-to-br from-[#F7F4ED] via-[#FBFAF7] to-[#EEF2F1] px-7 py-12 text-[#122847] shadow-[0_24px_70px_-55px_rgba(18,40,71,.35)] sm:px-12 sm:py-16 lg:px-16"><div className="pointer-events-none absolute -right-24 -top-36 h-[480px] w-[480px] rounded-full border border-[#C6A77A]/30"/><div className="pointer-events-none absolute -right-5 -top-16 h-[330px] w-[330px] rounded-full border border-[#122847]/[.07]"/><div className="relative grid gap-10 lg:grid-cols-[1fr_.7fr] lg:items-end"><Reveal><Eyebrow>12 / Let's build something better</Eyebrow><h2 className="mt-6 max-w-[700px] font-serif text-[38px] leading-[1.08] tracking-[-.045em] sm:text-[50px]">Ready to move your business <span className="text-[#A88659] italic">forward?</span></h2><p className="mt-5 max-w-[610px] text-[13px] leading-[1.95] text-[#68798A]">Whether you need a professional website, stronger visibility on Google or a more consistent social media presence, let's understand your goals and identify a useful next step.</p></Reveal><Reveal delay={.1}><div className="border-t border-[#DED8CD] pt-7 lg:border-l lg:border-t-0 lg:pl-9"><p className="font-serif text-[23px] leading-snug">Tell us what you're building.</p><p className="mt-3 text-[11px] leading-[1.8] text-[#7A8793]">Share your business, website and the challenge you'd like to solve.</p><div className="mt-6 flex flex-col gap-3"><Link href="/contact?source=vasai-location" className="inline-flex min-h-12 items-center justify-center gap-2 bg-[#C6A77A] px-5 text-[11px] font-semibold text-[#122847] transition hover:bg-[#D8C09B]">Get a Free Consultation <ArrowUpRight size={15}/></Link><Link href="/services" className="inline-flex min-h-12 items-center justify-center gap-2 border border-[#D8D0C4] bg-white/65 px-5 text-[11px] text-[#344A60] transition hover:bg-white">Explore all services <ArrowRight size={15}/></Link></div></div></Reveal></div><div className="relative mt-12 flex flex-wrap items-center justify-between gap-3 border-t border-[#DED8CD] pt-5 text-[9px] uppercase tracking-[.18em] text-[#87919A]"><span>SHARP RAYS — WE CREATE THE “OH, WOW.”!</span><span>VASAI · MAHARASHTRA</span></div></div>
     </section>
   </main>;
 }
