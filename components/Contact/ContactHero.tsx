@@ -33,7 +33,7 @@ const services = [
   "Content Marketing",
   "Performance Marketing",
   "Website Development",
-  "AI Video & Video Editing",
+  "AI Video & Creative",
   "AI Automation",
   "Not Sure Yet",
 ];
@@ -44,7 +44,9 @@ const serviceQueryMap: Record<string, string> = {
   "content-marketing": "Content Marketing",
   "performance-marketing": "Performance Marketing",
   "website-development": "Website Development",
-  "ai-video-editing": "AI Video & Video Editing",
+  "ai-video-creative": "AI Video & Creative",
+  "ai-video-and-creative": "AI Video & Creative",
+  "ai-video-editing": "AI Video & Creative",
   "ai-automation": "AI Automation",
 };
 
@@ -54,9 +56,6 @@ const planQueryMap: Record<string, string> = {
   growth: "Growth Plan",
   scale: "Scale Plan",
   launch: "Launch Plan",
-  "edit-starter": "Edit Starter Plan",
-  "edit-growth": "Edit Growth Plan",
-  "edit-scale": "Edit Scale Plan",
   "ai-starter": "AI Starter Plan",
   "ai-growth": "AI Growth Plan",
   "ai-scale": "AI Scale Plan",
@@ -98,18 +97,18 @@ const needQueryMap: Record<string, string> = {
   "content-plan": "Content Marketing Plan",
   "content-question": "Content Marketing Question",
 
-  // AI Video & Editing
-  "ai-video-creation": "AI Video Creation",
-  "professional-video-editing": "Professional Video Editing",
-  "short-form-video-editing": "Short-Form Video Editing",
-  "social-media-video-editing": "Social Media Video Editing",
-  "advertising-performance-video": "Advertising & Performance Video",
-  "ai-product-concept-videos": "AI Product & Concept Videos",
-  "motion-graphics-visual-effects": "Motion Graphics & Visual Effects",
-  "video-repurposing": "Video Repurposing",
-  "captions-subtitles-text-treatment": "Captions, Subtitles & Text Treatment",
-  "ai-assisted-enhancement": "AI-Assisted Enhancement",
-  "combined-video-plan": "AI Video + Regular Editing Plan",
+  // AI Video & Creative
+  "ai-video-ads": "AI Video Ads",
+  "ai-product-videos": "AI Product Videos",
+  "ai-ugc-videos": "AI UGC Videos",
+  "ai-brand-films": "AI Brand Films",
+  "ai-social-videos": "AI Social Videos",
+  "ai-explainer-videos": "AI Explainer Videos",
+  "ai-campaign-creative": "AI Campaign Creative",
+  "ai-concept-visualisation": "AI Concept Visualisation",
+  "ai-presenter-videos": "AI Presenter Videos",
+  "ai-creative-variations": "AI Creative Variations",
+  "custom-ai-video-production": "Custom AI Video Production",
 
   // AI Automation
   "automation-for-team": "Automation for My Team",
@@ -155,8 +154,8 @@ const problemRoutes = [
     soft: "#E9F1F8",
   },
   {
-    problem: "We need more video without more production friction",
-    service: "AI Video & Video Editing",
+    problem: "We need creative video content without traditional production",
+    service: "AI Video & Creative",
     icon: Bot,
     accent: "#9A6E55",
     soft: "#F6ECE7",

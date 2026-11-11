@@ -208,7 +208,7 @@ const services: Service[] = [
 
     tone: "peach",
 
-    href: "/services/performance-marketing/paid-social-advertising",
+    href: "/services/performance-marketing",
 
     brand: "social",
 

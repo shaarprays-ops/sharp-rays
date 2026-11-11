@@ -11,6 +11,8 @@ import {
   Video,
   Brain,
   FileText,
+  Clapperboard,
+  Newspaper,
 } from "lucide-react";
 
 const BRAND = "#0B2A52";
@@ -101,20 +103,20 @@ const services = [
 
   {
     icon: FileText,
-    title: "Content Management",
+    title: "Content Marketing",
     slug: "/services/content-marketing",
     image: "/whatwedo/content-marketing.png",
     imageAlt:
-      "Content management services for website updates, publishing and digital content organization",
+      "Content marketing services for SEO blogs, website copy, content strategy and brand storytelling",
     imageTitle:
-      "Content Management Services by Sharp Rays",
+      "Content Marketing Services by Sharp Rays",
     description:
-      "Keep your website and digital content organized, accurate, consistent, and up to date across pages, services, campaigns, and brand communication.",
+      "Attract relevant audiences with search-focused articles, website copy, brand storytelling, and a content strategy aligned with customer intent.",
     items: [
-      "Website Content Updates",
-      "Content Organization",
-      "Publishing & Maintenance",
-      "Content Quality Control",
+      "Content Strategy",
+      "SEO Blogs & Articles",
+      "Website Copywriting",
+      "Brand Storytelling",
     ],
   },
 
@@ -139,20 +141,58 @@ const services = [
 
   {
     icon: Video,
-    title: "AI Video & Video Editing",
+    title: "AI Video & Creative",
     slug: "/services/video-and-creative",
     image: "/whatwedo/video-creative.png",
     imageAlt:
-      "AI video creation and professional video editing services for reels, shorts and digital campaigns",
+      "AI video and creative production for campaigns, product storytelling and digital advertisements",
     imageTitle:
-      "AI Video Creation and Video Editing Services by Sharp Rays",
+      "AI Video and Creative Services by Sharp Rays",
     description:
-      "Create, edit, and adapt video content using AI-assisted production, professional editing, motion graphics, captions, and platform-ready workflows.",
+      "Develop campaign visuals and AI-assisted videos for product stories, brand advertisements and platform-ready digital creatives.",
     items: [
       "AI Video Creation",
-      "Professional Editing",
-      "Reels & Shorts",
-      "Motion & Graphics",
+      "Creative Concepts",
+      "Product Videos",
+      "Campaign Creatives",
+    ],
+  },
+
+  {
+    icon: Clapperboard,
+    title: "Professional Video Editing",
+    slug: "/services/video-editing",
+    image: "/whatwedo/video-creative.png",
+    imageAlt:
+      "Professional video editing for social media reels, short-form videos, YouTube and brand campaigns",
+    imageTitle:
+      "Professional Video Editing Services by Sharp Rays",
+    description:
+      "Transform original footage into polished, engaging videos with precise cuts, colour correction, sound, captions and platform-specific formats.",
+    items: [
+      "Reels & Shorts Editing",
+      "YouTube Video Editing",
+      "Captions & Motion Graphics",
+      "Brand & Ad Videos",
+    ],
+  },
+
+  {
+    icon: Newspaper,
+    title: "Digital PR & Media Relations",
+    slug: "/services/digital-pr-media-relations",
+    image: "/whatwedo/social-media1.png",
+    imageAlt:
+      "Digital public relations and media outreach for press releases, brand storytelling and founder visibility",
+    imageTitle:
+      "Digital PR and Media Relations Services by Sharp Rays",
+    description:
+      "Build a stronger public presence with newsworthy brand stories, relevant media outreach, press releases and responsible reputation communication.",
+    items: [
+      "Digital PR Strategy",
+      "Media & Journalist Outreach",
+      "Press Release Support",
+      "Founder & Brand Visibility",
     ],
   },
 ];
@@ -202,6 +242,16 @@ const accents = [
     border: "#0891B2",
     soft: "#ECFEFF",
     icon: "#0891B2",
+  },
+  {
+    border: "#8B5CF6",
+    soft: "#F5F1FF",
+    icon: "#7C3AED",
+  },
+  {
+    border: "#B7794D",
+    soft: "#FBF3EB",
+    icon: "#95603B",
   },
 ];
 
@@ -445,7 +495,7 @@ export default function ServicesSection() {
           >
             SHARPRAYS helps businesses strengthen their digital presence through
             social media marketing, SEO, paid media, website development,
-            AI-powered video production, AI automation, and ongoing content management.
+            AI-powered video production, professional video editing, AI automation, content marketing, and digital PR.
           </motion.p>
         </motion.div>
 

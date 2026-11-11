@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -66,16 +67,49 @@ function getReadTime(post: BlogPost) {
     return 3;
   }
 
-  const words =
-    text
-      .split(/\s+/)
-      .filter(Boolean)
-      .length;
+  const words = text
+    .split(/\s+/)
+    .filter(Boolean).length;
 
-  return Math.max(
-    1,
-    Math.ceil(words / 220)
-  );
+  return Math.max(1, Math.ceil(words / 220));
+}
+
+/**
+ * Remove duplicate Sanity tags.
+ * A tag is considered duplicate if its ID OR slug
+ * has already appeared in this post.
+ */
+function getUniqueTags(
+  tags: BlogPost["tags"]
+) {
+  const seenIds = new Set<string>();
+  const seenSlugs = new Set<string>();
+
+  return (tags || [])
+    .filter((tag) => {
+      const slug = tag.slug?.trim();
+      const id = tag._id?.trim();
+
+      if (!tag.title?.trim() || !slug) {
+        return false;
+      }
+
+      if (
+        seenSlugs.has(slug) ||
+        (id && seenIds.has(id))
+      ) {
+        return false;
+      }
+
+      seenSlugs.add(slug);
+
+      if (id) {
+        seenIds.add(id);
+      }
+
+      return true;
+    })
+    .slice(0, 3);
 }
 
 export default function CategoryInsightsGrid({
@@ -118,9 +152,10 @@ export default function CategoryInsightsGrid({
             <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-[#6285AD] sm:text-[11px]">
               Latest Insights
             </p>
-<h2 className="mt-3 max-w-[800px] font-serif text-[2.6rem] leading-[0.98] tracking-[-0.04em] text-[#0B2A52] sm:text-[2.95rem] md:text-[3.1rem] lg:text-[3.35rem]">
-  Latest Insights
-</h2>
+
+            <h2 className="mt-3 max-w-[800px] font-serif text-[2.6rem] leading-[0.98] tracking-[-0.04em] text-[#0B2A52] sm:text-[2.95rem] md:text-[3.1rem] lg:text-[3.35rem]">
+              Latest Insights
+            </h2>
           </div>
 
           <p className="max-w-[400px] text-[13px] leading-6 text-[#0B2A52]/55 md:text-right">
@@ -132,28 +167,17 @@ export default function CategoryInsightsGrid({
           {visiblePosts.map((post) => {
             const imageUrl =
               post.featuredImage?.asset
-                ? urlFor(
-                    post.featuredImage
-                  )
+                ? urlFor(post.featuredImage)
                     .width(1000)
                     .height(625)
                     .fit("crop")
                     .url()
                 : null;
 
-            const tags =
-              post.tags
-                ?.filter(
-                  (tag) =>
-                    tag.title &&
-                    tag.slug
-                )
-                .slice(0, 3) || [];
+            const tags = getUniqueTags(post.tags);
 
             const formattedDate =
-              formatDate(
-                post.publishedAt
-              );
+              formatDate(post.publishedAt);
 
             const readTime =
               getReadTime(post);
@@ -172,13 +196,11 @@ export default function CategoryInsightsGrid({
                     <Image
                       src={imageUrl}
                       alt={
-                        post.featuredImage
-                          ?.alt ||
+                        post.featuredImage?.alt ||
                         post.title
                       }
                       title={
-                        post.featuredImage
-                          ?.alt ||
+                        post.featuredImage?.alt ||
                         post.title
                       }
                       fill
@@ -193,8 +215,7 @@ export default function CategoryInsightsGrid({
 
                 <div className="flex flex-1 flex-col pt-5">
                   <p className="text-[10px] font-medium uppercase tracking-[0.17em] text-[#6285AD]">
-                    {post.category
-                      ?.title ||
+                    {post.category?.title ||
                       categoryTitle}
                   </p>
 
@@ -214,31 +235,23 @@ export default function CategoryInsightsGrid({
 
                   {tags.length > 0 && (
                     <div className="mt-4 flex flex-wrap gap-2">
-                      {tags.map(
-                        (tag) => (
-                          <Link
-                            key={
-                              tag._id ||
-                              tag.slug
-                            }
-                            href={`/blog/tag/${tag.slug}`}
-                            title={`Explore ${tag.title} insights`}
-                            className="border border-[#0B2A52]/10 bg-[#F8FAFC] px-2.5 py-1.5 text-[9px] font-medium text-[#0B2A52]/58 transition-colors hover:border-[#6285AD]/30 hover:text-[#0B2A52]"
-                          >
-                            {
-                              tag.title
-                            }
-                          </Link>
-                        )
-                      )}
+                      {tags.map((tag) => (
+                        <Link
+                          key={tag.slug}
+                          href={`/blog/tag/${tag.slug}`}
+                          title={`Explore ${tag.title} insights`}
+                          className="border border-[#0B2A52]/10 bg-[#F8FAFC] px-2.5 py-1.5 text-[9px] font-medium text-[#0B2A52]/58 transition-colors hover:border-[#6285AD]/30 hover:text-[#0B2A52]"
+                        >
+                          {tag.title}
+                        </Link>
+                      ))}
                     </div>
                   )}
 
                   <div className="mt-auto flex items-end justify-between gap-4 border-t border-[#0B2A52]/8 pt-5">
                     <div>
                       <p className="text-[11px] font-medium text-[#0B2A52]">
-                        {post.author
-                          ?.name ||
+                        {post.author?.name ||
                           "Sharp Rays"}
                       </p>
 
@@ -247,22 +260,16 @@ export default function CategoryInsightsGrid({
                           <span className="inline-flex items-center gap-1.5">
                             <CalendarDays
                               size={12}
-                              strokeWidth={
-                                1.6
-                              }
+                              strokeWidth={1.6}
                             />
-                            {
-                              formattedDate
-                            }
+                            {formattedDate}
                           </span>
                         )}
 
                         <span className="inline-flex items-center gap-1.5">
                           <Clock3
                             size={12}
-                            strokeWidth={
-                              1.6
-                            }
+                            strokeWidth={1.6}
                           />
                           {readTime} min read
                         </span>
@@ -272,6 +279,7 @@ export default function CategoryInsightsGrid({
                     <Link
                       href={`/blog/${post.slug}`}
                       title={`Read ${post.title}`}
+                      aria-label={`Read ${post.title}`}
                       className="inline-flex h-9 w-9 shrink-0 items-center justify-center border border-[#0B2A52]/12 text-[#0B2A52] transition-all duration-300 hover:border-[#0B2A52] hover:bg-[#0B2A52] hover:text-white"
                     >
                       <ArrowUpRight
@@ -291,10 +299,7 @@ export default function CategoryInsightsGrid({
             <button
               type="button"
               onClick={() =>
-                setVisibleCount(
-                  (count) =>
-                    count + 6
-                )
+                setVisibleCount((count) => count + 6)
               }
               className="inline-flex min-h-[48px] items-center justify-center border border-[#0B2A52] bg-white px-7 text-[12px] font-medium text-[#0B2A52] transition-all duration-300 hover:bg-[#0B2A52] hover:text-white"
             >
