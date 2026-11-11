@@ -1,3 +1,5 @@
+import Footer from "@/components/Home/Footer";
+import Navbar from "@/components/Home/Navbar";
 import VasaiRoadClientPage from "@/components/Locations/VasaiRoad/VasaiRaodClientPage";
 import type { Metadata } from "next";
 
@@ -12,5 +14,12 @@ export const metadata: Metadata = {
 };
 
 export default function VasaiRoadPage() {
-  return <VasaiRoadClientPage />;
+  return (
+     <>
+       <Navbar />
+         <VasaiRoadClientPage />
+       <Footer />
+     </>
+   );
+  
 }
