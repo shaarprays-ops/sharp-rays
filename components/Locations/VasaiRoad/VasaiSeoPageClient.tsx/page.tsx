@@ -604,6 +604,7 @@ export default function VasaiSEOPageClient() {
               <SoftLink href="/contact">Get Your Free SEO Audit</SoftLink>
               <Link
                 href="#vasai-seo-services"
+                title="Explore SEO Services in Vasai"
                 className="inline-flex items-center gap-2 rounded-full border border-[#DCCFBD] px-6 py-3.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#526477] transition hover:border-[#A88659] hover:text-[#A88659]"
               >
                 Explore Our SEO Services
@@ -846,6 +847,7 @@ export default function VasaiSEOPageClient() {
                       <div className="border-t border-[#EEE7DD] pt-5">
                         <Link
                           href={service.href}
+                          title={`Explore ${service.title} Services in Vasai`}
                           className="inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#26364A] transition-colors duration-300 hover:text-[#A88659]"
                         >
                           Explore {service.short}
@@ -1335,6 +1337,7 @@ export default function VasaiSEOPageClient() {
                 <SoftLink href="/contact">Discuss Your SEO Requirements</SoftLink>
                 <Link
                   href="/pricing"
+                  title="View all SEO pricing options"
                   className="inline-flex items-center gap-2 rounded-full border border-[#DCCFBD] px-6 py-3.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#526477] hover:border-[#A88659] hover:text-[#A88659]"
                 >
                   View All Pricing <ArrowUpRight size={14} />
@@ -1419,6 +1422,7 @@ export default function VasaiSEOPageClient() {
               </SoftLink>
               <Link
                 href="/pricing"
+                title="Explore Sharp Rays SEO Pricing Packages"
                 className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-white hover:text-[#26364A]"
               >
                 Explore SEO Pricing <ArrowUpRight size={14} />

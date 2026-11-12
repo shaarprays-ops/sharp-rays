@@ -355,7 +355,7 @@ export default function VasaiWebsiteDevelopmentPageClient() {
           <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {agencyServices.map(([title, copy, features, Icon, href]: any, i) => (
               <Reveal key={title} delay={(i % 3) * .04}>
-                <Link href={href} className={`group flex h-full flex-col rounded-[20px] border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_35px_rgba(45,55,65,.08)] ${accents[i % accents.length].card}`}>
+                <Link href={href} title={title} className={`group flex h-full flex-col rounded-[20px] border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_35px_rgba(45,55,65,.08)] ${accents[i % accents.length].card}`}>
                   <div className="flex items-center justify-between">
                     <span className={`rounded-xl p-3 ${accents[i % accents.length].icon}`}><Icon size={19} /></span>
                     <ArrowUpRight size={17} className="text-[#A47B4D] transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -373,7 +373,7 @@ export default function VasaiWebsiteDevelopmentPageClient() {
               <p className="text-[14px] font-semibold text-[#34465A]">Looking for something else?</p>
               <p className="mt-1 text-[12px] text-[#7B8794]">Explore the complete range of Sharp Rays digital services.</p>
             </div>
-            <Link href="/services" className="group inline-flex items-center gap-2 rounded-[14px] border border-[#6285AD]/30 bg-white/80 px-5 py-3 text-[12px] font-medium text-[#0B2A52] shadow-[0_8px_30px_rgba(11,42,82,.07)] transition hover:-translate-y-0.5 hover:shadow-lg">Explore All Services <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></Link>
+            <Link href="/services" title="Explore All Sharp Rays Services" className="group inline-flex items-center gap-2 rounded-[14px] border border-[#6285AD]/30 bg-white/80 px-5 py-3 text-[12px] font-medium text-[#0B2A52] shadow-[0_8px_30px_rgba(11,42,82,.07)] transition hover:-translate-y-0.5 hover:shadow-lg">Explore All Services <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></Link>
           </Reveal>
         </div>
       </section>
@@ -385,7 +385,7 @@ export default function VasaiWebsiteDevelopmentPageClient() {
           <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {industries.map(([title, copy, features, Icon, href]: any, i) => (
               <Reveal key={title} delay={(i % 3) * .04}>
-                <Link href={href} aria-label={`Explore ${title} industry solutions`} className={`group block h-full rounded-[19px] border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_35px_rgba(45,55,65,.09)] ${accents[i % accents.length].card}`}>
+                <Link href={href} title={`Explore ${title} Industry Solutions`} aria-label={`Explore ${title} industry solutions`} className={`group block h-full rounded-[19px] border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_35px_rgba(45,55,65,.09)] ${accents[i % accents.length].card}`}>
                   <div className="flex items-center justify-between">
                     <span className={`rounded-xl p-3 ${accents[i % accents.length].icon}`}><Icon size={19} /></span>
                     <ArrowUpRight size={17} className="text-[#A47B4D] transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -406,7 +406,7 @@ export default function VasaiWebsiteDevelopmentPageClient() {
               <p className="text-[14px] font-semibold text-[#34465A]">Explore all industries we help</p>
               <p className="mt-1 text-[12px] text-[#7B8794]">See how Sharp Rays supports businesses across different industries.</p>
             </div>
-            <Link href="/industries" className="group inline-flex items-center gap-2 rounded-[14px] border border-[#6285AD]/30 bg-white/80 px-5 py-3 text-[12px] font-medium text-[#0B2A52] shadow-[0_8px_30px_rgba(11,42,82,.07)] transition hover:-translate-y-0.5 hover:shadow-lg">Explore All Industries <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></Link>
+            <Link href="/industries" title="Explore All Industries Sharp Rays Serves" className="group inline-flex items-center gap-2 rounded-[14px] border border-[#6285AD]/30 bg-white/80 px-5 py-3 text-[12px] font-medium text-[#0B2A52] shadow-[0_8px_30px_rgba(11,42,82,.07)] transition hover:-translate-y-0.5 hover:shadow-lg">Explore All Industries <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></Link>
           </Reveal>
         </div>
       </section>
@@ -467,7 +467,7 @@ export default function VasaiWebsiteDevelopmentPageClient() {
             {[["Starter","₹14,999","An option for businesses looking to establish a professional online presence.","bg-[#EFF4F5] border-[#DCE7EA]",Globe2],["Growth","₹24,999","An option for businesses requiring a broader website structure and additional functionality.","bg-[#F7F0E8] border-[#EADCCB]",Layers3],["Advanced","₹39,999","An option for businesses with wider website requirements and more extensive functionality.","bg-[#F0F2EC] border-[#DDE5D5]",Rocket]].map(([name,price,copy,style,Icon]:any,i)=><Reveal key={name} delay={i*.06}><div className={`relative h-full rounded-[23px] border p-6 sm:p-7 ${style} ${i===1?"shadow-[0_15px_40px_rgba(45,55,65,.08)] md:-translate-y-2":""}`}><div className="flex items-center justify-between"><span className="rounded-xl bg-white/80 p-3 text-[#8C765D]"><Icon size={20}/></span>{i===1&&<span className="rounded-full bg-[#E9D9C5] px-3 py-1.5 text-[9px] font-bold uppercase tracking-wider text-[#8A6744]">Popular choice</span>}</div><p className="mt-6 text-[11px] font-semibold uppercase tracking-[.16em] text-[#778392]">{name}</p><p className="mt-2 font-serif text-[36px] tracking-[-.04em] text-[#26364A]">{price}</p><p className="mt-1 text-[10px] font-medium text-[#A47B4D]">Starting package</p><p className="mt-4 min-h-[48px] text-[12px] leading-[1.8] text-[#748092]">{copy}</p><div className="mt-6"><ButtonLink href="/contact?service=website-development">Discuss This Package</ButtonLink></div></div></Reveal>)}
           </div>
           <p className="mt-6 text-[11px] leading-6 text-[#8A9299]">For package inclusions, deliverables and applicable terms, explore our pricing page. Confirm the actual number of pages, features, integrations and support arrangements before selecting a package.</p>
-          <div className="mt-4"><Link href="/pricing" className="inline-flex items-center gap-2 text-[11px] font-bold text-[#9A754D] hover:text-[#26364A]">View all pricing <ArrowRight size={13}/></Link></div>
+          <div className="mt-4"><Link href="/pricing" title="View Sharp Rays Website Development Pricing" className="inline-flex items-center gap-2 text-[11px] font-bold text-[#9A754D] hover:text-[#26364A]">View all pricing <ArrowRight size={13}/></Link></div>
         </div>
       </section>
 

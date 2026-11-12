@@ -78,14 +78,24 @@ function SoftButton({
   href,
   children,
   secondary = false,
+  title,
 }: {
   href: string;
   children: ReactNode;
   secondary?: boolean;
+  title?: string;
 }) {
   return (
     <Link
       href={href}
+      title={
+        title ??
+        (href === "/pricing"
+          ? "View Sharp Rays Pricing and Social Media Marketing Plans"
+          : href === "/contact?service=social-media-marketing"
+            ? "Discuss Social Media Marketing with Sharp Rays"
+            : undefined)
+      }
       className={`group relative inline-flex min-h-[46px] items-center justify-center gap-2 overflow-hidden rounded-[15px] border px-5 py-[11px] text-[12px] font-medium tracking-[-.01em] transition-all duration-300 hover:-translate-y-[2px] active:translate-y-0 sm:min-h-[48px] sm:px-6 sm:text-[13px] ${
         secondary
           ? "border-[#D8E0E8] bg-white/80 text-[#17365B] shadow-[0_7px_25px_rgba(11,42,82,.055)] hover:border-[#9EB3C8] hover:bg-white hover:shadow-[0_10px_30px_rgba(98,133,173,.12)]"
@@ -280,7 +290,7 @@ export default function VasaiSocialMediaMarketingPageClient() {
       <section className="bg-[#F5F4F0] py-16 lg:py-20">
         <div className="mx-auto max-w-[1220px] px-5 sm:px-8">
           <Rise><Heading eyebrow="Industries We Help" title="Social media strategies for different business industries" copy="Every industry communicates differently. A retail store needs product-focused content, while a manufacturer needs to explain its capabilities and build professional credibility. Sharp Rays plans content around your business, audience and customer journey." /></Rise>
-          <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{industries.map(([t,c,ideas,I,href]:any,i)=><Rise key={t} delay={(i%3)*.035}><Link href={href} aria-label={`Explore ${t}`} className={`group block h-full rounded-[20px] border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_35px_rgba(45,55,65,.09)] ${palette[i%palette.length]}`}><div className="flex items-center justify-between"><span className={`inline-flex rounded-xl p-3 ${iconPalette[i%iconPalette.length]}`}><I size={19}/></span><ArrowUpRight size={16} className="text-[#A18A70] transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"/></div><h3 className="mt-4 text-[14px] font-semibold text-[#34465A]">{t}</h3><p className="mt-2 text-[11px] leading-[1.85] text-[#748294]">{c}</p><div className="mt-4 rounded-xl border border-white/80 bg-white/65 p-3"><p className="text-[9px] font-bold uppercase tracking-[.14em] text-[#A17D56]">Content opportunities</p><p className="mt-1.5 text-[10px] leading-[1.8] text-[#748294]">{ideas}</p></div><span className="mt-4 inline-flex items-center gap-2 text-[10px] font-semibold text-[#9B7954]">Explore industry <ArrowRight size={12} className="transition-transform group-hover:translate-x-1"/></span></Link></Rise>)}</div>
+          <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{industries.map(([t,c,ideas,I,href]:any,i)=><Rise key={t} delay={(i%3)*.035}><Link href={href} title={`Social Media Marketing for ${t} in Vasai`} aria-label={`Explore ${t}`} className={`group block h-full rounded-[20px] border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_35px_rgba(45,55,65,.09)] ${palette[i%palette.length]}`}><div className="flex items-center justify-between"><span className={`inline-flex rounded-xl p-3 ${iconPalette[i%iconPalette.length]}`}><I size={19}/></span><ArrowUpRight size={16} className="text-[#A18A70] transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"/></div><h3 className="mt-4 text-[14px] font-semibold text-[#34465A]">{t}</h3><p className="mt-2 text-[11px] leading-[1.85] text-[#748294]">{c}</p><div className="mt-4 rounded-xl border border-white/80 bg-white/65 p-3"><p className="text-[9px] font-bold uppercase tracking-[.14em] text-[#A17D56]">Content opportunities</p><p className="mt-1.5 text-[10px] leading-[1.8] text-[#748294]">{ideas}</p></div><span className="mt-4 inline-flex items-center gap-2 text-[10px] font-semibold text-[#9B7954]">Explore industry <ArrowRight size={12} className="transition-transform group-hover:translate-x-1"/></span></Link></Rise>)}</div>
           <Rise className="mt-7 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-[#E7E1D7] bg-white p-6"><div><p className="text-[14px] font-semibold text-[#34465A]">Looking for an industry-specific approach?</p><p className="mt-1 text-[12px] text-[#7B8794]">Tell us about your business and the audience you want to reach.</p></div><SoftButton href="/contact?service=social-media-marketing" secondary>Talk About Your Industry</SoftButton></Rise>
         </div>
       </section>
@@ -303,7 +313,7 @@ export default function VasaiSocialMediaMarketingPageClient() {
       {/* ALL SERVICES */}
       <section className="mx-auto max-w-[1220px] px-5 py-16 sm:px-8 lg:py-20">
         <Rise><Heading eyebrow="Explore Sharp Rays Services" title="Complete digital solutions to build and grow your online presence" copy="Social media is one part of your digital growth strategy. Sharp Rays offers a range of digital services to help businesses strengthen their online presence, attract relevant audiences and build stronger brand communication." /></Rise>
-        <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{allServices.map(([t,c,I,href]:any,i)=><Rise key={t} delay={(i%3)*.04}><Link href={href} className={`group block h-full rounded-[19px] border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${palette[i%palette.length]}`}><div className="flex items-center justify-between"><span className={`rounded-xl p-3 ${iconPalette[i%iconPalette.length]}`}><I size={19}/></span><ArrowUpRight size={16} className="text-[#A18A70] transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"/></div><h3 className="mt-4 text-[14px] font-semibold text-[#34465A]">{t}</h3><p className="mt-2 text-[11px] leading-[1.85] text-[#748294]">{c}</p><span className="mt-4 inline-flex items-center gap-2 text-[10px] font-semibold text-[#9B7954]">Explore service <ArrowRight size={12}/></span></Link></Rise>)}</div>
+        <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{allServices.map(([t,c,I,href]:any,i)=><Rise key={t} delay={(i%3)*.04}><Link href={href} title={`Explore ${t} Services at Sharp Rays`} className={`group block h-full rounded-[19px] border p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${palette[i%palette.length]}`}><div className="flex items-center justify-between"><span className={`rounded-xl p-3 ${iconPalette[i%iconPalette.length]}`}><I size={19}/></span><ArrowUpRight size={16} className="text-[#A18A70] transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"/></div><h3 className="mt-4 text-[14px] font-semibold text-[#34465A]">{t}</h3><p className="mt-2 text-[11px] leading-[1.85] text-[#748294]">{c}</p><span className="mt-4 inline-flex items-center gap-2 text-[10px] font-semibold text-[#9B7954]">Explore service <ArrowRight size={12}/></span></Link></Rise>)}</div>
         <Rise className="mt-7 flex flex-col items-start justify-between gap-4 rounded-2xl border border-[#E7E1D7] bg-white p-6 sm:flex-row sm:items-center"><div><p className="text-[14px] font-semibold text-[#34465A]">Looking for more than one service?</p><p className="mt-1 text-[12px] leading-6 text-[#7B8794]">Connect social media marketing with SEO, website development, content marketing and other digital solutions.</p></div><SoftButton href="/services" secondary>Explore All Services</SoftButton></Rise>
       </section>
 

@@ -37,17 +37,17 @@ const services = [
   { title: "AI-Powered Business Workflows", icon: BrainCircuit, line: "Use AI where a task involves interpreting information.", copy: "Explore AI-assisted processes for text, documents and structured business information where they offer practical value.", points: ["Text processing", "Information classification", "Content assistance workflows", "Document summarisation", "Data categorisation", "AI-assisted internal processes"], tone: "from-[#F0EAE5] to-[#FAF7F1]" },
 ];
 
-const industries = [
-  { name: "Beauty & Wellness", icon: Sparkles, intro: "For salons, spas, beauty professionals and wellness businesses.", items: ["Appointment enquiry organisation", "Booking notifications", "Customer enquiry handling", "Follow-up reminders", "Service information workflows", "Customer communication coordination"] },
-  { name: "Ecommerce", icon: ShoppingBag, intro: "For online stores, product brands and digital sellers.", items: ["Order information workflows", "Customer enquiry categorisation", "Product information organisation", "Order notification workflows", "Customer support assistance", "Internal task coordination"] },
-  { name: "Education", icon: GraduationCap, intro: "For schools, coaching classes, training institutes and educators.", items: ["Admission enquiry organisation", "Course enquiry workflows", "Student information processing", "Application notifications", "FAQ assistance", "Follow-up reminders"] },
-  { name: "Healthcare", icon: HeartPulse, intro: "For clinics, dental practices, diagnostic centres and healthcare providers.", items: ["Appointment enquiry organisation", "Administrative notifications", "General service information workflows", "Enquiry categorisation", "Internal task coordination", "Routine communication assistance"], note: "Healthcare automation requires particular attention to patient privacy, data security, applicable regulations and human oversight. Sensitive clinical decisions should not be delegated to unverified automated systems." },
-  { name: "Manufacturing", icon: Factory, intro: "For manufacturers, industrial suppliers, distributors and B2B businesses.", items: ["Product enquiry organisation", "RFQ information processing", "Lead management workflows", "Internal notification systems", "Document handling", "Sales enquiry coordination"] },
-  { name: "Professional Services", icon: BriefcaseBusiness, intro: "For consultants, agencies, financial professionals and service providers.", items: ["Consultation enquiry handling", "Lead organisation", "Client onboarding workflows", "Document processing", "Follow-up reminders", "Internal task management"] },
-  { name: "Real Estate", icon: Building2, intro: "For real estate agencies, builders, property consultants and construction businesses.", items: ["Property enquiry collection", "Lead categorisation", "Site visit enquiry coordination", "Follow-up reminders", "Property information workflows", "Customer communication notifications"] },
-  { name: "Restaurants", icon: UtensilsCrossed, intro: "For restaurants, cafes, bakeries, caterers and food businesses.", items: ["Reservation enquiry organisation", "Customer enquiry handling", "Order notification workflows", "Booking reminders", "Customer feedback collection", "Internal communication coordination"] },
-  { name: "Startups", icon: Rocket, intro: "For new businesses and growing brands looking to organise their operations.", items: ["Lead management", "Internal workflow coordination", "Customer onboarding", "Data organisation", "Routine reporting", "Marketing task automation"] },
-  { name: "Travel & Hospitality", icon: Plane, intro: "For travel operators, accommodation providers, tourism businesses and local experiences.", items: ["Booking enquiry organisation", "Travel enquiry categorisation", "Customer notifications", "Follow-up reminders", "Reservation information workflows", "Customer support assistance"] },
+const industries: { name: string; href: string; icon: IconType; intro: string; items: string[]; note?: string }[] = [
+  { name: "Beauty & Wellness", href: "/industries/beauty-wellness", icon: Sparkles, intro: "For salons, spas, beauty professionals and wellness businesses.", items: ["Appointment enquiry organisation", "Booking notifications", "Customer enquiry handling", "Follow-up reminders", "Service information workflows", "Customer communication coordination"] },
+  { name: "Ecommerce", href: "/industries/ecommerce", icon: ShoppingBag, intro: "For online stores, product brands and digital sellers.", items: ["Order information workflows", "Customer enquiry categorisation", "Product information organisation", "Order notification workflows", "Customer support assistance", "Internal task coordination"] },
+  { name: "Education", href: "/industries/education", icon: GraduationCap, intro: "For schools, coaching classes, training institutes and educators.", items: ["Admission enquiry organisation", "Course enquiry workflows", "Student information processing", "Application notifications", "FAQ assistance", "Follow-up reminders"] },
+  { name: "Healthcare", href: "/industries/healthcare", icon: HeartPulse, intro: "For clinics, dental practices, diagnostic centres and healthcare providers.", items: ["Appointment enquiry organisation", "Administrative notifications", "General service information workflows", "Enquiry categorisation", "Internal task coordination", "Routine communication assistance"], note: "Healthcare automation requires particular attention to patient privacy, data security, applicable regulations and human oversight. Sensitive clinical decisions should not be delegated to unverified automated systems." },
+  { name: "Manufacturing", href: "/industries/manufacturing", icon: Factory, intro: "For manufacturers, industrial suppliers, distributors and B2B businesses.", items: ["Product enquiry organisation", "RFQ information processing", "Lead management workflows", "Internal notification systems", "Document handling", "Sales enquiry coordination"] },
+  { name: "Professional Services", href: "/industries/professional-services", icon: BriefcaseBusiness, intro: "For consultants, agencies, financial professionals and service providers.", items: ["Consultation enquiry handling", "Lead organisation", "Client onboarding workflows", "Document processing", "Follow-up reminders", "Internal task management"] },
+  { name: "Real Estate", href: "/industries/real-estate", icon: Building2, intro: "For real estate agencies, builders, property consultants and construction businesses.", items: ["Property enquiry collection", "Lead categorisation", "Site visit enquiry coordination", "Follow-up reminders", "Property information workflows", "Customer communication notifications"] },
+  { name: "Restaurants", href: "/industries/restaurants", icon: UtensilsCrossed, intro: "For restaurants, cafes, bakeries, caterers and food businesses.", items: ["Reservation enquiry organisation", "Customer enquiry handling", "Order notification workflows", "Booking reminders", "Customer feedback collection", "Internal communication coordination"] },
+  { name: "Startups", href: "/industries/startups", icon: Rocket, intro: "For new businesses and growing brands looking to organise their operations.", items: ["Lead management", "Internal workflow coordination", "Customer onboarding", "Data organisation", "Routine reporting", "Marketing task automation"] },
+  { name: "Travel & Hospitality", href: "/industries/travel-hospitality", icon: Plane, intro: "For travel operators, accommodation providers, tourism businesses and local experiences.", items: ["Booking enquiry organisation", "Travel enquiry categorisation", "Customer notifications", "Follow-up reminders", "Reservation information workflows", "Customer support assistance"] },
 ];
 
 const areas = [
@@ -187,7 +187,7 @@ export default function VasaiAIAutomationPageClient() {
     <section className="px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
       <div className="mx-auto grid max-w-[1200px] gap-10 lg:grid-cols-[.72fr_1.28fr] lg:gap-20">
         <Reveal><Eyebrow>A practical starting point</Eyebrow><h2 className="mt-5 max-w-[410px] font-serif text-[35px] leading-[1.12] tracking-[-.04em] sm:text-[43px]">What does an AI automation agency in <span className="italic text-[#A88659]">Vasai</span> do?</h2></Reveal>
-        <Reveal delay={.08}><div className="border-l border-[#D9C8AE] pl-6 sm:pl-9"><p className="text-[16px] leading-[1.9] text-[#354B63]">An AI automation agency in Vasai helps businesses identify repetitive tasks and improve workflows using suitable automation tools and AI-assisted processes.</p><p className="mt-5 text-[13px] leading-[1.95] text-[#718092]">Sharp Rays focuses on practical automation opportunities such as enquiry handling, lead organisation, information processing and workflow coordination to help businesses reduce manual effort and manage everyday operations more efficiently.</p><div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">{["Understand the process","Find repetitive tasks","Keep human oversight"].map((x,i)=><div key={x} className="border-t border-[#D8C9B5] pt-3"><span className="font-serif text-[24px] text-[#A88659]">0{i+1}</span><p className="mt-1 text-[11px] text-[#52677D]">{x}</p></div>)}</div></div></Reveal>
+        <Reveal delay={.08}><div className="border-l border-[#D9C8AE] pl-6 sm:pl-9"><p className="text-[16px] leading-[1.9] text-[#354B63]">An AI automation agency in Vasai helps businesses identify repetitive tasks and improve workflows using suitable automation tools and AI-assisted processes.</p><p className="mt-5 text-[13px] leading-[1.95] text-[#718092]">Sharp Rays focuses on practical automation opportunities such as enquiry handling, lead organisation, information processing and workflow coordination to help businesses reduce manual effort and manage everyday operations more efficiently.</p><div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">{["Understand the process","Find repetitive tasks","Keep human oversight"].map((x,i)=><div key={x} className="border-t border-[#D8C9B5] pt-3"><p className="mt-1 text-[11px] text-[#52677D]">{x}</p></div>)}</div></div></Reveal>
       </div>
     </section>
 
@@ -211,10 +211,42 @@ export default function VasaiAIAutomationPageClient() {
       </div>
     </section>
 
-    {/* INDUSTRIES */}
+{/* INDUSTRIES */}
     <section className="bg-[#FAF8F5] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
-      <div className="mx-auto max-w-[1200px]"><Reveal><SectionTitle eyebrow="Industries we support" title={<>Automation shaped around your <span className="italic text-[#A88659]">industry.</span></>} copy="Every industry has different operational requirements. A retail business may need better enquiry organisation, while a manufacturer may need more structured handling of product enquiries and internal information."/></Reveal>
-        <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">{industries.map(({name,icon:Icon,intro,items,note},i)=><Reveal key={name} delay={(i%5)*.035}><article className="group flex h-full flex-col border border-[#E8E1D7] bg-white p-5 transition duration-300 hover:-translate-y-1 hover:border-[#A88659] hover:shadow-[0_18px_45px_-35px_rgba(18,40,71,.45)]"><div className="flex items-center justify-between"><Icon size={22} strokeWidth={1.25} className="text-[#A88659]"/><ArrowUpRight size={15} className="text-[#B8A78F] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5"/></div><h3 className="mt-7 font-serif text-[19px] leading-tight">{name}</h3><p className="mt-3 text-[11px] leading-[1.8] text-[#718092]">{intro}</p><p className="mt-4 text-[9px] font-semibold uppercase tracking-[.13em] text-[#9A7950]">Potential workflows</p><ul className="mt-2 space-y-2">{items.map(x=><li key={x} className="flex gap-2 text-[10px] leading-[1.65] text-[#617387]"><span className="mt-[6px] h-1 w-1 shrink-0 rounded-full bg-[#A88659]"/>{x}</li>)}</ul>{note&&<p className="mt-4 border-t border-[#EAE5DC] pt-3 text-[9px] leading-[1.7] text-[#8A949D]">{note}</p>}</article></Reveal>)}</div>
+      <div className="mx-auto max-w-[1200px]">
+        <Reveal>
+          <SectionTitle
+            eyebrow="Industries we support"
+            title={<>Automation shaped around your <span className="italic text-[#A88659]">industry.</span></>}
+            copy="Every industry has different operational requirements. A retail business may need better enquiry organisation, while a manufacturer may need more structured handling of product enquiries and internal information."
+          />
+        </Reveal>
+        <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+          {industries.map(({ name, href, icon: Icon, intro, items, note }, i) => (
+            <Reveal key={name} delay={(i % 5) * 0.035}>
+              <Link href={href} title={`Explore AI Automation for ${name}`} className="group block h-full">
+                <article className="flex h-full flex-col border border-[#E8E1D7] bg-white p-5 transition duration-300 hover:-translate-y-1 hover:border-[#A88659] hover:shadow-[0_18px_45px_-35px_rgba(18,40,71,.45)]">
+                  <div className="flex items-center justify-between">
+                    <Icon size={22} strokeWidth={1.25} className="text-[#A88659]" />
+                    <ArrowUpRight size={15} className="text-[#B8A78F] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </div>
+                  <h3 className="mt-7 font-serif text-[19px] leading-tight text-[#26364A]">{name}</h3>
+                  <p className="mt-3 text-[11px] leading-[1.8] text-[#718092]">{intro}</p>
+                  <p className="mt-4 text-[9px] font-semibold uppercase tracking-[.13em] text-[#9A7950]">Potential workflows</p>
+                  <ul className="mt-2 space-y-2">
+                    {items.map((item) => (
+                      <li key={item} className="flex gap-2 text-[10px] leading-[1.65] text-[#617387]">
+                        <span className="mt-[6px] h-1 w-1 shrink-0 rounded-full bg-[#A88659]" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  {note && <p className="mt-4 border-t border-[#EAE5DC] pt-3 text-[9px] leading-[1.7] text-[#8A949D]">{note}</p>}
+                </article>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
 
