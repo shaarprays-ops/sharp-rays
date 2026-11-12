@@ -5,7 +5,7 @@ import VasaiWebsiteDevelopmentPageClient from "@/components/Locations/VasaiRoad/
 import type { Metadata } from "next";
 
 const pageUrl =
-  "https://www.sharprays.com/locations/vasai-road/website-development";
+  "https://www.sharprays.com/locations/vasai-road/web-development-and-management";
 
 const ogImage =
   "https://www.sharprays.com/og/digital-marketing-agency-in-vasai-og.webp";
