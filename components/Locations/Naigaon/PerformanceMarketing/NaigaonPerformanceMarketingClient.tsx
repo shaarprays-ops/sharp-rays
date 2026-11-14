@@ -406,21 +406,24 @@ export default function NaigaonPerformanceMarketingClient() {
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/contact?service=performance-marketing"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#122847] px-7 py-4 text-sm font-semibold text-white transition hover:bg-[#1D3B61]"
-              >
-                Discuss Your Ad Campaign
-                <ArrowUpRight size={16} />
-              </Link>
+             <Link
+  href="/contact?service=performance-marketing"
+  title="Discuss Performance Marketing Services with Sharp Rays"
+  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#122847] px-7 py-4 text-sm font-semibold text-white transition hover:bg-[#1D3B61]"
+>
+  Discuss Your Ad Campaign
+  <ArrowUpRight size={16} />
+</Link>
+
 
               <Link
-                href="/pricing"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#122847]/15 bg-white px-7 py-4 text-sm font-semibold text-[#122847] transition hover:border-[#B79A72]"
-              >
-                Explore Pricing
-                <ArrowRight size={16} />
-              </Link>
+  href="/pricing"
+  title="Explore Sharp Rays Performance Marketing Pricing"
+  className="inline-flex items-center justify-center gap-2 rounded-full border border-[#122847]/15 bg-white px-7 py-4 text-sm font-semibold text-[#122847] transition hover:border-[#B79A72]"
+>
+  Explore Pricing
+  <ArrowRight size={16} />
+</Link>
             </div>
 
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-xs text-[#667085]">
@@ -978,13 +981,14 @@ export default function NaigaonPerformanceMarketingClient() {
               description="Paid media should be planned around your business, not a one-size-fits-all campaign template."
             />
 
-            <Link
-              href="/services/performance-marketing"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#122847] underline decoration-[#C6A77A] underline-offset-8 transition hover:text-[#A88659]"
-            >
-              Explore performance marketing services
-              <ArrowUpRight size={16} />
-            </Link>
+           <Link
+  href="/services/performance-marketing"
+  title="Explore Sharp Rays Performance Marketing Services"
+  className="inline-flex items-center gap-2 text-sm font-semibold text-[#122847] underline decoration-[#C6A77A] underline-offset-8 transition hover:text-[#A88659]"
+>
+  Explore performance marketing services
+  <ArrowUpRight size={16} />
+</Link>
           </Reveal>
 
           <div className="grid gap-4 sm:grid-cols-2">
@@ -1117,16 +1121,17 @@ export default function NaigaonPerformanceMarketingClient() {
             </ul>
 
             <Link
-              href="/pricing"
-              className={`mt-auto inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold transition ${
-                plan.featured
-                  ? "bg-[#C6A77A] text-[#122847] hover:bg-white"
-                  : "bg-[#122847] text-white hover:bg-[#1D3B61]"
-              }`}
-            >
-              View Package Details
-              <ArrowUpRight size={16} />
-            </Link>
+  href="/pricing"
+  title="View Sharp Rays Performance Marketing Package Details and Pricing"
+  className={`mt-auto inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold transition ${
+    plan.featured
+      ? "bg-[#C6A77A] text-[#122847] hover:bg-white"
+      : "bg-[#122847] text-white hover:bg-[#1D3B61]"
+  }`}
+>
+  View Package Details
+  <ArrowUpRight size={16} />
+</Link>
           </div>
         </Reveal>
       ))}
@@ -1137,12 +1142,13 @@ export default function NaigaonPerformanceMarketingClient() {
       separately to the advertising platforms. Prices are exclusive of
       applicable taxes. Professional shoots, UGC creators, advanced
       video production and additional scope are quoted separately.
-      <Link
-        href="/pricing"
-        className="ml-1 font-semibold text-[#122847] underline underline-offset-4"
-      >
-        View complete pricing details
-      </Link>
+     <Link
+  href="/pricing"
+  title="View Complete Sharp Rays Pricing Details"
+  className="ml-1 font-semibold text-[#122847] underline underline-offset-4"
+>
+  View complete pricing details
+</Link>
       .
     </p>
   </div>
@@ -1184,24 +1190,27 @@ export default function NaigaonPerformanceMarketingClient() {
               },
             ].map((item, index) => (
               <Reveal key={item.title} delay={index * 0.06}>
-                <Link
-                  href={item.href}
-                  className="group flex h-full flex-col rounded-2xl border border-[#E8E2D8] bg-white p-7 transition hover:-translate-y-1 hover:border-[#C6A77A]"
-                >
-                  <h3 className="text-xl font-medium">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 flex-1 text-sm leading-7 text-[#667085]">
-                    {item.copy}
-                  </p>
-                  <span className="mt-6 inline-flex items-center gap-2 text-xs font-semibold text-[#A88659]">
-                    Explore service
-                    <ArrowUpRight
-                      size={15}
-                      className="transition group-hover:translate-x-1 group-hover:-translate-y-1"
-                    />
-                  </span>
-                </Link>
+<Link
+  href={item.href}
+  title={`${item.title} Services in Naigaon | Sharp Rays`}
+  className="group flex h-full flex-col rounded-2xl border border-[#E8E2D8] bg-white p-7 transition hover:-translate-y-1 hover:border-[#C6A77A]"
+>
+  <h3 className="text-xl font-medium">
+    {item.title}
+  </h3>
+
+  <p className="mt-3 flex-1 text-sm leading-7 text-[#667085]">
+    {item.copy}
+  </p>
+
+  <span className="mt-6 inline-flex items-center gap-2 text-xs font-semibold text-[#A88659]">
+    Explore service
+    <ArrowUpRight
+      size={15}
+      className="transition group-hover:translate-x-1 group-hover:-translate-y-1"
+    />
+  </span>
+</Link>
               </Reveal>
             ))}
           </div>
@@ -1283,20 +1292,22 @@ export default function NaigaonPerformanceMarketingClient() {
 
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
-              href="/contact?service=performance-marketing"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#C6A77A] px-7 py-4 text-sm font-semibold text-[#122847] transition hover:bg-white"
-            >
-              Discuss Your Campaign
-              <ArrowUpRight size={16} />
-            </Link>
+  href="/contact?service=performance-marketing"
+  title="Discuss Your Performance Marketing Campaign with Sharp Rays"
+  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#C6A77A] px-7 py-4 text-sm font-semibold text-[#122847] transition hover:bg-white"
+>
+  Discuss Your Campaign
+  <ArrowUpRight size={16} />
+</Link>
 
             <Link
-              href="/locations/naigaon"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-7 py-4 text-sm font-semibold text-white transition hover:border-[#C6A77A] hover:text-[#C6A77A]"
-            >
-              Explore Naigaon Services
-              <ArrowDown size={16} />
-            </Link>
+  href="/locations/naigaon"
+  title="Explore All Digital Marketing Services in Naigaon"
+  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-7 py-4 text-sm font-semibold text-white transition hover:border-[#C6A77A] hover:text-[#C6A77A]"
+>
+  Explore Naigaon Services
+  <ArrowDown size={16} />
+</Link>
           </div>
 
           <p className="mt-7 text-xs text-white/40">

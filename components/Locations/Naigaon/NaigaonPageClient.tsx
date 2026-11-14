@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -112,8 +111,7 @@ function Heading({
 }
 
 /* =====================================================
-   ALL 9 SERVICES
-   First three are Sharp Rays' priority services.
+   ALL 6 SERVICES
 ===================================================== */
 
 type Service = {
@@ -132,42 +130,6 @@ type Service = {
 const services: Service[] = [
   {
     number: "01",
-    title: "Search Engine Optimization (SEO)",
-    headline: "Get Found When Potential Customers Are Searching.",
-    description:
-      "Improve organic search visibility through technical SEO, keyword research, on-page optimisation, local SEO and helpful website content.",
-    points: [
-      "Technical SEO and website audits",
-      "Keyword and search intent research",
-      "Local SEO and Google Business Profile",
-      "Content optimisation and reporting",
-    ],
-    best: "Organic visibility and relevant search enquiries.",
-    href: "/services/search-engine-optimization",
-    icon: Search,
-    accent: "#668A72",
-    tint: "#EDF4EE",
-  },
-  {
-    number: "02",
-    title: "Website Development & Management",
-    headline: "Build a Website That Supports Your Business Growth.",
-    description:
-      "Create responsive, accessible and SEO-conscious websites that communicate your services clearly and make customer enquiries easier.",
-    points: [
-      "Business websites and landing pages",
-      "UI/UX and responsive development",
-      "Technical SEO foundations",
-      "Website maintenance and performance",
-    ],
-    best: "Professional websites and better enquiry experiences.",
-    href: "/services/website-development",
-    icon: MonitorSmartphone,
-    accent: "#688AA6",
-    tint: "#EEF3F9",
-  },
-  {
-    number: "03",
     title: "Social Media Marketing",
     headline: "Build a Social Presence That Attracts the Right Audience.",
     description:
@@ -185,7 +147,25 @@ const services: Service[] = [
     tint: "#F7EFF1",
   },
   {
-    number: "04",
+    number: "02",
+    title: "Search Engine Optimization (SEO)",
+    headline: "Get Found When Potential Customers Are Searching.",
+    description:
+      "Improve organic search visibility through technical SEO, keyword research, on-page optimisation, local SEO and helpful website content.",
+    points: [
+      "Technical SEO and website audits",
+      "Keyword and search intent research",
+      "Local SEO and Google Business Profile",
+      "Content optimisation and reporting",
+    ],
+    best: "Organic visibility and relevant search enquiries.",
+    href: "/services/search-engine-optimization",
+    icon: Search,
+    accent: "#668A72",
+    tint: "#EDF4EE",
+  },
+  {
+    number: "03",
     title: "Performance Marketing / Paid Media",
     headline: "Reach Relevant Audiences With Measurable Campaigns.",
     description:
@@ -203,26 +183,26 @@ const services: Service[] = [
     tint: "#F8F0E5",
   },
   {
-    number: "05",
-    title: "Digital PR & Media Relations",
-    headline: "Build Brand Credibility Beyond Your Own Channels.",
+    number: "04",
+    title: "Website Development & Management",
+    headline: "Build a Website That Supports Your Business Growth.",
     description:
-      "Develop a stronger public brand presence through digital PR planning, media research, press materials and relevant communication.",
+      "Create responsive, accessible and SEO-conscious websites that communicate your services clearly and make customer enquiries easier.",
     points: [
-      "Digital PR positioning",
-      "Media research and outreach planning",
-      "Press materials and brand storytelling",
-      "Online brand mention monitoring",
+      "Business websites and landing pages",
+      "UI/UX and responsive development",
+      "Technical SEO foundations",
+      "Website maintenance and performance",
     ],
-    best: "Brand visibility, reputation and credibility.",
-    href: "/services/digital-pr-media-relations",
-    icon: Newspaper,
-    accent: "#A68563",
-    tint: "#F6F0E9",
+    best: "Professional websites and better enquiry experiences.",
+    href: "/services/website-development",
+    icon: MonitorSmartphone,
+    accent: "#688AA6",
+    tint: "#EEF3F9",
   },
   {
-    number: "06",
-    title: "AI Video & Creative",
+    number: "05",
+    title: "AI Video and Creative",
     headline: "Turn Creative Ideas Into Engaging Digital Content.",
     description:
       "Explore AI-assisted visual concepts, storyboarding and promotional creative assets for digital campaigns and social platforms.",
@@ -239,43 +219,7 @@ const services: Service[] = [
     tint: "#F1EEFA",
   },
   {
-    number: "07",
-    title: "Professional Video Editing",
-    headline: "Make Every Video Clearer and Ready to Publish.",
-    description:
-      "Transform raw footage into polished video content with thoughtful pacing, captions, transitions and professional finishing.",
-    points: [
-      "Instagram Reels and YouTube Shorts",
-      "Promotional video editing",
-      "Captions, transitions and graphics",
-      "Colour and audio finishing",
-    ],
-    best: "Professional, platform-ready video content.",
-    href: "/services/video-editing",
-    icon: Film,
-    accent: "#7C85AE",
-    tint: "#EEF1F8",
-  },
-  {
-    number: "08",
-    title: "Content Marketing",
-    headline: "Create Content That Helps Customers Make Decisions.",
-    description:
-      "Plan useful website and marketing content that answers audience questions, communicates expertise and supports organic discovery.",
-    points: [
-      "SEO articles and topic planning",
-      "Website and landing page copy",
-      "Service and industry content",
-      "Content optimisation and internal linking",
-    ],
-    best: "Organic discovery and long-term content value.",
-    href: "/services/content-marketing",
-    icon: BookOpen,
-    accent: "#9D8564",
-    tint: "#F7F2E9",
-  },
-  {
-    number: "09",
+    number: "06",
     title: "AI Automation",
     headline: "Spend Less Time on Repetitive Business Tasks.",
     description:
@@ -626,7 +570,11 @@ export default function NaigaonPageClient() {
                     <span className="text-[10px] uppercase tracking-[0.2em] text-[#927B60]">
                       Sharp Rays / Naigaon
                     </span>
-                    <MapPin size={22} strokeWidth={1.3} className="text-[#A38561]" />
+                    <MapPin
+                      size={22}
+                      strokeWidth={1.3}
+                      className="text-[#A38561]"
+                    />
                   </div>
 
                   <div className="relative">
@@ -740,6 +688,7 @@ export default function NaigaonPageClient() {
             <div className="mt-8">
               <Link
                 href="/locations"
+                title="Explore All Sharp Rays Service Locations"
                 className="inline-flex items-center gap-2 text-[12px] font-medium text-[#A18461] hover:text-[#0B2A52]"
               >
                 Explore All Locations
@@ -781,7 +730,11 @@ export default function NaigaonPageClient() {
                       i === 0 || i === 3 ? "bg-[#FCFAF7]" : "bg-[#F6F3ED]"
                     }`}
                   >
-                    <Icon size={25} strokeWidth={1.4} className="text-[#B79A72]" />
+                    <Icon
+                      size={25}
+                      strokeWidth={1.4}
+                      className="text-[#B79A72]"
+                    />
                     <h3 className="mt-7 font-[var(--font-new-york)] text-[22px]">
                       {item.title}
                     </h3>
@@ -797,7 +750,7 @@ export default function NaigaonPageClient() {
       </section>
 
       {/* =================================================
-          03. ALL 9 SERVICES
+          03. OUR 6 SERVICES
       ================================================= */}
 
       <section
@@ -807,7 +760,7 @@ export default function NaigaonPageClient() {
       >
         <div className="mx-auto max-w-[1220px]">
           <Rise className="mx-auto max-w-[820px] text-center">
-            <Eyebrow center>Our Digital Marketing Services</Eyebrow>
+            <Eyebrow center>Our Services</Eyebrow>
 
             <Heading center id="naigaon-services-heading">
               Digital Marketing Services in{" "}
@@ -815,181 +768,84 @@ export default function NaigaonPageClient() {
             </Heading>
 
             <p className="mx-auto mt-5 max-w-[720px] text-[13px] leading-[1.95] text-[#708092]">
-              From search engine optimisation and website development
-              to creative campaigns and automation, explore the
-              digital services available through Sharp Rays.
+              From social media marketing and SEO to website development,
+              performance marketing, AI video and automation, explore the
+              services Sharp Rays offers to support your business growth.
             </p>
           </Rise>
 
-          <div className="mt-12 space-y-5 lg:mt-16">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3">
             {services.map((service, index) => {
               const Icon = service.icon;
-              const reverse = index % 2 === 1;
 
               return (
-                <Rise key={service.number}>
-                  <article className="group overflow-hidden rounded-[18px] border border-[#E9E0D5] bg-white">
-                    <div className={`grid lg:grid-cols-[0.30fr_0.70fr]`}>
+                <Rise key={service.number} delay={(index % 3) * 0.06}>
+                  <article className="group flex h-full flex-col overflow-hidden rounded-[18px] border border-[#E9E0D5] bg-white transition duration-300 hover:-translate-y-1 hover:border-[#D7C3A9] hover:shadow-[0_18px_45px_-30px_rgba(11,42,82,0.25)]">
+                    <div
+                      className="relative flex min-h-[155px] items-center justify-center overflow-hidden"
+                      style={{ backgroundColor: service.tint }}
+                    >
+                      <div className="absolute inset-5 rounded-[14px] border border-current opacity-10" />
+
                       <div
-                        className="relative flex min-h-[190px] items-center justify-center overflow-hidden p-8 sm:min-h-[230px]"
-                        style={{ backgroundColor: service.tint }}
+                        className="relative flex h-[76px] w-[76px] items-center justify-center rounded-[22px] border bg-white/85 shadow-sm transition duration-300 group-hover:scale-105"
+                        style={{
+                          color: service.accent,
+                          borderColor: `${service.accent}40`,
+                        }}
                       >
-                        <div className="absolute inset-5 rounded-[14px] border border-current opacity-10" />
-
-                        <div
-                          className="relative flex h-24 w-24 items-center justify-center rounded-[25px] border bg-white/80 shadow-sm transition duration-300 group-hover:scale-105"
-                          style={{
-                            color: service.accent,
-                            borderColor: `${service.accent}40`,
-                          }}
-                        >
-                          <Icon size={42} strokeWidth={1.1} />
-                        </div>
-
-                        <span className="absolute bottom-5 left-6 text-[10px] uppercase tracking-[0.17em] text-[#927B60]">
-                          {service.number} / 09
-                        </span>
+                        <Icon size={34} strokeWidth={1.2} />
                       </div>
 
-                      <div className="flex flex-col p-6 sm:p-9 lg:p-10">
-                        <span
-                          className="text-[10px] font-medium uppercase tracking-[0.16em]"
-                          style={{ color: service.accent }}
-                        >
-                          Sharp Rays / Digital Services
-                        </span>
-
-                        <h3 className="mt-3 font-[var(--font-new-york)] text-[26px] leading-[1.2] sm:text-[32px]">
-                          {service.title}
-                        </h3>
-
-                        <p className="mt-3 font-[var(--font-new-york)] text-[18px] leading-[1.45] text-[#A18461]">
-                          {service.headline}
-                        </p>
-
-                        <p className="mt-4 max-w-[680px] text-[12px] leading-[1.95] text-[#718092] sm:text-[13px]">
-                          {service.description}
-                        </p>
-
-                        <div className="mt-6 grid gap-x-5 gap-y-3 sm:grid-cols-2">
-                          {service.points.map((point) => (
-                            <div
-                              key={point}
-                              className="flex items-start gap-2 text-[11px] leading-[1.8] text-[#536A7D]"
-                            >
-                              <Check
-                                size={14}
-                                className="mt-0.5 shrink-0"
-                                style={{ color: service.accent }}
-                              />
-                              {point}
-                            </div>
-                          ))}
-                        </div>
-
-                        <div className="mt-7 flex flex-col gap-4 border-t border-[#E8E0D6] pt-5 sm:flex-row sm:items-center sm:justify-between">
-                          <p className="text-[11px] leading-[1.7] text-[#7E8C98]">
-                            <span className="font-medium text-[#0B2A52]">
-                              Suitable for:
-                            </span>{" "}
-                            {service.best}
-                          </p>
-
-                          <Link
-                            href={service.href}
-                            title={`Explore ${service.title} by Sharp Rays`}
-                            className="inline-flex shrink-0 items-center gap-2 text-[12px] font-medium text-[#A18461] transition hover:text-[#0B2A52]"
-                          >
-                            Explore Service
-                            <ArrowUpRight size={16} />
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </Rise>
-              );
-            })}
-          </div>
-
-          <Rise>
-            <div className="mt-10 flex flex-col items-start justify-between gap-5 border-t border-[#E0D4C4] pt-8 sm:flex-row sm:items-center">
-              <p className="font-[var(--font-new-york)] text-[22px]">
-                Not sure which service fits your business?
-              </p>
-
-              <Link
-                href="/contact?source=naigaon-services"
-                className="inline-flex items-center gap-2 text-[12px] font-medium text-[#A18461]"
-              >
-                Discuss Your Requirements
-                <ArrowUpRight size={16} />
-              </Link>
-            </div>
-          </Rise>
-        </div>
-      </section>
-
-      {/* =================================================
-          04. ALL 10 INDUSTRIES
-      ================================================= */}
-
-      <section
-        className="bg-white px-5 py-20 sm:px-8 lg:py-28"
-        aria-labelledby="naigaon-industries-heading"
-      >
-        <div className="mx-auto max-w-[1220px]">
-          <Rise className="mx-auto max-w-[820px] text-center">
-            <Eyebrow center>Industries We Help</Eyebrow>
-
-            <Heading center id="naigaon-industries-heading">
-              Digital Marketing Solutions for{" "}
-              <span className="text-[#B79A72]">
-                Different Industries.
-              </span>
-            </Heading>
-
-            <p className="mx-auto mt-5 max-w-[720px] text-[13px] leading-[1.95] text-[#708092]">
-              Every industry has different audiences, customer
-              journeys and business objectives. Sharp Rays brings
-              together website development, SEO, social media,
-              creative and digital marketing solutions to address
-              different business requirements.
-            </p>
-          </Rise>
-
-          <div className="mt-12 grid gap-px overflow-hidden rounded-[18px] border border-[#E8DFD2] bg-[#E8DFD2] sm:grid-cols-2 lg:grid-cols-5">
-            {industries.map((industry, index) => {
-              const Icon = industry.icon;
-
-              return (
-                <Rise
-                  key={industry.number}
-                  delay={(index % 5) * 0.045}
-                  className="h-full"
-                >
-                  <article className="group flex h-full min-h-[215px] flex-col bg-[#FCFAF7] p-5 transition-colors duration-300 hover:bg-[#F5EFE6] sm:p-6">
-                    <div className="flex items-start justify-between">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#E4D6C5] bg-white text-[#B79A72] transition-transform duration-300 group-hover:scale-105">
-                        <Icon size={21} strokeWidth={1.4} />
-                      </div>
-
-                      <span className="font-[var(--font-new-york)] text-[13px] text-[#B79A72]">
-                        {industry.number}
+                      <span className="absolute bottom-4 left-5 text-[10px] uppercase tracking-[0.17em] text-[#927B60]">
+                        {service.number} / 06
                       </span>
                     </div>
 
-                    <h3 className="mt-7 font-[var(--font-new-york)] text-[20px] leading-[1.3] text-[#0B2A52]">
-                      {industry.name}
-                    </h3>
+                    <div className="flex flex-1 flex-col p-6 sm:p-7">
+                      <span
+                        className="text-[9px] font-medium uppercase tracking-[0.16em]"
+                        style={{ color: service.accent }}
+                      >
+                        Sharp Rays / Digital Services
+                      </span>
 
-                    <p className="mt-3 flex-1 text-[11px] leading-[1.9] text-[#718092]">
-                      {industry.description}
-                    </p>
+                      <h3 className="mt-3 font-[var(--font-new-york)] text-[22px] leading-[1.3] text-[#0B2A52]">
+                        {service.title}
+                      </h3>
 
-                    <div className="mt-5 flex items-center gap-2 border-t border-[#E6DACD] pt-4 text-[9px] uppercase tracking-[0.13em] text-[#A18461]">
-                      <span className="h-1 w-1 rounded-full bg-[#B79A72]" />
-                      Industry Solutions
+                      <p className="mt-3 font-[var(--font-new-york)] text-[16px] leading-[1.5] text-[#A18461]">
+                        {service.headline}
+                      </p>
+
+                      <p className="mt-4 text-[12px] leading-[1.9] text-[#718092]">
+                        {service.description}
+                      </p>
+
+                      <div className="mt-5 grid gap-3 border-t border-[#EEE6DC] pt-5">
+                        {service.points.map((point) => (
+                          <div
+                            key={point}
+                            className="flex items-start gap-2 text-[11px] leading-[1.8] text-[#536A7D]"
+                          >
+                            <Check
+                              size={14}
+                              className="mt-0.5 shrink-0"
+                              style={{ color: service.accent }}
+                            />
+                            {point}
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="mt-auto mt-6 border-t border-[#EEE6DC] pt-5">
+                        <p className="text-[11px] leading-[1.8] text-[#7E8C98]">
+                          <span className="font-medium text-[#0B2A52]">
+                            Suitable for:
+                          </span>{" "}
+                          {service.best}
+                        </p>
+                      </div>
                     </div>
                   </article>
                 </Rise>
@@ -998,20 +854,17 @@ export default function NaigaonPageClient() {
           </div>
 
           <Rise>
-            <div className="mt-9 flex flex-col items-center justify-between gap-5 border-t border-[#E8DED2] pt-7 text-center sm:flex-row sm:text-left">
-              <p className="max-w-[650px] text-[12px] leading-[1.9] text-[#718092]">
-                Looking for a digital solution for your industry?
-                Let's understand your business requirements and
-                identify the services that make sense for your goals.
-              </p>
-
+            <div className="mt-12 flex justify-center">
               <Link
-                href="/contact?source=naigaon-industries"
-                title="Discuss Digital Marketing Solutions for Your Industry"
-                className="inline-flex shrink-0 items-center gap-2 text-[12px] font-medium text-[#A18461] transition hover:text-[#0B2A52]"
+                href="/services"
+                title="Explore All Sharp Rays Services"
+                className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-xl bg-[#0B2A52] px-8 text-[12px] font-medium text-white transition duration-300 hover:bg-[#163D69]"
               >
-                Discuss Your Requirements
-                <ArrowUpRight size={16} />
+                Explore All Services
+                <ArrowUpRight
+                  size={16}
+                  className="transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                />
               </Link>
             </div>
           </Rise>
@@ -1280,6 +1133,7 @@ export default function NaigaonPageClient() {
                     <Link
                       key={item.href}
                       href={item.href}
+                      title={`Explore ${item.name} services from Sharp Rays`}
                       className="group flex items-center justify-between gap-3 border-b border-[#EEE6DC] pb-4 text-[12px] text-[#536A7D] transition hover:text-[#A18461]"
                     >
                       {item.name}
@@ -1317,6 +1171,7 @@ export default function NaigaonPageClient() {
                     <Link
                       key={item.href}
                       href={item.href}
+                      title={`Explore ${item.name} with Sharp Rays`}
                       className="group flex items-center justify-between gap-3 border-b border-[#EEE6DC] pb-4 text-[12px] text-[#536A7D] transition hover:text-[#A18461]"
                     >
                       {item.name}
@@ -1333,6 +1188,7 @@ export default function NaigaonPageClient() {
         </div>
       </section>
 
+   
       {/* =================================================
           09. FAQ
       ================================================= */}
@@ -1365,8 +1221,8 @@ export default function NaigaonPageClient() {
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
-                  <div>
-                    <h3 className="font-[var(--font-new-york)] text-[19px] leading-[1.4] sm:text-[21px]">
+                  <div className="min-w-0">
+                    <h3 className="font-[var(--font-new-york)] text-[19px] leading-[1.4] text-[#122847] sm:text-[21px]">
                       {faq.question}
                     </h3>
 
@@ -1380,6 +1236,7 @@ export default function NaigaonPageClient() {
           </div>
         </div>
       </section>
+
 
       {/* =================================================
           10. FINAL CTA
@@ -1453,7 +1310,7 @@ export default function NaigaonPageClient() {
                       className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[#D9C6AE] bg-white px-5 text-[12px] transition hover:border-[#B79A72]"
                     >
                       Contact Sharp Rays
-                      <ArrowRight size={16} className="text-[#B79A72]" />
+                      <ArrowRight size={16} className="text-[#B79A72}" />
                     </Link>
                   </div>
                 </div>

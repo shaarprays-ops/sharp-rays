@@ -397,17 +397,19 @@ export default function NaigaonWebDevClient() {
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/contact?source=naigaon-website-development"
-                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#122847] px-7 py-4 text-sm font-semibold text-white transition hover:bg-[#A88659]"
-              >
+             <Link
+  href="/contact?source=naigaon-website-development"
+  title="Discuss Website Design and Development in Naigaon with Sharp Rays"
+  className="inline-flex items-center justify-center gap-3 rounded-full bg-[#122847] px-7 py-4 text-sm font-semibold text-white transition hover:bg-[#A88659]"
+>
                 Discuss Your Website <ArrowUpRight size={17} />
               </Link>
 
               <Link
-                href="/services/website-development"
-                className="inline-flex items-center justify-center gap-3 rounded-full border border-[#122847]/15 bg-white px-7 py-4 text-sm font-medium text-[#122847] transition hover:border-[#A88659] hover:bg-[#F2F0EA]"
-              >
+  href="/services/website-development"
+  title="Explore Website Development Services by Sharp Rays"
+  className="inline-flex items-center gap-2 text-sm font-semibold text-[#122847] transition hover:text-[#A88659]"
+>
                 Explore Website Services <ArrowRight size={16} />
               </Link>
             </div>
@@ -601,10 +603,11 @@ export default function NaigaonWebDevClient() {
           </div>
 
           <div className="mt-10 text-center">
-            <Link
-              href="/services/website-development"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#122847] transition hover:text-[#A88659]"
-            >
+           <Link
+  href="/services/website-development"
+  title="Explore Website Development Services by Sharp Rays"
+  className="inline-flex items-center gap-2 text-sm font-semibold text-[#122847] transition hover:text-[#A88659]"
+>
               Explore our website development service
               <ArrowUpRight size={16} />
             </Link>
@@ -773,10 +776,11 @@ export default function NaigaonWebDevClient() {
               description="A website should look good, work across devices and provide a clear experience. Development decisions affect how visitors interact with your business online."
             />
 
-            <Link
-              href="/services/website-development"
-              className="inline-flex items-center gap-2 rounded-full bg-[#122847] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#A88659]"
-            >
+           <Link
+  href="/services/website-development"
+  title="Explore Sharp Rays Website Development Services"
+  className="inline-flex items-center justify-center gap-3 rounded-full border border-[#122847]/15 bg-white px-7 py-4 text-sm font-medium text-[#122847] transition hover:border-[#A88659] hover:bg-[#F2F0EA]"
+>
               Explore website development
               <ArrowUpRight size={16} />
             </Link>
@@ -913,10 +917,11 @@ export default function NaigaonWebDevClient() {
               description="Before choosing layouts or functionality, it is important to understand what your visitors need and what the website should help your business achieve."
             />
 
-            <Link
-              href="/contact?source=naigaon-website-planning"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#122847] transition hover:text-[#A88659]"
-            >
+           <Link
+  href="/contact?source=naigaon-website-planning"
+  title="Discuss Your Website Planning and Development Requirements with Sharp Rays"
+  className="inline-flex items-center gap-2 text-sm font-semibold text-[#122847] transition hover:text-[#A88659]"
+>
               Discuss your requirements
               <ArrowUpRight size={16} />
             </Link>
@@ -1016,9 +1021,10 @@ export default function NaigaonWebDevClient() {
           </ul>
 
           <Link
-            href="/pricing"
-            className="mt-9 flex items-center justify-center gap-2 rounded-full bg-[#122847] px-5 py-4 text-sm font-semibold text-white transition hover:bg-[#1C3B63]"
-          >
+  href="/pricing"
+  title="View Growth Website Development Package Pricing by Sharp Rays"
+  className="mt-9 flex items-center justify-center gap-2 rounded-full bg-[#C6A77A] px-5 py-4 text-sm font-semibold text-[#122847] transition hover:bg-[#D5B98F]"
+>
 View Package Details <ArrowUpRight size={17} />
           </Link>
         </div>
@@ -1055,9 +1061,10 @@ View Package Details <ArrowUpRight size={17} />
           </ul>
 
           <Link
-            href="/pricing"
-            className="mt-9 flex items-center justify-center gap-2 rounded-full bg-[#C6A77A] px-5 py-4 text-sm font-semibold text-[#122847] transition hover:bg-[#D5B98F]"
-          >
+  href="/pricing"
+  title="View Growth Website Development Package Pricing by Sharp Rays"
+  className="mt-9 flex items-center justify-center gap-2 rounded-full bg-[#C6A77A] px-5 py-4 text-sm font-semibold text-[#122847] transition hover:bg-[#D5B98F]"
+>
             View Package Details <ArrowUpRight size={17} />
           </Link>
         </div>
@@ -1088,10 +1095,11 @@ View Package Details <ArrowUpRight size={17} />
             ))}
           </ul>
 
-          <Link
-            href="/pricing"
-            className="mt-9 flex items-center justify-center gap-2 rounded-full bg-[#122847] px-5 py-4 text-sm font-semibold text-white transition hover:bg-[#1C3B63]"
-          >
+         <Link
+  href="/pricing"
+  title="View Scale Website Development Package Pricing by Sharp Rays"
+  className="mt-9 flex items-center justify-center gap-2 rounded-full bg-[#122847] px-5 py-4 text-sm font-semibold text-white transition hover:bg-[#1C3B63]"
+>
             View Package Details <ArrowUpRight size={16} />
           </Link>
         </div>
@@ -1103,9 +1111,10 @@ View Package Details <ArrowUpRight size={17} />
       Final scope and package suitability will be confirmed based on your
       website requirements. See our{" "}
       <Link
-        href="/pricing"
-        className="font-semibold text-[#122847] underline underline-offset-4"
-      >
+  href="/pricing"
+  title="View Complete Website Development Pricing and Packages by Sharp Rays"
+  className="font-semibold text-[#122847] underline underline-offset-4"
+>
         pricing page
       </Link>{" "}
       for more details.
@@ -1188,18 +1197,20 @@ View Package Details <ArrowUpRight size={17} />
           </p>
 
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link
-              href="/contact?source=naigaon-website-final"
-              className="inline-flex items-center justify-center gap-3 rounded-full bg-[#C6A77A] px-8 py-4 text-sm font-semibold text-[#122847] transition hover:bg-white"
-            >
+           <Link
+  href="/contact?source=naigaon-website-final"
+  title="Start Your Website Development Project with Sharp Rays in Naigaon"
+  className="inline-flex items-center justify-center gap-3 rounded-full bg-[#C6A77A] px-8 py-4 text-sm font-semibold text-[#122847] transition hover:bg-white"
+>
               Discuss Your Project
               <ArrowUpRight size={17} />
             </Link>
 
-            <Link
-              href="/locations/naigaon"
-              className="inline-flex items-center justify-center gap-3 rounded-full border border-white/25 px-8 py-4 text-sm font-medium text-white transition hover:bg-white/10"
-            >
+         <Link
+  href="/locations/naigaon"
+  title="Explore Digital Marketing and Website Development Services in Naigaon"
+  className="inline-flex items-center justify-center gap-3 rounded-full border border-white/25 px-8 py-4 text-sm font-medium text-white transition hover:bg-white/10"
+>
               Explore Naigaon Services
               <ArrowRight size={16} />
             </Link>
