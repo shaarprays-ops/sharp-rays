@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -492,6 +491,7 @@ export default function NaigaonAIAutomationClient() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/contact?service=ai-automation"
+                title="Discuss Your AI Automation Project with Sharp Rays"
                 className="inline-flex items-center justify-center gap-3 rounded-full bg-[#122847] px-7 py-4 text-sm font-semibold text-white transition hover:bg-[#203B5D]"
               >
                 Discuss Your Workflow
@@ -500,6 +500,7 @@ export default function NaigaonAIAutomationClient() {
 
               <Link
                 href="/services/ai-automation"
+                title="Explore Sharp Rays AI Automation Services"
                 className="inline-flex items-center justify-center gap-3 rounded-full border border-[#D8CBB9] bg-white px-7 py-4 text-sm font-medium text-[#122847] transition hover:border-[#B79A72]"
               >
                 Explore AI Automation
@@ -927,8 +928,7 @@ export default function NaigaonAIAutomationClient() {
           </Reveal>
         </div>
       </section>
-
-      {/* 07 — OUR PROCESS */}
+            {/* 07 — OUR PROCESS */}
 
       <section className="bg-[#FCFAF7] px-5 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto max-w-[1220px]">
@@ -1132,6 +1132,7 @@ export default function NaigaonAIAutomationClient() {
 
                   <Link
                     href="/pricing"
+                    title="View Sharp Rays AI Automation Pricing"
                     className={`mt-8 flex items-center justify-center gap-3 rounded-full px-5 py-4 text-[10px] font-semibold uppercase tracking-[0.14em] transition ${
                       plan.featured
                         ? "bg-[#C6A77A] text-[#122847] hover:bg-white"
@@ -1226,6 +1227,7 @@ export default function NaigaonAIAutomationClient() {
               <Link
                 key={label}
                 href={href}
+                title={`Explore ${label} Services by Sharp Rays`}
                 className="group flex items-center justify-between rounded-2xl border border-[#E5DDD3] bg-white p-5 text-sm text-[#122847] transition hover:-translate-y-1 hover:border-[#B79A72] hover:shadow-md"
               >
                 <span>{label}</span>
@@ -1241,6 +1243,7 @@ export default function NaigaonAIAutomationClient() {
           <div className="mt-7">
             <Link
               href="/locations/naigaon"
+              title="Explore Digital Marketing Services in Naigaon"
               className="inline-flex items-center gap-2 text-xs font-semibold text-[#8D704C] hover:text-[#122847]"
             >
               Explore all services for Naigaon
@@ -1249,8 +1252,7 @@ export default function NaigaonAIAutomationClient() {
           </div>
         </div>
       </section>
-
-      {/* 11 — FAQ */}
+            {/* 11 — FAQ */}
 
       <section
         className="bg-[#FCFAF7] px-5 py-20 sm:px-8 lg:py-28"
@@ -1329,6 +1331,7 @@ export default function NaigaonAIAutomationClient() {
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
               href="/contact?service=ai-automation"
+              title="Start an AI Automation Project with Sharp Rays"
               className="inline-flex items-center justify-center gap-3 rounded-full bg-[#C6A77A] px-8 py-4 text-sm font-semibold text-[#122847] transition hover:bg-white"
             >
               Discuss Your Automation Project
@@ -1337,6 +1340,7 @@ export default function NaigaonAIAutomationClient() {
 
             <Link
               href="/locations/naigaon"
+              title="Explore Digital Marketing Services in Naigaon"
               className="inline-flex items-center justify-center gap-3 rounded-full border border-white/25 px-8 py-4 text-sm font-medium text-white transition hover:bg-white/10"
             >
               Explore Naigaon Services

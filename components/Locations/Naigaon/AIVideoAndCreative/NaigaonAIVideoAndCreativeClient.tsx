@@ -376,18 +376,20 @@ export default function NaigaonAIVideoAndCreativeClient() {
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/contact?source=naigaon-ai-video-and-creative"
-                className="inline-flex items-center justify-center gap-3 rounded-full bg-[#122847] px-7 py-4 text-sm font-semibold text-white transition hover:bg-[#A88659]"
-              >
-                Discuss Your Creative Project <ArrowUpRight size={17} />
-              </Link>
+  href="/contact?source=naigaon-ai-video-and-creative"
+  title="Discuss Your AI Video and Creative Project with Sharp Rays"
+  className="inline-flex items-center justify-center gap-3 rounded-full bg-[#122847] px-7 py-4 text-sm font-semibold text-white transition hover:bg-[#A88659]"
+>
+  Discuss Your Creative Project <ArrowUpRight size={17} />
+</Link>
 
               <Link
-                href="/services/ai-video-and-creative"
-                className="inline-flex items-center justify-center gap-3 rounded-full border border-[#122847]/15 bg-white px-7 py-4 text-sm font-medium text-[#122847] transition hover:border-[#A88659] hover:bg-[#F2F0EA]"
-              >
-                Explore AI Video Services <ArrowRight size={16} />
-              </Link>
+  href="/services/ai-video-and-creative"
+  title="Explore Sharp Rays AI Video and Creative Services"
+  className="inline-flex items-center justify-center gap-3 rounded-full border border-[#122847]/15 bg-white px-7 py-4 text-sm font-medium text-[#122847] transition hover:border-[#A88659] hover:bg-[#F2F0EA]"
+>
+  Explore AI Video Services <ArrowRight size={16} />
+</Link>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-xs text-[#667085]">
@@ -570,12 +572,13 @@ export default function NaigaonAIVideoAndCreativeClient() {
 
           <div className="mt-10 text-center">
             <Link
-              href="/services/ai-video-and-creative"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#122847] transition hover:text-[#A88659]"
-            >
-              Explore our complete AI video and creative service
-              <ArrowUpRight size={16} />
-            </Link>
+  href="/services/ai-video-and-creative"
+  title="Explore Sharp Rays AI Video and Creative Services"
+  className="inline-flex items-center gap-2 text-sm font-semibold text-[#122847] transition hover:text-[#A88659]"
+>
+  Explore our complete AI video and creative service
+  <ArrowUpRight size={16} />
+</Link>
           </div>
         </div>
       </section>
@@ -1038,6 +1041,16 @@ export default function NaigaonAIVideoAndCreativeClient() {
                   </ul>
 
                   <Link
+  href="/pricing"
+  title="View Sharp Rays AI Video and Creative Pricing"
+  className={`mt-auto inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold transition ${
+    plan.featured
+      ? "bg-[#C6A77A] text-[#122847] hover:bg-white"
+      : "bg-[#122847] text-white hover:bg-[#1D3B61]"
+  }`}
+>
+  View Package Details <ArrowUpRight size={16} />
+</Link><Link
                     href="/pricing"
                     className={`mt-auto inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold transition ${
                       plan.featured
@@ -1056,11 +1069,12 @@ export default function NaigaonAIVideoAndCreativeClient() {
             Prices are starting prices. Final scope and requirements should be
             confirmed before starting. Explore the complete details on our{" "}
             <Link
-              href="/pricing"
-              className="font-semibold underline underline-offset-4"
-            >
-              pricing page
-            </Link>
+  href="/pricing"
+  title="View Sharp Rays AI Video and Creative Pricing"
+  className="font-semibold underline underline-offset-4"
+>
+  pricing page
+</Link>
             .
           </p>
         </div>
@@ -1090,11 +1104,12 @@ export default function NaigaonAIVideoAndCreativeClient() {
 
           <Reveal delay={0.1}>
             <Link
-              href="/contact?source=naigaon-ai-video-creative-quote"
-              className="inline-flex items-center justify-center gap-3 rounded-full bg-[#122847] px-7 py-4 text-sm font-semibold text-white transition hover:bg-[#A88659]"
-            >
-              Request a Quote <ArrowUpRight size={17} />
-            </Link>
+  href="/contact?source=naigaon-ai-video-creative-quote"
+  title="Request an AI Video and Creative Project Quote from Sharp Rays"
+  className="inline-flex items-center justify-center gap-3 rounded-full bg-[#122847] px-7 py-4 text-sm font-semibold text-white transition hover:bg-[#A88659]"
+>
+  Request a Quote <ArrowUpRight size={17} />
+</Link>
           </Reveal>
         </div>
       </section>
@@ -1173,20 +1188,22 @@ export default function NaigaonAIVideoAndCreativeClient() {
 
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
-              href="/contact?source=naigaon-ai-video-creative-final"
-              className="inline-flex items-center justify-center gap-3 rounded-full bg-[#C6A77A] px-8 py-4 text-sm font-semibold text-[#122847] transition hover:bg-white"
-            >
-              Discuss Your Project
-              <ArrowUpRight size={17} />
-            </Link>
+  href="/contact?source=naigaon-ai-video-creative-final"
+  title="Start an AI Video and Creative Project with Sharp Rays"
+  className="inline-flex items-center justify-center gap-3 rounded-full bg-[#C6A77A] px-8 py-4 text-sm font-semibold text-[#122847] transition hover:bg-white"
+>
+  Discuss Your Project
+  <ArrowUpRight size={17} />
+</Link>
 
-            <Link
-              href="/locations/naigaon"
-              className="inline-flex items-center justify-center gap-3 rounded-full border border-white/25 px-8 py-4 text-sm font-medium text-white transition hover:bg-white/10"
-            >
-              Explore Naigaon Services
-              <ArrowRight size={16} />
-            </Link>
+          <Link
+  href="/locations/naigaon"
+  title="Explore Digital Marketing Services in Naigaon"
+  className="inline-flex items-center justify-center gap-3 rounded-full border border-white/25 px-8 py-4 text-sm font-medium text-white transition hover:bg-white/10"
+>
+  Explore Naigaon Services
+  <ArrowRight size={16} />
+</Link>
           </div>
 
           <p className="mt-8 text-xs text-white/35">

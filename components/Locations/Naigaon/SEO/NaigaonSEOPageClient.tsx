@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -353,6 +352,7 @@ export default function NaigaonSEOPageClient() {
               <Link
                 href="/contact?source=naigaon-seo"
                 className="inline-flex items-center justify-center gap-3 rounded-full bg-[#122847] px-7 py-4 text-sm font-semibold text-white transition hover:bg-[#A88659]"
+                title="Contact Sharp Rays About SEO Services in Naigaon"
               >
                 Discuss Your SEO <ArrowUpRight size={17} />
               </Link>
@@ -360,6 +360,7 @@ export default function NaigaonSEOPageClient() {
               <Link
                 href="/services/search-engine-optimization"
                 className="inline-flex items-center justify-center gap-3 rounded-full border border-[#122847]/15 bg-white px-7 py-4 text-sm font-medium text-[#122847] transition hover:border-[#A88659] hover:bg-[#F2F0EA]"
+                title="Explore Sharp Rays SEO Services"
               >
                 Explore SEO Services <ArrowRight size={16} />
               </Link>
@@ -538,6 +539,7 @@ export default function NaigaonSEOPageClient() {
             <Link
               href="/services/search-engine-optimization"
               className="inline-flex items-center gap-2 text-sm font-semibold text-[#122847] transition hover:text-[#A88659]"
+              title="Explore Sharp Rays SEO Services"
             >
               Explore our complete SEO service <ArrowUpRight size={16} />
             </Link>
@@ -702,6 +704,7 @@ export default function NaigaonSEOPageClient() {
             <Link
               href="/services/search-engine-optimization"
               className="inline-flex items-center gap-2 rounded-full bg-[#122847] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#A88659]"
+              title="Explore Sharp Rays SEO Services"
             >
               Explore technical SEO <ArrowUpRight size={16} />
             </Link>
@@ -834,6 +837,7 @@ export default function NaigaonSEOPageClient() {
             <Link
               href="/work"
               className="inline-flex items-center gap-2 text-sm font-semibold text-[#122847] hover:text-[#A88659]"
+              title="Explore Sharp Rays Portfolio and Projects"
             >
               Explore our work <ArrowUpRight size={16} />
             </Link>
@@ -962,6 +966,7 @@ export default function NaigaonSEOPageClient() {
                         ? "bg-[#C6A77A] text-[#122847] hover:bg-white"
                         : "bg-[#122847] text-white hover:bg-[#1D3B61]"
                     }`}
+                    title="View Sharp Rays SEO and Website Service Pricing"
                   >
                     View Package Details <ArrowUpRight size={16} />
                   </Link>
@@ -976,6 +981,7 @@ export default function NaigaonSEOPageClient() {
             <Link
               href="/pricing"
               className="font-semibold underline underline-offset-4"
+              title="View Sharp Rays SEO and Website Service Pricing"
             >
               pricing page
             </Link>.
@@ -983,56 +989,54 @@ export default function NaigaonSEOPageClient() {
         </div>
       </section>
 
-    
-{/* 12 — FAQs */}
-<section
-  className="bg-[#FAF8F5] px-5 py-20 sm:px-8 lg:py-28"
-  aria-labelledby="naigaon-seo-faq-heading"
->
-  <div className="mx-auto max-w-[1220px]">
-    <Reveal className="mx-auto max-w-[800px] text-center">
-      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#A88659]">
-        Questions Before You Start
-      </p>
-
-      <h2
-        id="naigaon-seo-faq-heading"
-        className="mt-4 font-[var(--font-new-york)] text-3xl font-medium leading-tight tracking-[-0.035em] text-[#122847] sm:text-4xl lg:text-5xl"
+      {/* 12 — FAQs */}
+      <section
+        className="bg-[#FAF8F5] px-5 py-20 sm:px-8 lg:py-28"
+        aria-labelledby="naigaon-seo-faq-heading"
       >
-        Frequently Asked{" "}
-        <span className="text-[#B79A72]">Questions.</span>
-      </h2>
+        <div className="mx-auto max-w-[1220px]">
+          <Reveal className="mx-auto max-w-[800px] text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#A88659]">
+              Questions Before You Start
+            </p>
 
-      <p className="mt-5 text-[13px] leading-[1.9] text-[#718092] sm:text-sm">
-        Clear answers about SEO services, local search visibility and growing
-        your business online in Naigaon.
-      </p>
-    </Reveal>
+            <h2
+              id="naigaon-seo-faq-heading"
+              className="mt-4 font-[var(--font-new-york)] text-3xl font-medium leading-tight tracking-[-0.035em] text-[#122847] sm:text-4xl lg:text-5xl"
+            >
+              Frequently Asked{" "}
+              <span className="text-[#B79A72]">Questions.</span>
+            </h2>
 
-    <div className="mt-12 grid gap-x-12 border-t border-[#E4D9CC] lg:grid-cols-2">
-      {faqs.map((faq, index) => (
-        <Reveal key={faq.question}>
-          <article className="flex h-full gap-4 border-b border-[#E4D9CC] py-7 sm:py-8">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#E0D2BF] bg-white font-[var(--font-new-york)] text-[15px] text-[#B79A72]">
-              {String(index + 1).padStart(2, "0")}
-            </span>
+            <p className="mt-5 text-[13px] leading-[1.9] text-[#718092] sm:text-sm">
+              Clear answers about SEO services, local search visibility and growing
+              your business online in Naigaon.
+            </p>
+          </Reveal>
 
-            <div className="min-w-0">
-              <h3 className="font-[var(--font-new-york)] text-[19px] leading-[1.4] text-[#122847] sm:text-[21px]">
-                {faq.question}
-              </h3>
+          <div className="mt-12 grid gap-x-12 border-t border-[#E4D9CC] lg:grid-cols-2">
+            {faqs.map((faq, index) => (
+              <Reveal key={faq.question}>
+                <article className="flex h-full gap-4 border-b border-[#E4D9CC] py-7 sm:py-8">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#E0D2BF] bg-white font-[var(--font-new-york)] text-[15px] text-[#B79A72]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
 
-              <p className="mt-3 text-[12px] leading-[1.95] text-[#708092] sm:text-[13px]">
-                {faq.answer}
-              </p>
-            </div>
-          </article>
-        </Reveal>
-      ))}
-    </div>
-  </div>
-</section>
+                  <div className="min-w-0">
+                    <h3 className="font-[var(--font-new-york)] text-[19px] leading-[1.4] text-[#122847] sm:text-[21px]">
+                      {faq.question}
+                    </h3>
 
+                    <p className="mt-3 text-[12px] leading-[1.95] text-[#708092] sm:text-[13px]">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* 13 — FINAL CTA | NAVY */}
       <section className="relative isolate overflow-hidden bg-[#122847] px-5 py-24 text-white sm:px-8 lg:px-12 lg:py-32">
@@ -1057,12 +1061,14 @@ export default function NaigaonSEOPageClient() {
             <Link
               href="/contact?source=naigaon-seo-final"
               className="inline-flex items-center justify-center gap-3 rounded-full bg-[#C6A77A] px-8 py-4 text-sm font-semibold text-[#122847] transition hover:bg-white"
+              title="Start an SEO Consultation with Sharp Rays in Naigaon"
             >
               Start a Conversation <ArrowUpRight size={17} />
             </Link>
             <Link
               href="/locations/naigaon"
               className="inline-flex items-center justify-center gap-3 rounded-full border border-white/25 px-8 py-4 text-sm font-medium text-white transition hover:bg-white/10"
+              title="Explore Digital Marketing Services in Naigaon"
             >
               Explore Naigaon Services <ArrowRight size={16} />
             </Link>
