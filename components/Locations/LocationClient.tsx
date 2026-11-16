@@ -52,8 +52,8 @@ const locations = [
     tags: ["Growing businesses", "Retail", "Services"],
   },
   {
-    name: "Nalasopara",
-    slug: "nalasopara",
+    name: "Nallasopara",
+    slug: "nallasopara",
     region: "Vasai–Virar",
     number: "03",
     description:
