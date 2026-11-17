@@ -33,7 +33,11 @@ export async function generateMetadata({
 }: ContactPageProps): Promise<Metadata> {
   const params = searchParams ? await searchParams : {};
 
-  const hasQueryParameters = Object.keys(params).length > 0;
+ const hasFormParameters = ["service", "need", "plan"].some((key) => {
+  const value = params[key];
+
+  return typeof value === "string" && value.trim().length > 0;
+});
 
   return {
     metadataBase: new URL("https://www.sharprays.com"),
@@ -73,11 +77,11 @@ export async function generateMetadata({
     },
 
     robots: {
-      index: !hasQueryParameters,
+    index: !hasFormParameters,
       follow: true,
 
       googleBot: {
-        index: !hasQueryParameters,
+    index: !hasFormParameters,
         follow: true,
         "max-image-preview": "large",
         "max-snippet": -1,
