@@ -53,7 +53,7 @@ const industries: Industry[] = [
     number: "03", title: "Education", eyebrow: "SCHOOLS · COLLEGES · INSTITUTES",
     description: "Turn programme searches into student enquiries and admissions.",
     href: "/industries/education",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1100&q=82",
+    image: "/industries/education/education-services.webp",
     alt: "University graduates on a bright campus representing student admissions",
     imageTitle: "Education Marketing and Student Admissions — Sharp Rays",
     icon: GraduationCap, span: "lg:col-span-4", position: "center",

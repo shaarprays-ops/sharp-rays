@@ -1,6 +1,7 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { useState } from "react";
+import type { FormEvent, ReactNode } from "react";
 import {
   ArrowRight,
   BarChart3,
@@ -162,203 +163,54 @@ export default function FreeAuditClient() {
       className="overflow-hidden bg-white text-[#0B2A52]"
       style={{ fontFamily: '"New York", Georgia, serif' }}
     >
-      {/* HERO */}
-      <section className="relative border-b border-[#0B2A52]/10">
-        <div className="pointer-events-none absolute left-1/2 top-[-180px] h-[420px] w-[700px] -translate-x-1/2 rounded-full bg-[#DDEBFA]/70 blur-[100px]" />
+      {/* HERO + AUDIT FORM */}
+      <section className="relative overflow-hidden border-b border-[#0B2A52]/10">
+        <div className="pointer-events-none absolute left-[-180px] top-20 h-[420px] w-[420px] rounded-full bg-[#EAF3FC]/80 blur-[110px]" />
+        <div className="pointer-events-none absolute right-[-160px] top-[-120px] h-[480px] w-[480px] rounded-full bg-[#DDEBFA]/70 blur-[120px]" />
 
-        <div className="relative mx-auto max-w-[1440px] px-5 pb-20 pt-28 sm:px-8 sm:pb-24 sm:pt-32 lg:px-12 lg:pb-28 lg:pt-40">
-          <div className="mx-auto max-w-[950px] text-center">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#6285AD]/20 bg-[#F7FAFD] px-4 py-2">
+        <div className="relative mx-auto grid max-w-[1440px] items-start gap-12 px-5 pb-20 pt-24 sm:px-8 sm:pb-24 sm:pt-28 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:gap-14 lg:px-12 lg:pb-28 lg:pt-32 xl:gap-20">
+          <div className="mx-auto w-full max-w-[560px] lg:mx-0 lg:py-10">
+            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#6285AD]/20 bg-[#F7FAFD]/90 px-4 py-2">
               <Sparkles size={14} strokeWidth={1.8} />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] sm:text-xs">
-                Free Digital Marketing Audit
-              </span>
+              <span className="text-[10px] font-semibold uppercase tracking-[0.2em] sm:text-[11px]">Free Digital Marketing Audit</span>
             </div>
 
-            <h1
-              className="mx-auto max-w-[900px] text-[2.6rem] leading-[0.98] tracking-[-0.045em] 
-              sm:text-[2.6rem]
-                  md:text-[2.95rem]
-                  lg:text-[3.1rem]
-                  xl:text-[3.35rem]"
-              style={{ fontFamily: ' Georgia, serif' }}
-            >
-              Find Out What Is Holding Your Digital Growth Back.
+            <h1 className="max-w-[620px] text-[2.55rem] leading-[1.02] tracking-[-0.045em] sm:text-[3rem] md:text-[3.35rem] xl:text-[3.8rem]" style={{ fontFamily: "Georgia, serif" }}>
+              Find Out What Is Holding Your <span className="text-[#6285AD]">Digital Growth</span> Back.
             </h1>
 
-            <p className="mx-auto mt-7 max-w-[710px] text-[16px] leading-8 text-[#0B2A52]/65 sm:text-[18px]">
-              Get an initial review of your website and digital presence with
-              clear observations, priority opportunities and practical next
-              steps.
+            <p className="mt-6 max-w-[520px] text-[15px] leading-7 text-[#0B2A52]/65 sm:text-[16px] sm:leading-8">
+              Get an initial review of your website and digital presence, with clear observations, priority opportunities and practical next steps for your business.
             </p>
 
-            <div className="mt-9 flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0B2A52]/50 sm:text-xs">
-              <span>No Payment</span>
-              <span className="h-1 w-1 rounded-full bg-[#0B2A52]/25" />
-              <span>No Obligation</span>
-              <span className="h-1 w-1 rounded-full bg-[#0B2A52]/25" />
-              <span>Clear Opportunities</span>
+            <div className="mt-8 space-y-4">
+              {[
+                "An initial look at your website and online presence",
+                "Important gaps and opportunities worth exploring",
+                "Practical next steps — without a sales obligation",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-3 text-[13px] leading-6 text-[#0B2A52]/70 sm:text-[14px]">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#EAF3FC] text-[#315D88]"><Check size={12} strokeWidth={2.2} /></span>
+                  <span>{item}</span>
+                </div>
+              ))}
             </div>
 
-            <a
-              href="#audit-form"
-              title="Request Your Free Audit"
-              className="mt-10 inline-flex items-center gap-3 rounded-[16px] border border-[#6285AD]/30 bg-white/80 px-7 py-4 text-[14px] font-semibold text-[#0B2A52] shadow-[0_14px_45px_rgba(11,42,82,0.10)] transition duration-300 hover:-translate-y-2 hover:shadow-[0_20px_55px_rgba(11,42,82,0.15)]"
-            >
-              Get My Free Audit
-              <ArrowRight size={17} />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* WHAT WE REVIEW */}
-      <section className="relative py-20 sm:py-24 lg:py-28">
-        <div className="mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12">
-          <div className="mx-auto max-w-[800px] text-center">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#6285AD] sm:text-xs">
-              What We Look At
-            </p>
-
-            <h2
-              className="mt-4 text-[2.6rem] leading-[1.02] tracking-[-0.04em] sm:text-[2.6rem] md:text-[2.95rem] lg:text-[3.1rem] xl:text-[3.35rem]"
-              style={{ fontFamily: ' Georgia, serif' }}
-            >
-              A Focused Review of What Matters Most.
-            </h2>
-
-            <p className="mx-auto mt-5 max-w-[650px] text-[16px] leading-8 text-[#0B2A52]/60">
-              We are not trying to overwhelm you with a hundred-point checklist.
-              We focus on the issues and opportunities that could matter most
-              for your business.
-            </p>
+            <div className="mt-9 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-[#0B2A52]/10 pt-6 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#0B2A52]/45 sm:text-[11px]">
+              <span>No Payment</span><span className="h-1 w-1 rounded-full bg-[#6285AD]/50" />
+              <span>No Obligation</span><span className="h-1 w-1 rounded-full bg-[#6285AD]/50" />
+              <span>Clear Direction</span>
+            </div>
           </div>
 
-          <div className="mt-16 grid border-y border-[#0B2A52]/10 md:grid-cols-2 lg:grid-cols-4">
-            {auditAreas.map((item, index) => {
-              const Icon = item.icon;
-
-              return (
-                <div
-                  key={item.title}
-                  className={`group relative px-6 py-10 sm:px-8 lg:py-12 ${
-                    index !== auditAreas.length - 1
-                      ? "border-b border-[#0B2A52]/10 lg:border-b-0 lg:border-r"
-                      : ""
-                  } ${
-                    index === 1
-                      ? "md:border-b-0 lg:border-b-0"
-                      : ""
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    
-
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F3F7FB] transition duration-300 group-hover:-translate-y-1 group-hover:bg-[#E8F1FA]">
-                      <Icon size={18} strokeWidth={1.6} />
-                    </div>
-                  </div>
-
-                  <h3 className="mt-10 text-[24px] tracking-[-0.025em]">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-4 text-[14px] leading-7 text-[#0B2A52]/60">
-                    {item.description}
-                  </p>
-
-                  <div className="mt-8 h-[2px] w-8 bg-[#7FA6CF] transition-all duration-300 group-hover:w-16" />
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* WHAT YOU GET */}
-      <section className="bg-[#F8FBFE] py-20 sm:py-24 lg:py-28">
-        <div className="mx-auto grid max-w-[1200px] gap-14 px-5 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-20 lg:px-12">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#6285AD] sm:text-xs">
-              What You Receive
-            </p>
-
-            <h2
-              className="mt-4 text-[2.6rem] leading-[1.02] tracking-[-0.04em] sm:text-[2.6rem] md:text-[2.95rem] lg:text-[3.1rem] xl:text-[3.35rem]"
-              style={{ fontFamily: '"", Georgia, serif' }}
-            >
-              Useful Direction. Not a Generic Sales Pitch.
-            </h2>
-
-            <p className="mt-6 max-w-[560px] text-[16px] leading-8 text-[#0B2A52]/60">
-              The purpose of the audit is to help you understand where your
-              current digital presence may be creating friction and where
-              stronger opportunities may exist.
-            </p>
-          </div>
-
-          <div className="space-y-0 border-y border-[#0B2A52]/10">
-            {whatYouGet.map((item, index) => (
-              <div
-                key={item}
-                className="flex items-center gap-4 border-b border-[#0B2A52]/10 py-5 last:border-b-0"
-              >
-                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#EAF3FC]">
-                  <Check size={14} strokeWidth={2} />
-                </div>
-
-                <span className="text-[15px] leading-6 sm:text-[16px]">
-                  {item}
-                </span>
-
-                <span className="ml-auto text-[11px] tracking-[0.14em] text-[#0B2A52]/25">
-                  0{index + 1}
-                </span>
+          <div id="audit-form" className="scroll-mt-8 rounded-[28px] border border-[#6285AD]/20 bg-white p-5 shadow-[0_25px_80px_rgba(11,42,82,0.08)] sm:p-8 lg:p-9">
+            {!isSubmitted && (
+              <div className="mb-7 border-b border-[#0B2A52]/10 pb-6">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#6285AD]">Your Complimentary Review</p>
+                <h2 className="mt-2 text-[27px] leading-tight tracking-[-0.035em] sm:text-[30px]" style={{ fontFamily: "Georgia, serif" }}>Request Your Free Audit</h2>
+                <p className="mt-2 text-[13px] leading-6 text-[#0B2A52]/55">Share a few details so we can understand your business and focus the review.</p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* AUDIT FORM */}
-      <section
-        id="audit-form"
-        className="relative scroll-mt-20 py-20 sm:py-24 lg:py-32"
-      >
-        <div className="pointer-events-none absolute bottom-[-140px] right-[-100px] h-[400px] w-[400px] rounded-full bg-[#DCEBFA]/60 blur-[110px]" />
-
-        <div className="relative mx-auto grid max-w-[1260px] gap-14 px-5 sm:px-8 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20 lg:px-12">
-          <div className="lg:sticky lg:top-28 lg:self-start">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#6285AD] sm:text-xs">
-              Request Your Audit
-            </p>
-
-            <h2
-              className="mt-4 text-[2.6rem] leading-[1.02] tracking-[-0.04em] sm:text-[2.6rem] md:text-[2.95rem] lg:text-[3.1rem] xl:text-[3.35rem]"
-              style={{ fontFamily: '"", Georgia, serif' }}
-            >
-              Tell Us a Little About Your Business.
-            </h2>
-
-            <p className="mt-6 max-w-[480px] text-[15px] leading-7 text-[#0B2A52]/60">
-              Give us enough context to understand what you are working with.
-              Keep it simple—we do not need a long brief.
-            </p>
-
-            <div className="mt-10 border-t border-[#0B2A52]/10 pt-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#0B2A52]/45">
-                Important
-              </p>
-
-              <p className="mt-3 max-w-[460px] text-[13px] leading-6 text-[#0B2A52]/55">
-                The complimentary audit is an initial review. Detailed
-                implementation, technical diagnostics, competitor research or a
-                complete marketing strategy may require a separate scope.
-              </p>
-            </div>
-          </div>
-
-          <div className="rounded-[28px] border border-[#6285AD]/20 bg-white p-5 shadow-[0_25px_80px_rgba(11,42,82,0.08)] sm:p-8 lg:p-10">
+            )}
             {isSubmitted ? (
               <div className="flex min-h-[540px] flex-col items-center justify-center px-4 text-center">
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#EAF4FD]">
@@ -371,7 +223,7 @@ export default function FreeAuditClient() {
 
                 <h3
                   className="mt-3 max-w-[500px] text-[2.2rem] leading-[1.08] tracking-[-0.035em] sm:text-[2.7rem]"
-                  style={{ fontFamily: '"", Georgia, serif' }}
+                  style={{ fontFamily: "Georgia, serif" }}
                 >
                   Thanks. We Have Your Details.
                 </h3>
@@ -437,17 +289,20 @@ export default function FreeAuditClient() {
                   </FormField>
                 </div>
 
-                <div className="mt-6">
-                  <FormField label="Website URL">
-                    <input
-                      type="url"
-                      value={form.website}
-                      onChange={(e) => updateField("website", e.target.value)}
-                      placeholder="https://yourwebsite.com"
-                      className={inputClass}
-                    />
-                  </FormField>
-                </div>
+                
+<div className="mt-6">
+  <FormField label="Website URL">
+    <input
+      type="text"
+      inputMode="url"
+      value={form.website}
+      onChange={(e) => updateField("website", e.target.value)}
+      placeholder="yourwebsite.com"
+      className={inputClass}
+    />
+  </FormField>
+</div>
+
 
                 <div className="mt-8">
                   <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#0B2A52]/55">
@@ -522,6 +377,114 @@ export default function FreeAuditClient() {
         </div>
       </section>
 
+      {/* WHAT WE REVIEW */}
+      <section className="relative py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12">
+          <div className="mx-auto max-w-[800px] text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#6285AD] sm:text-xs">
+              What We Look At
+            </p>
+
+            <h2
+              className="mt-4 text-[2.6rem] leading-[1.02] tracking-[-0.04em] sm:text-[2.6rem] md:text-[2.95rem] lg:text-[3.1rem] xl:text-[3.35rem]"
+              style={{ fontFamily: "Georgia, serif" }}
+            >
+              A Focused Review of What Matters Most.
+            </h2>
+
+            <p className="mx-auto mt-5 max-w-[650px] text-[16px] leading-8 text-[#0B2A52]/60">
+              We are not trying to overwhelm you with a hundred-point checklist.
+              We focus on the issues and opportunities that could matter most
+              for your business.
+            </p>
+          </div>
+
+          <div className="mt-16 grid border-y border-[#0B2A52]/10 md:grid-cols-2 lg:grid-cols-4">
+            {auditAreas.map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <div
+                  key={item.title}
+                  className={`group relative px-6 py-10 sm:px-8 lg:py-12 ${
+                    index !== auditAreas.length - 1
+                      ? "border-b border-[#0B2A52]/10 lg:border-b-0 lg:border-r"
+                      : ""
+                  } ${
+                    index === 1
+                      ? "md:border-b-0 lg:border-b-0"
+                      : ""
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    
+
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F3F7FB] transition duration-300 group-hover:-translate-y-1 group-hover:bg-[#E8F1FA]">
+                      <Icon size={18} strokeWidth={1.6} />
+                    </div>
+                  </div>
+
+                  <h3 className="mt-10 text-[24px] tracking-[-0.025em]">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-4 text-[14px] leading-7 text-[#0B2A52]/60">
+                    {item.description}
+                  </p>
+
+                  <div className="mt-8 h-[2px] w-8 bg-[#7FA6CF] transition-all duration-300 group-hover:w-16" />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT YOU GET */}
+      <section className="bg-[#F8FBFE] py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto grid max-w-[1200px] gap-14 px-5 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-20 lg:px-12">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#6285AD] sm:text-xs">
+              What You Receive
+            </p>
+
+            <h2
+              className="mt-4 text-[2.6rem] leading-[1.02] tracking-[-0.04em] sm:text-[2.6rem] md:text-[2.95rem] lg:text-[3.1rem] xl:text-[3.35rem]"
+              style={{ fontFamily: "Georgia, serif" }}
+            >
+              Useful Direction. Not a Generic Sales Pitch.
+            </h2>
+
+            <p className="mt-6 max-w-[560px] text-[16px] leading-8 text-[#0B2A52]/60">
+              The purpose of the audit is to help you understand where your
+              current digital presence may be creating friction and where
+              stronger opportunities may exist.
+            </p>
+          </div>
+
+          <div className="space-y-0 border-y border-[#0B2A52]/10">
+            {whatYouGet.map((item, index) => (
+              <div
+                key={item}
+                className="flex items-center gap-4 border-b border-[#0B2A52]/10 py-5 last:border-b-0"
+              >
+                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#EAF3FC]">
+                  <Check size={14} strokeWidth={2} />
+                </div>
+
+                <span className="text-[15px] leading-6 sm:text-[16px]">
+                  {item}
+                </span>
+
+                <span className="ml-auto text-[11px] tracking-[0.14em] text-[#0B2A52]/25">
+                  0{index + 1}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* PROCESS */}
       <section className="border-y border-[#0B2A52]/10 bg-[#FAFCFE] py-20 sm:py-24">
         <div className="mx-auto max-w-[1200px] px-5 sm:px-8 lg:px-12">
@@ -532,7 +495,7 @@ export default function FreeAuditClient() {
 
             <h2
               className="mt-4 text-[2.6rem] leading-[1.02] tracking-[-0.04em] sm:text-[2.6rem] md:text-[2.95rem] lg:text-[3.1rem] xl:text-[3.35rem]"
-              style={{ fontFamily: '"", Georgia, serif' }}
+              style={{ fontFamily: "Georgia, serif" }}
             >
               Simple From Request to Recommendations.
             </h2>
@@ -589,7 +552,7 @@ export default function FreeAuditClient() {
 
             <h2
               className="mt-4 text-[2.6rem] leading-[1.02] tracking-[-0.04em] sm:text-[2.6rem] md:text-[2.95rem] lg:text-[3.1rem] xl:text-[3.35rem]"
-              style={{ fontFamily: '"", Georgia, serif' }}
+              style={{ fontFamily: "Georgia, serif" }}
             >
               Before You Request Your Audit.
             </h2>
@@ -639,7 +602,7 @@ export default function FreeAuditClient() {
 
             <h2
               className="mt-4 text-[2.6rem] leading-[1.02] tracking-[-0.04em] sm:text-[2.6rem] md:text-[2.95rem] lg:text-[3.1rem] xl:text-[3.35rem]"
-              style={{ fontFamily: '"", Georgia, serif' }}
+              style={{ fontFamily: "Georgia, serif" }}
             >
               Find the Opportunities You May Be Missing.
             </h2>
@@ -669,7 +632,7 @@ function FormField({
   children,
 }: {
   label: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <label className="block">
