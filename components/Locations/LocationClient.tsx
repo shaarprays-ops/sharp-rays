@@ -96,15 +96,7 @@ const locations = [
       "Digital presence and growth solutions for businesses and brands in Borivali.",
     tags: ["Retail", "Professional services", "Brands"],
   },
-  {
-    name: "Thane",
-    slug: "thane",
-    region: "Mumbai Metropolitan Region",
-    number: "08",
-    description:
-      "Digital solutions for retailers, professional firms and businesses in Thane.",
-    tags: ["B2B", "Professional services", "Retail"],
-  },
+  
 ];
 
 const services: {
@@ -588,46 +580,51 @@ export default function LocationClient() {
     <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {locations.map((location, index) => (
         <Rise key={location.slug} delay={(index % 4) * 0.05}>
-          <div
-            className="group relative flex h-full min-h-[275px] flex-col overflow-hidden rounded-[13px] border border-[#E7E1D7] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#C7AD88] hover:shadow-[0_18px_40px_rgba(11,42,82,.07)] sm:p-7"
+          <Link
+            href={`/locations/${location.slug}`}
+            className="group block h-full"
+            aria-label={`Explore digital marketing services in ${location.name}`}
           >
-            <div className="flex items-center justify-between">
-            
-
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F5F0E8] text-[#A1845F]">
-                <MapPin size={16} strokeWidth={1.4} />
-              </span>
-            </div>
-
-            <p className="mt-7 text-[9px] font-semibold uppercase tracking-[.14em] text-[#9B896F]">
-              {location.region}
-            </p>
-
-            <h3 className="mt-2 font-[var(--font-new-york),Georgia,serif] text-[27px] leading-tight tracking-[-.025em] text-[#0B2A52]">
-              {location.name}
-            </h3>
-
-            <p className="mt-4 text-[11px] leading-[1.85] text-[#6C7D89]">
-              {location.description}
-            </p>
-
-            <div className="mt-auto flex flex-wrap gap-1.5 pt-5">
-              {location.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-[#EAE4DA] px-2.5 py-1 text-[8px] text-[#71808A]"
-                >
-                  {tag}
+            <div className="relative flex h-full min-h-[275px] flex-col overflow-hidden rounded-[13px] border border-[#E7E1D7] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#C7AD88] hover:shadow-[0_18px_40px_rgba(11,42,82,.07)] sm:p-7">
+              <div className="flex items-center justify-between">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F5F0E8] text-[#A1845F] transition-colors duration-300 group-hover:bg-[#0B2A52] group-hover:text-white">
+                  <MapPin size={16} strokeWidth={1.4} />
                 </span>
-              ))}
+
+                <span className="text-[10px] text-[#B79A72] opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100">
+                  ↗
+                </span>
+              </div>
+
+              <p className="mt-7 text-[9px] font-semibold uppercase tracking-[.14em] text-[#9B896F]">
+                {location.region}
+              </p>
+
+              <h3 className="mt-2 font-[var(--font-new-york),Georgia,serif] text-[27px] leading-tight tracking-[-.025em] text-[#0B2A52]">
+                {location.name}
+              </h3>
+
+              <p className="mt-4 text-[11px] leading-[1.85] text-[#6C7D89]">
+                {location.description}
+              </p>
+
+              <div className="mt-auto flex flex-wrap gap-1.5 pt-5">
+                {location.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-[#EAE4DA] px-2.5 py-1 text-[8px] text-[#71808A]"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          </Link>
         </Rise>
       ))}
     </div>
   </div>
 </section>
-
 
       {/* 04 — SERVICES */}
       <section className="bg-white py-20 sm:py-24 lg:py-28">

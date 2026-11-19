@@ -102,6 +102,7 @@ const explore = [
   { label: "Blog & Insights", href: "/blog" },
   { label: "Pricing & Packages", href: "/pricing" },
   { label: "Free Digital Audit", href: "/free-audit" },
+  { label: "Locations We Serve", href: "/locations" },
   { label: "Contact Us", href: "/contact" },
 ];
 
