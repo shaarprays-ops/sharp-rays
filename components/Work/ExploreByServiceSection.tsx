@@ -128,7 +128,7 @@ const projects: Project[] = [
   ========================================================= */
 
   {
-    id: "rnk-rentals-social",
+    id: "rnk-rental-social",
     service: "social",
     title: "RNK Rentals",
     type: "Client Project",
@@ -144,27 +144,27 @@ const projects: Project[] = [
       "Content Planning · Social Creative · Captions · Reels · Publishing · Brand Consistency",
     outcome:
       "A clearer social presence with more consistent service communication and stronger visual presentation.",
-    href: "/work/rnk-rentals-social-media",
+    href: "/work/rnk-rental-social-media",
   },
-  {
-    id: "dts-social",
-    service: "social",
-    title: "DTS",
-    type: "Client Project",
-    platform: "Instagram",
-    industry: "Digital Marketing",
-    contentTag: "Brand Content",
-    image: "/services/social/dts_social.webp",
-    intro:
-      "Social media work for a digital marketing brand, combining educational, promotional and brand-led content into a more consistent publishing system.",
-    challenge:
-      "Communicate multiple digital topics without making the social feed feel disconnected or overly promotional.",
-    work:
-      "Content Strategy · Social Creative · Reels · Copy · Publishing · Content Planning",
-    outcome:
-      "A more structured content system with clearer brand communication across social posts.",
-    href: "/work/dts-social-media",
-  },
+{
+  id: "dts-social",
+  service: "social",
+  title: "DTS",
+  type: "Client Project",
+  platform: "Instagram",
+  industry: "Digital Marketing",
+  contentTag: "Brand Content",
+  image: "/services/social/dts_social.webp",
+  intro:
+    "Social media work for a digital marketing brand, combining educational, promotional and brand-led content into a more consistent publishing system.",
+  challenge:
+    "Communicate multiple digital topics without making the social feed feel disconnected or overly promotional.",
+  work:
+    "Content Strategy · Social Creative · Reels · Copy · Publishing · Content Planning",
+  outcome:
+    "A more structured content system with clearer brand communication across social posts.",
+  href: "/work/dts-social-media",
+},
   {
     id: "brownie-point-social",
     service: "social",
@@ -264,27 +264,26 @@ const projects: Project[] = [
       "Keyword Research · On-Page SEO · Technical Fixes · Internal Linking · Backlinks · GBP · Reporting",
     outcome:
       "A stronger search foundation with clearer priority pages, improved structure and ongoing visibility tracking.",
-    href: "/work/rnk-rentals-seo",
+    href: "/work/rnk-rental-social-media",
   },
-  {
-    id: "dts-seo",
-    service: "seo",
-    title: "DTS",
-    type: "Client Project",
-    industry: "Digital Marketing",
-    contentTag: "SEO",
-    image: "/services/seo/dts_seo.webp",
-    intro:
-      "Ongoing SEO work for a digital marketing brand covering technical improvements, search-led pages, internal linking and authority-building activity.",
-    challenge:
-      "Improve organic discoverability across services and content while keeping the website structure useful for both users and search engines.",
-    work:
-      "Keyword Research · Page Optimization · Technical SEO · Internal Linking · Backlinks · GBP · Reporting",
-    outcome:
-      "A more structured organic search program with clearer search targets and stronger website connectivity.",
-    href: "/work/dts-seo",
-  },
-
+{
+  id: "dts-seo",
+  service: "seo",
+  title: "DTS",
+  type: "Client Project",
+  industry: "Digital Marketing",
+  contentTag: "SEO",
+  image: "/services/seo/dts_seo.webp",
+  intro:
+    "Ongoing SEO work for a digital marketing brand covering technical improvements, search-led pages, internal linking and authority-building activity.",
+  challenge:
+    "Improve organic discoverability across services and content while keeping the website structure useful for both users and search engines.",
+  work:
+    "Keyword Research · Page Optimization · Technical SEO · Internal Linking · Backlinks · GBP · Reporting",
+  outcome:
+    "A more structured organic search program with clearer search targets and stronger website connectivity.",
+  href: "/work/dts-social-media",
+},
   /* =========================================================
      PERFORMANCE MARKETING
      Images:
@@ -307,27 +306,26 @@ const projects: Project[] = [
       "Campaign Strategy · Audience Targeting · Conversion Tracking · Creative Testing · Optimization · Reporting",
     outcome:
       "A more structured paid acquisition setup with clearer campaign measurement and ongoing optimization.",
-    href: "/work/rnk-rentals-performance-marketing",
+    href: "/work/rnk-rental-social-media",
   },
-  {
-    id: "dts-performance",
-    service: "performance",
-    title: "DTS",
-    type: "Client Project",
-    industry: "Digital Marketing",
-    contentTag: "Paid Growth",
-    image: "/work/performance/dts.jpg",
-    intro:
-      "Paid campaign work for a digital marketing brand focused on campaign setup, audience targeting, creative testing and clearer performance measurement.",
-    challenge:
-      "Build a more measurable acquisition process across campaigns without treating clicks as the final business outcome.",
-    work:
-      "Paid Campaigns · Audience Testing · Creative Variations · Conversion Tracking · Optimization · Reporting",
-    outcome:
-      "A clearer performance framework for testing audiences, creative and campaign efficiency.",
-    href: "/work/dts-performance-marketing",
-  },
-
+ {
+  id: "dts-performance",
+  service: "performance",
+  title: "DTS",
+  type: "Client Project",
+  industry: "Digital Marketing",
+  contentTag: "Paid Growth",
+  image: "/work/performance/dts.jpg",
+  intro:
+    "Paid campaign work for a digital marketing brand focused on campaign setup, audience targeting, creative testing and clearer performance measurement.",
+  challenge:
+    "Build a more measurable acquisition process across campaigns without treating clicks as the final business outcome.",
+  work:
+    "Paid Campaigns · Audience Testing · Creative Variations · Conversion Tracking · Optimization · Reporting",
+  outcome:
+    "A clearer performance framework for testing audiences, creative and campaign efficiency.",
+  href: "/work/dts-social-media",
+},
   /*
     PERFORMANCE PROJECT 03:
     Add the third project here once you confirm its client/project name.
@@ -340,24 +338,24 @@ const projects: Project[] = [
      /public/work/websites/
   ========================================================= */
 
-  {
-    id: "dts-website",
-    service: "website",
-    title: "DTS",
-    type: "Client Project",
-    industry: "Digital Marketing",
-    contentTag: "Website",
-    image: "/services/webdev/dts_web.webp",
-    intro:
-      "A website project for a digital marketing brand focused on organising services, improving clarity and creating a stronger responsive digital presence.",
-    challenge:
-      "Present multiple digital services clearly without making the site feel crowded or difficult to navigate.",
-    work:
-      "Website Strategy · UX/UI · Responsive Development · Content Structure · Technical SEO",
-    outcome:
-      "A clearer service journey with a more structured and scalable website experience.",
-    href: "/work/dts-website",
-  },
+ {
+  id: "dts-website",
+  service: "website",
+  title: "DTS",
+  type: "Client Project",
+  industry: "Digital Marketing",
+  contentTag: "Website",
+  image: "/services/webdev/dts_web.webp",
+  intro:
+    "A website project for a digital marketing brand focused on organising services, improving clarity and creating a stronger responsive digital presence.",
+  challenge:
+    "Present multiple digital services clearly without making the site feel crowded or difficult to navigate.",
+  work:
+    "Website Strategy · UX/UI · Responsive Development · Content Structure · Technical SEO",
+  outcome:
+    "A clearer service journey with a more structured and scalable website experience.",
+  href: "/work/dts-social-media",
+},
   {
     id: "rnk-rentals-website",
     service: "website",
@@ -374,7 +372,7 @@ const projects: Project[] = [
       "Website Structure · UX/UI · Responsive Development · Service Pages · Technical SEO",
     outcome:
       "A clearer rental journey with improved mobile usability and a more organised digital experience.",
-    href: "/work/rnk-rentals-website",
+   href: "/work/rnk-rental-social-media",
   },
   {
     id: "xiimba-website",
@@ -394,24 +392,26 @@ const projects: Project[] = [
       "A more professional digital presence with clearer business information and product communication.",
     href: "/work/xiimba-website",
   },
-  {
-    id: "poetry-dubai-website",
-    service: "website",
-    title: "Poetry Dubai",
-    type: "Client Project",
-    industry: "Furniture & Interior Products",
-    contentTag: "Showcase Website",
-    image: "/services/webdev/poetry_web.webp",
-    intro:
-      "A showcase-led website for a Dubai brand presenting chairs, wall pieces and other design-focused products through a clean visual browsing experience.",
-    challenge:
-      "Let the product range feel premium and visual while keeping categories and individual pieces easy to explore.",
-    work:
-      "Showcase Strategy · UX/UI · Product Presentation · Responsive Development · Content Structure",
-    outcome:
-      "A cleaner product showcase that gives individual pieces more visual space while keeping browsing straightforward.",
-    href: "/services/webdev/poetry_web.webp",
-  },
+  
+{
+  id: "poetry-dubai-website",
+  service: "website",
+  title: "Poetry Dubai",
+  type: "Client Project",
+  industry: "Furniture & Interior Products",
+  contentTag: "Showcase Website",
+  image: "/services/webdev/poetry_web.webp",
+  intro:
+    "A showcase-led website for a Dubai brand presenting chairs, wall pieces and other design-focused products through a clean visual browsing experience.",
+  challenge:
+    "Let the product range feel premium and visual while keeping categories and individual pieces easy to explore.",
+  work:
+    "Showcase Strategy · UX/UI · Product Presentation · Responsive Development · Content Structure",
+  outcome:
+    "A cleaner product showcase that gives individual pieces more visual space while keeping browsing straightforward.",
+  href: "/work/poetry-dubai-website",
+},
+
   {
     id: "shruti-chadha-website",
     service: "website",
@@ -428,7 +428,7 @@ const projects: Project[] = [
       "Portfolio Strategy · UX/UI · Responsive Development · Project Structure · Content Presentation",
     outcome:
       "A more polished portfolio experience that makes interior projects easier to explore across screen sizes.",
-    href: "/work/shruti-chadha-website",
+    href: "/work/shruti-chadha-social-media",
   },
   {
     id: "vcarglow-website",
@@ -448,24 +448,26 @@ const projects: Project[] = [
       "A clearer service experience that makes car care options easier to understand and act on.",
     href: "/work/vcarglow-website",
   },
-  {
-    id: "jkayy-website",
-    service: "website",
-    title: "JKAYY",
-    type: "Client Project",
-    industry: "DJ & Artist",
-    contentTag: "Artist Website",
-    image: "/services/webdev/jkayy_web.webp",
-    intro:
-      "A personal artist website for a DJ built to showcase identity, performances and creative presence in one focused digital destination.",
-    challenge:
-      "Translate an individual DJ identity into a website that feels distinctive while keeping important artist information easy to access.",
-    work:
-      "Artist Positioning · UX/UI · Responsive Development · Showcase Sections · Content Structure",
-    outcome:
-      "A stronger personal digital presence that brings artist identity and performance-focused content together.",
-    href: "/work/jkayy-website",
-  },
+  
+{
+  id: "jkayy-website",
+  service: "website",
+  title: "JKAYY",
+  type: "Client Project",
+  industry: "Music & Entertainment",
+  contentTag: "DJ Artist Website",
+  image: "/services/webdev/jkayy_web.webp",
+  intro:
+    "A distinctive artist website presenting JKAYY's identity through a music-inspired digital experience.",
+  challenge:
+    "Create a digital presence that captures the personality of a DJ while keeping the artist's information organised and easy to explore.",
+  work:
+    "Website Strategy · UI/UX · Visual Direction · Responsive Development",
+  outcome:
+    "A dedicated digital destination for presenting the JKAYY artist identity.",
+  href: "/work/jkayy-website",
+},
+
   {
     id: "afterrmatch-website",
     service: "website",
@@ -500,7 +502,7 @@ const projects: Project[] = [
     "Website Strategy · UX/UI · Responsive Development · Event Showcase · Content Structure",
   outcome:
     "A more cohesive digital experience that brings weddings, launches and event work together under one clear brand identity.",
-  href: "/work/vow-story-website",
+  href: "/work/vow-story-social-media",
 },
 
  
@@ -589,8 +591,13 @@ function WorkCard({
   index: number;
   reduceMotion: boolean;
 }) {
-  return (
-    <motion.article
+    return (
+    <Link
+      href={project.href}
+      aria-label={`View ${project.title} ${service.label} case study`}
+      className="block h-full rounded-[24px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6285AD] focus-visible:ring-offset-4"
+    >
+      <motion.article
       layout
       initial={
         reduceMotion
@@ -997,24 +1004,19 @@ function WorkCard({
 
         {/* CTA */}
 
-     <Link
-  href={project.href}
-  title={`View ${project.title} ${service.label} case study`}
+    <div
   style={newYorkFont}
   className="
     mt-auto
-    pt-5
-
     flex
     w-fit
     items-center
     gap-2
-
+    pt-5
     text-[8px]
     font-medium
     uppercase
     tracking-[0.16em]
-
     text-[#0B2A52]
   "
 >
@@ -1025,14 +1027,12 @@ function WorkCard({
     strokeWidth={1.7}
     className="
       text-[#B79A72]
-
       transition-transform
       duration-300
-
       group-hover:translate-x-1
     "
   />
-</Link>
+</div>
       </div>
 
       <span
@@ -1056,7 +1056,8 @@ function WorkCard({
           backgroundColor: service.accent,
         }}
       />
-    </motion.article>
+         </motion.article>
+    </Link>
   );
 }
 
